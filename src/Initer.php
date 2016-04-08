@@ -2,6 +2,11 @@
 
 namespace hipanel\rbac;
 
+/**
+ * Initer for AuthManager.
+ *
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class Initer
 {
     static public function init(AuthManager $auth)

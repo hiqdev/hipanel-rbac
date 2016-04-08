@@ -5,18 +5,43 @@ namespace hipanel\rbac;
 use yii\base\InvalidParamException;
 use yii\rbac\Item;
 
+/**
+ * AuthManager class.
+ *
+ * @author Andrii Vasyliev <sol@hiqdev.com>
+ */
 class AuthManager extends \yii\rbac\PhpManager
 {
+    /**
+     * Set permission.
+     * @param string $name
+     * @param string $description
+     * @return Item
+     */
     public function setPermission($name, $description = null)
     {
         return $this->setItem('permission', $name, $description);
     }
 
+    /**
+     * Set role.
+     * @param string $name
+     * @param string $description
+     * @return Item
+     */
     public function setRole($name, $description = null)
     {
         return $this->setItem('role', $name, $description);
     }
 
+    /**
+     * Set item by type and name.
+     * Created if not exists else updates.
+     * @param string $type
+     * @param string $name
+     * @param string $description
+     * @return Item
+     */
     public function setItem($type, $name, $description = null)
     {
         $item = $this->getItem($name) ?: $this->createItem($type, $name);
