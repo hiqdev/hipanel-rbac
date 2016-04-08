@@ -1,0 +1,66 @@
+{
+    "name": "hiqdev/yii2-auth",
+    "type": "yii2-extension",
+    "description": "RBAC implementation for HiPanel",
+    "keywords": [
+        "hipanel",
+        "rbac"
+    ],
+    "homepage": "https://github.com/hiqdev/hipanel-rbac",
+    "license": "BSD-3-Clause",
+    "support": {
+        "email": "support@hiqdev.com",
+        "source": "https://github.com/hiqdev/yii2-auth",
+        "issues": "https://github.com/hiqdev/yii2-auth/issues",
+        "wiki": "https://github.com/hiqdev/yii2-auth/wiki",
+        "forum": "http://forum.hiqdev.com/"
+    },
+    "authors": [
+        {
+            "name": "Andrii Vasyliev",
+            "role": "Project lead",
+            "email": "sol@hiqdev.com",
+            "homepage": "http://hipanel.com/"
+        },
+        {
+            "name": "Dmitry Naumenko",
+            "role": "Lead backend developer",
+            "email": "silverfire@hiqdev.com",
+            "homepage": "http://silverfire.me/"
+        },
+        {
+            "name": "Andrey Klochok",
+            "role": "Lead frontend developer",
+            "email": "tafid@hiqdev.com",
+            "homepage": "http://hiqdev.com/"
+        },
+        {
+            "name": "Yuriy Myronchuk",
+            "role": "QA Lead",
+            "email": "bladeroot@hiqdev.com",
+            "homepage": "http://hiqdev.com/"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "^2.0"
+    },
+    "require-dev": {
+        "yiisoft/yii2": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "hipanel\\rbac\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "hipanel\\rbac\\tests\\": "tests"
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://asset-packagist.hiqdev.com"
+        }
+    ]
+}

@@ -1,0 +1,20 @@
+package:
+    type:           yii2-extension
+    name:           hipanel-rbac
+    title:          RBAC implementation for HiPanel
+    headline:       HiPanel RBAC
+    keywords:       hipanel, rbac
+    namespace:      hipanel\rbac
+    description:    |
+        [![Logo](https://raw.githubusercontent.com/hiqdev/hipanel-core/master/docs/logo.png)](https://hipanel.com/)
+
+        [HiPanel](http://hipanel.com/) is the next generation control panel for hosting, domains and more.
+
+        This package provides RBAC implementation for HiPanel:
+
+        - authorization data: roles and permissions
+        - helpers
+
+require:
+    hiqdev/hidev-php:       "*"
+    hiqdev/hidev-vendor:    "*"
