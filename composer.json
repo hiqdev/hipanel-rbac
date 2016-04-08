@@ -1,5 +1,5 @@
 {
-    "name": "hiqdev/yii2-auth",
+    "name": "hiqdev/hipanel-rbac",
     "type": "yii2-extension",
     "description": "RBAC implementation for HiPanel",
     "keywords": [

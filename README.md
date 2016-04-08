@@ -3,8 +3,8 @@ HiPanel RBAC
 
 **RBAC implementation for HiPanel**
 
-[![Latest Stable Version](https://poser.pugx.org/hiqdev/yii2-auth/v/stable)](https://packagist.org/packages/hiqdev/yii2-auth)
-[![Total Downloads](https://poser.pugx.org/hiqdev/yii2-auth/downloads)](https://packagist.org/packages/hiqdev/yii2-auth)
+[![Latest Stable Version](https://poser.pugx.org/hiqdev/hipanel-rbac/v/stable)](https://packagist.org/packages/hiqdev/hipanel-rbac)
+[![Total Downloads](https://poser.pugx.org/hiqdev/hipanel-rbac/downloads)](https://packagist.org/packages/hiqdev/hipanel-rbac)
 [![Build Status](https://img.shields.io/travis/hiqdev/hipanel-rbac.svg)](https://travis-ci.org/hiqdev/hipanel-rbac)
 [![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/hiqdev/hipanel-rbac.svg)](https://scrutinizer-ci.com/g/hiqdev/hipanel-rbac/)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/hipanel-rbac.svg)](https://scrutinizer-ci.com/g/hiqdev/hipanel-rbac/)
