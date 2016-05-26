@@ -14,7 +14,3 @@ package:
 
         - authorization data: roles and permissions
         - helpers
-
-require:
-    hiqdev/hidev-php:       "*"
-    hiqdev/hidev-vendor:    "*"
