@@ -59,6 +59,11 @@
             "hipanel\\rbac\\tests\\": "tests"
         }
     },
+    "extra": {
+        "config-plugin": {
+            "hidev": "src/config/hidev.php"
+        }
+    },
     "repositories": [
         {
             "type": "composer",
