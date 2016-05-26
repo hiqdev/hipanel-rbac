@@ -20,39 +20,30 @@ class Initer
 {
     public static function init(AuthManager $auth)
     {
-        $auth->setRole('guest');
-        $auth->setRole('loggedin');
         $auth->setRole('client');
         $auth->setRole('supportRole');
-        $auth->setRole('admin');
+        $auth->setRole('adminRole');
         $auth->setRole('manager');
         $auth->setRole('reseller');
         $auth->setRole('owner');
         $auth->setRole('freezer');
 
+        $auth->setPermission('deposit');
         $auth->setPermission('support');
         $auth->setPermission('manage');
-        $auth->setPermission('administer');
+        $auth->setPermission('admin');
         $auth->setPermission('resell');
         $auth->setPermission('own');
         $auth->setPermission('root');
         $auth->setPermission('freeze');
         $auth->setPermission('unfreeze');
-        $auth->setPermission('deposit');
 
-        $auth->setPermission('domainSetNSs');
-
-        $auth->setChild('loggedin',         'guest');
-        $auth->setChild('loggedin',         'domainSetNSs');
-
-        $auth->setChild('client',           'loggedin');
         $auth->setChild('client',           'deposit');
 
-        $auth->setChild('supportRole',      'loggedin');
         $auth->setChild('supportRole',      'support');
 
-        $auth->setChild('admin',            'supportRole');
-        $auth->setChild('admin',            'administer');
+        $auth->setChild('adminRole',        'admin');
+        $auth->setChild('adminRole',        'support');
 
         $auth->setChild('manager',          'supportRole');
         $auth->setChild('manager',          'manage');
