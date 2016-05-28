@@ -13,7 +13,7 @@ return PhpCsFixer\Config::create()
     ->setUsingCache(true)
     ->setRiskyAllowed(true)
     ->setRules(array(
-        '@PSR2' => true,
+        '@Symfony' => true,
         'header_comment'                             => ['header' => $header], /// Add, replace or remove header comment
         'long_array_syntax'                          => false, /// Arrays should use the long syntax
         'php4_constructor'                           => false, /// Convert PHP4-style constructors to __construct. Warning! This could change code behavior
@@ -24,12 +24,14 @@ return PhpCsFixer\Config::create()
         'unalign_equals'                             => false, /// Unalign equals symbols in consecutive lines
         'phpdoc_no_empty_return'                     => false, /// @return void and @return null annotations should be omitted from phpdocs
         'empty_return'                               => false, /// A return statement wishing to return nothing should be simply "return"
-        'return'                                     => false, /// An empty line feed should precede a return statement
+        'blank_line_before_return'                   => false, /// n empty line feed should precede a return statement
+        'phpdoc_align'                               => false, /// All items of the @param, @throws, @return, @var, and @type phpdoc tags must be aligned vertically
         'phpdoc_params'                              => false, /// All items of the @param, @throws, @return, @var, and @type phpdoc tags must be aligned vertically
         'phpdoc_scalar'                              => false, /// Scalar types should always be written in the same form. "int", not "integer"; "bool", not "boolean"
         'phpdoc_separation'                          => false, /// Annotations of a different type are separated by a single blank line
         'phpdoc_to_comment'                          => false, /// Docblocks should only be used on structural elements
         'method_argument_space'                      => false, /// In method arguments and method call, there MUST NOT be a space before each comma and there MUST be one space after each comma
+        'concat_without_spaces'                      => false, /// Concatenation should be used without spaces
         'concat_with_spaces'                         =>  true, /// Concatenation should be used with at least one whitespace around
         'ereg_to_preg'                               =>  true, /// Replace deprecated ereg regular expression functions with preg. Warning! This could change code behavior
         'blank_line_after_opening_tag'               =>  true, /// Ensure there is no code on the same line as the PHP open tag and it is followed by a blankline
