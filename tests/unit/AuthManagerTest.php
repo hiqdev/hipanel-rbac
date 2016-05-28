@@ -47,7 +47,6 @@ class AuthManagerTest extends \PHPUnit_Framework_TestCase
 
     public function testMin()
     {
-        $this->assertTrue($this->auth->checkAccess('test', 'domainSetNSs'));
         $this->assertTrue($this->auth->checkAccess('test', 'support'));
         $this->assertTrue($this->auth->checkAccess('test', 'manage'));
         $this->assertTrue($this->auth->checkAccess('test', 'freeze'));
