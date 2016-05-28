@@ -1,12 +1,12 @@
 <?php
 
 /*
- * HiPanel core package
+ * RBAC implementation for HiPanel
  *
- * @link      https://hipanel.com/
- * @package   hipanel-core
+ * @link      https://github.com/hiqdev/hipanel-rbac
+ * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2014-2016, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac\console;
