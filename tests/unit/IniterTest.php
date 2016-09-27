@@ -12,6 +12,7 @@
 namespace hipanel\rbac\tests\unit;
 
 use hipanel\rbac\AuthManager;
+use hipanel\rbac\Initer;
 use Yii;
 
 /**
@@ -19,7 +20,7 @@ use Yii;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class AuthManagerTest extends \PHPUnit_Framework_TestCase
+class IniterTest extends \PHPUnit_Framework_TestCase
 {
     use CheckAccessTrait;
 
@@ -32,6 +33,7 @@ class AuthManagerTest extends \PHPUnit_Framework_TestCase
     {
         $this->auth = Yii::createObject(AuthManager::class);
 
+        Initer::reinit($this->auth);
         $this->setAssignments();
     }
 }
