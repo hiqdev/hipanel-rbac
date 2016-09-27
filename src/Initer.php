@@ -21,41 +21,48 @@ class Initer
     public static function init(AuthManager $auth)
     {
         $auth->setRole('client');
-        $auth->setRole('supportRole');
-        $auth->setRole('adminRole');
+        $auth->setRole('support');
+        $auth->setRole('admin');
         $auth->setRole('manager');
         $auth->setRole('reseller');
         $auth->setRole('owner');
         $auth->setRole('freezer');
 
         $auth->setPermission('deposit');
-        $auth->setPermission('support');
+        $auth->setPermission('supporting');
         $auth->setPermission('manage');
-        $auth->setPermission('admin');
+        $auth->setPermission('administrate');
         $auth->setPermission('resell');
         $auth->setPermission('own');
         $auth->setPermission('root');
         $auth->setPermission('freeze');
         $auth->setPermission('unfreeze');
 
-        $auth->setChild('client',           'deposit');
+        $auth->setChild('client',       'deposit');
 
-        $auth->setChild('supportRole',      'support');
+        $auth->setChild('support',      'supporting');
 
-        $auth->setChild('adminRole',        'admin');
-        $auth->setChild('adminRole',        'support');
+        $auth->setChild('admin',        'support');
+        $auth->setChild('admin',        'administrate');
 
-        $auth->setChild('manager',          'supportRole');
-        $auth->setChild('manager',          'manage');
+        $auth->setChild('manager',      'support');
+        $auth->setChild('manager',      'manage');
 
-        $auth->setChild('reseller',         'manager');
-        $auth->setChild('reseller',         'resell');
+        $auth->setChild('reseller',     'manager');
+        $auth->setChild('reseller',     'resell');
 
-        $auth->setChild('owner',            'reseller');
-        $auth->setChild('owner',            'own');
+        $auth->setChild('owner',        'reseller');
+        $auth->setChild('owner',        'own');
 
-        $auth->setChild('freezer',          'freeze');
-        $auth->setChild('freezer',          'unfreeze');
+        $auth->setChild('freezer',      'freeze');
+        $auth->setChild('freezer',      'unfreeze');
+
+        $auth->setAssignment('freezer', 'sol');
+        $auth->setAssignment('manager', 'sol');
+
+        $auth->setAssignment('freezer', 'andre');
+
+        $auth->saveBasicAssignments();
     }
 
     public static function reinit(AuthManager $auth)
