@@ -48,6 +48,7 @@ return Symfony\CS\Config\Config::create()
     ->finder(
         Symfony\CS\Finder\DefaultFinder::create()
             ->in(__DIR__)
+            ->notPath('src/files')
             ->notPath('vendor')
             ->notPath('runtime')
             ->notPath('web/assets')

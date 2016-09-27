@@ -14,3 +14,8 @@ package:
 
         - authorization data: roles and permissions
         - helpers
+
+php-cs-fixer:
+    finder:
+        notPath:
+            - src/files
