@@ -1,9 +1,11 @@
 hiqdev/hipanel-rbac
 -------------------
 
-## [Under development]
+## [0.0.1] - 2016-09-27
 
 - Added basics
+    - [d8568fa] 2016-09-27 skipped csfixing for `src/files` [sol@hiqdev.com]
+    - [32ef7a3] 2016-09-27 redone bumping to `chkipper` [sol@hiqdev.com]
     - [48cae72] 2016-09-27 csfixed [sol@hiqdev.com]
     - [c2b514a] 2016-09-27 greatly improved tests: splitted out IniterTest and CheckAccessTrait [sol@hiqdev.com]
     - [235625b] 2016-09-27 fixed roles and permissions names [sol@hiqdev.com]
@@ -45,3 +47,5 @@ hiqdev/hipanel-rbac
 [07695f4]: https://github.com/hiqdev/hipanel-rbac/commit/07695f4
 [be4ab26]: https://github.com/hiqdev/hipanel-rbac/commit/be4ab26
 [e90861b]: https://github.com/hiqdev/hipanel-rbac/commit/e90861b
+[d8568fa]: https://github.com/hiqdev/hipanel-rbac/commit/d8568fa
+[32ef7a3]: https://github.com/hiqdev/hipanel-rbac/commit/32ef7a3
