@@ -15,12 +15,17 @@ use yii\base\InvalidParamException;
 use yii\rbac\Item;
 
 /**
- * AuthManager class.
+ * HiPanel AuthManager.
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 class AuthManager extends \yii\rbac\PhpManager
 {
+
+    public $itemFile       = '@hipanel/rbac/files/items.php';
+    public $ruleFile       = '@hipanel/rbac/files/rules.php';
+    public $assignmentFile = '@hipanel/rbac/files/assignments.php';
+
     /**
      * Set permission.
      * @param string $name
@@ -121,5 +126,36 @@ class AuthManager extends \yii\rbac\PhpManager
             return false;
         }
         return $this->assign($role, $userId);
+    }
+
+    public function getRoles()
+    {
+        return $this->getItems(Item::TYPE_ROLE);
+    }
+
+    public function getPermissions()
+    {
+        return $this->getItems(Item::TYPE_PERMISSION);
+    }
+
+    public function getAllAssignments()
+    {
+        return $this->assignments;
+    }
+
+    /**
+     * We don't keep all the assignments, only basic.
+     * @see forceSaveAssignments
+     */
+    protected function saveAssignments()
+    {
+    }
+
+    /**
+     * Create only basic assignments before saving.
+     */
+    public function saveBasicAssignments()
+    {
+        parent::saveAssignments();
     }
 }
