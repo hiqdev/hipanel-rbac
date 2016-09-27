@@ -21,7 +21,6 @@ use yii\rbac\Item;
  */
 class AuthManager extends \yii\rbac\PhpManager
 {
-
     public $itemFile       = '@hipanel/rbac/files/items.php';
     public $ruleFile       = '@hipanel/rbac/files/rules.php';
     public $assignmentFile = '@hipanel/rbac/files/assignments.php';
@@ -110,6 +109,7 @@ class AuthManager extends \yii\rbac\PhpManager
         if (isset($this->children[$parent->name][$child->name])) {
             return false;
         }
+
         return $this->addChild($parent, $child);
     }
 
@@ -125,6 +125,7 @@ class AuthManager extends \yii\rbac\PhpManager
         if (isset($this->assignments[$userId][$role->name])) {
             return false;
         }
+
         return $this->assign($role, $userId);
     }
 

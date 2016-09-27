@@ -13,7 +13,6 @@ namespace hipanel\rbac\console;
 
 use hipanel\rbac\Initer;
 use Yii;
-use yii\rbac\Item;
 
 /**
  * Class RbacController.
@@ -55,5 +54,4 @@ class RbacController extends \yii\console\Controller
             printf("   %-12s %s\n", "$userId:", $roles);
         }
     }
-
 }
