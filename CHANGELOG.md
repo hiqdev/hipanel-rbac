@@ -1,9 +1,6 @@
-hiqdev/hipanel-rbac changelog
------------------------------
+hiqdev/hipanel-rbac
+-------------------
 
-## Under development
+## [Under development]
 
-- Added basics
-
-## Development started 2016-04-08
-
+## [Development started] - 2016-04-08
