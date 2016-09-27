@@ -61,7 +61,8 @@
     },
     "extra": {
         "config-plugin": {
-            "hidev": "src/config/hidev.php"
+            "hidev": "src/config/hidev.php",
+            "hisite": "src/config/hisite.php"
         }
     },
     "repositories": [
