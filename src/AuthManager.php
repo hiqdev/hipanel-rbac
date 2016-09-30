@@ -182,8 +182,10 @@ class AuthManager extends \yii\rbac\PhpManager
     public function setCurrentUserRole()
     {
         if ($this->_currentUserRole === null) {
-            $this->_currentUserRole = $this->getIdentity()->type;
-            $this->setAssignment($this->_currentUserRole, $this->getIdentity()->username);
+            $this->_currentUserRole = $this->getIdentity()->type ?: '';
+            if ($this->_currentUserRole) {
+                $this->setAssignment($this->_currentUserRole, $this->getIdentity()->username);
+            }
         }
     }
 
