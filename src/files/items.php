@@ -47,6 +47,13 @@ return [
             'unfreeze',
         ],
     ],
+    'billManager' => [
+        'type' => 1,
+        'children' => [
+            'delete-bills',
+            'edit-bills',
+        ],
+    ],
     'deposit' => [
         'type' => 2,
     ],
@@ -72,6 +79,12 @@ return [
         'type' => 2,
     ],
     'unfreeze' => [
+        'type' => 2,
+    ],
+    'delete-bills' => [
+        'type' => 2,
+    ],
+    'edit-bills' => [
         'type' => 2,
     ],
 ];

@@ -27,6 +27,7 @@ class Initer
         $auth->setRole('reseller');
         $auth->setRole('owner');
         $auth->setRole('freezer');
+        $auth->setRole('billManager');
 
         $auth->setPermission('deposit');
         $auth->setPermission('supporting');
@@ -37,30 +38,41 @@ class Initer
         $auth->setPermission('root');
         $auth->setPermission('freeze');
         $auth->setPermission('unfreeze');
+        $auth->setPermission('delete-bills');
+        $auth->setPermission('edit-bills');
 
-        $auth->setChild('client',       'deposit');
+        $auth->setChild('client',           'deposit');
 
-        $auth->setChild('support',      'supporting');
+        $auth->setChild('support',          'supporting');
 
-        $auth->setChild('admin',        'support');
-        $auth->setChild('admin',        'administrate');
+        $auth->setChild('admin',            'support');
+        $auth->setChild('admin',            'administrate');
 
-        $auth->setChild('manager',      'support');
-        $auth->setChild('manager',      'manage');
+        $auth->setChild('manager',          'support');
+        $auth->setChild('manager',          'manage');
 
-        $auth->setChild('reseller',     'manager');
-        $auth->setChild('reseller',     'resell');
+        $auth->setChild('reseller',         'manager');
+        $auth->setChild('reseller',         'resell');
 
-        $auth->setChild('owner',        'reseller');
-        $auth->setChild('owner',        'own');
+        $auth->setChild('owner',            'reseller');
+        $auth->setChild('owner',            'own');
 
-        $auth->setChild('freezer',      'freeze');
-        $auth->setChild('freezer',      'unfreeze');
+        $auth->setChild('freezer',          'freeze');
+        $auth->setChild('freezer',          'unfreeze');
 
-        $auth->setAssignment('freezer', 'sol');
-        $auth->setAssignment('manager', 'sol');
+        $auth->setChild('billManager',      'delete-bills');
+        $auth->setChild('billManager',      'edit-bills');
 
-        $auth->setAssignment('freezer', 'andre');
+        $auth->setAssignment('freezer',     'sol');
+        $auth->setAssignment('freezer',     'andre');
+
+        $auth->setAssignment('manager',     'sol');
+
+        $auth->setAssignment('billManager', 'sol');
+        $auth->setAssignment('billManager', 'margo');
+        $auth->setAssignment('billManager', 'dsr');
+        $auth->setAssignment('billManager', 'olgadsr');
+
 
         $auth->saveBasicAssignments();
     }
