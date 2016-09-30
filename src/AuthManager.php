@@ -118,8 +118,8 @@ class AuthManager extends \yii\rbac\PhpManager
      * Assigns a role to a user.
      * @param Role $role
      * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @return Assignment the role assignment information.
      * @throws \Exception when given wrong role name or the role has already been assigned to the user
+     * @return Assignment the role assignment information
      */
     public function setAssignment($role, $userId)
     {
@@ -174,6 +174,7 @@ class AuthManager extends \yii\rbac\PhpManager
         if ($userId === $this->getIdentity()->id) {
             $userId = $this->getIdentity()->username;
         }
+
         return parent::checkAccess($userId, $permission, $params);
     }
 
