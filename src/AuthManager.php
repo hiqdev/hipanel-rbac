@@ -13,6 +13,7 @@ namespace hipanel\rbac;
 
 use yii\base\InvalidParamException;
 use yii\rbac\Item;
+use Yii;
 
 /**
  * HiPanel AuthManager.
@@ -113,6 +114,13 @@ class AuthManager extends \yii\rbac\PhpManager
         return $this->addChild($parent, $child);
     }
 
+    /**
+     * Assigns a role to a user.
+     * @param Role $role
+     * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
+     * @return Assignment the role assignment information.
+     * @throws \Exception when given wrong role name or the role has already been assigned to the user
+     */
     public function setAssignment($role, $userId)
     {
         if (is_string($role)) {
@@ -158,5 +166,29 @@ class AuthManager extends \yii\rbac\PhpManager
     public function saveBasicAssignments()
     {
         parent::saveAssignments();
+    }
+
+    public function checkAccess($userId, $permission, $params = [])
+    {
+        $this->setCurrentUserRole();
+        if ($userId === $this->getIdentity()->id) {
+            $userId = $this->getIdentity()->username;
+        }
+        return parent::checkAccess($userId, $permission, $params);
+    }
+
+    protected $_currentUserRole;
+
+    public function setCurrentUserRole()
+    {
+        if ($this->_currentUserRole === null) {
+            $this->_currentUserRole = $this->getIdentity()->type;
+            $this->setAssignment($this->_currentUserRole, $this->getIdentity()->username);
+        }
+    }
+
+    public function getIdentity()
+    {
+        return Yii::$app->user->identity;
     }
 }
