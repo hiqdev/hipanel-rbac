@@ -137,16 +137,6 @@ class AuthManager extends \yii\rbac\PhpManager
         return $this->assign($role, $userId);
     }
 
-    public function getRoles()
-    {
-        return $this->getItems(Item::TYPE_ROLE);
-    }
-
-    public function getPermissions()
-    {
-        return $this->getItems(Item::TYPE_PERMISSION);
-    }
-
     public function getAllAssignments()
     {
         return $this->assignments;
