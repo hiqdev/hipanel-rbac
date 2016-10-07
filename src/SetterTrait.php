@@ -12,6 +12,7 @@
 namespace hipanel\rbac;
 
 use yii\base\InvalidParamException;
+use yii\rbac\Item;
 
 /**
  * Smart setters for AuthManager.

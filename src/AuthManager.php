@@ -11,7 +11,6 @@
 
 namespace hipanel\rbac;
 
-use yii\rbac\Item;
 use Yii;
 
 /**
