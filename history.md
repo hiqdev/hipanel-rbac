@@ -1,6 +1,22 @@
 hiqdev/hipanel-rbac
 -------------------
 
+## [0.0.2] - 2016-10-07
+
+- Added own `checkAccess`
+    - [5e19f40] 2016-10-07 greatly improved checkAccess to use findIdentity, removed setCurrencyUserRole [sol@hiqdev.com]
+    - [5f125bb] 2016-10-07 minor fix [sol@hiqdev.com]
+    - [de94806] 2016-10-07 csfixed [sol@hiqdev.com]
+    - [443cc4a] 2016-10-07 splitted out SetterTrait to see AuthManager idea clearly [sol@hiqdev.com]
+    - [96ea515] 2016-09-30 fixed setCurrentUserRole to work when no role could be found [sol@hiqdev.com]
+    - [a7579fb] 2016-09-30 added own `checkAccess()` going to production [sol@hiqdev.com]
+- Added `restore-password` and `edit/delete-bills` permissions
+    - [92fa7a7] 2016-10-07 added restore-password permission to files [sol@hiqdev.com]
+    - [d179692] 2016-10-07 removed getRoles and getPermissions cause they are already there from BaseManager [sol@hiqdev.com]
+    - [c988cc5] 2016-10-07 + restore-password permission [sol@hiqdev.com]
+    - [8cdad28] 2016-09-30 changed yii2 version constraint, yii2 is not semver [sol@hiqdev.com]
+    - [e1a90ce] 2016-09-30 + edit/delete bills permission, billManager role [sol@hiqdev.com]
+
 ## [0.0.1] - 2016-09-27
 
 - Added basics
@@ -49,3 +65,14 @@ hiqdev/hipanel-rbac
 [e90861b]: https://github.com/hiqdev/hipanel-rbac/commit/e90861b
 [d8568fa]: https://github.com/hiqdev/hipanel-rbac/commit/d8568fa
 [32ef7a3]: https://github.com/hiqdev/hipanel-rbac/commit/32ef7a3
+[5e19f40]: https://github.com/hiqdev/hipanel-rbac/commit/5e19f40
+[5f125bb]: https://github.com/hiqdev/hipanel-rbac/commit/5f125bb
+[de94806]: https://github.com/hiqdev/hipanel-rbac/commit/de94806
+[443cc4a]: https://github.com/hiqdev/hipanel-rbac/commit/443cc4a
+[92fa7a7]: https://github.com/hiqdev/hipanel-rbac/commit/92fa7a7
+[d179692]: https://github.com/hiqdev/hipanel-rbac/commit/d179692
+[c988cc5]: https://github.com/hiqdev/hipanel-rbac/commit/c988cc5
+[8cdad28]: https://github.com/hiqdev/hipanel-rbac/commit/8cdad28
+[96ea515]: https://github.com/hiqdev/hipanel-rbac/commit/96ea515
+[a7579fb]: https://github.com/hiqdev/hipanel-rbac/commit/a7579fb
+[e1a90ce]: https://github.com/hiqdev/hipanel-rbac/commit/e1a90ce
