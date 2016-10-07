@@ -45,28 +45,19 @@ class AuthManager extends \yii\rbac\PhpManager
 
     public function checkAccess($userId, $permission, $params = [])
     {
-        $this->setCurrentUserRole();
-        if ($userId === $this->getIdentity()->id) {
-            $userId = $this->getIdentity()->username;
+        if (isset(Yii::$app->user)) {
+            $user = Yii::$app->user->identity;
+            if (!$user || $user->id != $userId) {
+                $user = call_user_func([Yii::$app->user->identityClass, 'findIdentity'], $userId);
+            }
+            if (isset($user->username)) {
+                $userId = $user->username;
+            }
+            if (isset($user->type)) {
+                $this->setAssignment($user->type, $userId);
+            }
         }
 
         return parent::checkAccess($userId, $permission, $params);
-    }
-
-    protected $_currentUserRole;
-
-    public function setCurrentUserRole()
-    {
-        if ($this->_currentUserRole === null) {
-            $this->_currentUserRole = $this->getIdentity()->type ?: '';
-            if ($this->_currentUserRole) {
-                $this->setAssignment($this->_currentUserRole, $this->getIdentity()->username);
-            }
-        }
-    }
-
-    public function getIdentity()
-    {
-        return Yii::$app->user->identity;
     }
 }
