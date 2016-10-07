@@ -29,7 +29,7 @@ trait SetterTrait
      */
     public function setPermission($name, $description = null)
     {
-        $permission = $this->getItem($name) ?: $this->createPermission($name);
+        $permission = $this->getPermission($name) ?: $this->createPermission($name);
         if ($description) {
             $permission->description = $description;
         }
@@ -46,7 +46,7 @@ trait SetterTrait
      */
     public function setRole($name, $description = null)
     {
-        $role = $this->getItem($name) ?: $this->createRole($name);
+        $role = $this->getRole($name) ?: $this->createRole($name);
         if ($description) {
             $role->description = $description;
         }
