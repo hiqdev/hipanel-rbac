@@ -3,6 +3,7 @@ return [
     'client' => [
         'type' => 1,
         'children' => [
+            'restore-password',
             'deposit',
         ],
     ],
@@ -53,6 +54,9 @@ return [
             'delete-bills',
             'edit-bills',
         ],
+    ],
+    'restore-password' => [
+        'type' => 2,
     ],
     'deposit' => [
         'type' => 2,
