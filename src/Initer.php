@@ -75,7 +75,7 @@ class Initer
         $auth->setAssignment('billManager', 'dsr');
         $auth->setAssignment('billManager', 'olgadsr');
 
-        $auth->saveBasicAssignments();
+        $auth->persistAssignments();
     }
 
     public static function reinit(AuthManager $auth)
