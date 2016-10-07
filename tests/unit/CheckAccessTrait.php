@@ -26,6 +26,7 @@ trait CheckAccessTrait
     {
         $this->assertTrue($this->auth->checkAccess('client', 'client'));
         $this->assertTrue($this->auth->checkAccess('client', 'deposit'));
+        $this->assertTrue($this->auth->checkAccess('client', 'restore-password'));
 
         $this->assertFalse($this->auth->checkAccess('client', 'support'));
         $this->assertFalse($this->auth->checkAccess('client', 'supporting'));
@@ -49,6 +50,7 @@ trait CheckAccessTrait
 
         $this->assertFalse($this->auth->checkAccess('support', 'client'));
         $this->assertFalse($this->auth->checkAccess('support', 'deposit'));
+        $this->assertFalse($this->auth->checkAccess('support', 'restore-password'));
         $this->assertFalse($this->auth->checkAccess('support', 'manager'));
         $this->assertFalse($this->auth->checkAccess('support', 'manage'));
         $this->assertFalse($this->auth->checkAccess('support', 'freezer'));
@@ -76,6 +78,7 @@ trait CheckAccessTrait
 
         $this->assertFalse($this->auth->checkAccess('sol', 'client'));
         $this->assertFalse($this->auth->checkAccess('sol', 'deposit'));
+        $this->assertFalse($this->auth->checkAccess('sol', 'restore-password'));
         $this->assertFalse($this->auth->checkAccess('sol', 'reseller'));
         $this->assertFalse($this->auth->checkAccess('sol', 'resell'));
         $this->assertFalse($this->auth->checkAccess('sol', 'owner'));

@@ -29,6 +29,7 @@ class Initer
         $auth->setRole('freezer');
         $auth->setRole('billManager');
 
+        $auth->setPermission('restore-password');
         $auth->setPermission('deposit');
         $auth->setPermission('supporting');
         $auth->setPermission('manage');
@@ -41,6 +42,7 @@ class Initer
         $auth->setPermission('delete-bills');
         $auth->setPermission('edit-bills');
 
+        $auth->setChild('client',           'restore-password');
         $auth->setChild('client',           'deposit');
 
         $auth->setChild('support',          'supporting');
