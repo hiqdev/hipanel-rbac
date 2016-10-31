@@ -10,7 +10,7 @@ return [
     'support' => [
         'type' => 1,
         'children' => [
-            'supporting',
+            'do-support',
         ],
     ],
     'admin' => [
@@ -30,14 +30,16 @@ return [
     'reseller' => [
         'type' => 1,
         'children' => [
-            'manager',
+            'billManager',
             'resell',
+            'deposit',
         ],
     ],
     'owner' => [
         'type' => 1,
         'children' => [
-            'reseller',
+            'billManager',
+            'resell',
             'own',
         ],
     ],
@@ -48,11 +50,25 @@ return [
             'unfreeze',
         ],
     ],
-    'billManager' => [
+    'billCreator' => [
+        'type' => 1,
+        'children' => [
+            'create-bills',
+        ],
+    ],
+    'billDeleter' => [
         'type' => 1,
         'children' => [
             'delete-bills',
-            'edit-bills',
+        ],
+    ],
+    'billManager' => [
+        'type' => 1,
+        'children' => [
+            'manager',
+            'create-bills',
+            'update-bills',
+            'delete-bills',
         ],
     ],
     'restore-password' => [
@@ -61,7 +77,7 @@ return [
     'deposit' => [
         'type' => 2,
     ],
-    'supporting' => [
+    'do-support' => [
         'type' => 2,
     ],
     'manage' => [
@@ -76,19 +92,19 @@ return [
     'own' => [
         'type' => 2,
     ],
-    'root' => [
-        'type' => 2,
-    ],
     'freeze' => [
         'type' => 2,
     ],
     'unfreeze' => [
         'type' => 2,
     ],
-    'delete-bills' => [
+    'create-bills' => [
         'type' => 2,
     ],
-    'edit-bills' => [
+    'update-bills' => [
+        'type' => 2,
+    ],
+    'delete-bills' => [
         'type' => 2,
     ],
 ];
