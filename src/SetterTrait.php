@@ -86,7 +86,7 @@ trait SetterTrait
 
     /**
      * Assigns a role to a user.
-     * @param Role $role
+     * @param string|Role $role
      * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
      * @throws \Exception when given wrong role name or the role has already been assigned to the user
      * @return Assignment the role assignment information
