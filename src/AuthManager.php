@@ -11,8 +11,6 @@
 
 namespace hipanel\rbac;
 
-use yii\base\InvalidParamException;
-use yii\rbac\Item;
 use Yii;
 
 /**
@@ -56,33 +54,10 @@ class AuthManager extends \yii\rbac\PhpManager
                 $userId = $user->username;
             }
             if (isset($user->roles)) {
-                $this->setSmartAssignments($user->roles, $userId);
+                $this->setAssignments($user->roles, $userId);
             }
         }
 
         return parent::checkAccess($userId, $permission, $params);
-    }
-
-    public function setSmartAssignments(array $items, $userId)
-    {
-        $roles = [];
-        foreach ($items as $item) {
-            $roles[] = $this->getSmartRole($item);
-        }
-
-        $this->setAssignments($roles, $userId);
-    }
-
-    public function getSmartRole($item)
-    {
-        if (is_string($item)) {
-            $name = $item;
-            $item = $this->getItem('role:' . $name) ?: $this->getItem($name);
-        }
-        if (is_null($item)) {
-            throw new InvalidParamException("Unknown item:$name at getSmartRole");
-        }
-
-        return $item;
     }
 }
