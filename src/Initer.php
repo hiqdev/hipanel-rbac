@@ -59,8 +59,8 @@ class Initer
 
         $auth->setChild('role:reseller',                'role:manager');
         $auth->setChild('role:reseller',                'role:bill.manager');
-        $auth->setChild('role:reseller',                'deposit');
         $auth->setChild('role:reseller',                'resell');
+        $auth->setChild('role:reseller',                'deposit');
 
         $auth->setChild('role:owner',                   'role:manager');
         $auth->setChild('role:owner',                   'role:bill.manager');
@@ -73,14 +73,6 @@ class Initer
         $auth->setChild('role:bill.manager',            'bill.create');
         $auth->setChild('role:bill.manager',            'bill.update');
         $auth->setChild('role:bill.manager',            'bill.delete');
-
-        $auth->setAssignment('role:domain.freezer',     'sol');
-        $auth->setAssignment('role:domain.freezer',     'andre');
-
-        $auth->setAssignment('role:bill.manager',       'sol');
-        $auth->setAssignment('role:bill.manager',       'olgadsr');
-
-        $auth->persistAssignments();
     }
 
     public static function reinit(AuthManager $auth)

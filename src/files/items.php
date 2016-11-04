@@ -1,74 +1,63 @@
 <?php
 return [
-    'client' => [
+    'role:client' => [
         'type' => 1,
         'children' => [
             'restore-password',
             'deposit',
         ],
     ],
-    'support' => [
-        'type' => 1,
-        'children' => [
-            'do-support',
-        ],
-    ],
-    'admin' => [
+    'role:support' => [
         'type' => 1,
         'children' => [
             'support',
-            'administrate',
         ],
     ],
-    'manager' => [
+    'role:admin' => [
         'type' => 1,
         'children' => [
-            'support',
+            'role:support',
+            'admin',
+        ],
+    ],
+    'role:manager' => [
+        'type' => 1,
+        'children' => [
+            'role:support',
             'manage',
         ],
     ],
-    'reseller' => [
+    'role:reseller' => [
         'type' => 1,
         'children' => [
-            'billManager',
+            'role:manager',
+            'role:bill.manager',
             'resell',
             'deposit',
         ],
     ],
-    'owner' => [
+    'role:owner' => [
         'type' => 1,
         'children' => [
-            'billManager',
+            'role:manager',
+            'role:bill.manager',
             'resell',
             'own',
         ],
     ],
-    'freezer' => [
+    'role:domain.freezer' => [
         'type' => 1,
         'children' => [
-            'freeze',
-            'unfreeze',
+            'domain.freeze',
+            'domain.unfreeze',
         ],
     ],
-    'billCreator' => [
+    'role:bill.manager' => [
         'type' => 1,
         'children' => [
-            'create-bills',
-        ],
-    ],
-    'billDeleter' => [
-        'type' => 1,
-        'children' => [
-            'delete-bills',
-        ],
-    ],
-    'billManager' => [
-        'type' => 1,
-        'children' => [
-            'manager',
-            'create-bills',
-            'update-bills',
-            'delete-bills',
+            'bill.create',
+            'bill.update',
+            'bill.delete',
         ],
     ],
     'restore-password' => [
@@ -77,13 +66,13 @@ return [
     'deposit' => [
         'type' => 2,
     ],
-    'do-support' => [
+    'support' => [
         'type' => 2,
     ],
     'manage' => [
         'type' => 2,
     ],
-    'administrate' => [
+    'admin' => [
         'type' => 2,
     ],
     'resell' => [
@@ -92,19 +81,22 @@ return [
     'own' => [
         'type' => 2,
     ],
-    'freeze' => [
+    'domain.freeze' => [
         'type' => 2,
     ],
-    'unfreeze' => [
+    'domain.unfreeze' => [
         'type' => 2,
     ],
-    'create-bills' => [
+    'domain.set-contacts' => [
         'type' => 2,
     ],
-    'update-bills' => [
+    'bill.create' => [
         'type' => 2,
     ],
-    'delete-bills' => [
+    'bill.update' => [
+        'type' => 2,
+    ],
+    'bill.delete' => [
         'type' => 2,
     ],
 ];
