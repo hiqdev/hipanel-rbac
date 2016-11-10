@@ -85,26 +85,38 @@ trait SetterTrait
     }
 
     /**
-     * Assigns a role to a user.
-     * @param string|Role $role
+     * Assigns an item (role or permission) to a user.
+     * @param string|Item $item
      * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @throws \Exception when given wrong role name or the role has already been assigned to the user
-     * @return Assignment the role assignment information
+     * @throws \Exception when given wrong item name
+     * @return Assignment the assignment object
      */
-    public function setAssignment($role, $userId)
+    public function setAssignment($item, $userId)
     {
-        if (is_string($role)) {
-            $name = $role;
-            $role = $this->getRole($role);
-            if (is_null($role)) {
-                throw new InvalidParamException("Unknown role:$name at setAssignment");
+        if (is_string($item)) {
+            $name = $item;
+            $item = $this->getItem($item);
+            if (is_null($item)) {
+                throw new InvalidParamException("Unknown item:$name at setAssignment");
             }
         }
-        if (isset($this->assignments[$userId][$role->name])) {
-            return false;
+        if (isset($this->assignments[$userId][$item->name])) {
+            return $this->assignments[$userId][$item->name];
         }
 
-        return $this->assign($role, $userId);
+        return $this->assign($item, $userId);
+    }
+
+    /**
+     * Assigns items to a user.
+     * @param array $items
+     * @param string|integer $userId
+     */
+    public function setAssignments(array $items, $userId)
+    {
+        foreach ($items as $item) {
+            $this->setAssignment($item, $userId);
+        }
     }
 
     /**
@@ -114,5 +126,14 @@ trait SetterTrait
     public function getAllAssignments()
     {
         return $this->assignments;
+    }
+
+    /**
+     * Returns all items in the system.
+     * @return array
+     */
+    public function getAllItems()
+    {
+        return $this->items;
     }
 }

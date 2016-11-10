@@ -20,70 +20,59 @@ class Initer
 {
     public static function init(AuthManager $auth)
     {
-        $auth->setRole('client');
-        $auth->setRole('support');
-        $auth->setRole('admin');
-        $auth->setRole('manager');
-        $auth->setRole('reseller');
-        $auth->setRole('owner');
-        $auth->setRole('freezer');
-        $auth->setRole('billCreator');
-        $auth->setRole('billDeleter');
-        $auth->setRole('billManager');
+        $auth->setRole('role:client');
+        $auth->setRole('role:support');
+        $auth->setRole('role:admin');
+        $auth->setRole('role:manager');
+        $auth->setRole('role:reseller');
+        $auth->setRole('role:owner');
+
+        $auth->setRole('role:domain.freezer');
+        $auth->setRole('role:bill.manager');
 
         $auth->setPermission('restore-password');
         $auth->setPermission('deposit');
-        $auth->setPermission('do-support');
+        $auth->setPermission('support');
         $auth->setPermission('manage');
-        $auth->setPermission('administrate');
+        $auth->setPermission('admin');
         $auth->setPermission('resell');
         $auth->setPermission('own');
 
-        $auth->setPermission('freeze');
-        $auth->setPermission('unfreeze');
-        $auth->setPermission('create-bills');
-        $auth->setPermission('update-bills');
-        $auth->setPermission('delete-bills');
+        $auth->setPermission('domain.freeze');
+        $auth->setPermission('domain.unfreeze');
+        $auth->setPermission('domain.set-contacts');
 
-        $auth->setChild('client',           'restore-password');
-        $auth->setChild('client',           'deposit');
+        $auth->setPermission('bill.create');
+        $auth->setPermission('bill.update');
+        $auth->setPermission('bill.delete');
 
-        $auth->setChild('support',          'do-support');
+        $auth->setChild('role:client',                  'restore-password');
+        $auth->setChild('role:client',                  'deposit');
 
-        $auth->setChild('admin',            'support');
-        $auth->setChild('admin',            'administrate');
+        $auth->setChild('role:support',                 'support');
 
-        $auth->setChild('manager',          'support');
-        $auth->setChild('manager',          'manage');
+        $auth->setChild('role:admin',                   'role:support');
+        $auth->setChild('role:admin',                   'admin');
 
-        $auth->setChild('reseller',         'billManager');
-        $auth->setChild('reseller',         'resell');
-        $auth->setChild('reseller',         'deposit');
+        $auth->setChild('role:manager',                 'role:support');
+        $auth->setChild('role:manager',                 'manage');
 
-        $auth->setChild('owner',            'billManager');
-        $auth->setChild('owner',            'resell');
-        $auth->setChild('owner',            'own');
+        $auth->setChild('role:reseller',                'role:manager');
+        $auth->setChild('role:reseller',                'role:bill.manager');
+        $auth->setChild('role:reseller',                'resell');
+        $auth->setChild('role:reseller',                'deposit');
 
-        $auth->setChild('freezer',          'freeze');
-        $auth->setChild('freezer',          'unfreeze');
+        $auth->setChild('role:owner',                   'role:manager');
+        $auth->setChild('role:owner',                   'role:bill.manager');
+        $auth->setChild('role:owner',                   'resell');
+        $auth->setChild('role:owner',                   'own');
 
-        $auth->setChild('billCreator',      'create-bills');
-        $auth->setChild('billDeleter',      'delete-bills');
+        $auth->setChild('role:domain.freezer',          'domain.freeze');
+        $auth->setChild('role:domain.freezer',          'domain.unfreeze');
 
-        $auth->setChild('billManager',      'manager');
-        $auth->setChild('billManager',      'create-bills');
-        $auth->setChild('billManager',      'update-bills');
-        $auth->setChild('billManager',      'delete-bills');
-
-        $auth->setAssignment('freezer',     'sol');
-        $auth->setAssignment('freezer',     'andre');
-
-        $auth->setAssignment('billManager', 'sol');
-        $auth->setAssignment('billManager', 'margo');
-        $auth->setAssignment('billManager', 'dsr');
-        $auth->setAssignment('billManager', 'olgadsr');
-
-        $auth->persistAssignments();
+        $auth->setChild('role:bill.manager',            'bill.create');
+        $auth->setChild('role:bill.manager',            'bill.update');
+        $auth->setChild('role:bill.manager',            'bill.delete');
     }
 
     public static function reinit(AuthManager $auth)

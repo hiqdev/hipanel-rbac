@@ -53,8 +53,8 @@ class AuthManager extends \yii\rbac\PhpManager
             if (isset($user->username)) {
                 $userId = $user->username;
             }
-            if (isset($user->type)) {
-                $this->setAssignment($user->type, $userId);
+            if (isset($user->roles)) {
+                $this->setAssignments($user->roles, $userId);
             }
         }
 
