@@ -109,11 +109,14 @@ trait SetterTrait
 
     /**
      * Assigns items to a user.
-     * @param array $items
+     * @param string|array $items
      * @param string|integer $userId
      */
-    public function setAssignments(array $items, $userId)
+    public function setAssignments($items, $userId)
     {
+        if (is_string($items)) {
+            $items = explode(',', $items);
+        }
         foreach ($items as $item) {
             $this->setAssignment($item, $userId);
         }

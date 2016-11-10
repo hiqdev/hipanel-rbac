@@ -76,7 +76,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments(['role:admin', 'role:manager', 'bill.create', 'domain.freeze'], 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,bill.create,domain.freeze', 'user:mighty');
 
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'support'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'manage'));
