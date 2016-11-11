@@ -38,9 +38,12 @@ class Initer
         $auth->setPermission('resell');
         $auth->setPermission('own');
 
+        $auth->setPermission('domain.pay');
         $auth->setPermission('domain.freeze');
         $auth->setPermission('domain.unfreeze');
         $auth->setPermission('domain.set-contacts');
+
+        $auth->setPermission('server.pay');
 
         $auth->setPermission('bill.create');
         $auth->setPermission('bill.update');
@@ -48,6 +51,8 @@ class Initer
 
         $auth->setChild('role:client',                  'restore-password');
         $auth->setChild('role:client',                  'deposit');
+        $auth->setChild('role:client',                  'domain.pay');
+        $auth->setChild('role:client',                  'server.pay');
 
         $auth->setChild('role:support',                 'support');
 
@@ -56,6 +61,8 @@ class Initer
 
         $auth->setChild('role:manager',                 'role:support');
         $auth->setChild('role:manager',                 'manage');
+        $auth->setChild('role:manager',                 'domain.pay');
+        $auth->setChild('role:manager',                 'server.pay');
 
         $auth->setChild('role:reseller',                'role:manager');
         $auth->setChild('role:reseller',                'role:bill.manager');

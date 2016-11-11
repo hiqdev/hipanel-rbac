@@ -5,6 +5,8 @@ return [
         'children' => [
             'restore-password',
             'deposit',
+            'domain.pay',
+            'server.pay',
         ],
     ],
     'role:support' => [
@@ -25,6 +27,8 @@ return [
         'children' => [
             'role:support',
             'manage',
+            'domain.pay',
+            'server.pay',
         ],
     ],
     'role:reseller' => [
@@ -81,6 +85,9 @@ return [
     'own' => [
         'type' => 2,
     ],
+    'domain.pay' => [
+        'type' => 2,
+    ],
     'domain.freeze' => [
         'type' => 2,
     ],
@@ -88,6 +95,9 @@ return [
         'type' => 2,
     ],
     'domain.set-contacts' => [
+        'type' => 2,
+    ],
+    'server.pay' => [
         'type' => 2,
     ],
     'bill.create' => [

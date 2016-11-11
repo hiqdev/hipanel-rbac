@@ -22,8 +22,10 @@ trait CheckAccessTrait
 
     public function testClient()
     {
-        $this->assertTrue ($this->auth->checkAccess('role:client', 'deposit'));
         $this->assertTrue ($this->auth->checkAccess('role:client', 'restore-password'));
+        $this->assertTrue ($this->auth->checkAccess('role:client', 'deposit'));
+        $this->assertTrue ($this->auth->checkAccess('role:client', 'domain.pay'));
+        $this->assertTrue ($this->auth->checkAccess('role:client', 'server.pay'));
 
         $this->assertFalse($this->auth->checkAccess('role:client', 'support'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'manage'));
@@ -39,6 +41,8 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('role:support', 'support'));
 
         $this->assertFalse($this->auth->checkAccess('role:support', 'deposit'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'domain.pay'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'server.pay'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'restore-password'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'manage'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'domain.freeze'));
@@ -52,6 +56,8 @@ trait CheckAccessTrait
     {
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'support'));
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'manage'));
+        $this->assertTrue ($this->auth->checkAccess('role:manager', 'domain.pay'));
+        $this->assertTrue ($this->auth->checkAccess('role:manager', 'server.pay'));
 
         $this->assertFalse($this->auth->checkAccess('role:manager', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'restore-password'));
@@ -83,6 +89,8 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'domain.freeze'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'admin'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'bill.create'));
+        $this->assertTrue ($this->auth->checkAccess('user:mighty', 'domain.pay'));
+        $this->assertTrue ($this->auth->checkAccess('user:mighty', 'server.pay'));
 
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'restore-password'));
