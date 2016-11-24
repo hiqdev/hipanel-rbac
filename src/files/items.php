@@ -26,6 +26,7 @@ return [
         'type' => 1,
         'children' => [
             'role:support',
+            'role:document.manager',
             'manage',
             'domain.pay',
             'server.pay',
@@ -64,6 +65,12 @@ return [
             'bill.delete',
         ],
     ],
+    'role:document.manager' => [
+        'type' => 1,
+        'children' => [
+            'document.manage',
+        ],
+    ],
     'restore-password' => [
         'type' => 2,
     ],
@@ -95,6 +102,9 @@ return [
         'type' => 2,
     ],
     'domain.set-contacts' => [
+        'type' => 2,
+    ],
+    'document.manage' => [
         'type' => 2,
     ],
     'server.pay' => [

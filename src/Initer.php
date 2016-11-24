@@ -29,6 +29,7 @@ class Initer
 
         $auth->setRole('role:domain.freezer');
         $auth->setRole('role:bill.manager');
+        $auth->setRole('role:document.manager');
 
         $auth->setPermission('restore-password');
         $auth->setPermission('deposit');
@@ -42,6 +43,8 @@ class Initer
         $auth->setPermission('domain.freeze');
         $auth->setPermission('domain.unfreeze');
         $auth->setPermission('domain.set-contacts');
+
+        $auth->setPermission('document.manage');
 
         $auth->setPermission('server.pay');
 
@@ -60,6 +63,7 @@ class Initer
         $auth->setChild('role:admin',                   'admin');
 
         $auth->setChild('role:manager',                 'role:support');
+        $auth->setChild('role:manager',                 'role:document.manager');
         $auth->setChild('role:manager',                 'manage');
         $auth->setChild('role:manager',                 'domain.pay');
         $auth->setChild('role:manager',                 'server.pay');
@@ -80,6 +84,8 @@ class Initer
         $auth->setChild('role:bill.manager',            'bill.create');
         $auth->setChild('role:bill.manager',            'bill.update');
         $auth->setChild('role:bill.manager',            'bill.delete');
+
+        $auth->setChild('role:document.manager',         'document.manage');
     }
 
     public static function reinit(AuthManager $auth)
