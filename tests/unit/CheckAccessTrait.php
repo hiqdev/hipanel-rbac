@@ -35,6 +35,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:client', 'resell'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'own'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'document.manage'));
+        $this->assertFalse($this->auth->checkAccess('role:client', 'contact.force-verify'));
     }
 
     public function testSupport()
@@ -52,6 +53,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:support', 'resell'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'own'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'document.manage'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'contact.force-verify'));
     }
 
     public function testManager()
@@ -61,6 +63,7 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'domain.pay'));
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'server.pay'));
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'document.manage'));
+        $this->assertTrue ($this->auth->checkAccess('role:manager', 'contact.force-verify'));
 
         $this->assertFalse($this->auth->checkAccess('role:manager', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'restore-password'));
@@ -95,6 +98,7 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'domain.pay'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'server.pay'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'document.manage'));
+        $this->assertTrue ($this->auth->checkAccess('user:mighty', 'contact.force-verify'));
 
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'restore-password'));

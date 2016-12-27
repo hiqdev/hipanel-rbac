@@ -20,6 +20,7 @@ return [
         'children' => [
             'role:support',
             'admin',
+            'contact.force-verify',
         ],
     ],
     'role:manager' => [
@@ -30,6 +31,7 @@ return [
             'manage',
             'domain.pay',
             'server.pay',
+            'contact.force-verify',
         ],
     ],
     'role:reseller' => [
@@ -105,6 +107,9 @@ return [
         'type' => 2,
     ],
     'document.manage' => [
+        'type' => 2,
+    ],
+    'contact.force-verify' => [
         'type' => 2,
     ],
     'server.pay' => [

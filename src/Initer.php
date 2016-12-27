@@ -46,6 +46,8 @@ class Initer
 
         $auth->setPermission('document.manage');
 
+        $auth->setPermission('contact.force-verify');
+
         $auth->setPermission('server.pay');
 
         $auth->setPermission('bill.create');
@@ -61,12 +63,14 @@ class Initer
 
         $auth->setChild('role:admin',                   'role:support');
         $auth->setChild('role:admin',                   'admin');
+        $auth->setChild('role:admin',                   'contact.force-verify');
 
         $auth->setChild('role:manager',                 'role:support');
         $auth->setChild('role:manager',                 'role:document.manager');
         $auth->setChild('role:manager',                 'manage');
         $auth->setChild('role:manager',                 'domain.pay');
         $auth->setChild('role:manager',                 'server.pay');
+        $auth->setChild('role:manager',                 'contact.force-verify');
 
         $auth->setChild('role:reseller',                'role:manager');
         $auth->setChild('role:reseller',                'role:bill.manager');
