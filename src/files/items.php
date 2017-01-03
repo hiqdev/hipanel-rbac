@@ -32,6 +32,8 @@ return [
             'domain.pay',
             'server.pay',
             'contact.force-verify',
+            'mailing.prepare',
+            'mailing.send',
         ],
     ],
     'role:reseller' => [
@@ -107,6 +109,12 @@ return [
         'type' => 2,
     ],
     'document.manage' => [
+        'type' => 2,
+    ],
+    'mailing.prepare' => [
+        'type' => 2,
+    ],
+    'mailing.send' => [
         'type' => 2,
     ],
     'contact.force-verify' => [

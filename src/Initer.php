@@ -46,6 +46,9 @@ class Initer
 
         $auth->setPermission('document.manage');
 
+        $auth->setPermission('mailing.prepare');
+        $auth->setPermission('mailing.send');
+
         $auth->setPermission('contact.force-verify');
 
         $auth->setPermission('server.pay');
@@ -71,6 +74,8 @@ class Initer
         $auth->setChild('role:manager',                 'domain.pay');
         $auth->setChild('role:manager',                 'server.pay');
         $auth->setChild('role:manager',                 'contact.force-verify');
+        $auth->setChild('role:manager',                 'mailing.prepare');
+        $auth->setChild('role:manager',                 'mailing.send');
 
         $auth->setChild('role:reseller',                'role:manager');
         $auth->setChild('role:reseller',                'role:bill.manager');

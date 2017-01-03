@@ -36,6 +36,8 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:client', 'own'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'document.manage'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'contact.force-verify'));
+        $this->assertFalse($this->auth->checkAccess('role:client', 'mailing.prepare'));
+        $this->assertFalse($this->auth->checkAccess('role:client', 'mailing.send'));
     }
 
     public function testSupport()
@@ -54,6 +56,8 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:support', 'own'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'document.manage'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'contact.force-verify'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'mailing.prepare'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'mailing.send'));
     }
 
     public function testManager()
@@ -64,6 +68,8 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'server.pay'));
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'document.manage'));
         $this->assertTrue ($this->auth->checkAccess('role:manager', 'contact.force-verify'));
+        $this->assertTrue ($this->auth->checkAccess('role:manager', 'mailing.prepare'));
+        $this->assertTrue ($this->auth->checkAccess('role:manager', 'mailing.send'));
 
         $this->assertFalse($this->auth->checkAccess('role:manager', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'restore-password'));
@@ -99,6 +105,8 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'server.pay'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'document.manage'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'contact.force-verify'));
+        $this->assertTrue ($this->auth->checkAccess('user:mighty', 'mailing.prepare'));
+        $this->assertTrue ($this->auth->checkAccess('user:mighty', 'mailing.send'));
 
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'restore-password'));
