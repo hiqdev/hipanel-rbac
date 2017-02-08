@@ -27,7 +27,7 @@ class Initer
         $auth->setRole('role:reseller');
         $auth->setRole('role:owner');
 
-        $auth->setRole('role:domain.freezer');
+        $auth->setRole('role:domain.master');
         $auth->setRole('role:bill.manager');
         $auth->setRole('role:document.manager');
 
@@ -43,6 +43,7 @@ class Initer
         $auth->setPermission('domain.freeze');
         $auth->setPermission('domain.unfreeze');
         $auth->setPermission('domain.set-contacts');
+        $auth->setPermission('domain.force-push');
 
         $auth->setPermission('document.manage');
 
@@ -87,14 +88,15 @@ class Initer
         $auth->setChild('role:owner',                   'resell');
         $auth->setChild('role:owner',                   'own');
 
-        $auth->setChild('role:domain.freezer',          'domain.freeze');
-        $auth->setChild('role:domain.freezer',          'domain.unfreeze');
+        $auth->setChild('role:domain.master',           'domain.freeze');
+        $auth->setChild('role:domain.master',           'domain.unfreeze');
+        $auth->setChild('role:domain.master',           'domain.force-push');
 
         $auth->setChild('role:bill.manager',            'bill.create');
         $auth->setChild('role:bill.manager',            'bill.update');
         $auth->setChild('role:bill.manager',            'bill.delete');
 
-        $auth->setChild('role:document.manager',         'document.manage');
+        $auth->setChild('role:document.manager',        'document.manage');
     }
 
     public static function reinit(AuthManager $auth)

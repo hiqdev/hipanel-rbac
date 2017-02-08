@@ -54,11 +54,12 @@ return [
             'own',
         ],
     ],
-    'role:domain.freezer' => [
+    'role:domain.master' => [
         'type' => 1,
         'children' => [
             'domain.freeze',
             'domain.unfreeze',
+            'domain.force-push',
         ],
     ],
     'role:bill.manager' => [
@@ -106,6 +107,9 @@ return [
         'type' => 2,
     ],
     'domain.set-contacts' => [
+        'type' => 2,
+    ],
+    'domain.force-push' => [
         'type' => 2,
     ],
     'document.manage' => [
