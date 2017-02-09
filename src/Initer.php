@@ -29,6 +29,7 @@ class Initer
 
         $auth->setRole('role:domain.master');
         $auth->setRole('role:bill.manager');
+        $auth->setRole('role:employee.manager');
         $auth->setRole('role:document.manager');
 
         $auth->setPermission('restore-password');
@@ -38,6 +39,11 @@ class Initer
         $auth->setPermission('admin');
         $auth->setPermission('resell');
         $auth->setPermission('own');
+
+        $auth->setPermission('employee.read');
+        $auth->setPermission('employee.create');
+        $auth->setPermission('employee.update');
+        $auth->setPermission('employee.delete');
 
         $auth->setPermission('domain.pay');
         $auth->setPermission('domain.freeze');
@@ -95,6 +101,11 @@ class Initer
         $auth->setChild('role:bill.manager',            'bill.create');
         $auth->setChild('role:bill.manager',            'bill.update');
         $auth->setChild('role:bill.manager',            'bill.delete');
+
+        $auth->setChild('role:employee.manager',        'employee.read');
+        $auth->setChild('role:employee.manager',        'employee.create');
+        $auth->setChild('role:employee.manager',        'employee.update');
+        $auth->setChild('role:employee.manager',        'employee.delete');
 
         $auth->setChild('role:document.manager',        'document.manage');
     }

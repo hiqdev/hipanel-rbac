@@ -70,6 +70,15 @@ return [
             'bill.delete',
         ],
     ],
+    'role:employee.manager' => [
+        'type' => 1,
+        'children' => [
+            'employee.read',
+            'employee.create',
+            'employee.update',
+            'employee.delete',
+        ],
+    ],
     'role:document.manager' => [
         'type' => 1,
         'children' => [
@@ -95,6 +104,18 @@ return [
         'type' => 2,
     ],
     'own' => [
+        'type' => 2,
+    ],
+    'employee.read' => [
+        'type' => 2,
+    ],
+    'employee.create' => [
+        'type' => 2,
+    ],
+    'employee.update' => [
+        'type' => 2,
+    ],
+    'employee.delete' => [
         'type' => 2,
     ],
     'domain.pay' => [
