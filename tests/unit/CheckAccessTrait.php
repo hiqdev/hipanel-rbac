@@ -31,6 +31,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:client', 'manage'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'domain.freeze'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'domain.unfreeze'));
+        $this->assertFalse($this->auth->checkAccess('role:client', 'domain.force-push'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'admin'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'resell'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'own'));
@@ -51,6 +52,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:support', 'manage'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'domain.freeze'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'domain.unfreeze'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'domain.force-push'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'admin'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'resell'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'own'));
@@ -78,6 +80,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:manager', 'own'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'domain.freeze'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'domain.unfreeze'));
+        $this->assertFalse($this->auth->checkAccess('role:manager', 'domain.force-push'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'bill.create'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'bill.update'));
         $this->assertFalse($this->auth->checkAccess('role:manager', 'bill.delete'));
@@ -94,7 +97,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,bill.create,domain.freeze', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,bill.create,domain.freeze,domain.force-push', 'user:mighty');
 
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'support'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'manage'));
@@ -107,6 +110,7 @@ trait CheckAccessTrait
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'contact.force-verify'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'mailing.prepare'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'mailing.send'));
+        $this->assertTrue ($this->auth->checkAccess('user:mighty', 'domain.force-push'));
 
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'restore-password'));
