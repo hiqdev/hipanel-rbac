@@ -94,7 +94,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,bill.create,domain.freeze', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,bill.create,domain.freeze,domain.force-push', 'user:mighty');
 
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'support'));
         $this->assertTrue ($this->auth->checkAccess('user:mighty', 'manage'));
@@ -115,5 +115,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'bill.update'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'bill.delete'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'domain.unfreeze'));
+        $this->assertFalse($this->auth->checkAccess('user:mighty', 'domain.force-push'));
+
     }
 }
