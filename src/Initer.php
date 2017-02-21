@@ -1,12 +1,11 @@
 <?php
-
-/*
+/**
  * RBAC implementation for HiPanel
  *
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2017, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac;
@@ -46,6 +45,7 @@ class Initer
         $auth->setPermission('employee.delete');
 
         $auth->setPermission('domain.pay');
+        $auth->setPermission('domain.delete');
         $auth->setPermission('domain.freeze');
         $auth->setPermission('domain.unfreeze');
         $auth->setPermission('domain.set-contacts');
@@ -94,6 +94,7 @@ class Initer
         $auth->setChild('role:owner',                   'resell');
         $auth->setChild('role:owner',                   'own');
 
+        $auth->setChild('role:domain.master',           'domain.delete');
         $auth->setChild('role:domain.master',           'domain.freeze');
         $auth->setChild('role:domain.master',           'domain.unfreeze');
         $auth->setChild('role:domain.master',           'domain.force-push');

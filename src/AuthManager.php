@@ -1,12 +1,11 @@
 <?php
-
-/*
+/**
  * RBAC implementation for HiPanel
  *
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2017, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac;
@@ -47,7 +46,7 @@ class AuthManager extends \yii\rbac\PhpManager
     {
         if (isset(Yii::$app->user)) {
             $user = Yii::$app->user->identity;
-            if (!$user || $user->id != $userId) {
+            if (!$user || $user->id !== $userId) {
                 $user = call_user_func([Yii::$app->user->identityClass, 'findIdentity'], $userId);
             }
             if (isset($user->username)) {

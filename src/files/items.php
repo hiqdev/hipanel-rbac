@@ -57,6 +57,7 @@ return [
     'role:domain.master' => [
         'type' => 1,
         'children' => [
+            'domain.delete',
             'domain.freeze',
             'domain.unfreeze',
             'domain.force-push',
@@ -119,6 +120,9 @@ return [
         'type' => 2,
     ],
     'domain.pay' => [
+        'type' => 2,
+    ],
+    'domain.delete' => [
         'type' => 2,
     ],
     'domain.freeze' => [
