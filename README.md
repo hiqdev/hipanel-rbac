@@ -1,5 +1,4 @@
-HiPanel RBAC
-============
+# HiPanel RBAC
 
 **RBAC implementation for HiPanel**
 

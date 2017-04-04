@@ -91,6 +91,14 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:manager', 'bill.delete'));
     }
 
+    public function testEmployee()
+    {
+        $this->assertTrue($this->auth->checkAccess('role:employee', 'role:client'));
+
+        $this->assertFalse($this->auth->checkAccess('role:employee', 'role:support'));
+        $this->assertFalse($this->auth->checkAccess('role:employee', 'role:manager'));
+    }
+
     public function testPermission()
     {
         foreach ($this->auth->getPermissions() as $user) {

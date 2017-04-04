@@ -25,6 +25,7 @@ class Initer
         $auth->setRole('role:manager');
         $auth->setRole('role:reseller');
         $auth->setRole('role:owner');
+        $auth->setRole('role:employee');
 
         $auth->setRole('role:domain.master');
         $auth->setRole('role:bill.manager');
@@ -93,6 +94,8 @@ class Initer
         $auth->setChild('role:owner',                   'role:bill.manager');
         $auth->setChild('role:owner',                   'resell');
         $auth->setChild('role:owner',                   'own');
+
+        $auth->setChild('role:employee',                'role:client');
 
         $auth->setChild('role:domain.master',           'domain.delete');
         $auth->setChild('role:domain.master',           'domain.freeze');

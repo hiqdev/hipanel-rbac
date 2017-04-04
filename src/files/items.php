@@ -54,6 +54,12 @@ return [
             'own',
         ],
     ],
+    'role:employee' => [
+        'type' => 1,
+        'children' => [
+            'role:client',
+        ],
+    ],
     'role:domain.master' => [
         'type' => 1,
         'children' => [
