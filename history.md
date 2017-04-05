@@ -1,49 +1,79 @@
 hiqdev/hipanel-rbac
 -------------------
 
+## [Under development]
+
+    - [a13b3bf] 2017-04-05 Added employee.read permission to employee role [@SilverFire]
+    - [fd239bf] 2017-04-04 Added employee role [@SilverFire]
+    - [26d6d49] 2017-02-21 added domain.delete permission and csfixed [@hiqsol]
+    - [b5101ab] 2017-02-09 added employee CRUD permission and employee.manager role with tests [@hiqsol]
+    - [3970c44] 2017-02-09 Merge pull request #2 from bladeroot/domain-force-push [@hiqsol]
+    - [c937899] 2017-02-09 fixedttests [@BladeRoot]
+    - [535d5aa] 2017-02-09 + test domain.force-push [@BladeRoot]
+    - [7a7c8b1] 2017-02-08 changed domain.freezer -> domain.master [@hiqsol]
+    - [48e21bd] 2017-01-03 Added mailing.perpare, mailing.send permissions [@SilverFire]
+    - [d6e26d2] 2016-12-27 Added contact.force-verify permission [@SilverFire]
+    - [c8b26c8] 2016-11-24 Added document.manager role [@SilverFire]
+    - [d1ea29b] 2016-11-11 added `domain.pay` and `server.pay` permissions [@hiqsol]
+    - [c015235] 2016-11-10 changed setAssignments to work with comma separated string [@hiqsol]
+    - [84c6b5a] 2016-11-10 Merge pull request #1 from hiqsol/master [@hiqsol]
+    - [8c68994] 2016-11-04 simplified out setSmartAssignments in favour of setAssignments [@hiqsol]
+    - [a733e43] 2016-11-04 redone with setSmartAssignments [@hiqsol]
+    - [3aba504] 2016-11-03 refactoring roles and permissions names [@hiqsol]
+    - [2741a28] 2016-11-02 fixed phpdoc [@hiqsol]
+    - [b4f8334] 2016-10-31 redone bill management permissions: + roles: billManager/Creator/Deleter [@hiqsol]
+
 ## [0.0.2] - 2016-10-07
 
 - Added own `checkAccess`
-    - [5e19f40] 2016-10-07 greatly improved checkAccess to use findIdentity, removed setCurrencyUserRole [sol@hiqdev.com]
-    - [5f125bb] 2016-10-07 minor fix [sol@hiqdev.com]
-    - [de94806] 2016-10-07 csfixed [sol@hiqdev.com]
-    - [443cc4a] 2016-10-07 splitted out SetterTrait to see AuthManager idea clearly [sol@hiqdev.com]
-    - [96ea515] 2016-09-30 fixed setCurrentUserRole to work when no role could be found [sol@hiqdev.com]
-    - [a7579fb] 2016-09-30 added own `checkAccess()` going to production [sol@hiqdev.com]
+    - [5e19f40] 2016-10-07 greatly improved checkAccess to use findIdentity, removed setCurrencyUserRole [@hiqsol]
+    - [5f125bb] 2016-10-07 minor fix [@hiqsol]
+    - [de94806] 2016-10-07 csfixed [@hiqsol]
+    - [443cc4a] 2016-10-07 splitted out SetterTrait to see AuthManager idea clearly [@hiqsol]
+    - [96ea515] 2016-09-30 fixed setCurrentUserRole to work when no role could be found [@hiqsol]
+    - [a7579fb] 2016-09-30 added own `checkAccess()` going to production [@hiqsol]
 - Added `restore-password` and `edit/delete-bills` permissions
-    - [92fa7a7] 2016-10-07 added restore-password permission to files [sol@hiqdev.com]
-    - [d179692] 2016-10-07 removed getRoles and getPermissions cause they are already there from BaseManager [sol@hiqdev.com]
-    - [c988cc5] 2016-10-07 + restore-password permission [sol@hiqdev.com]
-    - [8cdad28] 2016-09-30 changed yii2 version constraint, yii2 is not semver [sol@hiqdev.com]
-    - [e1a90ce] 2016-09-30 + edit/delete bills permission, billManager role [sol@hiqdev.com]
+    - [92fa7a7] 2016-10-07 added restore-password permission to files [@hiqsol]
+    - [d179692] 2016-10-07 removed getRoles and getPermissions cause they are already there from BaseManager [@hiqsol]
+    - [c988cc5] 2016-10-07 + restore-password permission [@hiqsol]
+    - [8cdad28] 2016-09-30 changed yii2 version constraint, yii2 is not semver [@hiqsol]
+    - [e1a90ce] 2016-09-30 + edit/delete bills permission, billManager role [@hiqsol]
 
 ## [0.0.1] - 2016-09-27
 
 - Added basics
-    - [d8568fa] 2016-09-27 skipped csfixing for `src/files` [sol@hiqdev.com]
-    - [32ef7a3] 2016-09-27 redone bumping to `chkipper` [sol@hiqdev.com]
-    - [48cae72] 2016-09-27 csfixed [sol@hiqdev.com]
-    - [c2b514a] 2016-09-27 greatly improved tests: splitted out IniterTest and CheckAccessTrait [sol@hiqdev.com]
-    - [235625b] 2016-09-27 fixed roles and permissions names [sol@hiqdev.com]
-    - [17d1714] 2016-09-27 improved `rbac/show` action [sol@hiqdev.com]
-    - [b03792f] 2016-09-27 added rbac files to repository [sol@hiqdev.com]
-    - [dce698a] 2016-09-27 set files paths in class [sol@hiqdev.com]
-    - [78852f3] 2016-09-27 added hisite config [sol@hiqdev.com]
-    - [0ca8c7a] 2016-05-28 fixed tests [sol@hiqdev.com]
-    - [ce82cea] 2016-05-28 csfixed [sol@hiqdev.com]
-    - [b853f4b] 2016-05-28 csfixed [sol@hiqdev.com]
-    - [ab0ccf7] 2016-05-27 + rbac/show action [sol@hiqdev.com]
-    - [f34dd8d] 2016-05-27 added authManager configuration to hidev [sol@hiqdev.com]
-    - [2d333a4] 2016-05-26 added RbacController [sol@hiqdev.com]
-    - [000cc9b] 2016-05-26 renamed to adminRole and removed guest and loggedin [sol@hiqdev.com]
-    - [8a235e1] 2016-05-26 moved hidev plugins requiring to composer.json [sol@hiqdev.com]
-    - [8f94631] 2016-04-08 fixed name to `hipanel-core` [sol@hiqdev.com]
-    - [07695f4] 2016-04-08 phpcsfixed [sol@hiqdev.com]
-    - [be4ab26] 2016-04-08 improved comments [sol@hiqdev.com]
-    - [e90861b] 2016-04-08 inited [sol@hiqdev.com]
+    - [d8568fa] 2016-09-27 skipped csfixing for `src/files` [@hiqsol]
+    - [32ef7a3] 2016-09-27 redone bumping to `chkipper` [@hiqsol]
+    - [48cae72] 2016-09-27 csfixed [@hiqsol]
+    - [c2b514a] 2016-09-27 greatly improved tests: splitted out IniterTest and CheckAccessTrait [@hiqsol]
+    - [235625b] 2016-09-27 fixed roles and permissions names [@hiqsol]
+    - [17d1714] 2016-09-27 improved `rbac/show` action [@hiqsol]
+    - [b03792f] 2016-09-27 added rbac files to repository [@hiqsol]
+    - [dce698a] 2016-09-27 set files paths in class [@hiqsol]
+    - [78852f3] 2016-09-27 added hisite config [@hiqsol]
+    - [0ca8c7a] 2016-05-28 fixed tests [@hiqsol]
+    - [ce82cea] 2016-05-28 csfixed [@hiqsol]
+    - [b853f4b] 2016-05-28 csfixed [@hiqsol]
+    - [ab0ccf7] 2016-05-27 + rbac/show action [@hiqsol]
+    - [f34dd8d] 2016-05-27 added authManager configuration to hidev [@hiqsol]
+    - [2d333a4] 2016-05-26 added RbacController [@hiqsol]
+    - [000cc9b] 2016-05-26 renamed to adminRole and removed guest and loggedin [@hiqsol]
+    - [8a235e1] 2016-05-26 moved hidev plugins requiring to composer.json [@hiqsol]
+    - [8f94631] 2016-04-08 fixed name to `hipanel-core` [@hiqsol]
+    - [07695f4] 2016-04-08 phpcsfixed [@hiqsol]
+    - [be4ab26] 2016-04-08 improved comments [@hiqsol]
+    - [e90861b] 2016-04-08 inited [@hiqsol]
 
 ## [Development started] - 2016-04-08
 
+[@hiqsol]: https://github.com/hiqsol
+[sol@hiqdev.com]: https://github.com/hiqsol
+[@SilverFire]: https://github.com/SilverFire
+[d.naumenko.a@gmail.com]: https://github.com/SilverFire
+[@tafid]: https://github.com/tafid
+[andreyklochok@gmail.com]: https://github.com/tafid
+[@BladeRoot]: https://github.com/BladeRoot
+[bladeroot@gmail.com]: https://github.com/BladeRoot
 [48cae72]: https://github.com/hiqdev/hipanel-rbac/commit/48cae72
 [c2b514a]: https://github.com/hiqdev/hipanel-rbac/commit/c2b514a
 [235625b]: https://github.com/hiqdev/hipanel-rbac/commit/235625b
@@ -76,3 +106,25 @@ hiqdev/hipanel-rbac
 [96ea515]: https://github.com/hiqdev/hipanel-rbac/commit/96ea515
 [a7579fb]: https://github.com/hiqdev/hipanel-rbac/commit/a7579fb
 [e1a90ce]: https://github.com/hiqdev/hipanel-rbac/commit/e1a90ce
+[a13b3bf]: https://github.com/hiqdev/hipanel-rbac/commit/a13b3bf
+[fd239bf]: https://github.com/hiqdev/hipanel-rbac/commit/fd239bf
+[26d6d49]: https://github.com/hiqdev/hipanel-rbac/commit/26d6d49
+[b5101ab]: https://github.com/hiqdev/hipanel-rbac/commit/b5101ab
+[3970c44]: https://github.com/hiqdev/hipanel-rbac/commit/3970c44
+[c937899]: https://github.com/hiqdev/hipanel-rbac/commit/c937899
+[535d5aa]: https://github.com/hiqdev/hipanel-rbac/commit/535d5aa
+[7a7c8b1]: https://github.com/hiqdev/hipanel-rbac/commit/7a7c8b1
+[48e21bd]: https://github.com/hiqdev/hipanel-rbac/commit/48e21bd
+[d6e26d2]: https://github.com/hiqdev/hipanel-rbac/commit/d6e26d2
+[c8b26c8]: https://github.com/hiqdev/hipanel-rbac/commit/c8b26c8
+[d1ea29b]: https://github.com/hiqdev/hipanel-rbac/commit/d1ea29b
+[c015235]: https://github.com/hiqdev/hipanel-rbac/commit/c015235
+[84c6b5a]: https://github.com/hiqdev/hipanel-rbac/commit/84c6b5a
+[8c68994]: https://github.com/hiqdev/hipanel-rbac/commit/8c68994
+[a733e43]: https://github.com/hiqdev/hipanel-rbac/commit/a733e43
+[3aba504]: https://github.com/hiqdev/hipanel-rbac/commit/3aba504
+[2741a28]: https://github.com/hiqdev/hipanel-rbac/commit/2741a28
+[b4f8334]: https://github.com/hiqdev/hipanel-rbac/commit/b4f8334
+[Under development]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.2...HEAD
+[0.0.2]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.1...0.0.2
+[0.0.1]: https://github.com/hiqdev/hipanel-rbac/releases/tag/0.0.1
