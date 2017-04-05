@@ -96,6 +96,7 @@ class Initer
         $auth->setChild('role:owner',                   'own');
 
         $auth->setChild('role:employee',                'role:client');
+        $auth->setChild('role:employee',                'employee.read');
 
         $auth->setChild('role:domain.master',           'domain.delete');
         $auth->setChild('role:domain.master',           'domain.freeze');

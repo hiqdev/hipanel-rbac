@@ -58,6 +58,7 @@ return [
         'type' => 1,
         'children' => [
             'role:client',
+            'employee.read',
         ],
     ],
     'role:domain.master' => [
