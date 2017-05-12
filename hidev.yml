@@ -15,7 +15,7 @@ package:
         - authorization data: roles and permissions
         - helpers
 
-php-cs-fixer:
+.php_cs:
     finder:
         notPath:
             - src/files

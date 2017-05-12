@@ -26,6 +26,7 @@ return PhpCsFixer\Config::create()
         ],
         'concat_space'                               =>  ['spacing' => 'one'],
         'array_syntax'                               =>  ['syntax' => 'short'],
+        'phpdoc_no_alias_tag'                        =>  ['replacements' => ['type' => 'var']],
         'blank_line_before_return'                   =>  false,
         'phpdoc_align'                               =>  false,
         'phpdoc_scalar'                              =>  false,
@@ -49,6 +50,5 @@ return PhpCsFixer\Config::create()
             ->notPath('vendor')
             ->notPath('runtime')
             ->notPath('web/assets')
-            ->notPath('src/files')
         )
 ;
