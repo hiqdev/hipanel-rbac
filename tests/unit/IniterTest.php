@@ -19,7 +19,7 @@ use Yii;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class IniterTest extends \PHPUnit_Framework_TestCase
+class IniterTest extends \PHPUnit\Framework\TestCase
 {
     use CheckAccessTrait;
 

@@ -18,7 +18,7 @@ use Yii;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class AuthManagerTest extends \PHPUnit_Framework_TestCase
+class AuthManagerTest extends \PHPUnit\Framework\TestCase
 {
     use CheckAccessTrait;
 
