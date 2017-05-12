@@ -9,14 +9,9 @@
  */
 
 return [
-    'components' => [
-        'config' => [
-            'rbac' => [
-                'class' => \hipanel\rbac\console\RbacController::class,
-            ],
-        ],
-        'authManager' => [
-            'class' => \hipanel\rbac\AuthManager::class,
+    'controllerMap' => [
+        'rbac' => [
+            'class' => \hipanel\rbac\console\RbacController::class,
         ],
     ],
 ];
