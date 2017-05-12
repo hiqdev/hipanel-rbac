@@ -20,6 +20,8 @@ use Yii;
  */
 class RbacController extends \yii\console\Controller
 {
+    public $defaultAction = 'show';
+
     public function actionInit()
     {
         $auth = Yii::$app->get('authManager');
