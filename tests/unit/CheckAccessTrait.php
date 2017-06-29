@@ -24,6 +24,7 @@ trait CheckAccessTrait
         $this->assertTrue($this->auth->checkAccess('role:client', 'restore-password'));
         $this->assertTrue($this->auth->checkAccess('role:client', 'deposit'));
         $this->assertTrue($this->auth->checkAccess('role:client', 'domain.pay'));
+        $this->assertTrue($this->auth->checkAccess('role:client', 'domain.push'));
         $this->assertTrue($this->auth->checkAccess('role:client', 'server.pay'));
 
         $this->assertFalse($this->auth->checkAccess('role:client', 'support'));
@@ -141,5 +142,32 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'employee.update'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'employee.delete'));
         $this->assertFalse($this->auth->checkAccess('user:mighty', 'domain.unfreeze'));
+    }
+
+    public function testDeny()
+    {
+        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay', 'user:limited');
+
+        $this->assertTrue($this->auth->checkAccess('user:limited', 'restore-password'));
+        $this->assertTrue($this->auth->checkAccess('user:limited', 'domain.pay'));
+
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'deposit'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'domain.push'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'server.pay'));
+
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'support'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'manage'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'employee.read'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'domain.freeze'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'domain.unfreeze'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'domain.force-push'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'domain.delete'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'admin'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'resell'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'own'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'document.manage'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'contact.force-verify'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'mailing.prepare'));
+        $this->assertFalse($this->auth->checkAccess('user:limited', 'mailing.send'));
     }
 }

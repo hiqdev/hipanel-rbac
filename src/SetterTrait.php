@@ -93,17 +93,26 @@ trait SetterTrait
     public function setAssignment($item, $userId)
     {
         if (is_string($item)) {
-            $name = $item;
-            $item = $this->getItem($item);
-            if (is_null($item)) {
-                throw new InvalidParamException("Unknown item:$name at setAssignment");
-            }
+            $item = $this->findItem($item);
         }
         if (isset($this->assignments[$userId][$item->name])) {
             return $this->assignments[$userId][$item->name];
         }
 
         return $this->assign($item, $userId);
+    }
+
+    protected function findItem($name, $description = null)
+    {
+        $item = $this->getItem($name);
+        if ($item) {
+            return $item;
+        }
+        if (strncmp($name, 'deny:', 5) === 0) {
+            return $this->setPermission($name, $description);
+        }
+
+        throw new InvalidParamException("Unknown item:$name at findItem");
     }
 
     /**

@@ -57,6 +57,7 @@ class AuthManager extends \yii\rbac\PhpManager
             }
         }
 
-        return parent::checkAccess($userId, $permission, $params);
+        return parent::checkAccess($userId, $permission, $params)
+            && !parent::checkAccess($userId, "deny:$permission", $params);
     }
 }
