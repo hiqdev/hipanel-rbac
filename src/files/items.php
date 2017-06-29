@@ -6,6 +6,7 @@ return [
             'restore-password',
             'deposit',
             'domain.pay',
+            'domain.push',
             'server.pay',
         ],
     ],
@@ -30,6 +31,7 @@ return [
             'role:document.manager',
             'manage',
             'domain.pay',
+            'domain.push',
             'server.pay',
             'contact.force-verify',
             'mailing.prepare',
@@ -127,6 +129,9 @@ return [
         'type' => 2,
     ],
     'domain.pay' => [
+        'type' => 2,
+    ],
+    'domain.push' => [
         'type' => 2,
     ],
     'domain.delete' => [

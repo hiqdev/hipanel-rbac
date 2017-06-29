@@ -46,6 +46,7 @@ class Initer
         $auth->setPermission('employee.delete');
 
         $auth->setPermission('domain.pay');
+        $auth->setPermission('domain.push');
         $auth->setPermission('domain.delete');
         $auth->setPermission('domain.freeze');
         $auth->setPermission('domain.unfreeze');
@@ -68,6 +69,7 @@ class Initer
         $auth->setChild('role:client',                  'restore-password');
         $auth->setChild('role:client',                  'deposit');
         $auth->setChild('role:client',                  'domain.pay');
+        $auth->setChild('role:client',                  'domain.push');
         $auth->setChild('role:client',                  'server.pay');
 
         $auth->setChild('role:support',                 'support');
@@ -80,6 +82,7 @@ class Initer
         $auth->setChild('role:manager',                 'role:document.manager');
         $auth->setChild('role:manager',                 'manage');
         $auth->setChild('role:manager',                 'domain.pay');
+        $auth->setChild('role:manager',                 'domain.push');
         $auth->setChild('role:manager',                 'server.pay');
         $auth->setChild('role:manager',                 'contact.force-verify');
         $auth->setChild('role:manager',                 'mailing.prepare');
