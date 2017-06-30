@@ -1,12 +1,24 @@
-hiqdev/hipanel-rbac
--------------------
+# hiqdev/hipanel-rbac
 
-## [Under development]
+## [0.1.0] - 2017-06-30
 
+- Refactored Initer with `tree`
+    - [508101e] 2017-06-30 refactored Initer with `tree` [@hiqsol]
+- Added `deny` permission
+    - [5581422] 2017-06-29 added `deny` permission implementation (with tests) [@hiqsol]
+- Added `employee` CRUD permissions
+    - [2229b5f] 2017-05-12 fixed tests for phpunit 6 [@hiqsol]
+    - [947327d] 2017-05-12 csfixed [@hiqsol]
+    - [a3e3739] 2017-05-12 renamed configs to common and console [@hiqsol]
+    - [c082743] 2017-05-12 csfixed [@hiqsol]
+    - [8d1ea54] 2017-05-12 renamed `hidev.yml` [@hiqsol]
+    - [7bfb4be] 2017-04-05 hideved [@SilverFire]
     - [a13b3bf] 2017-04-05 Added employee.read permission to employee role [@SilverFire]
     - [fd239bf] 2017-04-04 Added employee role [@SilverFire]
     - [26d6d49] 2017-02-21 added domain.delete permission and csfixed [@hiqsol]
     - [b5101ab] 2017-02-09 added employee CRUD permission and employee.manager role with tests [@hiqsol]
+- Added more domain, server, contact, mailing and document permissions
+    - [e27d95a] 2017-06-29 added domain.push permission [@hiqsol]
     - [3970c44] 2017-02-09 Merge pull request #2 from bladeroot/domain-force-push [@hiqsol]
     - [c937899] 2017-02-09 fixedttests [@BladeRoot]
     - [535d5aa] 2017-02-09 + test domain.force-push [@BladeRoot]
@@ -18,7 +30,9 @@ hiqdev/hipanel-rbac
     - [c015235] 2016-11-10 changed setAssignments to work with comma separated string [@hiqsol]
     - [84c6b5a] 2016-11-10 Merge pull request #1 from hiqsol/master [@hiqsol]
     - [8c68994] 2016-11-04 simplified out setSmartAssignments in favour of setAssignments [@hiqsol]
+- Refactored role names to role:name, role:object.name, role:object.long-name
     - [a733e43] 2016-11-04 redone with setSmartAssignments [@hiqsol]
+- Refactored permission names to name, object.name, object.long-name
     - [3aba504] 2016-11-03 refactoring roles and permissions names [@hiqsol]
     - [2741a28] 2016-11-02 fixed phpdoc [@hiqsol]
     - [b4f8334] 2016-10-31 redone bill management permissions: + roles: billManager/Creator/Deleter [@hiqsol]
@@ -128,3 +142,13 @@ hiqdev/hipanel-rbac
 [Under development]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.2...HEAD
 [0.0.2]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/hiqdev/hipanel-rbac/releases/tag/0.0.1
+[5581422]: https://github.com/hiqdev/hipanel-rbac/commit/5581422
+[e27d95a]: https://github.com/hiqdev/hipanel-rbac/commit/e27d95a
+[2229b5f]: https://github.com/hiqdev/hipanel-rbac/commit/2229b5f
+[947327d]: https://github.com/hiqdev/hipanel-rbac/commit/947327d
+[a3e3739]: https://github.com/hiqdev/hipanel-rbac/commit/a3e3739
+[c082743]: https://github.com/hiqdev/hipanel-rbac/commit/c082743
+[8d1ea54]: https://github.com/hiqdev/hipanel-rbac/commit/8d1ea54
+[7bfb4be]: https://github.com/hiqdev/hipanel-rbac/commit/7bfb4be
+[508101e]: https://github.com/hiqdev/hipanel-rbac/commit/508101e
+[0.1.0]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.2...0.1.0

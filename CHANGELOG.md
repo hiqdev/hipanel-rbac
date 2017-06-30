@@ -1,7 +1,13 @@
-hiqdev/hipanel-rbac
--------------------
+# hiqdev/hipanel-rbac
 
-## [Under development]
+## [0.1.0] - 2017-06-30
+
+- Refactored Initer with `tree` ([@hiqsol])
+- Added `deny` permission ([@hiqsol])
+- Added `employee` CRUD permissions ([@hiqsol], [@SilverFire])
+- Added more domain, server, contact, mailing and document permissions ([@hiqsol], [@BladeRoot], [@SilverFire])
+- Refactored role names to role:name, role:object.name, role:object.long-name ([@hiqsol])
+- Refactored permission names to name, object.name, object.long-name ([@hiqsol])
 
 ## [0.0.2] - 2016-10-07
 
@@ -25,3 +31,4 @@ hiqdev/hipanel-rbac
 [Under development]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.2...HEAD
 [0.0.2]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/hiqdev/hipanel-rbac/releases/tag/0.0.1
+[0.1.0]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.2...0.1.0
