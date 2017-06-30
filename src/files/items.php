@@ -69,6 +69,7 @@ return [
             'domain.delete',
             'domain.freeze',
             'domain.unfreeze',
+            'domain.push',
             'domain.force-push',
         ],
     ],
@@ -101,13 +102,31 @@ return [
     'deposit' => [
         'type' => 2,
     ],
+    'domain.pay' => [
+        'type' => 2,
+    ],
+    'domain.push' => [
+        'type' => 2,
+    ],
+    'server.pay' => [
+        'type' => 2,
+    ],
     'support' => [
+        'type' => 2,
+    ],
+    'admin' => [
+        'type' => 2,
+    ],
+    'contact.force-verify' => [
         'type' => 2,
     ],
     'manage' => [
         'type' => 2,
     ],
-    'admin' => [
+    'mailing.prepare' => [
+        'type' => 2,
+    ],
+    'mailing.send' => [
         'type' => 2,
     ],
     'resell' => [
@@ -119,21 +138,6 @@ return [
     'employee.read' => [
         'type' => 2,
     ],
-    'employee.create' => [
-        'type' => 2,
-    ],
-    'employee.update' => [
-        'type' => 2,
-    ],
-    'employee.delete' => [
-        'type' => 2,
-    ],
-    'domain.pay' => [
-        'type' => 2,
-    ],
-    'domain.push' => [
-        'type' => 2,
-    ],
     'domain.delete' => [
         'type' => 2,
     ],
@@ -143,25 +147,7 @@ return [
     'domain.unfreeze' => [
         'type' => 2,
     ],
-    'domain.set-contacts' => [
-        'type' => 2,
-    ],
     'domain.force-push' => [
-        'type' => 2,
-    ],
-    'document.manage' => [
-        'type' => 2,
-    ],
-    'mailing.prepare' => [
-        'type' => 2,
-    ],
-    'mailing.send' => [
-        'type' => 2,
-    ],
-    'contact.force-verify' => [
-        'type' => 2,
-    ],
-    'server.pay' => [
         'type' => 2,
     ],
     'bill.create' => [
@@ -171,6 +157,27 @@ return [
         'type' => 2,
     ],
     'bill.delete' => [
+        'type' => 2,
+    ],
+    'employee.create' => [
+        'type' => 2,
+    ],
+    'employee.update' => [
+        'type' => 2,
+    ],
+    'employee.delete' => [
+        'type' => 2,
+    ],
+    'document.manage' => [
+        'type' => 2,
+    ],
+    'deny:deposit' => [
+        'type' => 2,
+    ],
+    'deny:domain.push' => [
+        'type' => 2,
+    ],
+    'deny:server.pay' => [
         'type' => 2,
     ],
 ];
