@@ -38,6 +38,7 @@ class Initer
             'server.pay',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
+            'server.sell'
         ],
         'role:reseller' => [
             'role:manager', 'role:bill.manager',

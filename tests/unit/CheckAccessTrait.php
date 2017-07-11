@@ -41,6 +41,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:client', 'contact.force-verify'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'mailing.prepare'));
         $this->assertFalse($this->auth->checkAccess('role:client', 'mailing.send'));
+        $this->assertFalse($this->auth->checkAccess('role:client', 'server.sell'));
     }
 
     public function testSupport()
@@ -50,6 +51,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:support', 'deposit'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'domain.pay'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'server.pay'));
+        $this->assertFalse($this->auth->checkAccess('role:support', 'server.sell'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'restore-password'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'manage'));
         $this->assertFalse($this->auth->checkAccess('role:support', 'employee.read'));
@@ -72,6 +74,7 @@ trait CheckAccessTrait
         $this->assertTrue($this->auth->checkAccess('role:manager', 'manage'));
         $this->assertTrue($this->auth->checkAccess('role:manager', 'domain.pay'));
         $this->assertTrue($this->auth->checkAccess('role:manager', 'server.pay'));
+        $this->assertTrue($this->auth->checkAccess('role:manager', 'server.sell'));
         $this->assertTrue($this->auth->checkAccess('role:manager', 'document.manage'));
         $this->assertTrue($this->auth->checkAccess('role:manager', 'contact.force-verify'));
         $this->assertTrue($this->auth->checkAccess('role:manager', 'mailing.prepare'));
@@ -102,6 +105,7 @@ trait CheckAccessTrait
         $this->assertFalse($this->auth->checkAccess('role:employee', 'employee.create'));
         $this->assertFalse($this->auth->checkAccess('role:employee', 'employee.update'));
         $this->assertFalse($this->auth->checkAccess('role:employee', 'employee.delete'));
+        $this->assertFalse($this->auth->checkAccess('role:employee', 'server.sell'));
     }
 
     public function testPermission()

@@ -36,6 +36,7 @@ return [
             'contact.force-verify',
             'mailing.prepare',
             'mailing.send',
+            'server.sell',
         ],
     ],
     'role:reseller' => [
@@ -127,6 +128,9 @@ return [
         'type' => 2,
     ],
     'mailing.send' => [
+        'type' => 2,
+    ],
+    'server.sell' => [
         'type' => 2,
     ],
     'resell' => [
