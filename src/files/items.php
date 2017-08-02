@@ -1,10 +1,16 @@
 <?php
 return [
-    'role:client' => [
+    'role:unauthorized' => [
         'type' => 1,
         'children' => [
             'restore-password',
             'deposit',
+        ],
+    ],
+    'role:client' => [
+        'type' => 1,
+        'children' => [
+            'role:unauthorized',
             'domain.pay',
             'domain.push',
             'server.pay',

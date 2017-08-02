@@ -19,6 +19,31 @@ trait CheckAccessTrait
         }
     }
 
+    public function testUnauthorized()
+    {
+        $this->assertTrue($this->auth->checkAccess('', 'restore-password'));
+        $this->assertTrue($this->auth->checkAccess('', 'deposit'));
+
+        $this->assertFalse($this->auth->checkAccess('', 'domain.pay'));
+        $this->assertFalse($this->auth->checkAccess('', 'domain.push'));
+        $this->assertFalse($this->auth->checkAccess('', 'server.pay'));
+        $this->assertFalse($this->auth->checkAccess('', 'support'));
+        $this->assertFalse($this->auth->checkAccess('', 'manage'));
+        $this->assertFalse($this->auth->checkAccess('', 'employee.read'));
+        $this->assertFalse($this->auth->checkAccess('', 'domain.freeze'));
+        $this->assertFalse($this->auth->checkAccess('', 'domain.unfreeze'));
+        $this->assertFalse($this->auth->checkAccess('', 'domain.force-push'));
+        $this->assertFalse($this->auth->checkAccess('', 'domain.delete'));
+        $this->assertFalse($this->auth->checkAccess('', 'admin'));
+        $this->assertFalse($this->auth->checkAccess('', 'resell'));
+        $this->assertFalse($this->auth->checkAccess('', 'own'));
+        $this->assertFalse($this->auth->checkAccess('', 'document.manage'));
+        $this->assertFalse($this->auth->checkAccess('', 'contact.force-verify'));
+        $this->assertFalse($this->auth->checkAccess('', 'mailing.prepare'));
+        $this->assertFalse($this->auth->checkAccess('', 'mailing.send'));
+        $this->assertFalse($this->auth->checkAccess('', 'server.sell'));
+    }
+
     public function testClient()
     {
         $this->assertTrue($this->auth->checkAccess('role:client', 'restore-password'));

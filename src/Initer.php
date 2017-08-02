@@ -18,8 +18,11 @@ namespace hipanel\rbac;
 class Initer
 {
     protected static $tree = [
-        'role:client' => [
+        'role:unauthorized' => [
             'restore-password', 'deposit',
+        ],
+        'role:client' => [
+            'role:unauthorized',
             'domain.pay', 'domain.push',
             'server.pay',
         ],

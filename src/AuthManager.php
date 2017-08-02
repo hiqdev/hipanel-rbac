@@ -44,6 +44,18 @@ class AuthManager extends \yii\rbac\PhpManager
 
     public function checkAccess($userId, $permission, $params = [])
     {
+        if (empty($this->getAssignments($userId))) {
+            $this->applyUserAssignments($userId);
+        }
+
+        return parent::checkAccess($userId, $permission, $params)
+            && !parent::checkAccess($userId, "deny:$permission", $params);
+    }
+
+    public function applyUserAssignments($userId)
+    {
+        $roles = '';
+
         if (isset(Yii::$app->user)) {
             $user = Yii::$app->user->identity;
             if (!$user || $user->id !== $userId) {
@@ -53,11 +65,17 @@ class AuthManager extends \yii\rbac\PhpManager
                 $userId = $user->username;
             }
             if (isset($user->roles)) {
-                $this->setAssignments($user->roles, $userId);
+                $roles = $user->roles;
             }
         }
 
-        return parent::checkAccess($userId, $permission, $params)
-            && !parent::checkAccess($userId, "deny:$permission", $params);
+        if (empty($userId)) {
+            $userId = '';
+            $roles = 'role:unauthorized';
+        }
+
+        if ($roles) {
+            $this->setAssignments($roles, $userId);
+        }
     }
 }
