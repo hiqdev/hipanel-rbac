@@ -39,7 +39,9 @@ class RbacController extends \yii\console\Controller
         $auth = Yii::$app->get('authManager');
 
         echo "Permissions:\n";
-        foreach ($auth->getPermissions() as $name => $perm) {
+        $permissions = $auth->getPermissions();
+        ksort($permissions);
+        foreach ($permissions as $name => $perm) {
             echo "   $perm->name $perm->description\n";
         }
 
