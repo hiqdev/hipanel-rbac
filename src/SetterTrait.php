@@ -10,7 +10,9 @@
 
 namespace hipanel\rbac;
 
+use Yii;
 use yii\base\InvalidParamException;
+use yii\rbac\Assignment;
 use yii\rbac\Item;
 
 /**
@@ -88,13 +90,19 @@ trait SetterTrait
      * @param string|Item $item
      * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
      * @throws \Exception when given wrong item name
-     * @return Assignment the assignment object
+     * @return Assignment|null the assignment object or `null` when assignment was not found by name
      */
     public function setAssignment($item, $userId)
     {
-        if (is_string($item)) {
-            $item = $this->findItem($item);
+        try {
+            if (is_string($item)) {
+                $item = $this->findItem($item);
+            }
+        } catch (InvalidParamException $e) {
+            Yii::warning('Role or permission "' . $item . '" does not exist');
+            return null;
         }
+
         if (isset($this->assignments[$userId][$item->name])) {
             return $this->assignments[$userId][$item->name];
         }
