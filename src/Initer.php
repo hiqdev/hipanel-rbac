@@ -67,7 +67,10 @@ class Initer
             'employee.read', 'employee.create', 'employee.update', 'employee.delete',
         ],
         'role:document.manager' => [
-            'document.manage',
+            'document.manage', 'document.generate',
+        ],
+        'role:document.master' => [
+            'document.generate-all',
         ],
     ];
 

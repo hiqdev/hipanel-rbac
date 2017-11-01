@@ -101,6 +101,13 @@ return [
         'type' => 1,
         'children' => [
             'document.manage',
+            'document.generate',
+        ],
+    ],
+    'role:document.master' => [
+        'type' => 1,
+        'children' => [
+            'document.generate-all',
         ],
     ],
     'restore-password' => [
@@ -179,6 +186,12 @@ return [
         'type' => 2,
     ],
     'document.manage' => [
+        'type' => 2,
+    ],
+    'document.generate' => [
+        'type' => 2,
+    ],
+    'document.generate-all' => [
         'type' => 2,
     ],
     'deny:deposit' => [

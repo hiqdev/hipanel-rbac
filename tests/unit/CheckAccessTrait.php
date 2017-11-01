@@ -81,7 +81,8 @@ trait CheckAccessTrait
             'support', 'manage',
             'domain.pay', 'domain.push',
             'server.pay', 'server.sell',
-            'document.manage', 'contact.force-verify',
+            'document.manage', 'document.generate',
+            'contact.force-verify',
             'mailing.prepare', 'mailing.send',
         ]);
     }
@@ -97,14 +98,15 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,bill.create,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,role:document.master,bill.create,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'support', 'manage', 'admin',
             'employee.read', 'bill.create',
             'domain.freeze', 'domain.push', 'domain.force-push', 'domain.delete',
             'domain.pay', 'server.pay', 'server.sell',
-            'document.manage', 'contact.force-verify',
+            'document.manage', 'document.generate', 'document.generate-all',
+            'contact.force-verify',
             'mailing.prepare', 'mailing.send',
         ]);
     }
