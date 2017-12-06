@@ -1,6 +1,6 @@
 <?php
 /**
- * RBAC implementation for HiPanel.
+ * RBAC implementation for HiPanel
  *
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
@@ -41,7 +41,7 @@ class Initer
             'server.pay',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
-            'server.sell'
+            'server.sell',
         ],
         'role:reseller' => [
             'role:manager', 'role:bill.manager',

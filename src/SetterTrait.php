@@ -1,6 +1,6 @@
 <?php
 /**
- * RBAC implementation for HiPanel.
+ * RBAC implementation for HiPanel
  *
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
@@ -100,6 +100,7 @@ trait SetterTrait
             }
         } catch (InvalidParamException $e) {
             Yii::warning('Role or permission "' . $item . '" does not exist');
+
             return null;
         }
 

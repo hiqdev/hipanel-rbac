@@ -1,6 +1,6 @@
 <?php
 /**
- * RBAC implementation for HiPanel.
+ * RBAC implementation for HiPanel
  *
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
