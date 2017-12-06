@@ -72,6 +72,13 @@ class Initer
         'role:document.master' => [
             'document.generate-all',
         ],
+        'role:beta-tester' => [
+            'test.beta',
+        ],
+        'role:alpha-tester' => [
+            'role:beta-tester',
+            'test.alpha',
+        ],
     ];
 
     public static function init(AuthManager $auth)

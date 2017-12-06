@@ -120,4 +120,22 @@ trait CheckAccessTrait
             'domain.pay',
         ]);
     }
+
+    public function testBetaTester()
+    {
+        $this->auth->setAssignments('role:beta-tester', 'user:beta-tester');
+
+        $this->assertAccesses('user:beta-tester', [
+            'test.beta',
+        ]);
+    }
+
+    public function testAlphaTester()
+    {
+        $this->auth->setAssignments('role:alpha-tester', 'user:alpha-tester');
+
+        $this->assertAccesses('user:alpha-tester', [
+            'test.alpha', 'test.beta',
+        ]);
+    }
 }

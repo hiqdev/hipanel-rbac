@@ -110,6 +110,19 @@ return [
             'document.generate-all',
         ],
     ],
+    'role:beta-tester' => [
+        'type' => 1,
+        'children' => [
+            'test.beta',
+        ],
+    ],
+    'role:alpha-tester' => [
+        'type' => 1,
+        'children' => [
+            'role:beta-tester',
+            'test.alpha',
+        ],
+    ],
     'restore-password' => [
         'type' => 2,
     ],
@@ -194,13 +207,10 @@ return [
     'document.generate-all' => [
         'type' => 2,
     ],
-    'deny:deposit' => [
+    'test.beta' => [
         'type' => 2,
     ],
-    'deny:domain.push' => [
-        'type' => 2,
-    ],
-    'deny:server.pay' => [
+    'test.alpha' => [
         'type' => 2,
     ],
 ];
