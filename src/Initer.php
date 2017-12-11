@@ -37,6 +37,7 @@ class Initer
         'role:manager' => [
             'role:support', 'role:document.manager', 'role:stock.manager',
             'manage',
+            'bill.read',
             'domain.pay', 'domain.push',
             'server.pay',
             'contact.force-verify',
@@ -61,7 +62,7 @@ class Initer
             'domain.push', 'domain.force-push',
         ],
         'role:bill.manager' => [
-            'bill.create', 'bill.update', 'bill.delete',
+            'bill.read', 'bill.create', 'bill.update', 'bill.delete',
         ],
         'role:employee.manager' => [
             'employee.read', 'employee.create', 'employee.update', 'employee.delete',
@@ -70,6 +71,7 @@ class Initer
             'stock.read', 'stock.create', 'stock.update', 'stock.delete',
         ],
         'role:document.manager' => [
+            'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate',
         ],
         'role:document.master' => [

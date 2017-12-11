@@ -37,6 +37,7 @@ return [
             'role:document.manager',
             'role:stock.manager',
             'manage',
+            'bill.read',
             'domain.pay',
             'domain.push',
             'server.pay',
@@ -84,6 +85,7 @@ return [
     'role:bill.manager' => [
         'type' => 1,
         'children' => [
+            'bill.read',
             'bill.create',
             'bill.update',
             'bill.delete',
@@ -110,6 +112,10 @@ return [
     'role:document.manager' => [
         'type' => 1,
         'children' => [
+            'document.read',
+            'document.create',
+            'document.update',
+            'document.delete',
             'document.manage',
             'document.generate',
         ],
@@ -158,6 +164,9 @@ return [
         'type' => 2,
     ],
     'manage' => [
+        'type' => 2,
+    ],
+    'bill.read' => [
         'type' => 2,
     ],
     'mailing.prepare' => [
@@ -218,6 +227,18 @@ return [
         'type' => 2,
     ],
     'stock.delete' => [
+        'type' => 2,
+    ],
+    'document.read' => [
+        'type' => 2,
+    ],
+    'document.create' => [
+        'type' => 2,
+    ],
+    'document.update' => [
+        'type' => 2,
+    ],
+    'document.delete' => [
         'type' => 2,
     ],
     'document.manage' => [

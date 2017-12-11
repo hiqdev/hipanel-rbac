@@ -79,8 +79,10 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:manager', [
             'support', 'manage',
+            'bill.read',
             'domain.pay', 'domain.push',
             'server.pay', 'server.sell',
+            'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
@@ -99,17 +101,19 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,role:document.master,bill.create,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'support', 'manage', 'admin',
-            'employee.read', 'bill.create',
+            'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'domain.freeze', 'domain.push', 'domain.force-push', 'domain.delete',
             'domain.pay', 'server.pay', 'server.sell',
+            'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate', 'document.generate-all',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
             'stock.read', 'stock.create', 'stock.update', 'stock.delete',
+            'employee.read',
         ]);
     }
 
