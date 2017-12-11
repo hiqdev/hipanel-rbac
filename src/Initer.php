@@ -23,6 +23,7 @@ class Initer
         ],
         'role:client' => [
             'role:unauthorized',
+            'bill.read',
             'domain.pay', 'domain.push',
             'server.pay',
         ],

@@ -11,6 +11,7 @@ return [
         'type' => 1,
         'children' => [
             'role:unauthorized',
+            'bill.read',
             'domain.pay',
             'domain.push',
             'server.pay',
@@ -145,6 +146,9 @@ return [
     'deposit' => [
         'type' => 2,
     ],
+    'bill.read' => [
+        'type' => 2,
+    ],
     'domain.pay' => [
         'type' => 2,
     ],
@@ -164,9 +168,6 @@ return [
         'type' => 2,
     ],
     'manage' => [
-        'type' => 2,
-    ],
-    'bill.read' => [
         'type' => 2,
     ],
     'mailing.prepare' => [

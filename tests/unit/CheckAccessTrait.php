@@ -65,6 +65,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:client', [
             'restore-password', 'deposit',
             'domain.pay', 'domain.push', 'server.pay',
+            'bill.read',
         ]);
     }
 
@@ -95,6 +96,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:employee', [
             'restore-password', 'deposit',
             'domain.pay', 'domain.push', 'server.pay',
+            'bill.read',
             'employee.read',
         ]);
     }
@@ -122,8 +124,7 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay', 'user:limited');
 
         $this->assertAccesses('user:limited', [
-            'restore-password',
-            'domain.pay',
+            'restore-password', 'domain.pay', 'bill.read',
         ]);
     }
 
