@@ -84,6 +84,7 @@ trait CheckAccessTrait
             'document.manage', 'document.generate',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
+            'stock.read', 'stock.create', 'stock.update', 'stock.delete',
         ]);
     }
 
@@ -108,6 +109,7 @@ trait CheckAccessTrait
             'document.manage', 'document.generate', 'document.generate-all',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
+            'stock.read', 'stock.create', 'stock.update', 'stock.delete',
         ]);
     }
 

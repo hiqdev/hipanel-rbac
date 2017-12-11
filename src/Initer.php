@@ -35,7 +35,7 @@ class Initer
             'contact.force-verify',
         ],
         'role:manager' => [
-            'role:support', 'role:document.manager',
+            'role:support', 'role:document.manager', 'role:stock.manager',
             'manage',
             'domain.pay', 'domain.push',
             'server.pay',
@@ -65,6 +65,9 @@ class Initer
         ],
         'role:employee.manager' => [
             'employee.read', 'employee.create', 'employee.update', 'employee.delete',
+        ],
+        'role:stock.manager' => [
+            'stock.read', 'stock.create', 'stock.update', 'stock.delete',
         ],
         'role:document.manager' => [
             'document.manage', 'document.generate',

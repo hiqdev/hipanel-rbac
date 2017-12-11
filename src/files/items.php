@@ -35,6 +35,7 @@ return [
         'children' => [
             'role:support',
             'role:document.manager',
+            'role:stock.manager',
             'manage',
             'domain.pay',
             'domain.push',
@@ -95,6 +96,15 @@ return [
             'employee.create',
             'employee.update',
             'employee.delete',
+        ],
+    ],
+    'role:stock.manager' => [
+        'type' => 1,
+        'children' => [
+            'stock.read',
+            'stock.create',
+            'stock.update',
+            'stock.delete',
         ],
     ],
     'role:document.manager' => [
@@ -196,6 +206,18 @@ return [
         'type' => 2,
     ],
     'employee.delete' => [
+        'type' => 2,
+    ],
+    'stock.read' => [
+        'type' => 2,
+    ],
+    'stock.create' => [
+        'type' => 2,
+    ],
+    'stock.update' => [
+        'type' => 2,
+    ],
+    'stock.delete' => [
         'type' => 2,
     ],
     'document.manage' => [
