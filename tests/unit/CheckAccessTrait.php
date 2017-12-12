@@ -64,6 +64,7 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:client', [
             'restore-password', 'deposit',
+            'domain.read', 'domain.create', 'domain.update',
             'domain.pay', 'domain.push', 'server.pay',
             'bill.read',
         ]);
@@ -81,6 +82,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:manager', [
             'support', 'manage',
             'bill.read',
+            'domain.read', 'domain.create', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'server.pay', 'server.sell',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -95,9 +97,7 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:employee', [
             'restore-password', 'deposit',
-            'domain.pay', 'domain.push', 'server.pay',
-            'bill.read',
-            'employee.read',
+            'bill.read', 'employee.read',
         ]);
     }
 
@@ -108,8 +108,10 @@ trait CheckAccessTrait
         $this->assertAccesses('user:mighty', [
             'support', 'manage', 'admin',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
-            'domain.freeze', 'domain.push', 'domain.force-push', 'domain.delete',
-            'domain.pay', 'server.pay', 'server.sell',
+            'domain.freeze',
+            'domain.read', 'domain.create', 'domain.update', 'domain.delete',
+            'domain.pay', 'domain.push', 'domain.force-push',
+            'server.pay', 'server.sell',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate', 'document.generate-all',
             'contact.force-verify',
@@ -124,6 +126,7 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay', 'user:limited');
 
         $this->assertAccesses('user:limited', [
+            'domain.read', 'domain.create', 'domain.update',
             'restore-password', 'domain.pay', 'bill.read',
         ]);
     }

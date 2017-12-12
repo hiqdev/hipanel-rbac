@@ -12,6 +12,9 @@ return [
         'children' => [
             'role:unauthorized',
             'bill.read',
+            'domain.read',
+            'domain.create',
+            'domain.update',
             'domain.pay',
             'domain.push',
             'server.pay',
@@ -35,6 +38,7 @@ return [
         'type' => 1,
         'children' => [
             'role:support',
+            'role:domain.manager',
             'role:document.manager',
             'role:stock.manager',
             'manage',
@@ -42,10 +46,10 @@ return [
             'domain.pay',
             'domain.push',
             'server.pay',
+            'server.sell',
             'contact.force-verify',
             'mailing.prepare',
             'mailing.send',
-            'server.sell',
         ],
     ],
     'role:reseller' => [
@@ -69,14 +73,25 @@ return [
     'role:employee' => [
         'type' => 1,
         'children' => [
-            'role:client',
+            'restore-password',
+            'deposit',
+            'bill.read',
             'employee.read',
+        ],
+    ],
+    'role:domain.manager' => [
+        'type' => 1,
+        'children' => [
+            'domain.read',
+            'domain.create',
+            'domain.update',
+            'domain.delete',
         ],
     ],
     'role:domain.master' => [
         'type' => 1,
         'children' => [
-            'domain.delete',
+            'role:domain.manager',
             'domain.freeze',
             'domain.unfreeze',
             'domain.push',
@@ -149,6 +164,15 @@ return [
     'bill.read' => [
         'type' => 2,
     ],
+    'domain.read' => [
+        'type' => 2,
+    ],
+    'domain.create' => [
+        'type' => 2,
+    ],
+    'domain.update' => [
+        'type' => 2,
+    ],
     'domain.pay' => [
         'type' => 2,
     ],
@@ -170,13 +194,13 @@ return [
     'manage' => [
         'type' => 2,
     ],
+    'server.sell' => [
+        'type' => 2,
+    ],
     'mailing.prepare' => [
         'type' => 2,
     ],
     'mailing.send' => [
-        'type' => 2,
-    ],
-    'server.sell' => [
         'type' => 2,
     ],
     'resell' => [
