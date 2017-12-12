@@ -40,10 +40,9 @@ class Initer
             'manage',
             'bill.read',
             'domain.pay', 'domain.push',
-            'server.pay',
+            'server.pay', 'server.sell',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
-            'server.sell',
         ],
         'role:reseller' => [
             'role:manager', 'role:bill.manager',
