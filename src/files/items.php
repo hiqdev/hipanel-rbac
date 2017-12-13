@@ -1,5 +1,11 @@
 <?php
 return [
+    'role:nobody' => [
+        'type' => 1,
+        'children' => [
+            'nothing',
+        ],
+    ],
     'role:unauthorized' => [
         'type' => 1,
         'children' => [
@@ -11,6 +17,7 @@ return [
         'type' => 1,
         'children' => [
             'role:unauthorized',
+            'role:ticket.client',
             'bill.read',
             'domain.read',
             'domain.create',
@@ -24,6 +31,7 @@ return [
         'type' => 1,
         'children' => [
             'support',
+            'role:ticket.manager',
         ],
     ],
     'role:admin' => [
@@ -41,6 +49,7 @@ return [
             'role:domain.manager',
             'role:document.manager',
             'role:stock.manager',
+            'role:ticket.manager',
             'manage',
             'bill.read',
             'domain.pay',
@@ -96,6 +105,23 @@ return [
             'domain.unfreeze',
             'domain.push',
             'domain.force-push',
+        ],
+    ],
+    'role:ticket.client' => [
+        'type' => 1,
+        'children' => [
+            'ticket.read',
+            'ticket.create',
+            'ticket.answer',
+            'ticket.close',
+        ],
+    ],
+    'role:ticket.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:ticket.client',
+            'ticket.update',
+            'ticket.delete',
         ],
     ],
     'role:bill.manager' => [
@@ -154,6 +180,9 @@ return [
             'role:beta-tester',
             'test.alpha',
         ],
+    ],
+    'nothing' => [
+        'type' => 2,
     ],
     'restore-password' => [
         'type' => 2,
@@ -222,6 +251,24 @@ return [
         'type' => 2,
     ],
     'domain.force-push' => [
+        'type' => 2,
+    ],
+    'ticket.read' => [
+        'type' => 2,
+    ],
+    'ticket.create' => [
+        'type' => 2,
+    ],
+    'ticket.answer' => [
+        'type' => 2,
+    ],
+    'ticket.close' => [
+        'type' => 2,
+    ],
+    'ticket.update' => [
+        'type' => 2,
+    ],
+    'ticket.delete' => [
         'type' => 2,
     ],
     'bill.create' => [

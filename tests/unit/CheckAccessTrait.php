@@ -71,6 +71,7 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:client', [
             'restore-password', 'deposit',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.create', 'domain.update',
             'domain.pay', 'domain.push', 'server.pay',
             'bill.read',
@@ -81,6 +82,7 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:support', [
             'support',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
         ]);
     }
 
@@ -88,6 +90,7 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:manager', [
             'support', 'manage',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'bill.read',
             'domain.read', 'domain.create', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
@@ -114,6 +117,7 @@ trait CheckAccessTrait
 
         $this->assertAccesses('user:mighty', [
             'support', 'manage', 'admin',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'domain.freeze',
             'domain.read', 'domain.create', 'domain.update', 'domain.delete',
@@ -133,6 +137,7 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay', 'user:limited');
 
         $this->assertAccesses('user:limited', [
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.create', 'domain.update',
             'restore-password', 'domain.pay', 'bill.read',
         ]);
