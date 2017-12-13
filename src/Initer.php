@@ -40,7 +40,6 @@ class Initer
         'role:admin' => [
             'role:support', 'admin',
             'role:server.manager',
-            'contact.force-verify',
         ],
         'role:manager' => [
             'role:support', 'manage',

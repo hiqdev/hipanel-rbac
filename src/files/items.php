@@ -41,7 +41,6 @@ return [
             'role:support',
             'admin',
             'role:server.manager',
-            'contact.force-verify',
         ],
     ],
     'role:manager' => [
@@ -229,13 +228,13 @@ return [
     'admin' => [
         'type' => 2,
     ],
-    'contact.force-verify' => [
-        'type' => 2,
-    ],
     'manage' => [
         'type' => 2,
     ],
     'server.sell' => [
+        'type' => 2,
+    ],
+    'contact.force-verify' => [
         'type' => 2,
     ],
     'mailing.prepare' => [
