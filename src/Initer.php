@@ -26,18 +26,18 @@ class Initer
         ],
         'role:client' => [
             'role:unauthorized',
-            'role:ticket.client',
-            'role:domain.client', 'domain.pay', 'domain.push',
-            'role:server.client', 'server.pay',
-            'role:account.client',
+            'role:ticket.user',
+            'role:domain.user', 'domain.pay', 'domain.push',
+            'role:server.user', 'server.pay',
+            'role:account.user',
             'bill.read',
         ],
         'role:support' => [
             'support',
             'role:ticket.manager',
-            'role:domain.client',
-            'role:server.client',
-            'role:account.client',
+            'role:domain.user',
+            'role:server.user',
+            'role:account.user',
         ],
         'role:admin' => [
             'role:support', 'admin',
@@ -66,31 +66,31 @@ class Initer
             'bill.read', 'employee.read',
         ],
         /// SUBROLES
-        'role:domain.client' => [
+        'role:domain.user' => [
             'domain.read', 'domain.update',
         ],
         'role:domain.manager' => [
-            'role:domain.client', 'domain.delete',
+            'role:domain.user', 'domain.delete',
         ],
         'role:domain.master' => [
             'role:domain.manager',
             'domain.freeze', 'domain.unfreeze',
             'domain.push', 'domain.force-push',
         ],
-        'role:account.client' => [
+        'role:account.user' => [
             'account.read', 'account.create', 'account.update', 'account.delete',
         ],
-        'role:server.client' => [
+        'role:server.user' => [
             'server.read',
         ],
         'role:server.admin' => [
-            'role:server.client', 'server.create', 'server.update', 'server.delete',
+            'role:server.user', 'server.create', 'server.update', 'server.delete',
         ],
-        'role:ticket.client' => [
+        'role:ticket.user' => [
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
         ],
         'role:ticket.manager' => [
-            'role:ticket.client', 'ticket.update', 'ticket.delete',
+            'role:ticket.user', 'ticket.update', 'ticket.delete',
         ],
         'role:bill.manager' => [
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
