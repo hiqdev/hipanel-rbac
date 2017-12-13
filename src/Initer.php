@@ -38,15 +38,14 @@ class Initer
             'role:server.client',
         ],
         'role:admin' => [
-            'role:support',
+            'role:support', 'admin',
             'role:server.manager',
-            'admin',
             'contact.force-verify',
         ],
         'role:manager' => [
-            'role:support', 'role:document.manager', 'role:stock.manager',
+            'role:support', 'manage',
+            'role:document.manager', 'role:stock.manager',
             'role:domain.manager', 'domain.pay', 'domain.push',
-            'manage',
             'bill.read',
             'server.pay', 'server.sell',
             'contact.force-verify',

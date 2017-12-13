@@ -39,8 +39,8 @@ return [
         'type' => 1,
         'children' => [
             'role:support',
-            'role:server.manager',
             'admin',
+            'role:server.manager',
             'contact.force-verify',
         ],
     ],
@@ -48,12 +48,12 @@ return [
         'type' => 1,
         'children' => [
             'role:support',
+            'manage',
             'role:document.manager',
             'role:stock.manager',
             'role:domain.manager',
             'domain.pay',
             'domain.push',
-            'manage',
             'bill.read',
             'server.pay',
             'server.sell',
