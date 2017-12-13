@@ -53,6 +53,13 @@ trait CheckAccessTrait
         }
     }
 
+    public function testNobody()
+    {
+        $this->assertAccesses('role:nobody', [
+            'nothing',
+        ]);
+    }
+
     public function testUnauthorized()
     {
         $this->assertAccesses('', [
