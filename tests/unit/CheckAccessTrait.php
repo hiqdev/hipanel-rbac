@@ -88,6 +88,16 @@ trait CheckAccessTrait
         ]);
     }
 
+    public function testAdmin()
+    {
+        $this->assertAccesses('role:admin', [
+            'support', 'admin',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'domain.read', 'domain.update',
+            'server.read', 'server.create', 'server.update', 'server.delete',
+        ]);
+    }
+
     public function testManager()
     {
         $this->assertAccesses('role:manager', [
