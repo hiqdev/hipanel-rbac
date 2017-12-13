@@ -18,12 +18,10 @@ return [
         'children' => [
             'role:unauthorized',
             'role:ticket.client',
-            'bill.read',
-            'domain.read',
-            'domain.create',
-            'domain.update',
+            'role:domain.client',
             'domain.pay',
             'domain.push',
+            'bill.read',
             'server.pay',
         ],
     ],
@@ -32,6 +30,7 @@ return [
         'children' => [
             'support',
             'role:ticket.manager',
+            'role:domain.manager',
         ],
     ],
     'role:admin' => [
@@ -46,14 +45,12 @@ return [
         'type' => 1,
         'children' => [
             'role:support',
-            'role:domain.manager',
             'role:document.manager',
             'role:stock.manager',
-            'role:ticket.manager',
-            'manage',
-            'bill.read',
             'domain.pay',
             'domain.push',
+            'manage',
+            'bill.read',
             'server.pay',
             'server.sell',
             'contact.force-verify',
@@ -88,12 +85,17 @@ return [
             'employee.read',
         ],
     ],
-    'role:domain.manager' => [
+    'role:domain.client' => [
         'type' => 1,
         'children' => [
             'domain.read',
-            'domain.create',
             'domain.update',
+        ],
+    ],
+    'role:domain.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:domain.client',
             'domain.delete',
         ],
     ],
@@ -190,22 +192,13 @@ return [
     'deposit' => [
         'type' => 2,
     ],
-    'bill.read' => [
-        'type' => 2,
-    ],
-    'domain.read' => [
-        'type' => 2,
-    ],
-    'domain.create' => [
-        'type' => 2,
-    ],
-    'domain.update' => [
-        'type' => 2,
-    ],
     'domain.pay' => [
         'type' => 2,
     ],
     'domain.push' => [
+        'type' => 2,
+    ],
+    'bill.read' => [
         'type' => 2,
     ],
     'server.pay' => [
@@ -239,6 +232,12 @@ return [
         'type' => 2,
     ],
     'employee.read' => [
+        'type' => 2,
+    ],
+    'domain.read' => [
+        'type' => 2,
+    ],
+    'domain.update' => [
         'type' => 2,
     ],
     'domain.delete' => [

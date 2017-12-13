@@ -72,7 +72,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:client', [
             'restore-password', 'deposit',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
-            'domain.read', 'domain.create', 'domain.update',
+            'domain.read', 'domain.update',
             'domain.pay', 'domain.push', 'server.pay',
             'bill.read',
         ]);
@@ -83,6 +83,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:support', [
             'support',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'domain.read', 'domain.update', 'domain.delete',
         ]);
     }
 
@@ -92,7 +93,7 @@ trait CheckAccessTrait
             'support', 'manage',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'bill.read',
-            'domain.read', 'domain.create', 'domain.update', 'domain.delete',
+            'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'server.pay', 'server.sell',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -120,7 +121,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'domain.freeze',
-            'domain.read', 'domain.create', 'domain.update', 'domain.delete',
+            'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push',
             'server.pay', 'server.sell',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -138,7 +139,7 @@ trait CheckAccessTrait
 
         $this->assertAccesses('user:limited', [
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
-            'domain.read', 'domain.create', 'domain.update',
+            'domain.read', 'domain.update',
             'restore-password', 'domain.pay', 'bill.read',
         ]);
     }
