@@ -82,7 +82,7 @@ trait CheckAccessTrait
     public function testSupport()
     {
         $this->assertAccesses('role:support', [
-            'support',
+            'access-subclients', 'support',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read',
             'domain.read', 'domain.update',
@@ -94,7 +94,7 @@ trait CheckAccessTrait
     public function testAdmin()
     {
         $this->assertAccesses('role:admin', [
-            'support', 'admin',
+            'access-subclients', 'support', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read',
             'domain.read', 'domain.update',
@@ -106,7 +106,7 @@ trait CheckAccessTrait
     public function testManager()
     {
         $this->assertAccesses('role:manager', [
-            'support', 'manage',
+            'access-subclients', 'support', 'manage',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read',
@@ -134,7 +134,7 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
-            'support', 'manage', 'admin',
+            'access-subclients', 'support', 'manage', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',

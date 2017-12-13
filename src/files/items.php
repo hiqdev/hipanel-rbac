@@ -30,6 +30,7 @@ return [
     'role:support' => [
         'type' => 1,
         'children' => [
+            'access-subclients',
             'support',
             'role:ticket.manager',
             'role:client.support',
@@ -253,6 +254,9 @@ return [
         'type' => 2,
     ],
     'bill.read' => [
+        'type' => 2,
+    ],
+    'access-subclients' => [
         'type' => 2,
     ],
     'support' => [

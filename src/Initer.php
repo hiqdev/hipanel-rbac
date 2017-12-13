@@ -33,7 +33,7 @@ class Initer
             'bill.read',
         ],
         'role:support' => [
-            'support',
+            'access-subclients', 'support',
             'role:ticket.manager',
             'role:client.support',
             'role:domain.user',
