@@ -32,6 +32,7 @@ return [
         'children' => [
             'support',
             'role:ticket.manager',
+            'role:client.support',
             'role:domain.user',
             'role:server.user',
             'role:account.user',
@@ -55,6 +56,7 @@ return [
             'role:domain.manager',
             'domain.pay',
             'domain.push',
+            'role:client.manager',
             'bill.read',
             'server.pay',
             'server.sell',
@@ -155,13 +157,19 @@ return [
             'ticket.delete',
         ],
     ],
-    'role:bill.manager' => [
+    'role:client.support' => [
         'type' => 1,
         'children' => [
-            'bill.read',
-            'bill.create',
-            'bill.update',
-            'bill.delete',
+            'client.read',
+        ],
+    ],
+    'role:client.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:client.support',
+            'client.create',
+            'client.update',
+            'client.delete',
         ],
     ],
     'role:employee.manager' => [
@@ -173,6 +181,15 @@ return [
             'employee.delete',
         ],
     ],
+    'role:bill.manager' => [
+        'type' => 1,
+        'children' => [
+            'bill.read',
+            'bill.create',
+            'bill.update',
+            'bill.delete',
+        ],
+    ],
     'role:stock.manager' => [
         'type' => 1,
         'children' => [
@@ -182,14 +199,19 @@ return [
             'stock.delete',
         ],
     ],
-    'role:document.manager' => [
+    'role:document.user' => [
         'type' => 1,
         'children' => [
             'document.read',
             'document.create',
+        ],
+    ],
+    'role:document.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:document.user',
             'document.update',
             'document.delete',
-            'document.manage',
             'document.generate',
         ],
     ],
@@ -323,13 +345,16 @@ return [
     'ticket.delete' => [
         'type' => 2,
     ],
-    'bill.create' => [
+    'client.read' => [
         'type' => 2,
     ],
-    'bill.update' => [
+    'client.create' => [
         'type' => 2,
     ],
-    'bill.delete' => [
+    'client.update' => [
+        'type' => 2,
+    ],
+    'client.delete' => [
         'type' => 2,
     ],
     'employee.create' => [
@@ -339,6 +364,15 @@ return [
         'type' => 2,
     ],
     'employee.delete' => [
+        'type' => 2,
+    ],
+    'bill.create' => [
+        'type' => 2,
+    ],
+    'bill.update' => [
+        'type' => 2,
+    ],
+    'bill.delete' => [
         'type' => 2,
     ],
     'stock.read' => [
@@ -363,9 +397,6 @@ return [
         'type' => 2,
     ],
     'document.delete' => [
-        'type' => 2,
-    ],
-    'document.manage' => [
         'type' => 2,
     ],
     'document.generate' => [
