@@ -28,22 +28,24 @@ class Initer
             'role:unauthorized',
             'role:ticket.client',
             'role:domain.client', 'domain.pay', 'domain.push',
+            'role:server.client', 'server.pay',
             'bill.read',
-            'server.pay',
         ],
         'role:support' => [
             'support',
             'role:ticket.manager',
-            'role:domain.manager',
+            'role:domain.client',
+            'role:server.client',
         ],
         'role:admin' => [
             'role:support',
+            'role:server.manager',
             'admin',
             'contact.force-verify',
         ],
         'role:manager' => [
             'role:support', 'role:document.manager', 'role:stock.manager',
-            'domain.pay', 'domain.push',
+            'role:domain.manager', 'domain.pay', 'domain.push',
             'manage',
             'bill.read',
             'server.pay', 'server.sell',
@@ -73,6 +75,12 @@ class Initer
             'role:domain.manager',
             'domain.freeze', 'domain.unfreeze',
             'domain.push', 'domain.force-push',
+        ],
+        'role:server.client' => [
+            'server.read',
+        ],
+        'role:server.manager' => [
+            'role:server.client', 'server.create', 'server.update', 'server.delete',
         ],
         'role:ticket.client' => [
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',

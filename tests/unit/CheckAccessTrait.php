@@ -72,8 +72,8 @@ trait CheckAccessTrait
         $this->assertAccesses('role:client', [
             'restore-password', 'deposit',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
-            'domain.read', 'domain.update',
-            'domain.pay', 'domain.push', 'server.pay',
+            'domain.read', 'domain.update', 'domain.pay', 'domain.push',
+            'server.read', 'server.pay',
             'bill.read',
         ]);
     }
@@ -83,7 +83,8 @@ trait CheckAccessTrait
         $this->assertAccesses('role:support', [
             'support',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'domain.read', 'domain.update', 'domain.delete',
+            'domain.read', 'domain.update',
+            'server.read',
         ]);
     }
 
@@ -95,7 +96,7 @@ trait CheckAccessTrait
             'bill.read',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
-            'server.pay', 'server.sell',
+            'server.read', 'server.pay', 'server.sell',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate',
             'contact.force-verify',
@@ -123,7 +124,7 @@ trait CheckAccessTrait
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push',
-            'server.pay', 'server.sell',
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate', 'document.generate-all',
             'contact.force-verify',
@@ -135,7 +136,7 @@ trait CheckAccessTrait
 
     public function testDeny()
     {
-        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay', 'user:limited');
+        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read', 'user:limited');
 
         $this->assertAccesses('user:limited', [
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',

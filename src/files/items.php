@@ -21,8 +21,9 @@ return [
             'role:domain.client',
             'domain.pay',
             'domain.push',
-            'bill.read',
+            'role:server.client',
             'server.pay',
+            'bill.read',
         ],
     ],
     'role:support' => [
@@ -30,13 +31,15 @@ return [
         'children' => [
             'support',
             'role:ticket.manager',
-            'role:domain.manager',
+            'role:domain.client',
+            'role:server.client',
         ],
     ],
     'role:admin' => [
         'type' => 1,
         'children' => [
             'role:support',
+            'role:server.manager',
             'admin',
             'contact.force-verify',
         ],
@@ -47,6 +50,7 @@ return [
             'role:support',
             'role:document.manager',
             'role:stock.manager',
+            'role:domain.manager',
             'domain.pay',
             'domain.push',
             'manage',
@@ -107,6 +111,21 @@ return [
             'domain.unfreeze',
             'domain.push',
             'domain.force-push',
+        ],
+    ],
+    'role:server.client' => [
+        'type' => 1,
+        'children' => [
+            'server.read',
+        ],
+    ],
+    'role:server.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:server.client',
+            'server.create',
+            'server.update',
+            'server.delete',
         ],
     ],
     'role:ticket.client' => [
@@ -198,10 +217,10 @@ return [
     'domain.push' => [
         'type' => 2,
     ],
-    'bill.read' => [
+    'server.pay' => [
         'type' => 2,
     ],
-    'server.pay' => [
+    'bill.read' => [
         'type' => 2,
     ],
     'support' => [
@@ -250,6 +269,18 @@ return [
         'type' => 2,
     ],
     'domain.force-push' => [
+        'type' => 2,
+    ],
+    'server.read' => [
+        'type' => 2,
+    ],
+    'server.create' => [
+        'type' => 2,
+    ],
+    'server.update' => [
+        'type' => 2,
+    ],
+    'server.delete' => [
         'type' => 2,
     ],
     'ticket.read' => [
