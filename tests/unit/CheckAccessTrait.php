@@ -84,6 +84,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:support', [
             'support',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read',
             'domain.read', 'domain.update',
             'server.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
@@ -95,6 +96,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:admin', [
             'support', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read',
             'domain.read', 'domain.update',
             'server.read', 'server.create', 'server.update', 'server.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
@@ -106,6 +108,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:manager', [
             'support', 'manage',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
@@ -134,6 +137,7 @@ trait CheckAccessTrait
         $this->assertAccesses('user:mighty', [
             'support', 'manage', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',

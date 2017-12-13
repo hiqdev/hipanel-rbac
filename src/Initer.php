@@ -35,6 +35,7 @@ class Initer
         'role:support' => [
             'support',
             'role:ticket.manager',
+            'role:client.support',
             'role:domain.user',
             'role:server.user',
             'role:account.user',
@@ -47,6 +48,7 @@ class Initer
             'role:support', 'manage',
             'role:document.manager', 'role:stock.manager',
             'role:domain.manager', 'domain.pay', 'domain.push',
+            'role:client.manager',
             'bill.read',
             'server.pay', 'server.sell',
             'contact.force-verify',
@@ -92,18 +94,26 @@ class Initer
         'role:ticket.manager' => [
             'role:ticket.user', 'ticket.update', 'ticket.delete',
         ],
-        'role:bill.manager' => [
-            'bill.read', 'bill.create', 'bill.update', 'bill.delete',
+        'role:client.support' => [
+            'client.read',
+        ],
+        'role:client.manager' => [
+            'role:client.support', 'client.create', 'client.update', 'client.delete',
         ],
         'role:employee.manager' => [
             'employee.read', 'employee.create', 'employee.update', 'employee.delete',
         ],
+        'role:bill.manager' => [
+            'bill.read', 'bill.create', 'bill.update', 'bill.delete',
+        ],
         'role:stock.manager' => [
             'stock.read', 'stock.create', 'stock.update', 'stock.delete',
         ],
+        'role:document.user' => [
+            'document.read', 'document.create',
+        ],
         'role:document.manager' => [
-            'document.read', 'document.create', 'document.update', 'document.delete',
-            'document.manage', 'document.generate',
+            'role:document.user', 'document.update', 'document.delete', 'document.generate',
         ],
         'role:document.master' => [
             'document.generate-all',
