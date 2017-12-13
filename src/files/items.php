@@ -17,12 +17,13 @@ return [
         'type' => 1,
         'children' => [
             'role:unauthorized',
-            'role:ticket.client',
-            'role:domain.client',
+            'role:ticket.user',
+            'role:domain.user',
             'domain.pay',
             'domain.push',
-            'role:server.client',
+            'role:server.user',
             'server.pay',
+            'role:account.user',
             'bill.read',
         ],
     ],
@@ -31,8 +32,9 @@ return [
         'children' => [
             'support',
             'role:ticket.manager',
-            'role:domain.client',
-            'role:server.client',
+            'role:domain.user',
+            'role:server.user',
+            'role:account.user',
         ],
     ],
     'role:admin' => [
@@ -40,7 +42,7 @@ return [
         'children' => [
             'role:support',
             'admin',
-            'role:server.manager',
+            'role:server.admin',
         ],
     ],
     'role:manager' => [
@@ -88,7 +90,7 @@ return [
             'employee.read',
         ],
     ],
-    'role:domain.client' => [
+    'role:domain.user' => [
         'type' => 1,
         'children' => [
             'domain.read',
@@ -98,7 +100,7 @@ return [
     'role:domain.manager' => [
         'type' => 1,
         'children' => [
-            'role:domain.client',
+            'role:domain.user',
             'domain.delete',
         ],
     ],
@@ -112,22 +114,31 @@ return [
             'domain.force-push',
         ],
     ],
-    'role:server.client' => [
+    'role:account.user' => [
+        'type' => 1,
+        'children' => [
+            'account.read',
+            'account.create',
+            'account.update',
+            'account.delete',
+        ],
+    ],
+    'role:server.user' => [
         'type' => 1,
         'children' => [
             'server.read',
         ],
     ],
-    'role:server.manager' => [
+    'role:server.admin' => [
         'type' => 1,
         'children' => [
-            'role:server.client',
+            'role:server.user',
             'server.create',
             'server.update',
             'server.delete',
         ],
     ],
-    'role:ticket.client' => [
+    'role:ticket.user' => [
         'type' => 1,
         'children' => [
             'ticket.read',
@@ -139,7 +150,7 @@ return [
     'role:ticket.manager' => [
         'type' => 1,
         'children' => [
-            'role:ticket.client',
+            'role:ticket.user',
             'ticket.update',
             'ticket.delete',
         ],
@@ -268,6 +279,18 @@ return [
         'type' => 2,
     ],
     'domain.force-push' => [
+        'type' => 2,
+    ],
+    'account.read' => [
+        'type' => 2,
+    ],
+    'account.create' => [
+        'type' => 2,
+    ],
+    'account.update' => [
+        'type' => 2,
+    ],
+    'account.delete' => [
         'type' => 2,
     ],
     'server.read' => [

@@ -74,6 +74,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.update', 'domain.pay', 'domain.push',
             'server.read', 'server.pay',
+            'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read',
         ]);
     }
@@ -85,6 +86,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'domain.read', 'domain.update',
             'server.read',
+            'account.read', 'account.create', 'account.update', 'account.delete',
         ]);
     }
 
@@ -95,6 +97,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'domain.read', 'domain.update',
             'server.read', 'server.create', 'server.update', 'server.delete',
+            'account.read', 'account.create', 'account.update', 'account.delete',
         ]);
     }
 
@@ -107,6 +110,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'server.read', 'server.pay', 'server.sell',
+            'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate',
             'contact.force-verify',
@@ -135,6 +139,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push',
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
+            'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.manage', 'document.generate', 'document.generate-all',
             'contact.force-verify',
@@ -150,8 +155,9 @@ trait CheckAccessTrait
 
         $this->assertAccesses('user:limited', [
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
-            'domain.read', 'domain.update',
-            'restore-password', 'domain.pay', 'bill.read',
+            'domain.read', 'domain.update', 'domain.pay',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'restore-password', 'bill.read',
         ]);
     }
 
