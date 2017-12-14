@@ -194,10 +194,18 @@ return [
     'role:stock.manager' => [
         'type' => 1,
         'children' => [
-            'stock.read',
-            'stock.create',
-            'stock.update',
-            'stock.delete',
+            'part.read',
+            'part.create',
+            'part.update',
+            'part.delete',
+            'move.read',
+            'move.create',
+            'move.update',
+            'move.delete',
+            'model.read',
+            'model.create',
+            'model.update',
+            'model.delete',
         ],
     ],
     'role:document.user' => [
@@ -379,16 +387,40 @@ return [
     'bill.delete' => [
         'type' => 2,
     ],
-    'stock.read' => [
+    'part.read' => [
         'type' => 2,
     ],
-    'stock.create' => [
+    'part.create' => [
         'type' => 2,
     ],
-    'stock.update' => [
+    'part.update' => [
         'type' => 2,
     ],
-    'stock.delete' => [
+    'part.delete' => [
+        'type' => 2,
+    ],
+    'move.read' => [
+        'type' => 2,
+    ],
+    'move.create' => [
+        'type' => 2,
+    ],
+    'move.update' => [
+        'type' => 2,
+    ],
+    'move.delete' => [
+        'type' => 2,
+    ],
+    'model.read' => [
+        'type' => 2,
+    ],
+    'model.create' => [
+        'type' => 2,
+    ],
+    'model.update' => [
+        'type' => 2,
+    ],
+    'model.delete' => [
         'type' => 2,
     ],
     'document.read' => [

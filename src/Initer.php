@@ -107,7 +107,9 @@ class Initer
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
         ],
         'role:stock.manager' => [
-            'stock.read', 'stock.create', 'stock.update', 'stock.delete',
+            'part.read', 'part.create', 'part.update', 'part.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete',
+            'model.read', 'model.create', 'model.update', 'model.delete',
         ],
         'role:document.user' => [
             'document.read', 'document.create',

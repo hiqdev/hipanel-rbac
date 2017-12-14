@@ -117,7 +117,9 @@ trait CheckAccessTrait
             'document.read', 'document.create', 'document.update', 'document.delete', 'document.generate',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
-            'stock.read', 'stock.create', 'stock.update', 'stock.delete',
+            'part.read', 'part.create', 'part.update', 'part.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete',
+            'model.read', 'model.create', 'model.update', 'model.delete',
         ]);
     }
 
@@ -147,7 +149,9 @@ trait CheckAccessTrait
             'document.generate', 'document.generate-all',
             'contact.force-verify',
             'mailing.prepare', 'mailing.send',
-            'stock.read', 'stock.create', 'stock.update', 'stock.delete',
+            'part.read', 'part.create', 'part.update', 'part.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete',
+            'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',
         ]);
     }
