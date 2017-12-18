@@ -76,7 +76,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.update', 'certificate.pay', 'certificate.push',
             'server.read', 'server.pay',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read',
+            'bill.read', 'tariff.read',
         ]);
     }
 
@@ -90,6 +90,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.update',
             'server.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
+            'tariff.read',
         ]);
     }
 
@@ -103,6 +104,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.update',
             'server.read', 'server.create', 'server.update', 'server.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
+            'tariff.read',
         ]);
     }
 
@@ -113,6 +115,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read',
+            'tariff.read', 'tariff.create', 'tariff.update', 'tariff.delete',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'certificate.read', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
@@ -144,6 +147,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
+            'tariff.read', 'tariff.create', 'tariff.update', 'tariff.delete',
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push',
@@ -170,7 +174,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.pay',
             'certificate.read', 'certificate.update', 'certificate.pay', 'certificate.push',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'restore-password', 'bill.read',
+            'restore-password', 'bill.read', 'tariff.read',
         ]);
     }
 

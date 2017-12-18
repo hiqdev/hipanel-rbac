@@ -31,7 +31,7 @@ class Initer
             'role:certificate.user', 'certificate.pay', 'certificate.push',
             'role:server.user', 'server.pay',
             'role:account.user',
-            'bill.read',
+            'bill.read', 'tariff.read',
         ],
         'role:support' => [
             'access-subclients', 'support',
@@ -41,6 +41,7 @@ class Initer
             'role:certificate.user',
             'role:server.user',
             'role:account.user',
+            'tariff.read',
         ],
         'role:admin' => [
             'role:support', 'admin',
@@ -52,6 +53,7 @@ class Initer
             'role:domain.manager', 'domain.pay', 'domain.push',
             'role:certificate.manager', 'certificate.pay', 'certificate.push',
             'role:client.manager',
+            'role:tariff.manager',
             'bill.read',
             'server.pay', 'server.sell',
             'contact.force-verify',
@@ -114,6 +116,9 @@ class Initer
         ],
         'role:bill.manager' => [
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
+        ],
+        'role:tariff.manager' => [
+            'tariff.read', 'tariff.create', 'tariff.update', 'tariff.delete',
         ],
         'role:stock.manager' => [
             'part.read', 'part.create', 'part.update', 'part.delete',
