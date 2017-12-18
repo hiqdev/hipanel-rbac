@@ -21,6 +21,9 @@ return [
             'role:domain.user',
             'domain.pay',
             'domain.push',
+            'role:certificate.user',
+            'certificate.pay',
+            'certificate.push',
             'role:server.user',
             'server.pay',
             'role:account.user',
@@ -35,6 +38,7 @@ return [
             'role:ticket.manager',
             'role:client.support',
             'role:domain.user',
+            'role:certificate.user',
             'role:server.user',
             'role:account.user',
         ],
@@ -57,6 +61,9 @@ return [
             'role:domain.manager',
             'domain.pay',
             'domain.push',
+            'role:certificate.manager',
+            'certificate.pay',
+            'certificate.push',
             'role:client.manager',
             'bill.read',
             'server.pay',
@@ -115,6 +122,20 @@ return [
             'domain.unfreeze',
             'domain.push',
             'domain.force-push',
+        ],
+    ],
+    'role:certificate.user' => [
+        'type' => 1,
+        'children' => [
+            'certificate.read',
+            'certificate.update',
+        ],
+    ],
+    'role:certificate.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:certificate.user',
+            'certificate.delete',
         ],
     ],
     'role:account.user' => [
@@ -258,6 +279,12 @@ return [
     'domain.push' => [
         'type' => 2,
     ],
+    'certificate.pay' => [
+        'type' => 2,
+    ],
+    'certificate.push' => [
+        'type' => 2,
+    ],
     'server.pay' => [
         'type' => 2,
     ],
@@ -313,6 +340,15 @@ return [
         'type' => 2,
     ],
     'domain.force-push' => [
+        'type' => 2,
+    ],
+    'certificate.read' => [
+        'type' => 2,
+    ],
+    'certificate.update' => [
+        'type' => 2,
+    ],
+    'certificate.delete' => [
         'type' => 2,
     ],
     'account.read' => [

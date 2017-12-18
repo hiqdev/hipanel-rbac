@@ -28,6 +28,7 @@ class Initer
             'role:unauthorized',
             'role:ticket.user',
             'role:domain.user', 'domain.pay', 'domain.push',
+            'role:certificate.user', 'certificate.pay', 'certificate.push',
             'role:server.user', 'server.pay',
             'role:account.user',
             'bill.read',
@@ -37,6 +38,7 @@ class Initer
             'role:ticket.manager',
             'role:client.support',
             'role:domain.user',
+            'role:certificate.user',
             'role:server.user',
             'role:account.user',
         ],
@@ -48,6 +50,7 @@ class Initer
             'role:support', 'manage',
             'role:document.manager', 'role:stock.manager',
             'role:domain.manager', 'domain.pay', 'domain.push',
+            'role:certificate.manager', 'certificate.pay', 'certificate.push',
             'role:client.manager',
             'bill.read',
             'server.pay', 'server.sell',
@@ -78,6 +81,12 @@ class Initer
             'role:domain.manager',
             'domain.freeze', 'domain.unfreeze',
             'domain.push', 'domain.force-push',
+        ],
+        'role:certificate.user' => [
+            'certificate.read', 'certificate.update',
+        ],
+        'role:certificate.manager' => [
+            'role:certificate.user', 'certificate.delete',
         ],
         'role:account.user' => [
             'account.read', 'account.create', 'account.update', 'account.delete',

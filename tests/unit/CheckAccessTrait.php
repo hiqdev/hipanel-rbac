@@ -73,6 +73,7 @@ trait CheckAccessTrait
             'restore-password', 'deposit',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.update', 'domain.pay', 'domain.push',
+            'certificate.read', 'certificate.update', 'certificate.pay', 'certificate.push',
             'server.read', 'server.pay',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read',
@@ -86,6 +87,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read',
             'domain.read', 'domain.update',
+            'certificate.read', 'certificate.update',
             'server.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
         ]);
@@ -98,6 +100,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read',
             'domain.read', 'domain.update',
+            'certificate.read', 'certificate.update',
             'server.read', 'server.create', 'server.update', 'server.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
         ]);
@@ -112,6 +115,7 @@ trait CheckAccessTrait
             'bill.read',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
+            'certificate.read', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'server.read', 'server.pay', 'server.sell',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete', 'document.generate',
@@ -143,6 +147,7 @@ trait CheckAccessTrait
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push',
+            'certificate.read', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -163,6 +168,7 @@ trait CheckAccessTrait
         $this->assertAccesses('user:limited', [
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.update', 'domain.pay',
+            'certificate.read', 'certificate.update', 'certificate.pay', 'certificate.push',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'restore-password', 'bill.read',
         ]);
