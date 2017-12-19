@@ -85,7 +85,7 @@ class Initer
             'domain.push', 'domain.force-push',
         ],
         'role:certificate.user' => [
-            'certificate.read', 'certificate.update',
+            'certificate.read', 'certificate.create', 'certificate.update',
         ],
         'role:certificate.manager' => [
             'role:certificate.user', 'certificate.delete',

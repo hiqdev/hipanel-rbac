@@ -131,6 +131,7 @@ return [
         'type' => 1,
         'children' => [
             'certificate.read',
+            'certificate.create',
             'certificate.update',
         ],
     ],
@@ -358,6 +359,9 @@ return [
         'type' => 2,
     ],
     'certificate.read' => [
+        'type' => 2,
+    ],
+    'certificate.create' => [
         'type' => 2,
     ],
     'certificate.update' => [
