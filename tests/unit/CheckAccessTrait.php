@@ -165,7 +165,7 @@ trait CheckAccessTrait
         ]);
     }
 
-    public function testDeny()
+    public function testLimited()
     {
         $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read', 'user:limited');
 
