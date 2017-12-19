@@ -76,7 +76,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
             'server.read', 'server.pay',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'tariff.read',
+            'bill.read', 'plan.read',
         ]);
     }
 
@@ -90,7 +90,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update',
             'server.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'tariff.read',
+            'plan.read',
         ]);
     }
 
@@ -104,7 +104,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update',
             'server.read', 'server.create', 'server.update', 'server.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'tariff.read',
+            'plan.read',
         ]);
     }
 
@@ -115,7 +115,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read',
-            'tariff.read', 'tariff.create', 'tariff.update', 'tariff.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
@@ -147,7 +147,7 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
-            'tariff.read', 'tariff.create', 'tariff.update', 'tariff.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete',
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push',
@@ -174,7 +174,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.pay',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'restore-password', 'bill.read', 'tariff.read',
+            'restore-password', 'bill.read', 'plan.read',
         ]);
     }
 

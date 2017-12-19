@@ -28,7 +28,7 @@ return [
             'server.pay',
             'role:account.user',
             'bill.read',
-            'tariff.read',
+            'plan.read',
         ],
     ],
     'role:support' => [
@@ -42,7 +42,7 @@ return [
             'role:certificate.user',
             'role:server.user',
             'role:account.user',
-            'tariff.read',
+            'plan.read',
         ],
     ],
     'role:admin' => [
@@ -67,7 +67,7 @@ return [
             'certificate.pay',
             'certificate.push',
             'role:client.manager',
-            'role:tariff.manager',
+            'role:plan.manager',
             'bill.read',
             'server.pay',
             'server.sell',
@@ -216,13 +216,13 @@ return [
             'bill.delete',
         ],
     ],
-    'role:tariff.manager' => [
+    'role:plan.manager' => [
         'type' => 1,
         'children' => [
-            'tariff.read',
-            'tariff.create',
-            'tariff.update',
-            'tariff.delete',
+            'plan.read',
+            'plan.create',
+            'plan.update',
+            'plan.delete',
         ],
     ],
     'role:stock.manager' => [
@@ -304,7 +304,7 @@ return [
     'bill.read' => [
         'type' => 2,
     ],
-    'tariff.read' => [
+    'plan.read' => [
         'type' => 2,
     ],
     'access-subclients' => [
@@ -442,13 +442,13 @@ return [
     'bill.delete' => [
         'type' => 2,
     ],
-    'tariff.create' => [
+    'plan.create' => [
         'type' => 2,
     ],
-    'tariff.update' => [
+    'plan.update' => [
         'type' => 2,
     ],
-    'tariff.delete' => [
+    'plan.delete' => [
         'type' => 2,
     ],
     'part.read' => [
