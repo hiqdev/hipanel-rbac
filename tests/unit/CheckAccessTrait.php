@@ -130,6 +130,28 @@ trait CheckAccessTrait
         ]);
     }
 
+    public function testReseller()
+    {
+        $this->assertAccesses('role:reseller', [
+            'deposit', 'have-goods',
+            'access-subclients', 'support', 'manage', 'resell',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete',
+            'bill.read', 'bill.create', 'bill.update', 'bill.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+            'domain.read', 'domain.update', 'domain.delete', 'domain.pay', 'domain.push',
+            'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
+            'server.read', 'server.pay', 'server.sell',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'document.read', 'document.create', 'document.update', 'document.delete', 'document.generate',
+            'contact.force-verify',
+            'mailing.prepare', 'mailing.send',
+            'part.read', 'part.create', 'part.update', 'part.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete',
+            'model.read', 'model.create', 'model.update', 'model.delete',
+        ]);
+    }
+
     public function testEmployee()
     {
         $this->assertAccesses('role:employee', [
