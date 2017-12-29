@@ -70,7 +70,7 @@ trait CheckAccessTrait
     public function testClient()
     {
         $this->assertAccesses('role:client', [
-            'restore-password', 'deposit',
+            'restore-password', 'deposit', 'have-goods',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.update', 'domain.pay', 'domain.push',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
@@ -170,6 +170,7 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read', 'user:limited');
 
         $this->assertAccesses('user:limited', [
+            'have-goods',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.update', 'domain.pay',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',

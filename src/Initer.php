@@ -13,6 +13,10 @@ namespace hipanel\rbac;
 /**
  * Initer for AuthManager.
  *
+ * Non-obvious permissions:
+ * - have-goods - permission to have anything, inherent to clients and resellers only.
+ *   Serfvice staff (supports, managers) can't have anything.
+ *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
 class Initer
@@ -25,7 +29,7 @@ class Initer
             'restore-password', 'deposit',
         ],
         'role:client' => [
-            'role:unauthorized',
+            'role:unauthorized', 'have-goods',
             'role:ticket.user',
             'role:domain.user', 'domain.pay', 'domain.push',
             'role:certificate.user', 'certificate.pay', 'certificate.push',
@@ -60,9 +64,9 @@ class Initer
             'mailing.prepare', 'mailing.send',
         ],
         'role:reseller' => [
+            'have-goods', 'deposit',
             'role:manager', 'role:bill.manager',
             'resell',
-            'deposit',
         ],
         'role:owner' => [
             'role:manager', 'role:bill.manager',

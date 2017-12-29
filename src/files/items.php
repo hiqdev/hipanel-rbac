@@ -17,6 +17,7 @@ return [
         'type' => 1,
         'children' => [
             'role:unauthorized',
+            'have-goods',
             'role:ticket.user',
             'role:domain.user',
             'domain.pay',
@@ -79,10 +80,11 @@ return [
     'role:reseller' => [
         'type' => 1,
         'children' => [
+            'have-goods',
+            'deposit',
             'role:manager',
             'role:bill.manager',
             'resell',
-            'deposit',
         ],
     ],
     'role:owner' => [
@@ -284,6 +286,9 @@ return [
         'type' => 2,
     ],
     'deposit' => [
+        'type' => 2,
+    ],
+    'have-goods' => [
         'type' => 2,
     ],
     'domain.pay' => [
