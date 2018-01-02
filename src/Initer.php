@@ -34,6 +34,7 @@ class Initer
             'role:domain.user', 'domain.pay', 'domain.push',
             'role:certificate.user', 'certificate.pay', 'certificate.push',
             'role:contact.user',
+            'client.read',
             'role:server.user', 'server.pay',
             'role:account.user',
             'bill.read', 'plan.read',

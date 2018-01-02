@@ -26,6 +26,7 @@ return [
             'certificate.pay',
             'certificate.push',
             'role:contact.user',
+            'client.read',
             'role:server.user',
             'server.pay',
             'role:account.user',
@@ -316,6 +317,9 @@ return [
     'certificate.push' => [
         'type' => 2,
     ],
+    'client.read' => [
+        'type' => 2,
+    ],
     'server.pay' => [
         'type' => 2,
     ],
@@ -440,9 +444,6 @@ return [
         'type' => 2,
     ],
     'ticket.delete' => [
-        'type' => 2,
-    ],
-    'client.read' => [
         'type' => 2,
     ],
     'client.create' => [
