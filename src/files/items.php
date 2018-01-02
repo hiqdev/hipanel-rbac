@@ -25,6 +25,7 @@ return [
             'role:certificate.user',
             'certificate.pay',
             'certificate.push',
+            'role:contact.user',
             'role:server.user',
             'server.pay',
             'role:account.user',
@@ -41,6 +42,7 @@ return [
             'role:client.support',
             'role:domain.user',
             'role:certificate.user',
+            'contact.read',
             'role:server.user',
             'role:account.user',
             'plan.read',
@@ -67,12 +69,13 @@ return [
             'role:certificate.manager',
             'certificate.pay',
             'certificate.push',
+            'role:contact.user',
+            'contact.force-verify',
             'role:client.manager',
             'role:plan.manager',
             'bill.read',
             'server.pay',
             'server.sell',
-            'contact.force-verify',
             'mailing.prepare',
             'mailing.send',
         ],
@@ -101,6 +104,7 @@ return [
         'children' => [
             'restore-password',
             'deposit',
+            'role:contact.user',
             'bill.read',
             'employee.read',
         ],
@@ -142,6 +146,15 @@ return [
         'children' => [
             'role:certificate.user',
             'certificate.delete',
+        ],
+    ],
+    'role:contact.user' => [
+        'type' => 1,
+        'children' => [
+            'contact.read',
+            'contact.create',
+            'contact.update',
+            'contact.delete',
         ],
     ],
     'role:account.user' => [
@@ -318,16 +331,19 @@ return [
     'support' => [
         'type' => 2,
     ],
+    'contact.read' => [
+        'type' => 2,
+    ],
     'admin' => [
         'type' => 2,
     ],
     'manage' => [
         'type' => 2,
     ],
-    'server.sell' => [
+    'contact.force-verify' => [
         'type' => 2,
     ],
-    'contact.force-verify' => [
+    'server.sell' => [
         'type' => 2,
     ],
     'mailing.prepare' => [
@@ -373,6 +389,15 @@ return [
         'type' => 2,
     ],
     'certificate.delete' => [
+        'type' => 2,
+    ],
+    'contact.create' => [
+        'type' => 2,
+    ],
+    'contact.update' => [
+        'type' => 2,
+    ],
+    'contact.delete' => [
         'type' => 2,
     ],
     'account.read' => [

@@ -33,6 +33,7 @@ class Initer
             'role:ticket.user',
             'role:domain.user', 'domain.pay', 'domain.push',
             'role:certificate.user', 'certificate.pay', 'certificate.push',
+            'role:contact.user',
             'role:server.user', 'server.pay',
             'role:account.user',
             'bill.read', 'plan.read',
@@ -43,6 +44,7 @@ class Initer
             'role:client.support',
             'role:domain.user',
             'role:certificate.user',
+            'contact.read',
             'role:server.user',
             'role:account.user',
             'plan.read',
@@ -56,11 +58,11 @@ class Initer
             'role:document.manager', 'role:stock.manager',
             'role:domain.manager', 'domain.pay', 'domain.push',
             'role:certificate.manager', 'certificate.pay', 'certificate.push',
+            'role:contact.user', 'contact.force-verify',
             'role:client.manager',
             'role:plan.manager',
             'bill.read',
             'server.pay', 'server.sell',
-            'contact.force-verify',
             'mailing.prepare', 'mailing.send',
         ],
         'role:reseller' => [
@@ -74,6 +76,7 @@ class Initer
         ],
         'role:employee' => [
             'restore-password', 'deposit',
+            'role:contact.user',
             'bill.read', 'employee.read',
         ],
         /// SUBROLES
@@ -93,6 +96,9 @@ class Initer
         ],
         'role:certificate.manager' => [
             'role:certificate.user', 'certificate.delete',
+        ],
+        'role:contact.user' => [
+            'contact.read', 'contact.create', 'contact.update', 'contact.delete',
         ],
         'role:account.user' => [
             'account.read', 'account.create', 'account.update', 'account.delete',
