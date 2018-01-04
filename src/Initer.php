@@ -125,6 +125,9 @@ class Initer
         'role:employee.manager' => [
             'employee.read', 'employee.create', 'employee.update', 'employee.delete',
         ],
+        'role:client.impersonator' => [
+            'client.impersonate'
+        ],
         'role:bill.manager' => [
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
         ],
