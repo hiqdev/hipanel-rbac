@@ -223,6 +223,12 @@ return [
             'employee.delete',
         ],
     ],
+    'role:client.impersonator' => [
+        'type' => 1,
+        'children' => [
+            'client.impersonate',
+        ],
+    ],
     'role:bill.manager' => [
         'type' => 1,
         'children' => [
@@ -462,6 +468,9 @@ return [
         'type' => 2,
     ],
     'employee.delete' => [
+        'type' => 2,
+    ],
+    'client.impersonate' => [
         'type' => 2,
     ],
     'bill.create' => [
