@@ -107,6 +107,7 @@ return [
             'deposit',
             'role:contact.user',
             'bill.read',
+            'client.read',
             'employee.read',
         ],
     ],

@@ -78,7 +78,7 @@ class Initer
         'role:employee' => [
             'restore-password', 'deposit',
             'role:contact.user',
-            'bill.read', 'employee.read',
+            'bill.read', 'client.read', 'employee.read',
         ],
         /// SUBROLES
         'role:domain.user' => [
