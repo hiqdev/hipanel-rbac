@@ -14,4 +14,9 @@ return [
             'class' => \hipanel\rbac\AuthManager::class,
         ],
     ],
+    'container' => [
+        'definitions' => [
+            \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
+        ]
+    ],
 ];

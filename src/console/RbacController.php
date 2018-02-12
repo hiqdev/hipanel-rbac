@@ -10,7 +10,8 @@
 
 namespace hipanel\rbac\console;
 
-use hipanel\rbac\Initer;
+use hipanel\rbac\RbacIniterInterface;
+use yii\base\Module;
 use Yii;
 
 /**
@@ -20,18 +21,30 @@ use Yii;
  */
 class RbacController extends \yii\console\Controller
 {
+    /**
+     * @var RbacIniterInterface
+     */
+    protected $initer;
+
+    public function __construct($id, Module $module, RbacIniterInterface $initer, $config = [])
+    {
+        parent::__construct($id, $module, $config);
+
+        $this->initer = $initer;
+    }
+
     public $defaultAction = 'show';
 
     public function actionInit()
     {
         $auth = Yii::$app->get('authManager');
-        Initer::init($auth);
+        $this->initer->init($auth);
     }
 
     public function actionReinit()
     {
         $auth = Yii::$app->get('authManager');
-        Initer::reinit($auth);
+        $this->initer->reinit($auth);
     }
 
     public function actionShow()

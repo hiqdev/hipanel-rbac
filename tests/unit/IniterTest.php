@@ -32,7 +32,7 @@ class IniterTest extends \PHPUnit\Framework\TestCase
     {
         $this->auth = Yii::createObject(AuthManager::class);
 
-        Initer::reinit($this->auth);
+        (new Initer)->reinit($this->auth);
         $this->setAssignments();
     }
 }
