@@ -11,7 +11,7 @@
 namespace hipanel\rbac;
 
 use Yii;
-use yii\base\InvalidParamException;
+use yii\base\InvalidConfigException;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
 
@@ -68,14 +68,14 @@ trait SetterTrait
             $name   = $parent;
             $parent = $this->getItem($parent);
             if (is_null($parent)) {
-                throw new InvalidParamException("Unknown parent:$name at setChild");
+                throw new InvalidConfigException("Unknown parent:$name at setChild");
             }
         }
         if (is_string($child)) {
             $name  = $child;
             $child = $this->getItem($child);
             if (is_null($child)) {
-                throw new InvalidParamException("Unknown child:$name at setChild");
+                throw new InvalidConfigException("Unknown child:$name at setChild");
             }
         }
         if (isset($this->children[$parent->name][$child->name])) {
@@ -98,7 +98,7 @@ trait SetterTrait
             if (is_string($item)) {
                 $item = $this->findItem($item);
             }
-        } catch (InvalidParamException $e) {
+        } catch (InvalidConfigException $e) {
             Yii::warning('Role or permission "' . $item . '" does not exist');
 
             return null;
@@ -121,7 +121,7 @@ trait SetterTrait
             return $this->setPermission($name, $description);
         }
 
-        throw new InvalidParamException("Unknown item:$name at findItem");
+        throw new InvalidConfigException("Unknown item:$name at findItem");
     }
 
     /**
