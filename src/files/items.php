@@ -27,7 +27,7 @@ return [
             'certificate.push',
             'role:contact.user',
             'client.read',
-            'document.read',
+            'role:document.user',
             'role:server.user',
             'server.pay',
             'role:account.user',
