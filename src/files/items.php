@@ -304,253 +304,505 @@ return [
     'nothing' => [
         'type' => 2,
     ],
+    'deny:nothing' => [
+        'type' => 2,
+    ],
     'restore-password' => [
+        'type' => 2,
+    ],
+    'deny:restore-password' => [
         'type' => 2,
     ],
     'deposit' => [
         'type' => 2,
     ],
+    'deny:deposit' => [
+        'type' => 2,
+    ],
     'have-goods' => [
+        'type' => 2,
+    ],
+    'deny:have-goods' => [
         'type' => 2,
     ],
     'domain.pay' => [
         'type' => 2,
     ],
+    'deny:domain.pay' => [
+        'type' => 2,
+    ],
     'domain.push' => [
+        'type' => 2,
+    ],
+    'deny:domain.push' => [
         'type' => 2,
     ],
     'certificate.pay' => [
         'type' => 2,
     ],
+    'deny:certificate.pay' => [
+        'type' => 2,
+    ],
     'certificate.push' => [
+        'type' => 2,
+    ],
+    'deny:certificate.push' => [
         'type' => 2,
     ],
     'client.read' => [
         'type' => 2,
     ],
+    'deny:client.read' => [
+        'type' => 2,
+    ],
     'server.pay' => [
+        'type' => 2,
+    ],
+    'deny:server.pay' => [
         'type' => 2,
     ],
     'bill.read' => [
         'type' => 2,
     ],
+    'deny:bill.read' => [
+        'type' => 2,
+    ],
     'plan.read' => [
+        'type' => 2,
+    ],
+    'deny:plan.read' => [
         'type' => 2,
     ],
     'access-subclients' => [
         'type' => 2,
     ],
+    'deny:access-subclients' => [
+        'type' => 2,
+    ],
     'support' => [
+        'type' => 2,
+    ],
+    'deny:support' => [
         'type' => 2,
     ],
     'contact.read' => [
         'type' => 2,
     ],
+    'deny:contact.read' => [
+        'type' => 2,
+    ],
     'admin' => [
+        'type' => 2,
+    ],
+    'deny:admin' => [
         'type' => 2,
     ],
     'manage' => [
         'type' => 2,
     ],
+    'deny:manage' => [
+        'type' => 2,
+    ],
     'contact.force-verify' => [
+        'type' => 2,
+    ],
+    'deny:contact.force-verify' => [
         'type' => 2,
     ],
     'server.sell' => [
         'type' => 2,
     ],
+    'deny:server.sell' => [
+        'type' => 2,
+    ],
     'mailing.prepare' => [
+        'type' => 2,
+    ],
+    'deny:mailing.prepare' => [
         'type' => 2,
     ],
     'mailing.send' => [
         'type' => 2,
     ],
+    'deny:mailing.send' => [
+        'type' => 2,
+    ],
     'resell' => [
+        'type' => 2,
+    ],
+    'deny:resell' => [
         'type' => 2,
     ],
     'own' => [
         'type' => 2,
     ],
+    'deny:own' => [
+        'type' => 2,
+    ],
     'employee.read' => [
+        'type' => 2,
+    ],
+    'deny:employee.read' => [
         'type' => 2,
     ],
     'domain.read' => [
         'type' => 2,
     ],
+    'deny:domain.read' => [
+        'type' => 2,
+    ],
     'domain.update' => [
+        'type' => 2,
+    ],
+    'deny:domain.update' => [
         'type' => 2,
     ],
     'domain.delete' => [
         'type' => 2,
     ],
+    'deny:domain.delete' => [
+        'type' => 2,
+    ],
     'domain.freeze' => [
+        'type' => 2,
+    ],
+    'deny:domain.freeze' => [
         'type' => 2,
     ],
     'domain.unfreeze' => [
         'type' => 2,
     ],
+    'deny:domain.unfreeze' => [
+        'type' => 2,
+    ],
     'domain.force-push' => [
+        'type' => 2,
+    ],
+    'deny:domain.force-push' => [
         'type' => 2,
     ],
     'certificate.read' => [
         'type' => 2,
     ],
+    'deny:certificate.read' => [
+        'type' => 2,
+    ],
     'certificate.create' => [
+        'type' => 2,
+    ],
+    'deny:certificate.create' => [
         'type' => 2,
     ],
     'certificate.update' => [
         'type' => 2,
     ],
+    'deny:certificate.update' => [
+        'type' => 2,
+    ],
     'certificate.delete' => [
+        'type' => 2,
+    ],
+    'deny:certificate.delete' => [
         'type' => 2,
     ],
     'contact.create' => [
         'type' => 2,
     ],
+    'deny:contact.create' => [
+        'type' => 2,
+    ],
     'contact.update' => [
+        'type' => 2,
+    ],
+    'deny:contact.update' => [
         'type' => 2,
     ],
     'contact.delete' => [
         'type' => 2,
     ],
+    'deny:contact.delete' => [
+        'type' => 2,
+    ],
     'account.read' => [
+        'type' => 2,
+    ],
+    'deny:account.read' => [
         'type' => 2,
     ],
     'account.create' => [
         'type' => 2,
     ],
+    'deny:account.create' => [
+        'type' => 2,
+    ],
     'account.update' => [
+        'type' => 2,
+    ],
+    'deny:account.update' => [
         'type' => 2,
     ],
     'account.delete' => [
         'type' => 2,
     ],
+    'deny:account.delete' => [
+        'type' => 2,
+    ],
     'server.read' => [
+        'type' => 2,
+    ],
+    'deny:server.read' => [
         'type' => 2,
     ],
     'server.create' => [
         'type' => 2,
     ],
+    'deny:server.create' => [
+        'type' => 2,
+    ],
     'server.update' => [
+        'type' => 2,
+    ],
+    'deny:server.update' => [
         'type' => 2,
     ],
     'server.delete' => [
         'type' => 2,
     ],
+    'deny:server.delete' => [
+        'type' => 2,
+    ],
     'ticket.read' => [
+        'type' => 2,
+    ],
+    'deny:ticket.read' => [
         'type' => 2,
     ],
     'ticket.create' => [
         'type' => 2,
     ],
+    'deny:ticket.create' => [
+        'type' => 2,
+    ],
     'ticket.answer' => [
+        'type' => 2,
+    ],
+    'deny:ticket.answer' => [
         'type' => 2,
     ],
     'ticket.close' => [
         'type' => 2,
     ],
+    'deny:ticket.close' => [
+        'type' => 2,
+    ],
     'ticket.update' => [
+        'type' => 2,
+    ],
+    'deny:ticket.update' => [
         'type' => 2,
     ],
     'ticket.delete' => [
         'type' => 2,
     ],
+    'deny:ticket.delete' => [
+        'type' => 2,
+    ],
     'client.create' => [
+        'type' => 2,
+    ],
+    'deny:client.create' => [
         'type' => 2,
     ],
     'client.update' => [
         'type' => 2,
     ],
+    'deny:client.update' => [
+        'type' => 2,
+    ],
     'client.delete' => [
+        'type' => 2,
+    ],
+    'deny:client.delete' => [
         'type' => 2,
     ],
     'employee.create' => [
         'type' => 2,
     ],
+    'deny:employee.create' => [
+        'type' => 2,
+    ],
     'employee.update' => [
+        'type' => 2,
+    ],
+    'deny:employee.update' => [
         'type' => 2,
     ],
     'employee.delete' => [
         'type' => 2,
     ],
+    'deny:employee.delete' => [
+        'type' => 2,
+    ],
     'client.impersonate' => [
+        'type' => 2,
+    ],
+    'deny:client.impersonate' => [
         'type' => 2,
     ],
     'bill.create' => [
         'type' => 2,
     ],
+    'deny:bill.create' => [
+        'type' => 2,
+    ],
     'bill.update' => [
+        'type' => 2,
+    ],
+    'deny:bill.update' => [
         'type' => 2,
     ],
     'bill.delete' => [
         'type' => 2,
     ],
+    'deny:bill.delete' => [
+        'type' => 2,
+    ],
     'plan.create' => [
+        'type' => 2,
+    ],
+    'deny:plan.create' => [
         'type' => 2,
     ],
     'plan.update' => [
         'type' => 2,
     ],
+    'deny:plan.update' => [
+        'type' => 2,
+    ],
     'plan.delete' => [
+        'type' => 2,
+    ],
+    'deny:plan.delete' => [
         'type' => 2,
     ],
     'part.read' => [
         'type' => 2,
     ],
+    'deny:part.read' => [
+        'type' => 2,
+    ],
     'part.create' => [
+        'type' => 2,
+    ],
+    'deny:part.create' => [
         'type' => 2,
     ],
     'part.update' => [
         'type' => 2,
     ],
+    'deny:part.update' => [
+        'type' => 2,
+    ],
     'part.delete' => [
+        'type' => 2,
+    ],
+    'deny:part.delete' => [
         'type' => 2,
     ],
     'move.read' => [
         'type' => 2,
     ],
+    'deny:move.read' => [
+        'type' => 2,
+    ],
     'move.create' => [
+        'type' => 2,
+    ],
+    'deny:move.create' => [
         'type' => 2,
     ],
     'move.update' => [
         'type' => 2,
     ],
+    'deny:move.update' => [
+        'type' => 2,
+    ],
     'move.delete' => [
+        'type' => 2,
+    ],
+    'deny:move.delete' => [
         'type' => 2,
     ],
     'model.read' => [
         'type' => 2,
     ],
+    'deny:model.read' => [
+        'type' => 2,
+    ],
     'model.create' => [
+        'type' => 2,
+    ],
+    'deny:model.create' => [
         'type' => 2,
     ],
     'model.update' => [
         'type' => 2,
     ],
+    'deny:model.update' => [
+        'type' => 2,
+    ],
     'model.delete' => [
+        'type' => 2,
+    ],
+    'deny:model.delete' => [
         'type' => 2,
     ],
     'document.read' => [
         'type' => 2,
     ],
+    'deny:document.read' => [
+        'type' => 2,
+    ],
     'document.create' => [
+        'type' => 2,
+    ],
+    'deny:document.create' => [
         'type' => 2,
     ],
     'document.update' => [
         'type' => 2,
     ],
+    'deny:document.update' => [
+        'type' => 2,
+    ],
     'document.delete' => [
+        'type' => 2,
+    ],
+    'deny:document.delete' => [
         'type' => 2,
     ],
     'document.generate' => [
         'type' => 2,
     ],
+    'deny:document.generate' => [
+        'type' => 2,
+    ],
     'document.generate-all' => [
+        'type' => 2,
+    ],
+    'deny:document.generate-all' => [
         'type' => 2,
     ],
     'test.beta' => [
         'type' => 2,
     ],
+    'deny:test.beta' => [
+        'type' => 2,
+    ],
     'test.alpha' => [
+        'type' => 2,
+    ],
+    'deny:test.alpha' => [
         'type' => 2,
     ],
 ];

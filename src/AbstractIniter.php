@@ -40,6 +40,7 @@ abstract class AbstractIniter implements RbacIniterInterface
                 $item = $auth->getItem($name);
                 if ($item === null) {
                     $item = $auth->setPermission($name);
+                    $auth->setPermission("deny:$name");
                 }
                 $auth->setChild($role, $item);
             }
