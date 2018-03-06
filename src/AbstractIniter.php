@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac;
@@ -18,7 +18,7 @@ namespace hipanel\rbac;
 abstract class AbstractIniter implements RbacIniterInterface
 {
     /**
-     * Provides a tree of permissions to be set in AuthManager
+     * Provides a tree of permissions to be set in AuthManager.
      *
      * @return array where:
      * - key: role name

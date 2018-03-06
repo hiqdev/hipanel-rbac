@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac;
@@ -128,7 +128,7 @@ class Initer extends AbstractIniter
                 'employee.read', 'employee.create', 'employee.update', 'employee.delete',
             ],
             'role:client.impersonator' => [
-                'client.impersonate'
+                'client.impersonate',
             ],
             'role:bill.manager' => [
                 'bill.read', 'bill.create', 'bill.update', 'bill.delete',

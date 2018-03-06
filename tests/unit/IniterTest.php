@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2017, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac\tests\unit;
@@ -32,7 +32,7 @@ class IniterTest extends \PHPUnit\Framework\TestCase
     {
         $this->auth = Yii::createObject(AuthManager::class);
 
-        (new Initer)->reinit($this->auth);
+        (new Initer())->reinit($this->auth);
         $this->setAssignments();
     }
 }
