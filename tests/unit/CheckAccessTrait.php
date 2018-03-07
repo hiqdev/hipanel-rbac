@@ -109,6 +109,9 @@ trait CheckAccessTrait
             'server.read', 'server.create', 'server.update', 'server.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'plan.read',
+            'part.read', 'part.create', 'part.update', 'part.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete',
+            'model.read', 'model.create', 'model.update', 'model.delete',
         ]);
     }
 

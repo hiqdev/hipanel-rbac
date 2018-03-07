@@ -55,6 +55,7 @@ return [
         'children' => [
             'role:support',
             'admin',
+            'role:stock.manager',
             'role:server.admin',
         ],
     ],

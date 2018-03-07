@@ -54,6 +54,7 @@ class Initer extends AbstractIniter
             ],
             'role:admin' => [
                 'role:support', 'admin',
+                'role:stock.manager',
                 'role:server.admin',
             ],
             'role:manager' => [
