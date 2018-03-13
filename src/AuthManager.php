@@ -58,7 +58,7 @@ class AuthManager extends \yii\rbac\PhpManager
 
         if (isset(Yii::$app->user)) {
             $user = Yii::$app->user->identity;
-            if (!$user || $user->id !== $userId) {
+            if ((!$user || $user->id !== $userId) && $userId) {
                 $user = call_user_func([Yii::$app->user->identityClass, 'findIdentity'], $userId);
             }
             if (isset($user->roles)) {
