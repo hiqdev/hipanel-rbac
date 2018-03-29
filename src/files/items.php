@@ -281,6 +281,8 @@ return [
             'document.update',
             'document.delete',
             'document.generate',
+            'document.acceptance',
+            'document.invoice',
         ],
     ],
     'role:document.master' => [
@@ -786,6 +788,18 @@ return [
         'type' => 2,
     ],
     'deny:document.generate' => [
+        'type' => 2,
+    ],
+    'document.acceptance' => [
+        'type' => 2,
+    ],
+    'deny:document.acceptance' => [
+        'type' => 2,
+    ],
+    'document.invoice' => [
+        'type' => 2,
+    ],
+    'deny:document.invoice' => [
         'type' => 2,
     ],
     'document.generate-all' => [

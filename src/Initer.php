@@ -146,7 +146,8 @@ class Initer extends AbstractIniter
                 'document.read', 'document.create',
             ],
             'role:document.manager' => [
-                'role:document.user', 'document.update', 'document.delete', 'document.generate',
+                'role:document.user', 'document.update', 'document.delete',
+                'document.generate', 'document.acceptance', 'document.invoice',
             ],
             'role:document.master' => [
                 'document.generate-all',
