@@ -96,6 +96,7 @@ return [
     'role:owner' => [
         'type' => 1,
         'children' => [
+            'deposit',
             'role:manager',
             'role:bill.manager',
             'resell',

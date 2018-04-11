@@ -75,6 +75,7 @@ class Initer extends AbstractIniter
                 'resell',
             ],
             'role:owner' => [
+                'deposit',
                 'role:manager', 'role:bill.manager',
                 'resell', 'own',
             ],
