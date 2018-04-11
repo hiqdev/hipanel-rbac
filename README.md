@@ -7,7 +7,6 @@
 [![Build Status](https://img.shields.io/travis/hiqdev/hipanel-rbac.svg)](https://travis-ci.org/hiqdev/hipanel-rbac)
 [![Scrutinizer Code Coverage](https://img.shields.io/scrutinizer/coverage/g/hiqdev/hipanel-rbac.svg)](https://scrutinizer-ci.com/g/hiqdev/hipanel-rbac/)
 [![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/hiqdev/hipanel-rbac.svg)](https://scrutinizer-ci.com/g/hiqdev/hipanel-rbac/)
-[![Dependency Status](https://www.versioneye.com/php/hiqdev:hipanel-rbac/dev-master/badge.svg)](https://www.versioneye.com/php/hiqdev:hipanel-rbac/dev-master)
 
 [![Logo](https://raw.githubusercontent.com/hiqdev/hipanel-core/master/docs/logo.png)](https://hipanel.com/)
 
