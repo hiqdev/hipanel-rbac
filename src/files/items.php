@@ -103,6 +103,12 @@ return [
             'own',
         ],
     ],
+    'role:superpowers' => [
+        'type' => 1,
+        'children' => [
+            'see-no-mans',
+        ],
+    ],
     'role:employee' => [
         'type' => 1,
         'children' => [
@@ -441,6 +447,12 @@ return [
         'type' => 2,
     ],
     'deny:own' => [
+        'type' => 2,
+    ],
+    'see-no-mans' => [
+        'type' => 2,
+    ],
+    'deny:see-no-mans' => [
         'type' => 2,
     ],
     'employee.read' => [

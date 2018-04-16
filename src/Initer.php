@@ -16,6 +16,7 @@ namespace hipanel\rbac;
  * Non-obvious permissions:
  * - have-goods - permission to have anything, inherent to clients and resellers only.
  *   Serfvice staff (supports, managers) can't have anything.
+ * - see-no-mans - see no man's objects - not belonging to anybody
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
@@ -78,6 +79,9 @@ class Initer extends AbstractIniter
                 'deposit',
                 'role:manager', 'role:bill.manager',
                 'resell', 'own',
+            ],
+            'role:superpowers' => [
+                'see-no-mans',
             ],
             'role:employee' => [
                 'restore-password', 'deposit',
