@@ -28,6 +28,7 @@ return [
             'certificate.push',
             'role:contact.user',
             'role:document.user',
+            'document.invoice',
             'client.read',
             'role:server.user',
             'server.pay',
@@ -119,6 +120,7 @@ return [
             'deposit',
             'role:contact.user',
             'role:document.user',
+            'document.acceptance',
             'bill.read',
             'client.read',
             'employee.read',
@@ -250,6 +252,7 @@ return [
             'employee.create',
             'employee.update',
             'employee.delete',
+            'document.acceptance',
         ],
     ],
     'role:client.impersonator' => [
@@ -378,6 +381,12 @@ return [
     'deny:certificate.push' => [
         'type' => 2,
     ],
+    'document.invoice' => [
+        'type' => 2,
+    ],
+    'deny:document.invoice' => [
+        'type' => 2,
+    ],
     'client.read' => [
         'type' => 2,
     ],
@@ -472,6 +481,12 @@ return [
         'type' => 2,
     ],
     'deny:see-no-mans' => [
+        'type' => 2,
+    ],
+    'document.acceptance' => [
+        'type' => 2,
+    ],
+    'deny:document.acceptance' => [
         'type' => 2,
     ],
     'employee.read' => [
@@ -844,18 +859,6 @@ return [
         'type' => 2,
     ],
     'deny:document.generate' => [
-        'type' => 2,
-    ],
-    'document.acceptance' => [
-        'type' => 2,
-    ],
-    'deny:document.acceptance' => [
-        'type' => 2,
-    ],
-    'document.invoice' => [
-        'type' => 2,
-    ],
-    'deny:document.invoice' => [
         'type' => 2,
     ],
     'document.generate-all' => [

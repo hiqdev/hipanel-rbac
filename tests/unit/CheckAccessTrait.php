@@ -75,7 +75,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.pay', 'domain.push',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
-            'client.read', 'document.read', 'document.create',
+            'client.read', 'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'server.read', 'server.pay',
             'account.read', 'account.create', 'account.update', 'account.delete',
@@ -171,7 +171,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:employee', [
             'restore-password', 'deposit',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'document.read', 'document.create',
+            'document.read', 'document.create', 'document.acceptance',
             'bill.read', 'client.read', 'employee.read',
         ]);
     }
@@ -215,7 +215,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.pay',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
-            'client.read', 'document.read', 'document.create',
+            'client.read', 'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'restore-password', 'bill.read', 'plan.read',
