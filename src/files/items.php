@@ -22,6 +22,7 @@ return [
             'role:domain.user',
             'domain.pay',
             'domain.push',
+            'role:dns.user',
             'role:certificate.user',
             'certificate.pay',
             'certificate.push',
@@ -43,6 +44,7 @@ return [
             'role:ticket.manager',
             'role:client.support',
             'role:domain.user',
+            'role:dns.user',
             'role:certificate.user',
             'contact.read',
             'role:server.user',
@@ -69,6 +71,7 @@ return [
             'role:domain.manager',
             'domain.pay',
             'domain.push',
+            'role:dns.manager',
             'role:certificate.manager',
             'certificate.pay',
             'certificate.push',
@@ -142,6 +145,21 @@ return [
             'domain.unfreeze',
             'domain.push',
             'domain.force-push',
+        ],
+    ],
+    'role:dns.user' => [
+        'type' => 1,
+        'children' => [
+            'dns.create',
+            'dns.read',
+            'dns.update',
+            'dns.delete',
+        ],
+    ],
+    'role:dns.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:dns.user',
         ],
     ],
     'role:certificate.user' => [
@@ -495,6 +513,30 @@ return [
         'type' => 2,
     ],
     'deny:domain.force-push' => [
+        'type' => 2,
+    ],
+    'dns.create' => [
+        'type' => 2,
+    ],
+    'deny:dns.create' => [
+        'type' => 2,
+    ],
+    'dns.read' => [
+        'type' => 2,
+    ],
+    'deny:dns.read' => [
+        'type' => 2,
+    ],
+    'dns.update' => [
+        'type' => 2,
+    ],
+    'deny:dns.update' => [
+        'type' => 2,
+    ],
+    'dns.delete' => [
+        'type' => 2,
+    ],
+    'deny:dns.delete' => [
         'type' => 2,
     ],
     'certificate.read' => [
