@@ -118,6 +118,7 @@ return [
             'restore-password',
             'deposit',
             'role:contact.user',
+            'role:document.user',
             'bill.read',
             'client.read',
             'employee.read',

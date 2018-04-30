@@ -89,6 +89,7 @@ class Initer extends AbstractIniter
             'role:employee' => [
                 'restore-password', 'deposit',
                 'role:contact.user',
+                'role:document.user',
                 'bill.read', 'client.read', 'employee.read',
             ],
             /// SUBROLES

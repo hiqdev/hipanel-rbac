@@ -171,6 +171,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:employee', [
             'restore-password', 'deposit',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
+            'document.read', 'document.create',
             'bill.read', 'client.read', 'employee.read',
         ]);
     }
