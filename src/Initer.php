@@ -35,6 +35,7 @@ class Initer extends AbstractIniter
                 'role:unauthorized', 'have-goods',
                 'role:ticket.user',
                 'role:domain.user', 'domain.pay', 'domain.push',
+                'role:dns.user',
                 'role:certificate.user', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'role:document.user',
                 'client.read',
@@ -47,6 +48,7 @@ class Initer extends AbstractIniter
                 'role:ticket.manager',
                 'role:client.support',
                 'role:domain.user',
+                'role:dns.user',
                 'role:certificate.user',
                 'contact.read',
                 'role:server.user',
@@ -62,6 +64,7 @@ class Initer extends AbstractIniter
                 'role:support', 'manage',
                 'role:document.manager', 'role:stock.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
+                'role:dns.manager',
                 'role:certificate.manager', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'contact.force-verify',
                 'role:client.manager',
@@ -99,6 +102,12 @@ class Initer extends AbstractIniter
                 'role:domain.manager',
                 'domain.freeze', 'domain.unfreeze',
                 'domain.push', 'domain.force-push',
+            ],
+            'role:dns.user' => [
+                'dns.create', 'dns.read', 'dns.update', 'dns.delete',
+            ],
+            'role:dns.manager' => [
+                'role:dns.user',
             ],
             'role:certificate.user' => [
                 'certificate.read', 'certificate.create', 'certificate.update',
