@@ -29,7 +29,6 @@ return [
             'role:contact.user',
             'role:document.user',
             'document.invoice',
-            'client.read',
             'role:server.user',
             'server.pay',
             'role:account.user',
@@ -122,7 +121,6 @@ return [
             'role:document.user',
             'document.acceptance',
             'bill.read',
-            'client.read',
             'employee.read',
         ],
     ],
@@ -385,12 +383,6 @@ return [
         'type' => 2,
     ],
     'deny:document.invoice' => [
-        'type' => 2,
-    ],
-    'client.read' => [
-        'type' => 2,
-    ],
-    'deny:client.read' => [
         'type' => 2,
     ],
     'server.pay' => [
@@ -679,6 +671,12 @@ return [
         'type' => 2,
     ],
     'deny:ticket.delete' => [
+        'type' => 2,
+    ],
+    'client.read' => [
+        'type' => 2,
+    ],
+    'deny:client.read' => [
         'type' => 2,
     ],
     'client.create' => [

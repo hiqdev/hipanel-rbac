@@ -38,7 +38,6 @@ class Initer extends AbstractIniter
                 'role:dns.user',
                 'role:certificate.user', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'role:document.user', 'document.invoice',
-                'client.read',
                 'role:server.user', 'server.pay',
                 'role:account.user',
                 'bill.read', 'plan.read',
@@ -90,7 +89,7 @@ class Initer extends AbstractIniter
                 'restore-password', 'deposit',
                 'role:contact.user',
                 'role:document.user', 'document.acceptance',
-                'bill.read', 'client.read', 'employee.read',
+                'bill.read', 'employee.read',
             ],
             /// SUBROLES
             'role:domain.user' => [
