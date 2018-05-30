@@ -47,6 +47,7 @@ return [
             'role:dns.user',
             'role:certificate.user',
             'contact.read',
+            'contact.update',
             'role:server.user',
             'role:account.user',
             'plan.read',
@@ -421,6 +422,12 @@ return [
     'deny:contact.read' => [
         'type' => 2,
     ],
+    'contact.update' => [
+        'type' => 2,
+    ],
+    'deny:contact.update' => [
+        'type' => 2,
+    ],
     'admin' => [
         'type' => 2,
     ],
@@ -575,12 +582,6 @@ return [
         'type' => 2,
     ],
     'deny:contact.create' => [
-        'type' => 2,
-    ],
-    'contact.update' => [
-        'type' => 2,
-    ],
-    'deny:contact.update' => [
         'type' => 2,
     ],
     'contact.delete' => [

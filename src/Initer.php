@@ -50,6 +50,7 @@ class Initer extends AbstractIniter
                 'role:dns.user',
                 'role:certificate.user',
                 'contact.read',
+                'contact.update',
                 'role:server.user',
                 'role:account.user',
                 'plan.read',
