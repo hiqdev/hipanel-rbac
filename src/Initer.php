@@ -154,7 +154,7 @@ class Initer extends AbstractIniter
                 'plan.read', 'plan.create', 'plan.update', 'plan.delete',
             ],
             'role:stock.manager' => [
-                'part.read', 'part.create', 'part.update', 'part.delete',
+                'part.read', 'part.create', 'part.update', 'part.delete', 'part.sale',
                 'move.read', 'move.create', 'move.update', 'move.delete',
                 'model.read', 'model.create', 'model.update', 'model.delete',
             ],
