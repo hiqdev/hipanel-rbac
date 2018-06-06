@@ -84,7 +84,7 @@ class Initer extends AbstractIniter
                 'resell', 'own',
             ],
             'role:superpowers' => [
-                'see-no-mans',
+                'see-no-mans', 'part.sell',
             ],
             'role:employee' => [
                 'restore-password', 'deposit',

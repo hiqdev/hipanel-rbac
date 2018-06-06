@@ -46,8 +46,7 @@ return [
             'role:domain.user',
             'role:dns.user',
             'role:certificate.user',
-            'contact.read',
-            'contact.update',
+            'role:contact.user',
             'role:server.user',
             'role:account.user',
             'plan.read',
@@ -111,6 +110,7 @@ return [
         'type' => 1,
         'children' => [
             'see-no-mans',
+            'part.sell',
         ],
     ],
     'role:employee' => [
@@ -416,18 +416,6 @@ return [
     'deny:support' => [
         'type' => 2,
     ],
-    'contact.read' => [
-        'type' => 2,
-    ],
-    'deny:contact.read' => [
-        'type' => 2,
-    ],
-    'contact.update' => [
-        'type' => 2,
-    ],
-    'deny:contact.update' => [
-        'type' => 2,
-    ],
     'admin' => [
         'type' => 2,
     ],
@@ -480,6 +468,12 @@ return [
         'type' => 2,
     ],
     'deny:see-no-mans' => [
+        'type' => 2,
+    ],
+    'part.sell' => [
+        'type' => 2,
+    ],
+    'deny:part.sell' => [
         'type' => 2,
     ],
     'document.acceptance' => [
@@ -578,10 +572,22 @@ return [
     'deny:certificate.delete' => [
         'type' => 2,
     ],
+    'contact.read' => [
+        'type' => 2,
+    ],
+    'deny:contact.read' => [
+        'type' => 2,
+    ],
     'contact.create' => [
         'type' => 2,
     ],
     'deny:contact.create' => [
+        'type' => 2,
+    ],
+    'contact.update' => [
+        'type' => 2,
+    ],
+    'deny:contact.update' => [
         'type' => 2,
     ],
     'contact.delete' => [
