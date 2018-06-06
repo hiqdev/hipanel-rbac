@@ -112,7 +112,7 @@ trait CheckAccessTrait
             'server.read', 'server.create', 'server.update', 'server.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'plan.read',
-            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sale',
+            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sell',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
         ]);
@@ -136,7 +136,7 @@ trait CheckAccessTrait
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.acceptance', 'document.invoice',
             'mailing.prepare', 'mailing.send',
-            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sale',
+            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sell',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
         ]);
@@ -160,7 +160,7 @@ trait CheckAccessTrait
             'document.generate', 'document.acceptance', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
-            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sale',
+            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sell',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
         ]);
@@ -198,7 +198,7 @@ trait CheckAccessTrait
             'document.acceptance', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
-            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sale',
+            'part.read', 'part.create', 'part.update', 'part.delete', 'part.sell',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',

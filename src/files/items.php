@@ -285,7 +285,7 @@ return [
             'part.create',
             'part.update',
             'part.delete',
-            'part.sale',
+            'part.sell',
             'move.read',
             'move.create',
             'move.update',
@@ -783,10 +783,10 @@ return [
     'deny:part.delete' => [
         'type' => 2,
     ],
-    'part.sale' => [
+    'part.sell' => [
         'type' => 2,
     ],
-    'deny:part.sale' => [
+    'deny:part.sell' => [
         'type' => 2,
     ],
     'move.read' => [
