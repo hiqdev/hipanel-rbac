@@ -199,7 +199,7 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
             'part.read', 'part.create', 'part.update', 'part.delete',
-            'move.read', 'move.create', 'move.update', 'move.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',
         ]);
