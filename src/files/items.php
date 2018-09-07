@@ -295,6 +295,13 @@ return [
             'model.delete',
         ],
     ],
+    'role:stock.master' => [
+        'type' => 1,
+        'children' => [
+            'role:stock.manager',
+            'move.read-all',
+        ],
+    ],
     'role:document.user' => [
         'type' => 1,
         'children' => [
@@ -788,12 +795,6 @@ return [
     'deny:part.delete' => [
         'type' => 2,
     ],
-    'move.read-all' => [
-        'type' => 2,
-    ],
-    'deny:move.read-all' => [
-        'type' => 2,
-    ],
     'move.read' => [
         'type' => 2,
     ],
@@ -840,6 +841,12 @@ return [
         'type' => 2,
     ],
     'deny:model.delete' => [
+        'type' => 2,
+    ],
+    'move.read-all' => [
+        'type' => 2,
+    ],
+    'deny:move.read-all' => [
         'type' => 2,
     ],
     'document.read' => [
