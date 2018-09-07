@@ -791,6 +791,9 @@ return [
     'move.read-all' => [
         'type' => 2,
     ],
+    'deny:move.read-all' => [
+        'type' => 2,
+    ],
     'move.read' => [
         'type' => 2,
     ],
