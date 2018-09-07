@@ -178,7 +178,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,domain.freeze,domain.force-push,domain.delete,employee.read,move.read-all', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'support', 'manage', 'admin',
@@ -239,4 +239,6 @@ trait CheckAccessTrait
             'test.alpha', 'test.beta',
         ]);
     }
+
+
 }

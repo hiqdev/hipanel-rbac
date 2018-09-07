@@ -788,6 +788,12 @@ return [
     'deny:part.delete' => [
         'type' => 2,
     ],
+    'move.read-all' => [
+        'type' => 2,
+        'children' => [
+            'move.read',
+        ],
+    ],
     'move.read' => [
         'type' => 2,
     ],
