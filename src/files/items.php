@@ -790,9 +790,6 @@ return [
     ],
     'move.read-all' => [
         'type' => 2,
-        'children' => [
-            'move.read',
-        ],
     ],
     'move.read' => [
         'type' => 2,
