@@ -157,6 +157,9 @@ class Initer extends AbstractIniter
                 'move.read', 'move.create', 'move.update', 'move.delete',
                 'model.read', 'model.create', 'model.update', 'model.delete',
             ],
+            'role:stock.master' => [
+                'role:stock.manager', 'move.read-all',
+            ],
             'role:document.user' => [
                 'document.read', 'document.create',
             ],
