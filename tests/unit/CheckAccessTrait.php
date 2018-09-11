@@ -239,6 +239,4 @@ trait CheckAccessTrait
             'test.alpha', 'test.beta',
         ]);
     }
-
-
 }
