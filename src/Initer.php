@@ -56,6 +56,7 @@ class Initer extends AbstractIniter
             ],
             'role:admin' => [
                 'role:support', 'admin',
+                'role:hub.admin',
                 'role:stock.manager',
                 'role:server.admin',
             ],
@@ -126,6 +127,9 @@ class Initer extends AbstractIniter
             ],
             'role:server.admin' => [
                 'role:server.user', 'server.create', 'server.update', 'server.delete',
+            ],
+            'role:hub.admin' => [
+                'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             ],
             'role:ticket.user' => [
                 'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',

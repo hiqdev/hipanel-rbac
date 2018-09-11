@@ -57,6 +57,7 @@ return [
         'children' => [
             'role:support',
             'admin',
+            'role:hub.admin',
             'role:stock.manager',
             'role:server.admin',
         ],
@@ -210,6 +211,15 @@ return [
             'server.create',
             'server.update',
             'server.delete',
+        ],
+    ],
+    'role:hub.admin' => [
+        'type' => 1,
+        'children' => [
+            'hub.read',
+            'hub.create',
+            'hub.update',
+            'hub.delete',
         ],
     ],
     'role:ticket.user' => [
@@ -642,6 +652,30 @@ return [
         'type' => 2,
     ],
     'deny:server.delete' => [
+        'type' => 2,
+    ],
+    'hub.read' => [
+        'type' => 2,
+    ],
+    'deny:hub.read' => [
+        'type' => 2,
+    ],
+    'hub.create' => [
+        'type' => 2,
+    ],
+    'deny:hub.create' => [
+        'type' => 2,
+    ],
+    'hub.update' => [
+        'type' => 2,
+    ],
+    'deny:hub.update' => [
+        'type' => 2,
+    ],
+    'hub.delete' => [
+        'type' => 2,
+    ],
+    'deny:hub.delete' => [
         'type' => 2,
     ],
     'ticket.read' => [
