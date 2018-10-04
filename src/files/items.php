@@ -148,6 +148,7 @@ return [
             'domain.unfreeze',
             'domain.push',
             'domain.force-push',
+            'domain.force-send-foa',
         ],
     ],
     'role:dns.user' => [
@@ -539,6 +540,12 @@ return [
         'type' => 2,
     ],
     'deny:domain.force-push' => [
+        'type' => 2,
+    ],
+    'domain.force-send-foa' => [
+        'type' => 2,
+    ],
+    'deny:domain.force-send-foa' => [
         'type' => 2,
     ],
     'dns.create' => [

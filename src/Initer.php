@@ -103,6 +103,7 @@ class Initer extends AbstractIniter
                 'role:domain.manager',
                 'domain.freeze', 'domain.unfreeze',
                 'domain.push', 'domain.force-push',
+                'domain.force-send-foa',
             ],
             'role:dns.user' => [
                 'dns.create', 'dns.read', 'dns.update', 'dns.delete',
