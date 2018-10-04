@@ -179,7 +179,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,role:stock.master,domain.freeze,domain.force-push,domain.delete,employee.read', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,role:stock.master,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'support', 'manage', 'admin',
@@ -189,7 +189,7 @@ trait CheckAccessTrait
             'plan.read', 'plan.create', 'plan.update', 'plan.delete',
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
-            'domain.pay', 'domain.push', 'domain.force-push',
+            'domain.pay', 'domain.push', 'domain.force-push', 'domain.force-send-foa',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
