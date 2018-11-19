@@ -36,6 +36,9 @@ php-cs-fixer.phar
 phpunit-skelgen.phar
 phpunit.phar
 
+# Binaries
+phpstan.phar
+
 # test RBAC files
 /tests/assignments.php
 /tests/items.php
