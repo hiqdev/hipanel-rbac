@@ -126,6 +126,15 @@ return [
             'employee.read',
         ],
     ],
+    'role:junior-manager' => [
+        'type' => 1,
+        'children' => [
+            'access-sublients',
+            'client.read',
+            'server.read',
+            'part.read',
+        ],
+    ],
     'role:domain.user' => [
         'type' => 1,
         'children' => [
@@ -506,6 +515,30 @@ return [
     'deny:employee.read' => [
         'type' => 2,
     ],
+    'access-sublients' => [
+        'type' => 2,
+    ],
+    'deny:access-sublients' => [
+        'type' => 2,
+    ],
+    'client.read' => [
+        'type' => 2,
+    ],
+    'deny:client.read' => [
+        'type' => 2,
+    ],
+    'server.read' => [
+        'type' => 2,
+    ],
+    'deny:server.read' => [
+        'type' => 2,
+    ],
+    'part.read' => [
+        'type' => 2,
+    ],
+    'deny:part.read' => [
+        'type' => 2,
+    ],
     'domain.read' => [
         'type' => 2,
     ],
@@ -644,12 +677,6 @@ return [
     'deny:account.delete' => [
         'type' => 2,
     ],
-    'server.read' => [
-        'type' => 2,
-    ],
-    'deny:server.read' => [
-        'type' => 2,
-    ],
     'server.create' => [
         'type' => 2,
     ],
@@ -728,12 +755,6 @@ return [
     'deny:ticket.delete' => [
         'type' => 2,
     ],
-    'client.read' => [
-        'type' => 2,
-    ],
-    'deny:client.read' => [
-        'type' => 2,
-    ],
     'client.create' => [
         'type' => 2,
     ],
@@ -810,12 +831,6 @@ return [
         'type' => 2,
     ],
     'deny:plan.delete' => [
-        'type' => 2,
-    ],
-    'part.read' => [
-        'type' => 2,
-    ],
-    'deny:part.read' => [
         'type' => 2,
     ],
     'part.create' => [

@@ -92,6 +92,13 @@ class Initer extends AbstractIniter
                 'role:document.user', 'document.acceptance',
                 'bill.read', 'employee.read',
             ],
+            /// LIMITED ROLES
+            'role:junior-manager' => [
+                'access-sublients',
+                'client.read',
+                'server.read',
+                'part.read',
+            ],
             /// SUBROLES
             'role:domain.user' => [
                 'domain.read', 'domain.update',
