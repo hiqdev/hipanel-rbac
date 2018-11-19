@@ -129,10 +129,11 @@ return [
     'role:junior-manager' => [
         'type' => 1,
         'children' => [
-            'access-sublients',
+            'access-subclients',
             'client.read',
             'server.read',
             'part.read',
+            'stock.read',
         ],
     ],
     'role:domain.user' => [
@@ -515,12 +516,6 @@ return [
     'deny:employee.read' => [
         'type' => 2,
     ],
-    'access-sublients' => [
-        'type' => 2,
-    ],
-    'deny:access-sublients' => [
-        'type' => 2,
-    ],
     'client.read' => [
         'type' => 2,
     ],
@@ -537,6 +532,12 @@ return [
         'type' => 2,
     ],
     'deny:part.read' => [
+        'type' => 2,
+    ],
+    'stock.read' => [
+        'type' => 2,
+    ],
+    'deny:stock.read' => [
         'type' => 2,
     ],
     'domain.read' => [
