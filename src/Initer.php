@@ -94,10 +94,11 @@ class Initer extends AbstractIniter
             ],
             /// LIMITED ROLES
             'role:junior-manager' => [
-                'access-sublients',
+                'access-subclients',
                 'client.read',
                 'server.read',
                 'part.read',
+                'stock.read',
             ],
             /// SUBROLES
             'role:domain.user' => [
