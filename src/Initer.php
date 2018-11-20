@@ -97,8 +97,9 @@ class Initer extends AbstractIniter
                 'access-subclients',
                 'client.read',
                 'server.read',
-                'part.read',
                 'stock.read',
+                'part.read',
+                'move.read',
             ],
             /// SUBROLES
             'role:domain.user' => [
