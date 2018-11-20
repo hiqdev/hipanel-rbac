@@ -134,6 +134,7 @@ return [
             'server.read',
             'part.read',
             'stock.read',
+            'move.read',
         ],
     ],
     'role:domain.user' => [
