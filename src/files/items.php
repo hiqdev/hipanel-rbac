@@ -83,6 +83,7 @@ return [
             'bill.read',
             'server.pay',
             'server.sell',
+            'hub.sell',
             'mailing.prepare',
             'mailing.send',
         ],
@@ -132,8 +133,8 @@ return [
             'access-subclients',
             'client.read',
             'server.read',
-            'part.read',
             'stock.read',
+            'part.read',
             'move.read',
         ],
     ],
@@ -469,6 +470,12 @@ return [
     'deny:server.sell' => [
         'type' => 2,
     ],
+    'hub.sell' => [
+        'type' => 2,
+    ],
+    'deny:hub.sell' => [
+        'type' => 2,
+    ],
     'mailing.prepare' => [
         'type' => 2,
     ],
@@ -529,16 +536,22 @@ return [
     'deny:server.read' => [
         'type' => 2,
     ],
+    'stock.read' => [
+        'type' => 2,
+    ],
+    'deny:stock.read' => [
+        'type' => 2,
+    ],
     'part.read' => [
         'type' => 2,
     ],
     'deny:part.read' => [
         'type' => 2,
     ],
-    'stock.read' => [
+    'move.read' => [
         'type' => 2,
     ],
-    'deny:stock.read' => [
+    'deny:move.read' => [
         'type' => 2,
     ],
     'domain.read' => [
@@ -851,12 +864,6 @@ return [
         'type' => 2,
     ],
     'deny:part.delete' => [
-        'type' => 2,
-    ],
-    'move.read' => [
-        'type' => 2,
-    ],
-    'deny:move.read' => [
         'type' => 2,
     ],
     'move.create' => [
