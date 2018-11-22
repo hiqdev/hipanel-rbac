@@ -125,6 +125,7 @@ class Initer extends AbstractIniter
                 'role:plan.manager',
                 'bill.read',
                 'server.pay', 'server.sell',
+                'hub.sell',
                 'mailing.prepare', 'mailing.send',
             ],
             'role:reseller' => [

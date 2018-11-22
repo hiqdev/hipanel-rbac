@@ -229,6 +229,7 @@ return [
             'bill.read',
             'server.pay',
             'server.sell',
+            'hub.sell',
             'mailing.prepare',
             'mailing.send',
         ],
@@ -858,6 +859,12 @@ return [
         'type' => 2,
     ],
     'deny:server.sell' => [
+        'type' => 2,
+    ],
+    'hub.sell' => [
+        'type' => 2,
+    ],
+    'deny:hub.sell' => [
         'type' => 2,
     ],
     'mailing.prepare' => [
