@@ -31,6 +31,57 @@ class Initer extends AbstractIniter
             'role:unauthorized' => [
                 'restore-password', 'deposit',
             ],
+            'role:account.user' => [
+                'account.read', 'account.create', 'account.update', 'account.delete',
+            ],
+            'role:backup.user' => [
+                'backup.read', 'backup.delete',
+            ],
+            'role:backuping.user' => [
+                'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            ],
+            'role:crontab.user' => [
+                'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            ],
+            'role:db.user' => [
+                'db.read', 'db.create', 'db.update', 'db.delete',
+            ],
+            'role:hdomain.user' => [
+                'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            ],
+            'role:ip.admin' => [
+                'ip.read', 'ip.create', 'ip.update', 'ip.delete',
+            ],
+            'role:mail.user' => [
+                'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            ],
+            'role:request.user' => [
+                'request.read', 'request.create', 'request.update', 'request.delete',
+            ],
+            'role:service.admin' => [
+                'service.read', 'service.create', 'service.update', 'service.delete',
+            ],
+            'role:vhost.user' => [
+                'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            ],
+            'role:hosting.read' => [
+                'account.read', 'backup.read', 'backuping.read',
+                'crontab.read', 'db.read', 'hdomain.read',
+                'ip.read', 'mail.read', 'request.read','service.read',
+                'vhost.read',
+            ],
+            'role:hosting.user' => [
+                'role:account.user', 'role:backup.user', 'role:backuping.user',
+                'role:crontab.user', 'role:db.user', 'role:hdomain.user',
+                'role:mail.user', 'role:request.user', 'role:vhost.user',
+                'ip.read', 'service.read',
+            ],
+            'role:hosting.admin' => [
+                'role:account.user', 'role:backup.user', 'role:backuping.user',
+                'role:crontab.user', 'role:db.user', 'role:hdomain.user',
+                'role:mail.user', 'role:request.user', 'role:vhost.user',
+                'role:ip.admin', 'role:service.admin',
+            ],
             'role:client' => [
                 'role:unauthorized', 'have-goods',
                 'role:ticket.user',
@@ -39,7 +90,7 @@ class Initer extends AbstractIniter
                 'role:certificate.user', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'role:document.user', 'document.invoice',
                 'role:server.user', 'server.pay',
-                'role:account.user',
+                'role:hosting.user',
                 'bill.read', 'plan.read',
             ],
             'role:support' => [
@@ -51,17 +102,20 @@ class Initer extends AbstractIniter
                 'role:certificate.user',
                 'role:contact.user',
                 'role:server.user',
-                'role:account.user',
+                'role:hosting.user',
                 'plan.read',
             ],
             'role:admin' => [
-                'role:support', 'admin',
+                'admin',
+                'role:support',
                 'role:hub.admin',
                 'role:stock.manager',
                 'role:server.admin',
+                'role:hosting.admin',
             ],
             'role:manager' => [
-                'role:support', 'manage',
+                'manage',
+                'role:support',
                 'role:document.manager', 'role:stock.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
                 'role:dns.manager',
@@ -95,11 +149,11 @@ class Initer extends AbstractIniter
             /// LIMITED ROLES
             'role:junior-manager' => [
                 'access-subclients',
+                'role:hosting.read',
                 'client.read',
                 'server.read',
-                'stock.read',
-                'part.read',
-                'move.read',
+                'stock.read', 'part.read', 'move.read',
+                'plan.read',
             ],
             /// SUBROLES
             'role:domain.user' => [
@@ -128,9 +182,6 @@ class Initer extends AbstractIniter
             ],
             'role:contact.user' => [
                 'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            ],
-            'role:account.user' => [
-                'account.read', 'account.create', 'account.update', 'account.delete',
             ],
             'role:server.user' => [
                 'server.read',

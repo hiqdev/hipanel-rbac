@@ -80,6 +80,15 @@ trait CheckAccessTrait
             'server.read', 'server.pay',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read', 'plan.read',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'service.read',
         ]);
     }
 
@@ -95,6 +104,15 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'server.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'service.read',
             'plan.read',
         ]);
     }
@@ -111,11 +129,21 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'server.read', 'server.create', 'server.update', 'server.delete',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
-            'account.read', 'account.create', 'account.update', 'account.delete',
-            'plan.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'ip.create', 'ip.update', 'ip.delete',
+            'service.read', 'service.create', 'service.update', 'service.delete',
+            'plan.read',
         ]);
     }
 
@@ -133,13 +161,24 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'server.read', 'server.pay', 'server.sell',
-            'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.acceptance', 'document.invoice',
             'mailing.prepare', 'mailing.send',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'bill.read', 'plan.read',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'service.read',
+
         ]);
     }
 
@@ -156,7 +195,6 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'server.read', 'server.pay', 'server.sell',
-            'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.acceptance', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
@@ -164,6 +202,17 @@ trait CheckAccessTrait
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'bill.read', 'plan.read',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'service.read',
         ]);
     }
 
@@ -194,7 +243,6 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
-            'account.read', 'account.create', 'account.update', 'account.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.generate-all',
             'document.acceptance', 'document.invoice',
@@ -204,12 +252,24 @@ trait CheckAccessTrait
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'bill.read', 'plan.read',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'ip.create', 'ip.update', 'ip.delete',
+            'service.read', 'service.create', 'service.update', 'service.delete',
         ]);
     }
 
     public function testLimited()
     {
-        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read', 'user:limited');
+        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:ip.read,deny:service.read', 'user:limited');
 
         $this->assertAccesses('user:limited', [
             'have-goods',
@@ -221,6 +281,14 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'restore-password', 'bill.read', 'plan.read',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
         ]);
     }
 

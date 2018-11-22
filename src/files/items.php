@@ -13,6 +13,151 @@ return [
             'deposit',
         ],
     ],
+    'role:account.user' => [
+        'type' => 1,
+        'children' => [
+            'account.read',
+            'account.create',
+            'account.update',
+            'account.delete',
+        ],
+    ],
+    'role:backup.user' => [
+        'type' => 1,
+        'children' => [
+            'backup.read',
+            'backup.delete',
+        ],
+    ],
+    'role:backuping.user' => [
+        'type' => 1,
+        'children' => [
+            'backuping.read',
+            'backuping.create',
+            'backuping.update',
+            'backuping.delete',
+        ],
+    ],
+    'role:crontab.user' => [
+        'type' => 1,
+        'children' => [
+            'crontab.read',
+            'crontab.create',
+            'crontab.update',
+            'crontab.delete',
+        ],
+    ],
+    'role:db.user' => [
+        'type' => 1,
+        'children' => [
+            'db.read',
+            'db.create',
+            'db.update',
+            'db.delete',
+        ],
+    ],
+    'role:hdomain.user' => [
+        'type' => 1,
+        'children' => [
+            'hdomain.read',
+            'hdomain.create',
+            'hdomain.update',
+            'hdomain.delete',
+        ],
+    ],
+    'role:ip.admin' => [
+        'type' => 1,
+        'children' => [
+            'ip.read',
+            'ip.create',
+            'ip.update',
+            'ip.delete',
+        ],
+    ],
+    'role:mail.user' => [
+        'type' => 1,
+        'children' => [
+            'mail.read',
+            'mail.create',
+            'mail.update',
+            'mail.delete',
+        ],
+    ],
+    'role:request.user' => [
+        'type' => 1,
+        'children' => [
+            'request.read',
+            'request.create',
+            'request.update',
+            'request.delete',
+        ],
+    ],
+    'role:service.admin' => [
+        'type' => 1,
+        'children' => [
+            'service.read',
+            'service.create',
+            'service.update',
+            'service.delete',
+        ],
+    ],
+    'role:vhost.user' => [
+        'type' => 1,
+        'children' => [
+            'vhost.read',
+            'vhost.create',
+            'vhost.update',
+            'vhost.delete',
+        ],
+    ],
+    'role:hosting.read' => [
+        'type' => 1,
+        'children' => [
+            'account.read',
+            'backup.read',
+            'backuping.read',
+            'crontab.read',
+            'db.read',
+            'hdomain.read',
+            'ip.read',
+            'mail.read',
+            'request.read',
+            'service.read',
+            'vhost.read',
+        ],
+    ],
+    'role:hosting.user' => [
+        'type' => 1,
+        'children' => [
+            'role:account.user',
+            'role:backup.user',
+            'role:backuping.user',
+            'role:crontab.user',
+            'role:db.user',
+            'role:hdomain.user',
+            'role:mail.user',
+            'role:request.user',
+            'role:vhost.user',
+            'ip.read',
+            'service.read',
+        ],
+    ],
+    'role:hosting.admin' => [
+        'type' => 1,
+        'children' => [
+            'role:account.user',
+            'role:backup.user',
+            'role:backuping.user',
+            'role:crontab.user',
+            'role:db.user',
+            'role:hdomain.user',
+            'role:mail.user',
+            'role:request.user',
+            'role:vhost.user',
+            'role:ip.admin',
+            'role:service.admin',
+        ],
+    ],
     'role:client' => [
         'type' => 1,
         'children' => [
@@ -31,7 +176,7 @@ return [
             'document.invoice',
             'role:server.user',
             'server.pay',
-            'role:account.user',
+            'role:hosting.user',
             'bill.read',
             'plan.read',
         ],
@@ -48,25 +193,26 @@ return [
             'role:certificate.user',
             'role:contact.user',
             'role:server.user',
-            'role:account.user',
+            'role:hosting.user',
             'plan.read',
         ],
     ],
     'role:admin' => [
         'type' => 1,
         'children' => [
-            'role:support',
             'admin',
+            'role:support',
             'role:hub.admin',
             'role:stock.manager',
             'role:server.admin',
+            'role:hosting.admin',
         ],
     ],
     'role:manager' => [
         'type' => 1,
         'children' => [
-            'role:support',
             'manage',
+            'role:support',
             'role:document.manager',
             'role:stock.manager',
             'role:domain.manager',
@@ -130,11 +276,13 @@ return [
         'type' => 1,
         'children' => [
             'access-subclients',
+            'role:hosting.read',
             'client.read',
             'server.read',
-            'part.read',
             'stock.read',
+            'part.read',
             'move.read',
+            'plan.read',
         ],
     ],
     'role:domain.user' => [
@@ -199,15 +347,6 @@ return [
             'contact.create',
             'contact.update',
             'contact.delete',
-        ],
-    ],
-    'role:account.user' => [
-        'type' => 1,
-        'children' => [
-            'account.read',
-            'account.create',
-            'account.update',
-            'account.delete',
         ],
     ],
     'role:server.user' => [
@@ -379,6 +518,258 @@ return [
     'deny:deposit' => [
         'type' => 2,
     ],
+    'account.read' => [
+        'type' => 2,
+    ],
+    'deny:account.read' => [
+        'type' => 2,
+    ],
+    'account.create' => [
+        'type' => 2,
+    ],
+    'deny:account.create' => [
+        'type' => 2,
+    ],
+    'account.update' => [
+        'type' => 2,
+    ],
+    'deny:account.update' => [
+        'type' => 2,
+    ],
+    'account.delete' => [
+        'type' => 2,
+    ],
+    'deny:account.delete' => [
+        'type' => 2,
+    ],
+    'backup.read' => [
+        'type' => 2,
+    ],
+    'deny:backup.read' => [
+        'type' => 2,
+    ],
+    'backup.delete' => [
+        'type' => 2,
+    ],
+    'deny:backup.delete' => [
+        'type' => 2,
+    ],
+    'backuping.read' => [
+        'type' => 2,
+    ],
+    'deny:backuping.read' => [
+        'type' => 2,
+    ],
+    'backuping.create' => [
+        'type' => 2,
+    ],
+    'deny:backuping.create' => [
+        'type' => 2,
+    ],
+    'backuping.update' => [
+        'type' => 2,
+    ],
+    'deny:backuping.update' => [
+        'type' => 2,
+    ],
+    'backuping.delete' => [
+        'type' => 2,
+    ],
+    'deny:backuping.delete' => [
+        'type' => 2,
+    ],
+    'crontab.read' => [
+        'type' => 2,
+    ],
+    'deny:crontab.read' => [
+        'type' => 2,
+    ],
+    'crontab.create' => [
+        'type' => 2,
+    ],
+    'deny:crontab.create' => [
+        'type' => 2,
+    ],
+    'crontab.update' => [
+        'type' => 2,
+    ],
+    'deny:crontab.update' => [
+        'type' => 2,
+    ],
+    'crontab.delete' => [
+        'type' => 2,
+    ],
+    'deny:crontab.delete' => [
+        'type' => 2,
+    ],
+    'db.read' => [
+        'type' => 2,
+    ],
+    'deny:db.read' => [
+        'type' => 2,
+    ],
+    'db.create' => [
+        'type' => 2,
+    ],
+    'deny:db.create' => [
+        'type' => 2,
+    ],
+    'db.update' => [
+        'type' => 2,
+    ],
+    'deny:db.update' => [
+        'type' => 2,
+    ],
+    'db.delete' => [
+        'type' => 2,
+    ],
+    'deny:db.delete' => [
+        'type' => 2,
+    ],
+    'hdomain.read' => [
+        'type' => 2,
+    ],
+    'deny:hdomain.read' => [
+        'type' => 2,
+    ],
+    'hdomain.create' => [
+        'type' => 2,
+    ],
+    'deny:hdomain.create' => [
+        'type' => 2,
+    ],
+    'hdomain.update' => [
+        'type' => 2,
+    ],
+    'deny:hdomain.update' => [
+        'type' => 2,
+    ],
+    'hdomain.delete' => [
+        'type' => 2,
+    ],
+    'deny:hdomain.delete' => [
+        'type' => 2,
+    ],
+    'ip.read' => [
+        'type' => 2,
+    ],
+    'deny:ip.read' => [
+        'type' => 2,
+    ],
+    'ip.create' => [
+        'type' => 2,
+    ],
+    'deny:ip.create' => [
+        'type' => 2,
+    ],
+    'ip.update' => [
+        'type' => 2,
+    ],
+    'deny:ip.update' => [
+        'type' => 2,
+    ],
+    'ip.delete' => [
+        'type' => 2,
+    ],
+    'deny:ip.delete' => [
+        'type' => 2,
+    ],
+    'mail.read' => [
+        'type' => 2,
+    ],
+    'deny:mail.read' => [
+        'type' => 2,
+    ],
+    'mail.create' => [
+        'type' => 2,
+    ],
+    'deny:mail.create' => [
+        'type' => 2,
+    ],
+    'mail.update' => [
+        'type' => 2,
+    ],
+    'deny:mail.update' => [
+        'type' => 2,
+    ],
+    'mail.delete' => [
+        'type' => 2,
+    ],
+    'deny:mail.delete' => [
+        'type' => 2,
+    ],
+    'request.read' => [
+        'type' => 2,
+    ],
+    'deny:request.read' => [
+        'type' => 2,
+    ],
+    'request.create' => [
+        'type' => 2,
+    ],
+    'deny:request.create' => [
+        'type' => 2,
+    ],
+    'request.update' => [
+        'type' => 2,
+    ],
+    'deny:request.update' => [
+        'type' => 2,
+    ],
+    'request.delete' => [
+        'type' => 2,
+    ],
+    'deny:request.delete' => [
+        'type' => 2,
+    ],
+    'service.read' => [
+        'type' => 2,
+    ],
+    'deny:service.read' => [
+        'type' => 2,
+    ],
+    'service.create' => [
+        'type' => 2,
+    ],
+    'deny:service.create' => [
+        'type' => 2,
+    ],
+    'service.update' => [
+        'type' => 2,
+    ],
+    'deny:service.update' => [
+        'type' => 2,
+    ],
+    'service.delete' => [
+        'type' => 2,
+    ],
+    'deny:service.delete' => [
+        'type' => 2,
+    ],
+    'vhost.read' => [
+        'type' => 2,
+    ],
+    'deny:vhost.read' => [
+        'type' => 2,
+    ],
+    'vhost.create' => [
+        'type' => 2,
+    ],
+    'deny:vhost.create' => [
+        'type' => 2,
+    ],
+    'vhost.update' => [
+        'type' => 2,
+    ],
+    'deny:vhost.update' => [
+        'type' => 2,
+    ],
+    'vhost.delete' => [
+        'type' => 2,
+    ],
+    'deny:vhost.delete' => [
+        'type' => 2,
+    ],
     'have-goods' => [
         'type' => 2,
     ],
@@ -529,16 +920,22 @@ return [
     'deny:server.read' => [
         'type' => 2,
     ],
+    'stock.read' => [
+        'type' => 2,
+    ],
+    'deny:stock.read' => [
+        'type' => 2,
+    ],
     'part.read' => [
         'type' => 2,
     ],
     'deny:part.read' => [
         'type' => 2,
     ],
-    'stock.read' => [
+    'move.read' => [
         'type' => 2,
     ],
-    'deny:stock.read' => [
+    'deny:move.read' => [
         'type' => 2,
     ],
     'domain.read' => [
@@ -653,30 +1050,6 @@ return [
         'type' => 2,
     ],
     'deny:contact.delete' => [
-        'type' => 2,
-    ],
-    'account.read' => [
-        'type' => 2,
-    ],
-    'deny:account.read' => [
-        'type' => 2,
-    ],
-    'account.create' => [
-        'type' => 2,
-    ],
-    'deny:account.create' => [
-        'type' => 2,
-    ],
-    'account.update' => [
-        'type' => 2,
-    ],
-    'deny:account.update' => [
-        'type' => 2,
-    ],
-    'account.delete' => [
-        'type' => 2,
-    ],
-    'deny:account.delete' => [
         'type' => 2,
     ],
     'server.create' => [
@@ -851,12 +1224,6 @@ return [
         'type' => 2,
     ],
     'deny:part.delete' => [
-        'type' => 2,
-    ],
-    'move.read' => [
-        'type' => 2,
-    ],
-    'deny:move.read' => [
         'type' => 2,
     ],
     'move.create' => [
