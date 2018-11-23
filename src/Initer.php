@@ -52,7 +52,7 @@ class Initer extends AbstractIniter
                 'server.read', 'server.power-management', 'server.system-management', 'server.set-note',
             ],
             'role:server.admin' => [
-                'role:server.user', 'server.create', 'server.update', 'server.delete', 'server.wizzard', 'server.set-label',
+                'role:server.user', 'server.create', 'server.update', 'server.delete', 'server.wizzard', 'server.set-label', 'consumption.read',
             ],
             'role:server.manager' => [
                 'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
@@ -65,6 +65,12 @@ class Initer extends AbstractIniter
             ],
             'role:hub.manager' => [
                 'hub.read', 'hub.sell',
+            ],
+            'role:consumption.user' => [
+                'consumption.read',
+            ],
+            'role:consumption.manager' => [
+                'consumption.read', 'consumption.delete',
             ],
             // HOSTING MODULE
             'role:account.user' => [
@@ -244,8 +250,7 @@ class Initer extends AbstractIniter
                 'role:support',
                 'role:document.manager', 'role:stock.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
-                'role:server.manager',
-                'role:hub.manager',
+                'role:server.manager', 'role:hub.manager', 'role:consumption.manager',
                 'role:dns.manager',
                 'role:certificate.manager', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'contact.force-verify',

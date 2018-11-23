@@ -72,6 +72,7 @@ return [
             'server.delete',
             'server.wizzard',
             'server.set-label',
+            'consumption.read',
         ],
     ],
     'role:server.manager' => [
@@ -105,6 +106,19 @@ return [
         'children' => [
             'hub.read',
             'hub.sell',
+        ],
+    ],
+    'role:consumption.user' => [
+        'type' => 1,
+        'children' => [
+            'consumption.read',
+        ],
+    ],
+    'role:consumption.manager' => [
+        'type' => 1,
+        'children' => [
+            'consumption.read',
+            'consumption.delete',
         ],
     ],
     'role:account.user' => [
@@ -496,6 +510,7 @@ return [
             'domain.push',
             'role:server.manager',
             'role:hub.manager',
+            'role:consumption.manager',
             'role:dns.manager',
             'role:certificate.manager',
             'certificate.pay',
@@ -803,6 +818,12 @@ return [
     'deny:server.set-label' => [
         'type' => 2,
     ],
+    'consumption.read' => [
+        'type' => 2,
+    ],
+    'deny:consumption.read' => [
+        'type' => 2,
+    ],
     'server.enable-block' => [
         'type' => 2,
     ],
@@ -855,6 +876,12 @@ return [
         'type' => 2,
     ],
     'deny:hub.sell' => [
+        'type' => 2,
+    ],
+    'consumption.delete' => [
+        'type' => 2,
+    ],
+    'deny:consumption.delete' => [
         'type' => 2,
     ],
     'account.read' => [
