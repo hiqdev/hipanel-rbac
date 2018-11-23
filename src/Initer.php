@@ -280,7 +280,7 @@ class Initer extends AbstractIniter
             ],
             /// LIMITED ROLES
             'role:junior-manager' => [
-                'access-subclients',
+                'access-subclients', 'access-reseller',
                 'role:hub.user',
                 'role:stock.user',
                 'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'bill.read',

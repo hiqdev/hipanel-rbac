@@ -561,6 +561,7 @@ return [
         'type' => 1,
         'children' => [
             'access-subclients',
+            'access-reseller',
             'role:hub.user',
             'role:stock.user',
             'plan.force-read',
@@ -1454,6 +1455,12 @@ return [
         'type' => 2,
     ],
     'deny:part.sell' => [
+        'type' => 2,
+    ],
+    'access-reseller' => [
+        'type' => 2,
+    ],
+    'deny:access-reseller' => [
         'type' => 2,
     ],
     'domain.read' => [
