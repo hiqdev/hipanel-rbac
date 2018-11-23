@@ -77,9 +77,9 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
             'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.pay',
+            'server.read', 'server.pay', 'server.power-management', 'server.system-management', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read',
+            'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -102,7 +102,7 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read',
+            'server.read', 'server.power-management', 'server.system-management', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
@@ -113,7 +113,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read',
-            'plan.read',
+            'plan.read', 'finance.read',
         ]);
     }
 
@@ -127,8 +127,9 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.create', 'server.update', 'server.delete',
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.power-management', 'server.system-management', 'server.wizzard', 'server.set-label', 'server.set-note',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
+            'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
@@ -143,7 +144,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
-            'plan.read',
+            'plan.read', 'finance.read',
         ]);
     }
 
@@ -154,22 +155,24 @@ trait CheckAccessTrait
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read',
+            'sale.read', 'sale.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
-            'server.read', 'server.pay', 'server.sell',
-            'hub.sell',
+            'server.read', 'server.pay', 'server.sell', 'server.power-management', 'server.system-management', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
+            'hub.sell', 'hub.read',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.acceptance', 'document.invoice',
             'mailing.prepare', 'mailing.send',
+            'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read',
+            'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -192,20 +195,22 @@ trait CheckAccessTrait
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+            'sale.read', 'sale.delete',
             'domain.read', 'domain.update', 'domain.delete', 'domain.pay', 'domain.push',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
-            'server.read', 'server.pay', 'server.sell',
-            'hub.sell',
+            'server.read', 'server.pay', 'server.sell', 'server.power-management', 'server.system-management', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
+            'hub.sell', 'hub.read',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.acceptance', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
+            'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read',
+            'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -224,13 +229,13 @@ trait CheckAccessTrait
             'restore-password', 'deposit',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'document.read', 'document.create', 'document.acceptance',
-            'bill.read', 'employee.read',
+            'bill.read', 'employee.read', 'finance.read',
         ]);
     }
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:bill.manager,role:stock.master,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa', 'user:mighty');
+        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:finance.master,role:stock.master,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'support', 'manage', 'admin',
@@ -238,12 +243,14 @@ trait CheckAccessTrait
             'client.read', 'client.create', 'client.update', 'client.delete',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+            'sale.read', 'sale.delete',
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push', 'domain.force-push', 'domain.force-send-foa',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell', 'server.power-management', 'server.system-management', 'server.wizzard',
+            'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.sell',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -251,12 +258,13 @@ trait CheckAccessTrait
             'document.acceptance', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
+            'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read',
+            'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -272,7 +280,7 @@ trait CheckAccessTrait
 
     public function testLimited()
     {
-        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:ip.read,deny:service.read', 'user:limited');
+        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.power-management,deny:server.system-management,deny:server.set-note,deny:ip.read,deny:service.read', 'user:limited');
 
         $this->assertAccesses('user:limited', [
             'have-goods',
@@ -283,7 +291,7 @@ trait CheckAccessTrait
             'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'restore-password', 'bill.read', 'plan.read',
+            'restore-password', 'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
