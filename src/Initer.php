@@ -172,7 +172,7 @@ class Initer extends AbstractIniter
             ],
                 // FINANCE
             'role:finance.read' => [
-                'plan.read', 'bill.read', 'document.read', 'finance.read',
+                'plan.read', 'bill.read', 'document.read', 'finance.read', 'bill.read',
             ],
             'role:finance.user' => [
                 'role:finance.read',
@@ -286,6 +286,7 @@ class Initer extends AbstractIniter
                 'plan.force-read', 'plan.read', 'document.read', 'finance.read',
                 'client.read',
                 'server.read',
+                'consumption.read',
             ],
             /// SUBROLES
             'role:domain.user' => [

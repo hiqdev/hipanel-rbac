@@ -569,6 +569,7 @@ return [
             'finance.read',
             'client.read',
             'server.read',
+            'consumption.read',
         ],
     ],
     'role:domain.user' => [
