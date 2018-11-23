@@ -13,6 +13,47 @@ return [
             'deposit',
         ],
     ],
+    'role:client.support' => [
+        'type' => 1,
+        'children' => [
+            'client.read',
+            'client.force-read',
+        ],
+    ],
+    'role:client.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:client.support',
+            'client.create',
+            'client.update',
+            'client.delete',
+        ],
+    ],
+    'role:employee.manager' => [
+        'type' => 1,
+        'children' => [
+            'employee.read',
+            'employee.create',
+            'employee.update',
+            'employee.delete',
+            'document.acceptance',
+        ],
+    ],
+    'role:client.impersonator' => [
+        'type' => 1,
+        'children' => [
+            'client.impersonate',
+        ],
+    ],
+    'role:contact.user' => [
+        'type' => 1,
+        'children' => [
+            'contact.read',
+            'contact.create',
+            'contact.update',
+            'contact.delete',
+        ],
+    ],
     'role:server.user' => [
         'type' => 1,
         'children' => [
@@ -238,6 +279,7 @@ return [
         'type' => 1,
         'children' => [
             'plan.read',
+            'price.read',
         ],
     ],
     'role:plan.manager' => [
@@ -247,15 +289,17 @@ return [
             'plan.create',
             'plan.update',
             'plan.delete',
+            'plan.force-read',
+            'price.read',
+            'price.update',
+            'price.delete',
+            'price.create',
         ],
     ],
     'role:plan.master' => [
         'type' => 1,
         'children' => [
-            'plan.read',
-            'plan.create',
-            'plan.update',
-            'plan.delete',
+            'role:plan.manager',
         ],
     ],
     'role:document.user' => [
@@ -425,6 +469,7 @@ return [
             'role:server.user',
             'role:hosting.user',
             'plan.read',
+            'price.read',
             'finance.read',
         ],
     ],
@@ -504,6 +549,7 @@ return [
             'role:hub.user',
             'role:stock.user',
             'role:finance.read',
+            'plan.force-read',
             'client.read',
             'server.read',
         ],
@@ -563,15 +609,6 @@ return [
             'certificate.delete',
         ],
     ],
-    'role:contact.user' => [
-        'type' => 1,
-        'children' => [
-            'contact.read',
-            'contact.create',
-            'contact.update',
-            'contact.delete',
-        ],
-    ],
     'role:ticket.user' => [
         'type' => 1,
         'children' => [
@@ -587,37 +624,6 @@ return [
             'role:ticket.user',
             'ticket.update',
             'ticket.delete',
-        ],
-    ],
-    'role:client.support' => [
-        'type' => 1,
-        'children' => [
-            'client.read',
-        ],
-    ],
-    'role:client.manager' => [
-        'type' => 1,
-        'children' => [
-            'role:client.support',
-            'client.create',
-            'client.update',
-            'client.delete',
-        ],
-    ],
-    'role:employee.manager' => [
-        'type' => 1,
-        'children' => [
-            'employee.read',
-            'employee.create',
-            'employee.update',
-            'employee.delete',
-            'document.acceptance',
-        ],
-    ],
-    'role:client.impersonator' => [
-        'type' => 1,
-        'children' => [
-            'client.impersonate',
         ],
     ],
     'role:beta-tester' => [
@@ -649,6 +655,96 @@ return [
         'type' => 2,
     ],
     'deny:deposit' => [
+        'type' => 2,
+    ],
+    'client.read' => [
+        'type' => 2,
+    ],
+    'deny:client.read' => [
+        'type' => 2,
+    ],
+    'client.force-read' => [
+        'type' => 2,
+    ],
+    'deny:client.force-read' => [
+        'type' => 2,
+    ],
+    'client.create' => [
+        'type' => 2,
+    ],
+    'deny:client.create' => [
+        'type' => 2,
+    ],
+    'client.update' => [
+        'type' => 2,
+    ],
+    'deny:client.update' => [
+        'type' => 2,
+    ],
+    'client.delete' => [
+        'type' => 2,
+    ],
+    'deny:client.delete' => [
+        'type' => 2,
+    ],
+    'employee.read' => [
+        'type' => 2,
+    ],
+    'deny:employee.read' => [
+        'type' => 2,
+    ],
+    'employee.create' => [
+        'type' => 2,
+    ],
+    'deny:employee.create' => [
+        'type' => 2,
+    ],
+    'employee.update' => [
+        'type' => 2,
+    ],
+    'deny:employee.update' => [
+        'type' => 2,
+    ],
+    'employee.delete' => [
+        'type' => 2,
+    ],
+    'deny:employee.delete' => [
+        'type' => 2,
+    ],
+    'document.acceptance' => [
+        'type' => 2,
+    ],
+    'deny:document.acceptance' => [
+        'type' => 2,
+    ],
+    'client.impersonate' => [
+        'type' => 2,
+    ],
+    'deny:client.impersonate' => [
+        'type' => 2,
+    ],
+    'contact.read' => [
+        'type' => 2,
+    ],
+    'deny:contact.read' => [
+        'type' => 2,
+    ],
+    'contact.create' => [
+        'type' => 2,
+    ],
+    'deny:contact.create' => [
+        'type' => 2,
+    ],
+    'contact.update' => [
+        'type' => 2,
+    ],
+    'deny:contact.update' => [
+        'type' => 2,
+    ],
+    'contact.delete' => [
+        'type' => 2,
+    ],
+    'deny:contact.delete' => [
         'type' => 2,
     ],
     'server.read' => [
@@ -1041,6 +1137,12 @@ return [
     'deny:plan.read' => [
         'type' => 2,
     ],
+    'price.read' => [
+        'type' => 2,
+    ],
+    'deny:price.read' => [
+        'type' => 2,
+    ],
     'plan.create' => [
         'type' => 2,
     ],
@@ -1059,6 +1161,30 @@ return [
     'deny:plan.delete' => [
         'type' => 2,
     ],
+    'plan.force-read' => [
+        'type' => 2,
+    ],
+    'deny:plan.force-read' => [
+        'type' => 2,
+    ],
+    'price.update' => [
+        'type' => 2,
+    ],
+    'deny:price.update' => [
+        'type' => 2,
+    ],
+    'price.delete' => [
+        'type' => 2,
+    ],
+    'deny:price.delete' => [
+        'type' => 2,
+    ],
+    'price.create' => [
+        'type' => 2,
+    ],
+    'deny:price.create' => [
+        'type' => 2,
+    ],
     'document.read' => [
         'type' => 2,
     ],
@@ -1075,12 +1201,6 @@ return [
         'type' => 2,
     ],
     'deny:document.invoice' => [
-        'type' => 2,
-    ],
-    'document.acceptance' => [
-        'type' => 2,
-    ],
-    'deny:document.acceptance' => [
         'type' => 2,
     ],
     'document.update' => [
@@ -1305,18 +1425,6 @@ return [
     'deny:part.sell' => [
         'type' => 2,
     ],
-    'employee.read' => [
-        'type' => 2,
-    ],
-    'deny:employee.read' => [
-        'type' => 2,
-    ],
-    'client.read' => [
-        'type' => 2,
-    ],
-    'deny:client.read' => [
-        'type' => 2,
-    ],
     'domain.read' => [
         'type' => 2,
     ],
@@ -1407,30 +1515,6 @@ return [
     'deny:certificate.delete' => [
         'type' => 2,
     ],
-    'contact.read' => [
-        'type' => 2,
-    ],
-    'deny:contact.read' => [
-        'type' => 2,
-    ],
-    'contact.create' => [
-        'type' => 2,
-    ],
-    'deny:contact.create' => [
-        'type' => 2,
-    ],
-    'contact.update' => [
-        'type' => 2,
-    ],
-    'deny:contact.update' => [
-        'type' => 2,
-    ],
-    'contact.delete' => [
-        'type' => 2,
-    ],
-    'deny:contact.delete' => [
-        'type' => 2,
-    ],
     'ticket.read' => [
         'type' => 2,
     ],
@@ -1465,48 +1549,6 @@ return [
         'type' => 2,
     ],
     'deny:ticket.delete' => [
-        'type' => 2,
-    ],
-    'client.create' => [
-        'type' => 2,
-    ],
-    'deny:client.create' => [
-        'type' => 2,
-    ],
-    'client.update' => [
-        'type' => 2,
-    ],
-    'deny:client.update' => [
-        'type' => 2,
-    ],
-    'client.delete' => [
-        'type' => 2,
-    ],
-    'deny:client.delete' => [
-        'type' => 2,
-    ],
-    'employee.create' => [
-        'type' => 2,
-    ],
-    'deny:employee.create' => [
-        'type' => 2,
-    ],
-    'employee.update' => [
-        'type' => 2,
-    ],
-    'deny:employee.update' => [
-        'type' => 2,
-    ],
-    'employee.delete' => [
-        'type' => 2,
-    ],
-    'deny:employee.delete' => [
-        'type' => 2,
-    ],
-    'client.impersonate' => [
-        'type' => 2,
-    ],
-    'deny:client.impersonate' => [
         'type' => 2,
     ],
     'test.beta' => [

@@ -31,6 +31,22 @@ class Initer extends AbstractIniter
             'role:unauthorized' => [
                 'restore-password', 'deposit',
             ],
+            // CLIENT MODULE
+            'role:client.support' => [
+                'client.read', 'client.force-read',
+            ],
+            'role:client.manager' => [
+                'role:client.support', 'client.create', 'client.update', 'client.delete',
+            ],
+            'role:employee.manager' => [
+                'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
+            ],
+            'role:client.impersonator' => [
+                'client.impersonate',
+            ],
+            'role:contact.user' => [
+                'contact.read', 'contact.create', 'contact.update', 'contact.delete',
+            ],
             // SERVER MODULE
             'role:server.user' => [
                 'server.read', 'server.power-management', 'server.system-management', 'server.set-note',
@@ -115,13 +131,14 @@ class Initer extends AbstractIniter
             ],
                 // PLAN
             'role:plan.user' => [
-                'plan.read',
+                'plan.read', 'price.read',
             ],
             'role:plan.manager' => [
-                'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+                'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
+                'price.read', 'price.update', 'price.delete', 'price.create',
             ],
             'role:plan.master' => [
-                'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+                'role:plan.manager',
             ],
                 // DOCUMENT
             'role:document.user' => [
@@ -212,7 +229,7 @@ class Initer extends AbstractIniter
                 'role:contact.user',
                 'role:server.user',
                 'role:hosting.user',
-                'plan.read', 'finance.read',
+                'plan.read', 'price.read', 'finance.read',
             ],
             'role:admin' => [
                 'admin',
@@ -262,6 +279,7 @@ class Initer extends AbstractIniter
                 'role:hub.user',
                 'role:stock.user',
                 'role:finance.read',
+                'plan.force-read',
                 'client.read',
                 'server.read',
             ],
@@ -290,27 +308,11 @@ class Initer extends AbstractIniter
             'role:certificate.manager' => [
                 'role:certificate.user', 'certificate.delete',
             ],
-            'role:contact.user' => [
-                'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            ],
             'role:ticket.user' => [
                 'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             ],
             'role:ticket.manager' => [
                 'role:ticket.user', 'ticket.update', 'ticket.delete',
-            ],
-            'role:client.support' => [
-                'client.read',
-            ],
-            'role:client.manager' => [
-                'role:client.support', 'client.create', 'client.update', 'client.delete',
-            ],
-            'role:employee.manager' => [
-                'employee.read', 'employee.create', 'employee.update', 'employee.delete',
-                'document.acceptance',
-            ],
-            'role:client.impersonator' => [
-                'client.impersonate',
             ],
             'role:beta-tester' => [
                 'test.beta',

@@ -79,7 +79,7 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'server.read', 'server.pay', 'server.power-management', 'server.system-management', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read', 'finance.read',
+            'bill.read', 'plan.read', 'finance.read', 'price.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -97,7 +97,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:support', [
             'access-subclients', 'support',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read',
+            'client.read', 'client.force-read',
             'domain.read', 'domain.update',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
@@ -113,7 +113,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read',
-            'plan.read', 'finance.read',
+            'plan.read', 'finance.read', 'price.read',
         ]);
     }
 
@@ -122,7 +122,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:admin', [
             'access-subclients', 'support', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read',
+            'client.read', 'client.force-read',
             'domain.read', 'domain.update',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
@@ -144,7 +144,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
-            'plan.read', 'finance.read',
+            'plan.read', 'finance.read', 'price.read',
         ]);
     }
 
@@ -153,10 +153,11 @@ trait CheckAccessTrait
         $this->assertAccesses('role:manager', [
             'access-subclients', 'support', 'manage',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.create', 'client.update', 'client.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.force-read',
             'bill.read',
             'sale.read', 'sale.delete',
-            'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
+            'price.read', 'price.create', 'price.update', 'price.delete',
             'domain.read', 'domain.update', 'domain.delete',
             'domain.pay', 'domain.push',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
@@ -192,9 +193,10 @@ trait CheckAccessTrait
             'deposit', 'have-goods',
             'access-subclients', 'support', 'manage', 'resell',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.create', 'client.update', 'client.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.force-read',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
-            'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
+            'price.read', 'price.create', 'price.update', 'price.delete',
             'sale.read', 'sale.delete',
             'domain.read', 'domain.update', 'domain.delete', 'domain.pay', 'domain.push',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
@@ -240,9 +242,10 @@ trait CheckAccessTrait
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'support', 'manage', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.create', 'client.update', 'client.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.force-read',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
-            'plan.read', 'plan.create', 'plan.update', 'plan.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
+            'price.read', 'price.create', 'price.update', 'price.delete',
             'sale.read', 'sale.delete',
             'domain.freeze',
             'domain.read', 'domain.update', 'domain.delete',
@@ -291,7 +294,7 @@ trait CheckAccessTrait
             'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'restore-password', 'bill.read', 'plan.read', 'finance.read',
+            'restore-password', 'bill.read', 'plan.read', 'finance.read', 'price.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
