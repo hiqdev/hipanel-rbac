@@ -277,12 +277,12 @@ return [
         'type' => 1,
         'children' => [
             'access-subclients',
-            'role:hosting.read',
             'client.read',
             'server.read',
             'stock.read',
             'part.read',
             'move.read',
+            'model.read',
             'plan.read',
         ],
     ],
@@ -945,6 +945,12 @@ return [
     'deny:move.read' => [
         'type' => 2,
     ],
+    'model.read' => [
+        'type' => 2,
+    ],
+    'deny:model.read' => [
+        'type' => 2,
+    ],
     'domain.read' => [
         'type' => 2,
     ],
@@ -1249,12 +1255,6 @@ return [
         'type' => 2,
     ],
     'deny:move.delete' => [
-        'type' => 2,
-    ],
-    'model.read' => [
-        'type' => 2,
-    ],
-    'deny:model.read' => [
         'type' => 2,
     ],
     'model.create' => [
