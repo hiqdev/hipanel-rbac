@@ -31,6 +31,189 @@ class Initer extends AbstractIniter
             'role:unauthorized' => [
                 'restore-password', 'deposit',
             ],
+            // CLIENT MODULE
+            'role:client.support' => [
+                'client.read', 'client.force-read',
+            ],
+            'role:client.manager' => [
+                'role:client.support', 'client.create', 'client.update', 'client.delete',
+            ],
+            'role:employee.manager' => [
+                'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
+            ],
+            'role:client.impersonator' => [
+                'client.impersonate',
+            ],
+            'role:contact.user' => [
+                'contact.read', 'contact.create', 'contact.update', 'contact.delete',
+            ],
+            // SERVER MODULE
+            'role:server.user' => [
+                'server.read', 'server.control-power', 'server.control-system', 'server.set-note',
+            ],
+            'role:server.admin' => [
+                'role:server.user', 'server.create', 'server.update', 'server.delete', 'server.wizzard', 'server.set-label', 'consumption.read',
+            ],
+            'role:server.manager' => [
+                'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
+            ],
+            'role:hub.user' => [
+                'hub.read',
+            ],
+            'role:hub.admin' => [
+                'hub.read', 'hub.create', 'hub.update', 'hub.delete',
+            ],
+            'role:hub.manager' => [
+                'hub.read', 'hub.sell',
+            ],
+            'role:consumption.user' => [
+                'consumption.read',
+            ],
+            'role:consumption.manager' => [
+                'consumption.read', 'consumption.delete',
+            ],
+            // HOSTING MODULE
+            'role:account.user' => [
+                'account.read', 'account.create', 'account.update', 'account.delete',
+            ],
+            'role:backup.user' => [
+                'backup.read', 'backup.delete',
+            ],
+            'role:backuping.user' => [
+                'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            ],
+            'role:crontab.user' => [
+                'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            ],
+            'role:db.user' => [
+                'db.read', 'db.create', 'db.update', 'db.delete',
+            ],
+            'role:hdomain.user' => [
+                'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+            ],
+            'role:ip.admin' => [
+                'ip.read', 'ip.create', 'ip.update', 'ip.delete',
+            ],
+            'role:mail.user' => [
+                'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            ],
+            'role:request.user' => [
+                'request.read', 'request.create', 'request.update', 'request.delete',
+            ],
+            'role:service.admin' => [
+                'service.read', 'service.create', 'service.update', 'service.delete',
+            ],
+            'role:vhost.user' => [
+                'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            ],
+            'role:hosting.reader' => [
+                'account.read', 'backup.read', 'backuping.read',
+                'crontab.read', 'db.read', 'hdomain.read',
+                'ip.read', 'mail.read', 'request.read','service.read',
+                'vhost.read',
+            ],
+            'role:hosting.user' => [
+                'role:account.user', 'role:backup.user', 'role:backuping.user',
+                'role:crontab.user', 'role:db.user', 'role:hdomain.user',
+                'role:mail.user', 'role:request.user', 'role:vhost.user',
+                'ip.read', 'service.read',
+            ],
+            'role:hosting.admin' => [
+                'role:account.user', 'role:backup.user', 'role:backuping.user',
+                'role:crontab.user', 'role:db.user', 'role:hdomain.user',
+                'role:mail.user', 'role:request.user', 'role:vhost.user',
+                'role:ip.admin', 'role:service.admin',
+            ],
+            // FINANCE MODULE
+                // BILL
+            'role:bill.user' => [
+                'bill.read', 'deposit',
+            ],
+            'role:bill.manager' => [
+                'bill.read',
+            ],
+            'role:bill.master' => [
+                'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
+            ],
+                // PLAN
+            'role:plan.user' => [
+                'plan.read', 'price.read',
+            ],
+            'role:plan.manager' => [
+                'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
+                'price.read', 'price.update', 'price.delete', 'price.create',
+            ],
+            'role:plan.master' => [
+                'role:plan.manager',
+            ],
+                // DOCUMENT
+            'role:document.user' => [
+                'document.read', 'document.create', 'document.invoice',
+            ],
+            'role:document.employee' => [
+                'document.read', 'document.create', 'document.acceptance',
+            ],
+            'role:document.manager' => [
+                'role:document.user', 'document.update', 'document.delete',
+                'document.generate', 'document.acceptance', 'document.invoice',
+            ],
+            'role:document.master' => [
+                'document.generate-all',
+            ],
+                // SALE
+            'role:sale.user' => [
+                'sale.read',
+            ],
+            'role:sale.manager' => [
+                'sale.read', 'sale.delete',
+            ],
+            'role:sale.master' => [
+                'sale.read', 'sale.delete',
+            ],
+                // FINANCE
+            'role:finance.reader' => [
+                'plan.read', 'bill.read', 'document.read', 'finance.read', 'bill.read',
+            ],
+            'role:finance.user' => [
+                'role:finance.reader',
+                'role:bill.user',
+                'role:plan.user',
+                'role:document.user',
+            ],
+            'role:finance.employee' => [
+                'role:bill.user',
+                'role:document.employee',
+                'finance.read',
+            ],
+            'role:finance.manager' => [
+                'role:finance.reader',
+                'role:bill.manager',
+                'role:plan.manager',
+                'role:document.manager',
+                'role:sale.manager',
+                'finance.read',
+            ],
+            'role:finance.master' => [
+                'role:finance.manager',
+                'role:bill.master',
+                'role:plan.master',
+                'role:document.manager',
+                'role:sale.master',
+            ],
+            // STOCK MODULE
+            'role:stock.user' => [
+                'stock.read', 'part.read', 'move.read', 'model.read',
+            ],
+            'role:stock.manager' => [
+                'role:stock.user',
+                'part.create', 'part.update', 'part.delete',
+                'move.create', 'move.update', 'move.delete',
+                'model.create', 'model.update', 'model.delete',
+            ],
+            'role:stock.master' => [
+                'role:stock.manager', 'move.read-all',
+            ],
+            // ROLES
             'role:client' => [
                 'role:unauthorized', 'have-goods',
                 'role:ticket.user',
@@ -39,8 +222,8 @@ class Initer extends AbstractIniter
                 'role:certificate.user', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'role:document.user', 'document.invoice',
                 'role:server.user', 'server.pay',
-                'role:account.user',
-                'bill.read', 'plan.read',
+                'role:hosting.user',
+                'role:finance.user',
             ],
             'role:support' => [
                 'access-subclients', 'support',
@@ -51,56 +234,59 @@ class Initer extends AbstractIniter
                 'role:certificate.user',
                 'role:contact.user',
                 'role:server.user',
-                'role:account.user',
-                'plan.read',
+                'role:hosting.user',
+                'plan.read', 'price.read', 'finance.read',
             ],
             'role:admin' => [
-                'role:support', 'admin',
+                'admin',
+                'role:support',
                 'role:hub.admin',
                 'role:stock.manager',
                 'role:server.admin',
+                'role:hosting.admin',
             ],
             'role:manager' => [
-                'role:support', 'manage',
+                'manage',
+                'role:support',
                 'role:document.manager', 'role:stock.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
+                'role:server.manager', 'role:hub.manager', 'role:consumption.manager',
                 'role:dns.manager',
                 'role:certificate.manager', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'contact.force-verify',
                 'role:client.manager',
-                'role:plan.manager',
-                'bill.read',
-                'server.pay', 'server.sell',
-                'hub.sell',
+                'role:finance.manager',
                 'mailing.prepare', 'mailing.send',
             ],
             'role:reseller' => [
-                'have-goods', 'deposit',
-                'role:manager', 'role:bill.manager',
+                'have-goods',
+                'role:manager',
+                'role:finance.master',
                 'resell',
             ],
             'role:owner' => [
-                'deposit',
-                'role:manager', 'role:bill.manager',
+                'role:manager',
+                'role:bill.master',
                 'resell', 'own',
             ],
             'role:superpowers' => [
                 'see-no-mans', 'part.sell',
             ],
             'role:employee' => [
-                'restore-password', 'deposit',
+                'restore-password',
                 'role:contact.user',
-                'role:document.user', 'document.acceptance',
-                'bill.read', 'employee.read',
+                'role:finance.employee',
+                'employee.read',
             ],
             /// LIMITED ROLES
             'role:junior-manager' => [
-                'access-subclients',
+                'access-subclients', 'access-reseller',
+                'role:hub.user',
+                'role:stock.user',
+                'plan.force-read', 'plan.read', 'document.read', 'finance.read',
                 'client.read',
                 'server.read',
-                'stock.read',
-                'part.read',
-                'move.read',
+                'consumption.read',
             ],
             /// SUBROLES
             'role:domain.user' => [
@@ -127,63 +313,11 @@ class Initer extends AbstractIniter
             'role:certificate.manager' => [
                 'role:certificate.user', 'certificate.delete',
             ],
-            'role:contact.user' => [
-                'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            ],
-            'role:account.user' => [
-                'account.read', 'account.create', 'account.update', 'account.delete',
-            ],
-            'role:server.user' => [
-                'server.read',
-            ],
-            'role:server.admin' => [
-                'role:server.user', 'server.create', 'server.update', 'server.delete',
-            ],
-            'role:hub.admin' => [
-                'hub.read', 'hub.create', 'hub.update', 'hub.delete',
-            ],
             'role:ticket.user' => [
                 'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             ],
             'role:ticket.manager' => [
                 'role:ticket.user', 'ticket.update', 'ticket.delete',
-            ],
-            'role:client.support' => [
-                'client.read',
-            ],
-            'role:client.manager' => [
-                'role:client.support', 'client.create', 'client.update', 'client.delete',
-            ],
-            'role:employee.manager' => [
-                'employee.read', 'employee.create', 'employee.update', 'employee.delete',
-                'document.acceptance',
-            ],
-            'role:client.impersonator' => [
-                'client.impersonate',
-            ],
-            'role:bill.manager' => [
-                'bill.read', 'bill.create', 'bill.update', 'bill.delete',
-            ],
-            'role:plan.manager' => [
-                'plan.read', 'plan.create', 'plan.update', 'plan.delete',
-            ],
-            'role:stock.manager' => [
-                'part.read', 'part.create', 'part.update', 'part.delete',
-                'move.read', 'move.create', 'move.update', 'move.delete',
-                'model.read', 'model.create', 'model.update', 'model.delete',
-            ],
-            'role:stock.master' => [
-                'role:stock.manager', 'move.read-all',
-            ],
-            'role:document.user' => [
-                'document.read', 'document.create',
-            ],
-            'role:document.manager' => [
-                'role:document.user', 'document.update', 'document.delete',
-                'document.generate', 'document.acceptance', 'document.invoice',
-            ],
-            'role:document.master' => [
-                'document.generate-all',
             ],
             'role:beta-tester' => [
                 'test.beta',
