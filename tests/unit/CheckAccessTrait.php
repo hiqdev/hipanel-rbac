@@ -97,7 +97,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:support', [
             'access-subclients', 'support',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.force-read',
+            'client.read', 'client.list',
             'domain.read', 'domain.update',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
@@ -122,7 +122,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:admin', [
             'access-subclients', 'support', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.force-read',
+            'client.read', 'client.list',
             'domain.read', 'domain.update',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
@@ -154,7 +154,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:manager', [
             'access-subclients', 'support', 'manage',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.create', 'client.update', 'client.delete', 'client.force-read',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'bill.read',
             'sale.read', 'sale.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
@@ -194,7 +194,7 @@ trait CheckAccessTrait
             'deposit', 'have-goods',
             'access-subclients', 'support', 'manage', 'resell',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.create', 'client.update', 'client.delete', 'client.force-read',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
@@ -244,7 +244,7 @@ trait CheckAccessTrait
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'support', 'manage', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
-            'client.read', 'client.create', 'client.update', 'client.delete', 'client.force-read',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
