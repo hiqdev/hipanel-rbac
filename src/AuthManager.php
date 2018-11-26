@@ -10,7 +10,8 @@
 
 namespace hipanel\rbac;
 
-use Yii;
+use yii\helpers\Yii;
+use yii\rbac\RuleFactory;
 
 /**
  * HiPanel AuthManager.
@@ -19,11 +20,13 @@ use Yii;
  */
 class AuthManager extends \yii\rbac\PhpManager
 {
-    public $itemFile       = '@hipanel/rbac/files/items.php';
-    public $ruleFile       = '@hipanel/rbac/files/rules.php';
-    public $assignmentFile = '@hipanel/rbac/files/assignments.php';
-
     use SetterTrait;
+
+    public function __construct()
+    {
+        $dir = __DIR__ . '/files';
+        parent::__construct($dir, new RuleFactory);
+    }
 
     /**
      * We don't keep all the assignments, only persistent.
@@ -56,10 +59,10 @@ class AuthManager extends \yii\rbac\PhpManager
     {
         $roles = '';
 
-        if (isset(Yii::$app->user)) {
-            $user = Yii::$app->user->identity;
+        if (isset(Yii::getApp()->user)) {
+            $user = Yii::getApp()->user->identity;
             if ((!$user || $user->id !== $userId) && $userId) {
-                $user = call_user_func([Yii::$app->user->identityClass, 'findIdentity'], $userId);
+                $user = call_user_func([Yii::getApp()->user->identityClass, 'findIdentity'], $userId);
             }
             if (isset($user->roles)) {
                 $roles = $user->roles;

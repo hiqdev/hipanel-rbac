@@ -10,8 +10,8 @@
 
 namespace hipanel\rbac;
 
-use Yii;
-use yii\base\InvalidConfigException;
+use yii\helpers\Yii;
+use yii\exceptions\InvalidConfigException;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
 
