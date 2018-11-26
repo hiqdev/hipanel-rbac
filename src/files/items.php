@@ -568,7 +568,6 @@ return [
             'plan.read',
             'document.read',
             'finance.read',
-            'bill.read',
             'client.read',
             'server.read',
             'consumption.read',

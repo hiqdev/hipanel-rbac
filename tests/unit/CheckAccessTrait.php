@@ -185,7 +185,6 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read',
-
         ]);
     }
 
@@ -308,6 +307,18 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
         ]);
+    }
+
+    public function testJuniorManager()
+    {
+        $this->assertAccesses('role:junior-manager', [
+            'access-subclients', 'access-reseller',
+            'client.read', 'server.read', 'consumption.read',
+            'plan.force-read', 'plan.read', 'document.read', 'finance.read',
+            'stock.read', 'part.read', 'move.read', 'model.read',
+            'hub.read',
+        ]);
+
     }
 
     public function testBetaTester()

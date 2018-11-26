@@ -283,7 +283,7 @@ class Initer extends AbstractIniter
                 'access-subclients', 'access-reseller',
                 'role:hub.user',
                 'role:stock.user',
-                'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'bill.read',
+                'plan.force-read', 'plan.read', 'document.read', 'finance.read',
                 'client.read',
                 'server.read',
                 'consumption.read',
