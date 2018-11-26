@@ -49,7 +49,7 @@ class Initer extends AbstractIniter
             ],
             // SERVER MODULE
             'role:server.user' => [
-                'server.read', 'server.power-management', 'server.system-management', 'server.set-note',
+                'server.read', 'server.control-power', 'server.control-system', 'server.set-note',
             ],
             'role:server.admin' => [
                 'role:server.user', 'server.create', 'server.update', 'server.delete', 'server.wizzard', 'server.set-label', 'consumption.read',
@@ -106,7 +106,7 @@ class Initer extends AbstractIniter
             'role:vhost.user' => [
                 'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             ],
-            'role:hosting.read' => [
+            'role:hosting.reader' => [
                 'account.read', 'backup.read', 'backuping.read',
                 'crontab.read', 'db.read', 'hdomain.read',
                 'ip.read', 'mail.read', 'request.read','service.read',
@@ -171,11 +171,11 @@ class Initer extends AbstractIniter
                 'sale.read', 'sale.delete',
             ],
                 // FINANCE
-            'role:finance.read' => [
+            'role:finance.reader' => [
                 'plan.read', 'bill.read', 'document.read', 'finance.read', 'bill.read',
             ],
             'role:finance.user' => [
-                'role:finance.read',
+                'role:finance.reader',
                 'role:bill.user',
                 'role:plan.user',
                 'role:document.user',
@@ -186,7 +186,7 @@ class Initer extends AbstractIniter
                 'finance.read',
             ],
             'role:finance.manager' => [
-                'role:finance.read',
+                'role:finance.reader',
                 'role:bill.manager',
                 'role:plan.manager',
                 'role:document.manager',

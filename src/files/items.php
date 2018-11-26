@@ -58,8 +58,8 @@ return [
         'type' => 1,
         'children' => [
             'server.read',
-            'server.power-management',
-            'server.system-management',
+            'server.control-power',
+            'server.control-system',
             'server.set-note',
         ],
     ],
@@ -218,7 +218,7 @@ return [
             'vhost.delete',
         ],
     ],
-    'role:hosting.read' => [
+    'role:hosting.reader' => [
         'type' => 1,
         'children' => [
             'account.read',
@@ -369,7 +369,7 @@ return [
             'sale.delete',
         ],
     ],
-    'role:finance.read' => [
+    'role:finance.reader' => [
         'type' => 1,
         'children' => [
             'plan.read',
@@ -381,7 +381,7 @@ return [
     'role:finance.user' => [
         'type' => 1,
         'children' => [
-            'role:finance.read',
+            'role:finance.reader',
             'role:bill.user',
             'role:plan.user',
             'role:document.user',
@@ -398,7 +398,7 @@ return [
     'role:finance.manager' => [
         'type' => 1,
         'children' => [
-            'role:finance.read',
+            'role:finance.reader',
             'role:bill.manager',
             'role:plan.manager',
             'role:document.manager',
@@ -773,16 +773,16 @@ return [
     'deny:server.read' => [
         'type' => 2,
     ],
-    'server.power-management' => [
+    'server.control-power' => [
         'type' => 2,
     ],
-    'deny:server.power-management' => [
+    'deny:server.control-power' => [
         'type' => 2,
     ],
-    'server.system-management' => [
+    'server.control-system' => [
         'type' => 2,
     ],
-    'deny:server.system-management' => [
+    'deny:server.control-system' => [
         'type' => 2,
     ],
     'server.set-note' => [

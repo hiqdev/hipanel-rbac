@@ -77,7 +77,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.pay', 'certificate.push',
             'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.pay', 'server.power-management', 'server.system-management', 'server.set-note',
+            'server.read', 'server.pay', 'server.control-power', 'server.control-system', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read', 'plan.read', 'finance.read', 'price.read',
             'backup.read', 'backup.delete',
@@ -102,7 +102,7 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.power-management', 'server.system-management', 'server.set-note',
+            'server.read', 'server.control-power', 'server.control-system', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
@@ -127,7 +127,7 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.power-management', 'server.system-management', 'server.wizzard', 'server.set-label', 'server.set-note',
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power', 'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read',
             'stock.read',
@@ -164,7 +164,7 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
-            'server.read', 'server.pay', 'server.sell', 'server.power-management', 'server.system-management', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
+            'server.read', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.sell', 'hub.read',
             'consumption.read', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -203,7 +203,7 @@ trait CheckAccessTrait
             'domain.read', 'domain.update', 'domain.delete', 'domain.pay', 'domain.push',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
-            'server.read', 'server.pay', 'server.sell', 'server.power-management', 'server.system-management', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
+            'server.read', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.sell', 'hub.read',
             'consumption.read', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
@@ -255,7 +255,7 @@ trait CheckAccessTrait
             'domain.pay', 'domain.push', 'domain.force-push', 'domain.force-send-foa',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell', 'server.power-management', 'server.system-management', 'server.wizzard',
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.wizzard',
             'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.sell',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
@@ -287,7 +287,7 @@ trait CheckAccessTrait
 
     public function testLimited()
     {
-        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.power-management,deny:server.system-management,deny:server.set-note,deny:ip.read,deny:service.read', 'user:limited');
+        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.control-power,deny:server.control-system,deny:server.set-note,deny:ip.read,deny:service.read', 'user:limited');
 
         $this->assertAccesses('user:limited', [
             'have-goods',
