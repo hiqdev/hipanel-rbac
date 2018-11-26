@@ -17,7 +17,7 @@ return [
         'type' => 1,
         'children' => [
             'client.read',
-            'client.force-read',
+            'client.list',
         ],
     ],
     'role:client.manager' => [
@@ -682,10 +682,10 @@ return [
     'deny:client.read' => [
         'type' => 2,
     ],
-    'client.force-read' => [
+    'client.list' => [
         'type' => 2,
     ],
-    'deny:client.force-read' => [
+    'deny:client.list' => [
         'type' => 2,
     ],
     'client.create' => [

@@ -33,7 +33,7 @@ class Initer extends AbstractIniter
             ],
             // CLIENT MODULE
             'role:client.support' => [
-                'client.read', 'client.force-read',
+                'client.read', 'client.list',
             ],
             'role:client.manager' => [
                 'role:client.support', 'client.create', 'client.update', 'client.delete',
