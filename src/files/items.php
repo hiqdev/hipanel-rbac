@@ -509,7 +509,6 @@ return [
             'domain.pay',
             'domain.push',
             'role:server.manager',
-            'role:hub.manager',
             'role:consumption.manager',
             'role:dns.manager',
             'role:certificate.manager',
@@ -555,6 +554,12 @@ return [
             'role:contact.user',
             'role:finance.employee',
             'employee.read',
+        ],
+    ],
+    'role:accounter' => [
+        'type' => 1,
+        'children' => [
+            'role:hub.manager',
         ],
     ],
     'role:junior-manager' => [
