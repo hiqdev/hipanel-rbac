@@ -11,7 +11,7 @@
 namespace hipanel\rbac\tests\unit;
 
 use hipanel\rbac\AuthManager;
-use Yii;
+use yii\helpers\Yii;
 
 /**
  * AuthManagerTest class.

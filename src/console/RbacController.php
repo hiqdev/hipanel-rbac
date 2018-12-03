@@ -11,7 +11,7 @@
 namespace hipanel\rbac\console;
 
 use hipanel\rbac\RbacIniterInterface;
-use Yii;
+use yii\helpers\Yii;
 use yii\base\Module;
 
 /**
