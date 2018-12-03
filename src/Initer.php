@@ -245,12 +245,16 @@ class Initer extends AbstractIniter
                 'role:server.admin',
                 'role:hosting.admin',
             ],
+            'role:accounter' => [
+                'role:manager',
+                'role:hub.manager',
+            ],
             'role:manager' => [
                 'manage',
                 'role:support',
                 'role:document.manager', 'role:stock.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
-                'role:server.manager', 'role:hub.manager', 'role:consumption.manager',
+                'role:server.manager', 'role:consumption.manager',
                 'role:dns.manager',
                 'role:certificate.manager', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'contact.force-verify',
