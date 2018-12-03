@@ -498,6 +498,13 @@ return [
             'role:hosting.admin',
         ],
     ],
+    'role:accounter' => [
+        'type' => 1,
+        'children' => [
+            'role:manager',
+            'role:hub.manager',
+        ],
+    ],
     'role:manager' => [
         'type' => 1,
         'children' => [
@@ -554,12 +561,6 @@ return [
             'role:contact.user',
             'role:finance.employee',
             'employee.read',
-        ],
-    ],
-    'role:accounter' => [
-        'type' => 1,
-        'children' => [
-            'role:hub.manager',
         ],
     ],
     'role:junior-manager' => [
