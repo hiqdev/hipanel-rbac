@@ -9,14 +9,8 @@
  */
 
 return [
-    'components' => [
-        'authManager' => [
-            'class' => \hipanel\rbac\AuthManager::class,
-        ],
+    'authManager' => [
+        '__class' => \hipanel\rbac\AuthManager::class,
     ],
-    'container' => [
-        'definitions' => [
-            \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
-        ],
-    ],
+    \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
