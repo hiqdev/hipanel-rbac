@@ -289,6 +289,21 @@ return [
             'deposit',
         ],
     ],
+    'role:requisites.user' => [
+        'type' => 1,
+        'children' => [
+            'requisites.read',
+        ],
+    ],
+    'role:requisites.manager' => [
+        'type' => 1,
+        'children' => [
+            'requisites.read',
+            'requisites.create',
+            'requisites.update',
+            'requisites.delete',
+        ],
+    ],
     'role:plan.user' => [
         'type' => 1,
         'children' => [
@@ -1166,6 +1181,30 @@ return [
         'type' => 2,
     ],
     'deny:bill.delete' => [
+        'type' => 2,
+    ],
+    'requisites.read' => [
+        'type' => 2,
+    ],
+    'deny:requisites.read' => [
+        'type' => 2,
+    ],
+    'requisites.create' => [
+        'type' => 2,
+    ],
+    'deny:requisites.create' => [
+        'type' => 2,
+    ],
+    'requisites.update' => [
+        'type' => 2,
+    ],
+    'deny:requisites.update' => [
+        'type' => 2,
+    ],
+    'requisites.delete' => [
+        'type' => 2,
+    ],
+    'deny:requisites.delete' => [
         'type' => 2,
     ],
     'plan.read' => [

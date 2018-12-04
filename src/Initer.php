@@ -135,6 +135,13 @@ class Initer extends AbstractIniter
             'role:bill.master' => [
                 'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
             ],
+                // REQUISITES
+            'role:requisites.user' => [
+                'requisites.read',
+            ],
+            'role:requisites.manager' => [
+                'requisites.read', 'requisites.create', 'requisites.update', 'requisites.delete',
+            ],
                 // PLAN
             'role:plan.user' => [
                 'plan.read', 'price.read',
