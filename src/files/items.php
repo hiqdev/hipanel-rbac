@@ -503,6 +503,7 @@ return [
         'children' => [
             'role:manager',
             'role:hub.manager',
+            'role:stock.manager',
         ],
     ],
     'role:manager' => [
@@ -511,7 +512,6 @@ return [
             'manage',
             'role:support',
             'role:document.manager',
-            'role:stock.manager',
             'role:domain.manager',
             'domain.pay',
             'domain.push',
@@ -533,9 +533,9 @@ return [
         'type' => 1,
         'children' => [
             'have-goods',
-            'role:manager',
-            'role:finance.master',
             'resell',
+            'role:finance.master',
+            'role:manager',
         ],
     ],
     'role:owner' => [
@@ -543,6 +543,7 @@ return [
         'children' => [
             'role:manager',
             'role:bill.master',
+            'role:stock.manager',
             'resell',
             'own',
         ],

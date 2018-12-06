@@ -248,11 +248,12 @@ class Initer extends AbstractIniter
             'role:accounter' => [
                 'role:manager',
                 'role:hub.manager',
+                'role:stock.manager',
             ],
             'role:manager' => [
                 'manage',
                 'role:support',
-                'role:document.manager', 'role:stock.manager',
+                'role:document.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
                 'role:server.manager', 'role:consumption.manager',
                 'role:dns.manager',
@@ -264,13 +265,14 @@ class Initer extends AbstractIniter
             ],
             'role:reseller' => [
                 'have-goods',
-                'role:manager',
-                'role:finance.master',
                 'resell',
+                'role:finance.master',
+                'role:manager',
             ],
             'role:owner' => [
                 'role:manager',
                 'role:bill.master',
+                'role:stock.manager',
                 'resell', 'own',
             ],
             'role:superpowers' => [
