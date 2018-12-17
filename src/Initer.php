@@ -135,6 +135,13 @@ class Initer extends AbstractIniter
             'role:bill.master' => [
                 'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
             ],
+                // REQUISITES
+            'role:requisites.user' => [
+                'requisites.read',
+            ],
+            'role:requisites.manager' => [
+                'requisites.read', 'requisites.create', 'requisites.update', 'requisites.delete',
+            ],
                 // PLAN
             'role:plan.user' => [
                 'plan.read', 'price.read',
@@ -245,12 +252,17 @@ class Initer extends AbstractIniter
                 'role:server.admin',
                 'role:hosting.admin',
             ],
+            'role:accounter' => [
+                'role:manager',
+                'role:hub.manager',
+                'role:stock.manager',
+            ],
             'role:manager' => [
                 'manage',
                 'role:support',
-                'role:document.manager', 'role:stock.manager',
+                'role:document.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
-                'role:server.manager', 'role:hub.manager', 'role:consumption.manager',
+                'role:server.manager', 'role:consumption.manager',
                 'role:dns.manager',
                 'role:certificate.manager', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'contact.force-verify',
@@ -260,13 +272,14 @@ class Initer extends AbstractIniter
             ],
             'role:reseller' => [
                 'have-goods',
-                'role:manager',
-                'role:finance.master',
                 'resell',
+                'role:finance.master',
+                'role:manager',
             ],
             'role:owner' => [
                 'role:manager',
                 'role:bill.master',
+                'role:stock.manager',
                 'resell', 'own',
             ],
             'role:superpowers' => [

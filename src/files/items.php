@@ -289,6 +289,21 @@ return [
             'deposit',
         ],
     ],
+    'role:requisites.user' => [
+        'type' => 1,
+        'children' => [
+            'requisites.read',
+        ],
+    ],
+    'role:requisites.manager' => [
+        'type' => 1,
+        'children' => [
+            'requisites.read',
+            'requisites.create',
+            'requisites.update',
+            'requisites.delete',
+        ],
+    ],
     'role:plan.user' => [
         'type' => 1,
         'children' => [
@@ -498,18 +513,24 @@ return [
             'role:hosting.admin',
         ],
     ],
+    'role:accounter' => [
+        'type' => 1,
+        'children' => [
+            'role:manager',
+            'role:hub.manager',
+            'role:stock.manager',
+        ],
+    ],
     'role:manager' => [
         'type' => 1,
         'children' => [
             'manage',
             'role:support',
             'role:document.manager',
-            'role:stock.manager',
             'role:domain.manager',
             'domain.pay',
             'domain.push',
             'role:server.manager',
-            'role:hub.manager',
             'role:consumption.manager',
             'role:dns.manager',
             'role:certificate.manager',
@@ -527,9 +548,9 @@ return [
         'type' => 1,
         'children' => [
             'have-goods',
-            'role:manager',
-            'role:finance.master',
             'resell',
+            'role:finance.master',
+            'role:manager',
         ],
     ],
     'role:owner' => [
@@ -537,6 +558,7 @@ return [
         'children' => [
             'role:manager',
             'role:bill.master',
+            'role:stock.manager',
             'resell',
             'own',
         ],
@@ -1160,6 +1182,30 @@ return [
         'type' => 2,
     ],
     'deny:bill.delete' => [
+        'type' => 2,
+    ],
+    'requisites.read' => [
+        'type' => 2,
+    ],
+    'deny:requisites.read' => [
+        'type' => 2,
+    ],
+    'requisites.create' => [
+        'type' => 2,
+    ],
+    'deny:requisites.create' => [
+        'type' => 2,
+    ],
+    'requisites.update' => [
+        'type' => 2,
+    ],
+    'deny:requisites.update' => [
+        'type' => 2,
+    ],
+    'requisites.delete' => [
+        'type' => 2,
+    ],
+    'deny:requisites.delete' => [
         'type' => 2,
     ],
     'plan.read' => [
