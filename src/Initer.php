@@ -242,7 +242,6 @@ class Initer extends AbstractIniter
                 'role:contact.user',
                 'role:server.user',
                 'role:hosting.user',
-                'plan.read', 'price.read', 'finance.read',
             ],
             'role:admin' => [
                 'admin',
