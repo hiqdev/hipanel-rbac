@@ -9,8 +9,10 @@
  */
 
 return [
+    \yii\rbac\CheckAccessInterface::class => \yii\di\Reference::to('authManager'),
     'authManager' => [
         '__class' => \hipanel\rbac\AuthManager::class,
     ],
+
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
