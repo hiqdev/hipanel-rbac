@@ -73,6 +73,7 @@ return [
             'server.wizzard',
             'server.set-label',
             'consumption.read',
+            'server.manage-settings',
         ],
     ],
     'role:server.manager' => [
@@ -844,6 +845,12 @@ return [
         'type' => 2,
     ],
     'deny:consumption.read' => [
+        'type' => 2,
+    ],
+    'server.manage-settings' => [
+        'type' => 2,
+    ],
+    'deny:server.manage-settings' => [
         'type' => 2,
     ],
     'server.enable-block' => [
