@@ -126,7 +126,10 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power', 'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note',
+
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power',
+            'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
+
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read',
             'stock.read',
@@ -281,7 +284,10 @@ trait CheckAccessTrait
             'domain.pay', 'domain.push', 'domain.force-push', 'domain.force-send-foa',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.wizzard',
+
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
+            'server.control-power', 'server.control-system', 'server.wizzard', 'server.manage-settings',
+
             'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read', 'consumption.delete',
