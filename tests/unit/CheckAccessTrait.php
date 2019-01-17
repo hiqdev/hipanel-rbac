@@ -364,4 +364,11 @@ trait CheckAccessTrait
             'test.alpha', 'test.beta',
         ]);
     }
+
+    public function testSuperPowers()
+    {
+        $this->assertAccesses('role:superpowers', [
+            'see-no-mans', 'part.sell', 'client.set-others-allowed-ips',
+        ]);
+    }
 }

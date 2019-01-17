@@ -565,6 +565,7 @@ return [
         'children' => [
             'see-no-mans',
             'part.sell',
+            'client.set-others-allowed-ips',
         ],
     ],
     'role:employee' => [
@@ -1497,6 +1498,12 @@ return [
         'type' => 2,
     ],
     'deny:part.sell' => [
+        'type' => 2,
+    ],
+    'client.set-others-allowed-ips' => [
+        'type' => 2,
+    ],
+    'deny:client.set-others-allowed-ips' => [
         'type' => 2,
     ],
     'access-reseller' => [
