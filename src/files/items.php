@@ -28,7 +28,8 @@ return [
             'client.update',
             'client.delete',
             'contact.set-verified',
-            'client.set-block',
+            'client.block',
+            'client.unblock',
             'client.get-note',
             'client.set-note',
             'client.set-description',
@@ -739,10 +740,16 @@ return [
     'deny:contact.set-verified' => [
         'type' => 2,
     ],
-    'client.set-block' => [
+    'client.block' => [
         'type' => 2,
     ],
-    'deny:client.set-block' => [
+    'deny:client.block' => [
+        'type' => 2,
+    ],
+    'client.unblock' => [
+        'type' => 2,
+    ],
+    'deny:client.unblock' => [
         'type' => 2,
     ],
     'client.get-note' => [
