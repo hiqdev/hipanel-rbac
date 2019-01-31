@@ -37,7 +37,7 @@ class Initer extends AbstractIniter
             ],
             'role:client.manager' => [
                 'role:client.support', 'client.create', 'client.update', 'client.delete',
-                'contact.set-verified', 'client.set-block',
+                'contact.set-verified', 'client.block', 'client.unblock',
                 'client.get-note', 'client.set-note', 'client.set-description',
             ],
             'role:employee.manager' => [
