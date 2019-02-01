@@ -236,7 +236,6 @@ trait CheckAccessTrait
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
             'client.get-note', 'client.set-note', 'client.set-description',
-            'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
