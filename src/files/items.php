@@ -27,6 +27,12 @@ return [
             'client.create',
             'client.update',
             'client.delete',
+            'contact.set-verified',
+            'client.block',
+            'client.unblock',
+            'client.get-note',
+            'client.set-note',
+            'client.set-description',
         ],
     ],
     'role:employee.manager' => [
@@ -540,6 +546,7 @@ return [
             'role:finance.manager',
             'mailing.prepare',
             'mailing.send',
+            'client.set-tmp-pwd',
         ],
     ],
     'role:reseller' => [
@@ -725,6 +732,42 @@ return [
         'type' => 2,
     ],
     'deny:client.delete' => [
+        'type' => 2,
+    ],
+    'contact.set-verified' => [
+        'type' => 2,
+    ],
+    'deny:contact.set-verified' => [
+        'type' => 2,
+    ],
+    'client.block' => [
+        'type' => 2,
+    ],
+    'deny:client.block' => [
+        'type' => 2,
+    ],
+    'client.unblock' => [
+        'type' => 2,
+    ],
+    'deny:client.unblock' => [
+        'type' => 2,
+    ],
+    'client.get-note' => [
+        'type' => 2,
+    ],
+    'deny:client.get-note' => [
+        'type' => 2,
+    ],
+    'client.set-note' => [
+        'type' => 2,
+    ],
+    'deny:client.set-note' => [
+        'type' => 2,
+    ],
+    'client.set-description' => [
+        'type' => 2,
+    ],
+    'deny:client.set-description' => [
         'type' => 2,
     ],
     'employee.read' => [
@@ -1481,6 +1524,12 @@ return [
         'type' => 2,
     ],
     'deny:mailing.send' => [
+        'type' => 2,
+    ],
+    'client.set-tmp-pwd' => [
+        'type' => 2,
+    ],
+    'deny:client.set-tmp-pwd' => [
         'type' => 2,
     ],
     'resell' => [
