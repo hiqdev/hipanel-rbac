@@ -156,6 +156,13 @@ class Initer extends AbstractIniter
             'role:plan.master' => [
                 'role:plan.manager',
             ],
+                // TARIFF PROFILE
+            'role:tariffprofile.manager' => [
+                'tariffprofile.read',
+            ],
+            'role:tariffprofile.master' => [
+                'tariffprofile.read', 'tariffprofile.create', 'tariffprofile.update', 'tariffprofile.delete',
+            ],
                 // DOCUMENT
             'role:document.user' => [
                 'document.read', 'document.create', 'document.invoice',
@@ -272,12 +279,14 @@ class Initer extends AbstractIniter
                 'role:finance.manager',
                 'mailing.prepare', 'mailing.send',
                 'client.set-tmp-pwd',
+                'role:tariffprofile.manager',
             ],
             'role:reseller' => [
                 'have-goods',
                 'resell',
                 'role:finance.master',
                 'role:manager',
+                'role:tariffprofile.master',
             ],
             'role:owner' => [
                 'role:manager',
