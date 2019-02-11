@@ -153,7 +153,7 @@ trait CheckAccessTrait
     public function testAccounter()
     {
         $this->assertAccesses('role:accounter', [
-            'access-subclients', 'support', 'manage',
+            'access-subclients', 'support', 'manage', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
@@ -194,7 +194,7 @@ trait CheckAccessTrait
     public function testManager()
     {
         $this->assertAccesses('role:manager', [
-            'access-subclients', 'support', 'manage',
+            'access-subclients', 'support', 'manage', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',

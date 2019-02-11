@@ -260,7 +260,7 @@ class Initer extends AbstractIniter
                 'role:stock.manager',
             ],
             'role:manager' => [
-                'manage',
+                'manage', 'access-reseller',
                 'role:support',
                 'role:document.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
@@ -277,6 +277,7 @@ class Initer extends AbstractIniter
                 'have-goods',
                 'resell',
                 'role:finance.master',
+                'deny:access-reseller',
                 'role:manager',
             ],
             'role:owner' => [

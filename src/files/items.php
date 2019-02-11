@@ -529,6 +529,7 @@ return [
         'type' => 1,
         'children' => [
             'manage',
+            'access-reseller',
             'role:support',
             'role:document.manager',
             'role:domain.manager',
@@ -555,6 +556,7 @@ return [
             'have-goods',
             'resell',
             'role:finance.master',
+            'deny:access-reseller',
             'role:manager',
         ],
     ],
@@ -1508,6 +1510,12 @@ return [
     'deny:manage' => [
         'type' => 2,
     ],
+    'access-reseller' => [
+        'type' => 2,
+    ],
+    'deny:access-reseller' => [
+        'type' => 2,
+    ],
     'contact.force-verify' => [
         'type' => 2,
     ],
@@ -1560,12 +1568,6 @@ return [
         'type' => 2,
     ],
     'deny:client.set-others-allowed-ips' => [
-        'type' => 2,
-    ],
-    'access-reseller' => [
-        'type' => 2,
-    ],
-    'deny:access-reseller' => [
         'type' => 2,
     ],
     'domain.read' => [
