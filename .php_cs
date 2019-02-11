@@ -6,7 +6,7 @@ RBAC implementation for HiPanel
 @link      https://github.com/hiqdev/hipanel-rbac
 @package   hipanel-rbac
 @license   BSD-3-Clause
-@copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
+@copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
 EOF;
 
 return PhpCsFixer\Config::create()
