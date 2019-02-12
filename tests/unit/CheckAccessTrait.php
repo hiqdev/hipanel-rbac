@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac\tests\unit;
@@ -153,7 +153,7 @@ trait CheckAccessTrait
     public function testAccounter()
     {
         $this->assertAccesses('role:accounter', [
-            'access-subclients', 'support', 'manage',
+            'access-subclients', 'support', 'manage', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
@@ -195,7 +195,7 @@ trait CheckAccessTrait
     public function testManager()
     {
         $this->assertAccesses('role:manager', [
-            'access-subclients', 'support', 'manage',
+            'access-subclients', 'support', 'manage', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
@@ -362,7 +362,6 @@ trait CheckAccessTrait
             'stock.read', 'part.read', 'move.read', 'model.read',
             'hub.read',
         ]);
-
     }
 
     public function testBetaTester()
