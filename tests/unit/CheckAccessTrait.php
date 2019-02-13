@@ -281,7 +281,7 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:finance.master,role:stock.master,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
-            'access-subclients', 'support', 'manage', 'admin',
+            'access-subclients', 'support', 'manage', 'admin', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',

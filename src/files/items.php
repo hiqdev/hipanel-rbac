@@ -338,19 +338,19 @@ return [
             'role:plan.manager',
         ],
     ],
-    'role:tariffprofile.manager' => [
+    'role:profiletariff.manager' => [
         'type' => 1,
         'children' => [
-            'tariffprofile.read',
+            'profiletariff.read',
         ],
     ],
-    'role:tariffprofile.master' => [
+    'role:profiletariff.master' => [
         'type' => 1,
         'children' => [
-            'tariffprofile.read',
-            'tariffprofile.create',
-            'tariffprofile.update',
-            'tariffprofile.delete',
+            'profiletariff.read',
+            'profiletariff.create',
+            'profiletariff.update',
+            'profiletariff.delete',
         ],
     ],
     'role:document.user' => [
@@ -563,7 +563,7 @@ return [
             'mailing.prepare',
             'mailing.send',
             'client.set-tmp-pwd',
-            'role:tariffprofile.manager',
+            'role:profiletariff.manager',
         ],
     ],
     'role:reseller' => [
@@ -574,7 +574,7 @@ return [
             'role:finance.master',
             'deny:access-reseller',
             'role:manager',
-            'role:tariffprofile.master',
+            'role:profiletariff.master',
         ],
     ],
     'role:owner' => [
@@ -1329,28 +1329,28 @@ return [
     'deny:price.create' => [
         'type' => 2,
     ],
-    'tariffprofile.read' => [
+    'profiletariff.read' => [
         'type' => 2,
     ],
-    'deny:tariffprofile.read' => [
+    'deny:profiletariff.read' => [
         'type' => 2,
     ],
-    'tariffprofile.create' => [
+    'profiletariff.create' => [
         'type' => 2,
     ],
-    'deny:tariffprofile.create' => [
+    'deny:profiletariff.create' => [
         'type' => 2,
     ],
-    'tariffprofile.update' => [
+    'profiletariff.update' => [
         'type' => 2,
     ],
-    'deny:tariffprofile.update' => [
+    'deny:profiletariff.update' => [
         'type' => 2,
     ],
-    'tariffprofile.delete' => [
+    'profiletariff.delete' => [
         'type' => 2,
     ],
-    'deny:tariffprofile.delete' => [
+    'deny:profiletariff.delete' => [
         'type' => 2,
     ],
     'document.read' => [
