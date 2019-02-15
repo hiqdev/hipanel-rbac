@@ -92,7 +92,7 @@ class Initer extends AbstractIniter
                 'db.read', 'db.create', 'db.update', 'db.delete',
             ],
             'role:hdomain.user' => [
-                'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete',
+                'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete', 'hdomain.set-dns',
             ],
             'role:ip.admin' => [
                 'ip.read', 'ip.create', 'ip.update', 'ip.delete',
@@ -227,7 +227,7 @@ class Initer extends AbstractIniter
             'role:client' => [
                 'role:unauthorized', 'have-goods',
                 'role:ticket.user',
-                'role:domain.user', 'domain.pay', 'domain.push',
+                'role:domain.user', 'domain.pay', 'domain.push', 'domain.delete-agp',
                 'role:dns.user',
                 'role:certificate.user', 'certificate.pay', 'certificate.push',
                 'role:contact.user', 'role:document.user', 'document.invoice',
@@ -263,7 +263,7 @@ class Initer extends AbstractIniter
                 'manage', 'access-reseller',
                 'role:support',
                 'role:document.manager',
-                'role:domain.manager', 'domain.pay', 'domain.push',
+                'role:domain.manager', 'domain.pay', 'domain.push', 'domain.delete-agp',
                 'role:server.manager', 'role:consumption.manager',
                 'role:dns.manager',
                 'role:certificate.manager', 'certificate.pay', 'certificate.push',
@@ -307,7 +307,7 @@ class Initer extends AbstractIniter
             ],
             /// SUBROLES
             'role:domain.user' => [
-                'domain.read', 'domain.update',
+                'domain.read', 'domain.update', 'domain.delete-agp', 'domain.set-nss',
             ],
             'role:domain.manager' => [
                 'role:domain.user', 'domain.delete',
@@ -317,6 +317,7 @@ class Initer extends AbstractIniter
                 'domain.freeze', 'domain.unfreeze',
                 'domain.push', 'domain.force-push',
                 'domain.force-send-foa',
+                'domain.approve-trasfer-out',
             ],
             'role:dns.user' => [
                 'dns.create', 'dns.read', 'dns.update', 'dns.delete',
