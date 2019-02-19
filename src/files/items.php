@@ -27,6 +27,12 @@ return [
             'client.create',
             'client.update',
             'client.delete',
+            'contact.set-verified',
+            'client.block',
+            'client.unblock',
+            'client.get-note',
+            'client.set-note',
+            'client.set-description',
         ],
     ],
     'role:employee.manager' => [
@@ -73,6 +79,7 @@ return [
             'server.wizzard',
             'server.set-label',
             'consumption.read',
+            'server.manage-settings',
         ],
     ],
     'role:server.manager' => [
@@ -522,6 +529,7 @@ return [
         'type' => 1,
         'children' => [
             'manage',
+            'access-reseller',
             'role:support',
             'role:document.manager',
             'role:domain.manager',
@@ -539,6 +547,7 @@ return [
             'role:finance.manager',
             'mailing.prepare',
             'mailing.send',
+            'client.set-tmp-pwd',
         ],
     ],
     'role:reseller' => [
@@ -547,6 +556,7 @@ return [
             'have-goods',
             'resell',
             'role:finance.master',
+            'deny:access-reseller',
             'role:manager',
         ],
     ],
@@ -565,6 +575,7 @@ return [
         'children' => [
             'see-no-mans',
             'part.sell',
+            'client.set-others-allowed-ips',
         ],
     ],
     'role:employee' => [
@@ -725,6 +736,42 @@ return [
     'deny:client.delete' => [
         'type' => 2,
     ],
+    'contact.set-verified' => [
+        'type' => 2,
+    ],
+    'deny:contact.set-verified' => [
+        'type' => 2,
+    ],
+    'client.block' => [
+        'type' => 2,
+    ],
+    'deny:client.block' => [
+        'type' => 2,
+    ],
+    'client.unblock' => [
+        'type' => 2,
+    ],
+    'deny:client.unblock' => [
+        'type' => 2,
+    ],
+    'client.get-note' => [
+        'type' => 2,
+    ],
+    'deny:client.get-note' => [
+        'type' => 2,
+    ],
+    'client.set-note' => [
+        'type' => 2,
+    ],
+    'deny:client.set-note' => [
+        'type' => 2,
+    ],
+    'client.set-description' => [
+        'type' => 2,
+    ],
+    'deny:client.set-description' => [
+        'type' => 2,
+    ],
     'employee.read' => [
         'type' => 2,
     ],
@@ -843,6 +890,12 @@ return [
         'type' => 2,
     ],
     'deny:consumption.read' => [
+        'type' => 2,
+    ],
+    'server.manage-settings' => [
+        'type' => 2,
+    ],
+    'deny:server.manage-settings' => [
         'type' => 2,
     ],
     'server.enable-block' => [
@@ -1457,6 +1510,12 @@ return [
     'deny:manage' => [
         'type' => 2,
     ],
+    'access-reseller' => [
+        'type' => 2,
+    ],
+    'deny:access-reseller' => [
+        'type' => 2,
+    ],
     'contact.force-verify' => [
         'type' => 2,
     ],
@@ -1473,6 +1532,12 @@ return [
         'type' => 2,
     ],
     'deny:mailing.send' => [
+        'type' => 2,
+    ],
+    'client.set-tmp-pwd' => [
+        'type' => 2,
+    ],
+    'deny:client.set-tmp-pwd' => [
         'type' => 2,
     ],
     'resell' => [
@@ -1499,10 +1564,10 @@ return [
     'deny:part.sell' => [
         'type' => 2,
     ],
-    'access-reseller' => [
+    'client.set-others-allowed-ips' => [
         'type' => 2,
     ],
-    'deny:access-reseller' => [
+    'deny:client.set-others-allowed-ips' => [
         'type' => 2,
     ],
     'domain.read' => [

@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac\tests\unit;
@@ -126,7 +126,10 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power', 'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note',
+
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power',
+            'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
+
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read',
             'stock.read',
@@ -150,9 +153,11 @@ trait CheckAccessTrait
     public function testAccounter()
     {
         $this->assertAccesses('role:accounter', [
-            'access-subclients', 'support', 'manage',
+            'access-subclients', 'support', 'manage', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
+            'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
+            'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read',
             'sale.read', 'sale.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
@@ -189,9 +194,11 @@ trait CheckAccessTrait
     public function testManager()
     {
         $this->assertAccesses('role:manager', [
-            'access-subclients', 'support', 'manage',
+            'access-subclients', 'support', 'manage', 'access-reseller',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
+            'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
+            'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read',
             'sale.read', 'sale.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
@@ -227,6 +234,8 @@ trait CheckAccessTrait
             'access-subclients', 'support', 'manage', 'resell',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
+            'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
+            'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
@@ -269,9 +278,12 @@ trait CheckAccessTrait
         $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:finance.master,role:stock.master,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
-            'access-subclients', 'support', 'manage', 'admin',
+            'access-subclients', 'access-reseller',
+            'support', 'manage', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
+            'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
+            'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read', 'bill.create', 'bill.update', 'bill.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
@@ -281,7 +293,10 @@ trait CheckAccessTrait
             'domain.pay', 'domain.push', 'domain.force-push', 'domain.force-send-foa',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.wizzard',
+
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
+            'server.control-power', 'server.control-system', 'server.wizzard', 'server.manage-settings',
+
             'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read', 'consumption.delete',
@@ -344,7 +359,6 @@ trait CheckAccessTrait
             'stock.read', 'part.read', 'move.read', 'model.read',
             'hub.read',
         ]);
-
     }
 
     public function testBetaTester()
@@ -362,6 +376,13 @@ trait CheckAccessTrait
 
         $this->assertAccesses('user:alpha-tester', [
             'test.alpha', 'test.beta',
+        ]);
+    }
+
+    public function testSuperPowers()
+    {
+        $this->assertAccesses('role:superpowers', [
+            'see-no-mans', 'part.sell', 'client.set-others-allowed-ips',
         ]);
     }
 }

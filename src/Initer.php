@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2018, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac;
@@ -37,6 +37,8 @@ class Initer extends AbstractIniter
             ],
             'role:client.manager' => [
                 'role:client.support', 'client.create', 'client.update', 'client.delete',
+                'contact.set-verified', 'client.block', 'client.unblock',
+                'client.get-note', 'client.set-note', 'client.set-description',
             ],
             'role:employee.manager' => [
                 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
@@ -52,7 +54,8 @@ class Initer extends AbstractIniter
                 'server.read', 'server.control-power', 'server.control-system', 'server.set-note',
             ],
             'role:server.admin' => [
-                'role:server.user', 'server.create', 'server.update', 'server.delete', 'server.wizzard', 'server.set-label', 'consumption.read',
+                'role:server.user', 'server.create', 'server.update', 'server.delete',
+                'server.wizzard', 'server.set-label', 'consumption.read', 'server.manage-settings',
             ],
             'role:server.manager' => [
                 'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
@@ -109,7 +112,7 @@ class Initer extends AbstractIniter
             'role:hosting.reader' => [
                 'account.read', 'backup.read', 'backuping.read',
                 'crontab.read', 'db.read', 'hdomain.read',
-                'ip.read', 'mail.read', 'request.read','service.read',
+                'ip.read', 'mail.read', 'request.read', 'service.read',
                 'vhost.read',
             ],
             'role:hosting.user' => [
@@ -257,7 +260,7 @@ class Initer extends AbstractIniter
                 'role:stock.manager',
             ],
             'role:manager' => [
-                'manage',
+                'manage', 'access-reseller',
                 'role:support',
                 'role:document.manager',
                 'role:domain.manager', 'domain.pay', 'domain.push',
@@ -268,11 +271,13 @@ class Initer extends AbstractIniter
                 'role:client.manager',
                 'role:finance.manager',
                 'mailing.prepare', 'mailing.send',
+                'client.set-tmp-pwd',
             ],
             'role:reseller' => [
                 'have-goods',
                 'resell',
                 'role:finance.master',
+                'deny:access-reseller',
                 'role:manager',
             ],
             'role:owner' => [
@@ -282,7 +287,7 @@ class Initer extends AbstractIniter
                 'resell', 'own',
             ],
             'role:superpowers' => [
-                'see-no-mans', 'part.sell',
+                'see-no-mans', 'part.sell', 'client.set-others-allowed-ips',
             ],
             'role:employee' => [
                 'restore-password',
