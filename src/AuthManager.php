@@ -10,7 +10,6 @@
 
 namespace hipanel\rbac;
 
-use yii\helpers\Yii;
 use yii\rbac\RuleFactory;
 
 /**
@@ -59,10 +58,10 @@ class AuthManager extends \yii\rbac\PhpManager
     {
         $roles = '';
 
-        if (isset(Yii::getApp()->user)) {
-            $user = Yii::getApp()->user->identity;
+        if (isset($this->getApp()->user)) {
+            $user = $this->getApp()->user->identity;
             if ((!$user || $user->id !== $userId) && $userId) {
-                $user = call_user_func([Yii::getApp()->user->identityClass, 'findIdentity'], $userId);
+                $user = call_user_func([$this->getApp()->user->identityClass, 'findIdentity'], $userId);
             }
             if (isset($user->roles)) {
                 $roles = $user->roles;
@@ -77,5 +76,10 @@ class AuthManager extends \yii\rbac\PhpManager
         if ($roles) {
             $this->setAssignments($roles, $userId);
         }
+    }
+
+    protected function getApp()
+    {
+        return class_exists('Yii') ? \Yii::$app : \yii\helpers\Yii::getApp();
     }
 }

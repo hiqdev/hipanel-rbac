@@ -11,7 +11,6 @@
 namespace hipanel\rbac\tests\unit;
 
 use hipanel\rbac\AuthManager;
-use yii\helpers\Yii;
 
 /**
  * AuthManagerTest class.
@@ -29,8 +28,13 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
 
     protected function setUp()
     {
-        $this->auth = Yii::createObject(AuthManager::class);
+        $this->auth = $this->createObject(AuthManager::class);
 
         $this->setAssignments();
+    }
+
+    protected function createObject($config)
+    {
+        return class_exists('Yii') ? \Yii::createObject($config) : \yii\helpers\Yii::createObject($config);
     }
 }
