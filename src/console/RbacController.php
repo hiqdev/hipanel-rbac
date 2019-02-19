@@ -11,7 +11,6 @@
 namespace hipanel\rbac\console;
 
 use hipanel\rbac\RbacIniterInterface;
-use Yii;
 use yii\base\Module;
 
 /**
@@ -37,19 +36,19 @@ class RbacController extends \yii\console\Controller
 
     public function actionInit()
     {
-        $auth = Yii::$app->get('authManager');
+        $auth = $this->getApp()->get('authManager');
         $this->initer->init($auth);
     }
 
     public function actionReinit()
     {
-        $auth = Yii::$app->get('authManager');
+        $auth = $this->getApp()->get('authManager');
         $this->initer->reinit($auth);
     }
 
     public function actionShow()
     {
-        $auth = Yii::$app->get('authManager');
+        $auth = $this->getApp()->get('authManager');
 
         echo "Permissions:\n";
         $permissions = $auth->getPermissions();
@@ -69,5 +68,10 @@ class RbacController extends \yii\console\Controller
             $roles = implode(',', array_keys($roles));
             printf("   %-12s %s\n", "$userId:", $roles);
         }
+    }
+
+    protected function getApp()
+    {
+        return class_exists('Yii') ? \Yii::$app : \yii\helpers\Yii::getApp();
     }
 }
