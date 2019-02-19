@@ -10,7 +10,6 @@
 
 namespace hipanel\rbac;
 
-use Yii;
 use yii\base\InvalidConfigException;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
@@ -99,7 +98,7 @@ trait SetterTrait
                 $item = $this->findItem($item);
             }
         } catch (InvalidConfigException $e) {
-            Yii::warning('Role or permission "' . $item . '" does not exist');
+            $this->warning('Role or permission "' . $item . '" does not exist');
 
             return null;
         }
@@ -155,5 +154,10 @@ trait SetterTrait
     public function getAllItems()
     {
         return $this->items;
+    }
+
+    protected function warning(string $message)
+    {
+        return class_exists('Yii') ? \Yii::warning($message) : \yii\helpers\Yii::warning($message);
     }
 }
