@@ -59,10 +59,10 @@
     },
     "extra": {
         "config-plugin": {
-            "common": "src/config/common.php",
+            "common": "config/common.php",
             "console": [
-                "src/config/common.php",
-                "src/config/console.php"
+                "config/common.php",
+                "config/console.php"
             ]
         }
     },
