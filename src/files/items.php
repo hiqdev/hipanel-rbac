@@ -178,6 +178,7 @@ return [
             'hdomain.create',
             'hdomain.update',
             'hdomain.delete',
+            'hdomain.set-dns',
         ],
     ],
     'role:ip.admin' => [
@@ -478,6 +479,7 @@ return [
             'role:domain.user',
             'domain.pay',
             'domain.push',
+            'domain.delete-agp',
             'role:dns.user',
             'role:certificate.user',
             'certificate.pay',
@@ -535,6 +537,7 @@ return [
             'role:domain.manager',
             'domain.pay',
             'domain.push',
+            'domain.delete-agp',
             'role:server.manager',
             'role:consumption.manager',
             'role:dns.manager',
@@ -608,6 +611,8 @@ return [
         'children' => [
             'domain.read',
             'domain.update',
+            'domain.delete-agp',
+            'domain.set-nss',
         ],
     ],
     'role:domain.manager' => [
@@ -626,6 +631,7 @@ return [
             'domain.push',
             'domain.force-push',
             'domain.force-send-foa',
+            'domain.approve-trasfer-out',
         ],
     ],
     'role:dns.user' => [
@@ -1090,6 +1096,12 @@ return [
     'deny:hdomain.delete' => [
         'type' => 2,
     ],
+    'hdomain.set-dns' => [
+        'type' => 2,
+    ],
+    'deny:hdomain.set-dns' => [
+        'type' => 2,
+    ],
     'ip.read' => [
         'type' => 2,
     ],
@@ -1474,6 +1486,12 @@ return [
     'deny:domain.push' => [
         'type' => 2,
     ],
+    'domain.delete-agp' => [
+        'type' => 2,
+    ],
+    'deny:domain.delete-agp' => [
+        'type' => 2,
+    ],
     'certificate.pay' => [
         'type' => 2,
     ],
@@ -1582,6 +1600,12 @@ return [
     'deny:domain.update' => [
         'type' => 2,
     ],
+    'domain.set-nss' => [
+        'type' => 2,
+    ],
+    'deny:domain.set-nss' => [
+        'type' => 2,
+    ],
     'domain.delete' => [
         'type' => 2,
     ],
@@ -1610,6 +1634,12 @@ return [
         'type' => 2,
     ],
     'deny:domain.force-send-foa' => [
+        'type' => 2,
+    ],
+    'domain.approve-trasfer-out' => [
+        'type' => 2,
+    ],
+    'deny:domain.approve-trasfer-out' => [
         'type' => 2,
     ],
     'dns.create' => [
