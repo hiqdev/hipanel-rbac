@@ -19,15 +19,6 @@ trait CheckAccessTrait
         }
     }
 
-    public function testPermission()
-    {
-        foreach ($this->auth->getPermissions() as $user) {
-            foreach ($this->auth->getPermissions() as $perm) {
-                $this->assertSame($user->name === $perm->name, $this->auth->checkAccess($user->name, $perm->name));
-            }
-        }
-    }
-
     public function assertAccesses($userId, array $allowedPermissions)
     {
         $deniedPermissions = array_diff($this->getAllPermissions(), $allowedPermissions);
