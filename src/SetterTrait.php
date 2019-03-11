@@ -10,7 +10,7 @@
 
 namespace hipanel\rbac;
 
-use yii\base\InvalidConfigException;
+use Exception;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
 
@@ -67,14 +67,14 @@ trait SetterTrait
             $name   = $parent;
             $parent = $this->getItem($parent);
             if (is_null($parent)) {
-                throw new InvalidConfigException("Unknown parent:$name at setChild");
+                throw new Exception("Unknown parent:$name at setChild");
             }
         }
         if (is_string($child)) {
             $name  = $child;
             $child = $this->getItem($child);
             if (is_null($child)) {
-                throw new InvalidConfigException("Unknown child:$name at setChild");
+                throw new Exception("Unknown child:$name at setChild");
             }
         }
         if (isset($this->children[$parent->name][$child->name])) {
@@ -88,7 +88,7 @@ trait SetterTrait
      * Assigns an item (role or permission) to a user.
      * @param string|Item $item
      * @param string|integer $userId the user ID (see [[\yii\web\User::id]])
-     * @throws \Exception when given wrong item name
+     * @throws Exception when given wrong item name
      * @return Assignment|null the assignment object or `null` when assignment was not found by name
      */
     public function setAssignment($item, $userId)
@@ -97,7 +97,7 @@ trait SetterTrait
             if (is_string($item)) {
                 $item = $this->findItem($item);
             }
-        } catch (InvalidConfigException $e) {
+        } catch (Exception $e) {
             $this->warning('Role or permission "' . $item . '" does not exist');
 
             return null;
@@ -120,7 +120,7 @@ trait SetterTrait
             return $this->setPermission($name, $description);
         }
 
-        throw new InvalidConfigException("Unknown item:$name at findItem");
+        throw new Exception("Unknown item:$name at findItem");
     }
 
     /**
