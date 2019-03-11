@@ -10,6 +10,8 @@
 
 namespace hipanel\rbac;
 
+use yii\rbac\RuleFactory;
+
 /**
  * HiPanel AuthManager.
  *
@@ -22,6 +24,16 @@ class AuthManager extends \yii\rbac\PhpManager
     public $assignmentFile = '@hipanel/rbac/files/assignments.php';
 
     use SetterTrait;
+
+    public function __construct()
+    {
+        if (class_exists('Yii')) {
+            parent::init();
+        } else {
+            $dir = __DIR__ . '/files';
+            parent::__construct($dir, new RuleFactory);
+        }
+    }
 
     /**
      * We don't keep all the assignments, only persistent.
