@@ -8,6 +8,8 @@
  * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
 
+use yii\helpers\Yii;
+
 $components = [
     'authManager' => [
         '__class' => \hipanel\rbac\AuthManager::class,
@@ -15,14 +17,14 @@ $components = [
 ];
 
 $singletons = [
-    \yii\rbac\CheckAccessInterface::class => class_exists('Yii')
-        ? \yii\di\Instance::of('authManager')
-        : \yii\di\Reference::to('authManager')
+    \yii\rbac\CheckAccessInterface::class => class_exists(Yii::class)
+        ? \yii\di\Reference::to('authManager')
+        : \yii\di\Instance::of('authManager')
     ,
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
 
-return class_exists('Yii') ? [
+return !class_exists(Yii::class) ? [
     'components' => $components,
     'container' => [
         'singletons' => $singletons,

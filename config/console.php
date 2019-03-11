@@ -8,10 +8,18 @@
  * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
 
-return [
+$app = [
     'controllerMap' => [
         'rbac' => [
-            'class' => \hipanel\rbac\console\RbacController::class,
+            '__class' => \hipanel\rbac\console\RbacController::class,
         ],
     ],
 ];
+
+$components = [
+    'user' => [
+        '__class' => \yii\web\User::class,
+    ],
+];
+
+return class_exists(\yii\helpers\Yii::class) ? array_merge($components, ['app' => $app]) : $app;
