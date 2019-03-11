@@ -70,7 +70,7 @@ class RbacController extends \yii\console\Controller
         }
     }
 
-    protected function getApp()
+    public function getApp(): \yii\base\Application
     {
         return class_exists('Yii') ? \Yii::$app : \yii\helpers\Yii::getApp();
     }

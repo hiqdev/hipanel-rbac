@@ -7,10 +7,17 @@
  * @license   BSD-3-Clause
  * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
-error_reporting(E_ALL & ~E_NOTICE);
+
+error_reporting(E_ALL);
 
 require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
 
-Yii::setAlias('@hipanel/rbac', dirname(__DIR__) . '/src');
-Yii::setAlias('@hipanel/rbac/tests', __DIR__);
+if (class_exists(\yii\helpers\Yii::class)) {
+    $config = require \hiqdev\composer\config\Builder::path('console');
+    \yii\helpers\Yii::setContainer(new \yii\di\Container($config));
+} else {
+    require_once __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+
+    Yii::setAlias('@hipanel/rbac', dirname(__DIR__) . '/src');
+    Yii::setAlias('@hipanel/rbac/tests', __DIR__);
+}

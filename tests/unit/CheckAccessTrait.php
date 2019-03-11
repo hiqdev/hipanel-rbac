@@ -19,24 +19,9 @@ trait CheckAccessTrait
         }
     }
 
-    public function testPermission()
-    {
-        foreach ($this->auth->getPermissions() as $user) {
-            foreach ($this->auth->getPermissions() as $perm) {
-                $this->assertSame($user->name === $perm->name, $this->auth->checkAccess($user->name, $perm->name));
-            }
-        }
-    }
-
     public function assertAccesses($userId, array $allowedPermissions)
     {
-        $allPermissions = array_keys($this->auth->getPermissions());
-        foreach ($allPermissions as $key => $permission) {
-            if (strncmp('deny:', $permission, 5) === 0) {
-                unset($allPermissions[$key]);
-            }
-        }
-        $deniedPermissions = array_diff($allPermissions, $allowedPermissions);
+        $deniedPermissions = array_diff($this->getAllPermissions(), $allowedPermissions);
 
         $this->assertAccess($userId, true, $allowedPermissions);
         $this->assertAccess($userId, false, $deniedPermissions);
@@ -51,6 +36,22 @@ trait CheckAccessTrait
             }
             $this->assertSame($isAllowed, $checked);
         }
+    }
+
+    protected $allPermissions;
+
+    protected function getAllPermissions()
+    {
+        if (empty($this->allPermissions)) {
+            $this->allPermissions = array_keys($this->auth->getPermissions());
+            foreach ($this->allPermissions as $key => $permission) {
+                if (strncmp('deny:', $permission, 5) === 0) {
+                    unset($this->allPermissions[$key]);
+                }
+            }
+        }
+
+        return $this->allPermissions;
     }
 
     public function testNobody()

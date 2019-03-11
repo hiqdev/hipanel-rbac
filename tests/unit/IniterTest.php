@@ -31,8 +31,12 @@ class IniterTest extends \PHPUnit\Framework\TestCase
     {
         $this->auth = $this->createObject(AuthManager::class);
 
-        (new Initer())->reinit($this->auth);
         $this->setAssignments();
+    }
+
+    public function testReinit()
+    {
+        $this->assertNull((new Initer())->reinit($this->auth));
     }
 
     protected function createObject($config)

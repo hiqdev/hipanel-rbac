@@ -23,8 +23,12 @@ class AuthManager extends \yii\rbac\PhpManager
 
     public function __construct()
     {
-        $dir = __DIR__ . '/files';
-        parent::__construct($dir, new RuleFactory);
+        if (class_exists('Yii')) {
+            parent::init();
+        } else {
+            $dir = __DIR__ . '/files';
+            parent::__construct($dir, new RuleFactory);
+        }
     }
 
     /**
