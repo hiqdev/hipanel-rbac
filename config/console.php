@@ -8,18 +8,20 @@
  * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
 
+use hiqdev\yii\compat\yii;
+
 $app = [
     'controllerMap' => [
         'rbac' => [
-            '__class' => \hipanel\rbac\console\RbacController::class,
+            yii::classKey() => \hipanel\rbac\console\RbacController::class,
         ],
     ],
 ];
 
 $components = [
     'user' => [
-        '__class' => \yii\web\User::class,
+        yii::classKey() => \yii\web\User::class,
     ],
 ];
 
-return class_exists(\yii\helpers\Yii::class) ? array_merge($components, ['app' => $app]) : $app;
+return yii::is2() ? $app : array_merge($components, ['app' => $app]);

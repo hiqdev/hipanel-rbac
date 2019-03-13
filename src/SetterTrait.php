@@ -10,6 +10,7 @@
 
 namespace hipanel\rbac;
 
+use hiqdev\yii\compat\yii;
 use Exception;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
@@ -98,7 +99,7 @@ trait SetterTrait
                 $item = $this->findItem($item);
             }
         } catch (Exception $e) {
-            $this->warning('Role or permission "' . $item . '" does not exist');
+            yii::warning('Role or permission "' . $item . '" does not exist');
 
             return null;
         }
@@ -154,10 +155,5 @@ trait SetterTrait
     public function getAllItems()
     {
         return $this->items;
-    }
-
-    protected function warning(string $message)
-    {
-        return class_exists('Yii') ? \Yii::warning($message) : \yii\helpers\Yii::warning($message);
     }
 }
