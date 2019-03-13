@@ -21,6 +21,10 @@ class AuthManager extends \yii\rbac\PhpManager
 {
     use SetterTrait;
 
+    public $itemFile       = '@hipanel/rbac/files/items.php';
+    public $ruleFile       = '@hipanel/rbac/files/rules.php';
+    public $assignmentFile = '@hipanel/rbac/files/assignments.php';
+
     public function __construct()
     {
         if (class_exists('Yii')) {
