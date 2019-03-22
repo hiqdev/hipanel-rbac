@@ -358,7 +358,7 @@ trait CheckAccessTrait
             'client.read', 'server.read', 'consumption.read',
             'plan.force-read', 'plan.read', 'document.read', 'finance.read',
             'stock.read', 'part.read', 'move.read', 'model.read',
-            'hub.read',
+            'hub.read', 'client.list', 'contact.read', 'bill.read',
         ]);
     }
 
