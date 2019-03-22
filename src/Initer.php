@@ -41,7 +41,7 @@ class Initer extends AbstractIniter
                 'client.get-note', 'client.set-note', 'client.set-description',
             ],
             'role:employee.manager' => [
-                'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
+                'client.list', 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance'
             ],
             'role:client.impersonator' => [
                 'client.impersonate',
