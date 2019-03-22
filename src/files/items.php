@@ -38,6 +38,7 @@ return [
     'role:employee.manager' => [
         'type' => 1,
         'children' => [
+            'client.list',
             'employee.read',
             'employee.create',
             'employee.update',
@@ -601,7 +602,10 @@ return [
             'plan.read',
             'document.read',
             'finance.read',
+            'bill.read',
             'client.read',
+            'client.list',
+            'contact.read',
             'server.read',
             'consumption.read',
         ],

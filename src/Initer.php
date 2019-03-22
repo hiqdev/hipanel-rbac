@@ -41,7 +41,7 @@ class Initer extends AbstractIniter
                 'client.get-note', 'client.set-note', 'client.set-description',
             ],
             'role:employee.manager' => [
-                'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
+                'client.list', 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance'
             ],
             'role:client.impersonator' => [
                 'client.impersonate',
@@ -300,8 +300,8 @@ class Initer extends AbstractIniter
                 'access-subclients', 'access-reseller',
                 'role:hub.user',
                 'role:stock.user',
-                'plan.force-read', 'plan.read', 'document.read', 'finance.read',
-                'client.read',
+                'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'bill.read',
+                'client.read', 'client.list', 'contact.read',
                 'server.read',
                 'consumption.read',
             ],
