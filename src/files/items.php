@@ -475,7 +475,7 @@ return [
         'type' => 1,
         'children' => [
             'consumption.read',
-            'role:stock.user',
+            'part.read',
         ],
     ],
     'role:client' => [
