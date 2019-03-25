@@ -471,6 +471,13 @@ return [
             'move.read-all',
         ],
     ],
+    'role:project.user' => [
+        'type' => 1,
+        'children' => [
+            'consumption.read',
+            'role:stock.user',
+        ],
+    ],
     'role:client' => [
         'type' => 1,
         'children' => [
