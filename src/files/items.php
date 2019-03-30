@@ -447,6 +447,7 @@ return [
             'part.read',
             'move.read',
             'model.read',
+            'move.get-directions',
         ],
     ],
     'role:stock.manager' => [
@@ -1420,6 +1421,12 @@ return [
     'deny:model.read' => [
         'type' => 2,
     ],
+    'move.get-directions' => [
+        'type' => 2,
+    ],
+    'deny:move.get-directions' => [
+        'type' => 2,
+    ],
     'part.create' => [
         'type' => 2,
     ],
@@ -1478,12 +1485,6 @@ return [
         'type' => 2,
     ],
     'deny:move.read-all' => [
-        'type' => 2,
-    ],
-    'move.get-directions' => [
-        'type' => 2,
-    ],
-    'deny:move.get-directions' => [
         'type' => 2,
     ],
     'have-goods' => [
