@@ -476,6 +476,7 @@ return [
         'children' => [
             'consumption.read',
             'part.read',
+            'move.get-directions',
         ],
     ],
     'role:client' => [
@@ -1477,6 +1478,12 @@ return [
         'type' => 2,
     ],
     'deny:move.read-all' => [
+        'type' => 2,
+    ],
+    'move.get-directions' => [
+        'type' => 2,
+    ],
+    'deny:move.get-directions' => [
         'type' => 2,
     ],
     'have-goods' => [

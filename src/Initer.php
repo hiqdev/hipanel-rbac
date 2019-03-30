@@ -227,6 +227,7 @@ class Initer extends AbstractIniter
             'role:project.user' => [
                 'consumption.read',
                 'part.read',
+                'move.get-directions',
             ],
             // ROLES
             'role:client' => [
