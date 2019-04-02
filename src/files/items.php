@@ -447,6 +447,7 @@ return [
             'part.read',
             'move.read',
             'model.read',
+            'move.get-directions',
         ],
     ],
     'role:stock.manager' => [
@@ -469,6 +470,14 @@ return [
         'children' => [
             'role:stock.manager',
             'move.read-all',
+        ],
+    ],
+    'role:project.user' => [
+        'type' => 1,
+        'children' => [
+            'consumption.read',
+            'part.read',
+            'move.get-directions',
         ],
     ],
     'role:client' => [
@@ -1410,6 +1419,12 @@ return [
         'type' => 2,
     ],
     'deny:model.read' => [
+        'type' => 2,
+    ],
+    'move.get-directions' => [
+        'type' => 2,
+    ],
+    'deny:move.get-directions' => [
         'type' => 2,
     ],
     'part.create' => [
