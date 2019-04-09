@@ -32,7 +32,7 @@ class AuthManager extends \yii\rbac\PhpManager
             parent::init();
         } else {
             $dir = __DIR__ . '/files';
-            parent::__construct($dir, new RuleFactory);
+            parent::__construct($dir, new RuleFactory());
         }
     }
 

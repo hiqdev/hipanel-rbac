@@ -10,8 +10,8 @@
 
 namespace hipanel\rbac;
 
-use hiqdev\yii\compat\yii;
 use Exception;
+use hiqdev\yii\compat\yii;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
 
