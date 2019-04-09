@@ -26,7 +26,7 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
      */
     protected $auth;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $this->auth = $this->createObject(AuthManager::class);
 
