@@ -11,6 +11,7 @@
 namespace hipanel\rbac;
 
 use hiqdev\yii\compat\yii;
+use yii\base\Configurable;
 use yii\rbac\RuleFactory;
 
 /**
@@ -18,7 +19,7 @@ use yii\rbac\RuleFactory;
  *
  * @author Andrii Vasyliev <sol@hiqdev.com>
  */
-class AuthManager extends \yii\rbac\PhpManager
+class AuthManager extends \yii\rbac\PhpManager implements Configurable
 {
     use SetterTrait;
 
@@ -26,9 +27,10 @@ class AuthManager extends \yii\rbac\PhpManager
     public $ruleFile       = '@hipanel/rbac/files/rules.php';
     public $assignmentFile = '@hipanel/rbac/files/assignments.php';
 
-    public function __construct()
+    public function __construct(array $config = [])
     {
         if (yii::is2()) {
+            parent::__construct($config);
             parent::init();
         } else {
             $dir = __DIR__ . '/files';
