@@ -448,12 +448,14 @@ return [
             'move.read',
             'model.read',
             'move.get-directions',
+            'order.read',
         ],
     ],
     'role:stock.manager' => [
         'type' => 1,
         'children' => [
             'role:stock.user',
+            'role:order.manager',
             'part.create',
             'part.update',
             'part.delete',
@@ -470,6 +472,21 @@ return [
         'children' => [
             'role:stock.manager',
             'move.read-all',
+        ],
+    ],
+    'role:order.user' => [
+        'type' => 1,
+        'children' => [
+            'order.read',
+            'order.create',
+            'order.update',
+            'order.delete',
+        ],
+    ],
+    'role:order.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:order.user',
         ],
     ],
     'role:project.user' => [
@@ -1427,6 +1444,12 @@ return [
     'deny:move.get-directions' => [
         'type' => 2,
     ],
+    'order.read' => [
+        'type' => 2,
+    ],
+    'deny:order.read' => [
+        'type' => 2,
+    ],
     'part.create' => [
         'type' => 2,
     ],
@@ -1485,6 +1508,24 @@ return [
         'type' => 2,
     ],
     'deny:move.read-all' => [
+        'type' => 2,
+    ],
+    'order.create' => [
+        'type' => 2,
+    ],
+    'deny:order.create' => [
+        'type' => 2,
+    ],
+    'order.update' => [
+        'type' => 2,
+    ],
+    'deny:order.update' => [
+        'type' => 2,
+    ],
+    'order.delete' => [
+        'type' => 2,
+    ],
+    'deny:order.delete' => [
         'type' => 2,
     ],
     'have-goods' => [
