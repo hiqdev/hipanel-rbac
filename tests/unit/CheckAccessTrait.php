@@ -136,6 +136,7 @@ trait CheckAccessTrait
             'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.get-directions',
+            'order.read', 'order.read', 'order.create', 'order.update', 'order.delete',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
@@ -178,6 +179,7 @@ trait CheckAccessTrait
             'part.read', 'part.create', 'part.update', 'part.delete',
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.get-directions',
             'model.read', 'model.create', 'model.update', 'model.delete',
+            'order.read', 'order.read', 'order.create', 'order.update', 'order.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
@@ -308,6 +310,7 @@ trait CheckAccessTrait
             'mailing.prepare', 'mailing.send',
             'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
+            'order.read', 'order.read', 'order.create', 'order.update', 'order.delete',
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all', 'move.get-directions',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',
@@ -357,7 +360,7 @@ trait CheckAccessTrait
             'access-subclients', 'access-reseller',
             'client.read', 'server.read', 'consumption.read',
             'plan.force-read', 'plan.read', 'document.read', 'finance.read',
-            'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions',
+            'stock.read', 'part.read', 'move.read', 'model.read', 'order.read', 'move.get-directions',
             'hub.read', 'client.list', 'contact.read', 'bill.read',
         ]);
     }

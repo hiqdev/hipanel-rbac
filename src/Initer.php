@@ -212,16 +212,22 @@ class Initer extends AbstractIniter
             ],
             // STOCK MODULE
             'role:stock.user' => [
-                'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions',
+                'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions', 'order.read',
             ],
             'role:stock.manager' => [
-                'role:stock.user',
+                'role:stock.user', 'role:order.manager',
                 'part.create', 'part.update', 'part.delete',
                 'move.create', 'move.update', 'move.delete',
                 'model.create', 'model.update', 'model.delete',
             ],
             'role:stock.master' => [
                 'role:stock.manager', 'move.read-all',
+            ],
+            'role:order.user' => [
+                'order.read', 'order.create', 'order.update', 'order.delete',
+            ],
+            'role:order.manager' => [
+                'role:order.user',
             ],
             // PROJECT USER
             'role:project.user' => [
