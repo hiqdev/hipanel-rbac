@@ -129,6 +129,15 @@ return [
             'consumption.delete',
         ],
     ],
+    'role:integration.manager' => [
+        'type' => 1,
+        'children' => [
+            'integration.read',
+            'integration.create',
+            'integration.update',
+            'integration.delete',
+        ],
+    ],
     'role:account.user' => [
         'type' => 1,
         'children' => [
@@ -588,6 +597,7 @@ return [
             'role:finance.master',
             'deny:access-reseller',
             'role:manager',
+            'role:integration.manager',
         ],
     ],
     'role:owner' => [
@@ -992,6 +1002,30 @@ return [
         'type' => 2,
     ],
     'deny:consumption.delete' => [
+        'type' => 2,
+    ],
+    'integration.read' => [
+        'type' => 2,
+    ],
+    'deny:integration.read' => [
+        'type' => 2,
+    ],
+    'integration.create' => [
+        'type' => 2,
+    ],
+    'deny:integration.create' => [
+        'type' => 2,
+    ],
+    'integration.update' => [
+        'type' => 2,
+    ],
+    'deny:integration.update' => [
+        'type' => 2,
+    ],
+    'integration.delete' => [
+        'type' => 2,
+    ],
+    'deny:integration.delete' => [
         'type' => 2,
     ],
     'account.read' => [

@@ -263,6 +263,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read',
+            'integration.read', 'integration.create', 'integration.update', 'integration.delete',
         ]);
     }
 

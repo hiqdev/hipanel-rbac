@@ -75,6 +75,10 @@ class Initer extends AbstractIniter
             'role:consumption.manager' => [
                 'consumption.read', 'consumption.delete',
             ],
+            // INTEGRATIONS
+            'role:integration.manager' => [
+                'integration.read', 'integration.create', 'integration.update', 'integration.delete',
+            ],
             // HOSTING MODULE
             'role:account.user' => [
                 'account.read', 'account.create', 'account.update', 'account.delete',
@@ -291,6 +295,7 @@ class Initer extends AbstractIniter
                 'role:finance.master',
                 'deny:access-reseller',
                 'role:manager',
+                'role:integration.manager',
             ],
             'role:owner' => [
                 'role:manager',
