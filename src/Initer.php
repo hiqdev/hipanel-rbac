@@ -215,13 +215,13 @@ class Initer extends AbstractIniter
                 'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions', 'order.read',
             ],
             'role:stock.manager' => [
-                'role:stock.user', 'role:order.manager',
+                'role:stock.user',
                 'part.create', 'part.update', 'part.delete',
                 'move.create', 'move.update', 'move.delete',
                 'model.create', 'model.update', 'model.delete',
             ],
             'role:stock.master' => [
-                'role:stock.manager', 'move.read-all',
+                'role:stock.manager', 'move.read-all', 'role:order.manager',
             ],
             'role:order.user' => [
                 'order.read', 'order.create', 'order.update', 'order.delete',
