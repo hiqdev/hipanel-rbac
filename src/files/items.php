@@ -455,7 +455,6 @@ return [
         'type' => 1,
         'children' => [
             'role:stock.user',
-            'role:order.manager',
             'part.create',
             'part.update',
             'part.delete',
@@ -472,6 +471,7 @@ return [
         'children' => [
             'role:stock.manager',
             'move.read-all',
+            'role:order.manager',
         ],
     ],
     'role:order.user' => [
