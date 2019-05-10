@@ -181,6 +181,15 @@ return [
             'db.delete',
         ],
     ],
+    'role:zone.manager' => [
+        'type' => 1,
+        'children' => [
+            'zone.create',
+            'zone.update',
+            'zone.read',
+            'zone.delete',
+        ],
+    ],
     'role:hdomain.user' => [
         'type' => 1,
         'children' => [
@@ -1134,6 +1143,30 @@ return [
         'type' => 2,
     ],
     'deny:db.delete' => [
+        'type' => 2,
+    ],
+    'zone.create' => [
+        'type' => 2,
+    ],
+    'deny:zone.create' => [
+        'type' => 2,
+    ],
+    'zone.update' => [
+        'type' => 2,
+    ],
+    'deny:zone.update' => [
+        'type' => 2,
+    ],
+    'zone.read' => [
+        'type' => 2,
+    ],
+    'deny:zone.read' => [
+        'type' => 2,
+    ],
+    'zone.delete' => [
+        'type' => 2,
+    ],
+    'deny:zone.delete' => [
         'type' => 2,
     ],
     'hdomain.read' => [
