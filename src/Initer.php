@@ -95,6 +95,9 @@ class Initer extends AbstractIniter
             'role:db.user' => [
                 'db.read', 'db.create', 'db.update', 'db.delete',
             ],
+            'role:zone.manager' => [
+                'zone.create', 'zone.update', 'zone.read', 'zone.delete',  
+            ],
             'role:hdomain.user' => [
                 'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete', 'hdomain.set-dns',
             ],
