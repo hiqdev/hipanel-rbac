@@ -75,6 +75,10 @@ class Initer extends AbstractIniter
             'role:consumption.manager' => [
                 'consumption.read', 'consumption.delete',
             ],
+            // CONFIG
+            'role:config.manager' => [
+                'config.read', 'config.create', 'config.update', 'config.delete',
+            ],
             // INTEGRATIONS
             'role:integration.manager' => [
                 'integration.read', 'integration.create', 'integration.update', 'integration.delete',

@@ -129,6 +129,15 @@ return [
             'consumption.delete',
         ],
     ],
+    'role:config.manager' => [
+        'type' => 1,
+        'children' => [
+            'config.read',
+            'config.create',
+            'config.update',
+            'config.delete',
+        ],
+    ],
     'role:integration.manager' => [
         'type' => 1,
         'children' => [
@@ -1011,6 +1020,30 @@ return [
         'type' => 2,
     ],
     'deny:consumption.delete' => [
+        'type' => 2,
+    ],
+    'config.read' => [
+        'type' => 2,
+    ],
+    'deny:config.read' => [
+        'type' => 2,
+    ],
+    'config.create' => [
+        'type' => 2,
+    ],
+    'deny:config.create' => [
+        'type' => 2,
+    ],
+    'config.update' => [
+        'type' => 2,
+    ],
+    'deny:config.update' => [
+        'type' => 2,
+    ],
+    'config.delete' => [
+        'type' => 2,
+    ],
+    'deny:config.delete' => [
         'type' => 2,
     ],
     'integration.read' => [
