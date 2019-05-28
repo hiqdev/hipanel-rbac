@@ -7,6 +7,7 @@
  * @license   BSD-3-Clause
  * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
  */
+
 use hiqdev\yii\compat\yii;
 
 $app = [

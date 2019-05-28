@@ -31,6 +31,7 @@ return PhpCsFixer\Config::create()
         'phpdoc_scalar'                              =>  false,
         'phpdoc_separation'                          =>  false,
         'phpdoc_to_comment'                          =>  false,
+        'phpdoc_var_without_name'                    =>  false,
         'method_argument_space'                      =>  false,
         'ereg_to_preg'                               =>  true,
         'blank_line_after_opening_tag'               =>  true,
@@ -51,5 +52,7 @@ return PhpCsFixer\Config::create()
             ->notPath('vendor')
             ->notPath('runtime')
             ->notPath('web/assets')
+            ->notPath('public/assets')
+            ->notPath('tests/_support/_generated')
         )
 ;
