@@ -752,6 +752,13 @@ return [
             'test.alpha',
         ],
     ],
+    'role:owner-staff' => [
+        'type' => 1,
+        'children' => [
+            'ref.view.not-used',
+            'bill.charges.read',
+        ],
+    ],
     'nothing' => [
         'type' => 2,
     ],
@@ -1896,6 +1903,18 @@ return [
         'type' => 2,
     ],
     'deny:test.alpha' => [
+        'type' => 2,
+    ],
+    'ref.view.not-used' => [
+        'type' => 2,
+    ],
+    'deny:ref.view.not-used' => [
+        'type' => 2,
+    ],
+    'bill.charges.read' => [
+        'type' => 2,
+    ],
+    'deny:bill.charges.read' => [
         'type' => 2,
     ],
 ];

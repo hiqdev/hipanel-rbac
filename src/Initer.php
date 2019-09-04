@@ -368,6 +368,10 @@ class Initer extends AbstractIniter
                 'role:beta-tester',
                 'test.alpha',
             ],
+            'role:owner-staff' => [
+                'ref.view.not-used',
+                'bill.charges.read'
+            ]
         ];
     }
 }
