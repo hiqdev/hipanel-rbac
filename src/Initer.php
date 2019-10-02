@@ -232,7 +232,7 @@ class Initer extends AbstractIniter
                 'model.create', 'model.update', 'model.delete',
             ],
             'role:stock.master' => [
-                'role:stock.manager', 'move.read-all', 'role:order.manager',
+                'role:stock.manager', 'move.read-all', 'role:order.master',
             ],
             'role:order.user' => [
                 'order.read', 'order.create', 'order.update', 'order.delete',

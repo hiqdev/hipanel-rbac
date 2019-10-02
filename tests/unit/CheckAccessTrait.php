@@ -312,7 +312,7 @@ trait CheckAccessTrait
             'mailing.prepare', 'mailing.send',
             'stock.read',
             'part.read', 'part.create', 'part.update', 'part.delete',
-            'order.read', 'order.read', 'order.create', 'order.update', 'order.delete',
+            'order.read', 'order.read', 'order.create', 'order.update', 'order.delete', 'order.read-profits',
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all', 'move.get-directions',
             'model.read', 'model.create', 'model.update', 'model.delete',
             'employee.read',

@@ -498,7 +498,7 @@ return [
         'children' => [
             'role:stock.manager',
             'move.read-all',
-            'role:order.manager',
+            'role:order.master',
         ],
     ],
     'role:order.user' => [
