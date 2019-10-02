@@ -516,6 +516,13 @@ return [
             'role:order.user',
         ],
     ],
+    'role:order.master' => [
+        'type' => 1,
+        'children' => [
+            'role:order.manager',
+            'order.read-profits',
+        ],
+    ],
     'role:project.user' => [
         'type' => 1,
         'children' => [
@@ -1633,6 +1640,12 @@ return [
         'type' => 2,
     ],
     'deny:order.delete' => [
+        'type' => 2,
+    ],
+    'order.read-profits' => [
+        'type' => 2,
+    ],
+    'deny:order.read-profits' => [
         'type' => 2,
     ],
     'have-goods' => [

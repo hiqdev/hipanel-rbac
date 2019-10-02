@@ -240,6 +240,10 @@ class Initer extends AbstractIniter
             'role:order.manager' => [
                 'role:order.user',
             ],
+            'role:order.master' => [
+                'role:order.manager',
+                'order.read-profits',
+            ],
             // PROJECT USER
             'role:project.user' => [
                 'consumption.read',
