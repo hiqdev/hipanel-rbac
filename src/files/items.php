@@ -763,7 +763,16 @@ return [
         'type' => 1,
         'children' => [
             'ref.view.not-used',
-            'bill.charges.read',
+            'charges.read',
+        ],
+    ],
+    'role:charges.user' => [
+        'type' => 1,
+        'children' => [
+            'charges.read',
+            'charges.create',
+            'charges.update',
+            'charges.delete',
         ],
     ],
     'nothing' => [
@@ -1924,10 +1933,28 @@ return [
     'deny:ref.view.not-used' => [
         'type' => 2,
     ],
-    'bill.charges.read' => [
+    'charges.read' => [
         'type' => 2,
     ],
-    'deny:bill.charges.read' => [
+    'deny:charges.read' => [
+        'type' => 2,
+    ],
+    'charges.create' => [
+        'type' => 2,
+    ],
+    'deny:charges.create' => [
+        'type' => 2,
+    ],
+    'charges.update' => [
+        'type' => 2,
+    ],
+    'deny:charges.update' => [
+        'type' => 2,
+    ],
+    'charges.delete' => [
+        'type' => 2,
+    ],
+    'deny:charges.delete' => [
         'type' => 2,
     ],
 ];

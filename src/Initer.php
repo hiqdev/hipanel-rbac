@@ -374,8 +374,11 @@ class Initer extends AbstractIniter
             ],
             'role:owner-staff' => [
                 'ref.view.not-used',
-                'bill.charges.read'
-            ]
+                'charges.read',
+            ],
+            'role:charges.user' => [
+                'charges.read', 'charges.create', 'charges.update', 'charges.delete',
+            ],
         ];
     }
 }
