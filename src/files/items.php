@@ -11,6 +11,7 @@ return [
         'children' => [
             'restore-password',
             'deposit',
+            'server.pay',
         ],
     ],
     'role:client.support' => [
@@ -784,6 +785,12 @@ return [
     'deny:deposit' => [
         'type' => 2,
     ],
+    'server.pay' => [
+        'type' => 2,
+    ],
+    'deny:server.pay' => [
+        'type' => 2,
+    ],
     'client.read' => [
         'type' => 2,
     ],
@@ -986,12 +993,6 @@ return [
         'type' => 2,
     ],
     'deny:server.disable-block' => [
-        'type' => 2,
-    ],
-    'server.pay' => [
-        'type' => 2,
-    ],
-    'deny:server.pay' => [
         'type' => 2,
     ],
     'server.sell' => [
