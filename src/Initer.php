@@ -29,7 +29,7 @@ class Initer extends AbstractIniter
                 'nothing',
             ],
             'role:unauthorized' => [
-                'restore-password', 'deposit',
+                'restore-password', 'deposit', 'server.pay',
             ],
             // CLIENT MODULE
             'role:client.support' => [
