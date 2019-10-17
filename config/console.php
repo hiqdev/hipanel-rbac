@@ -13,14 +13,14 @@ use hiqdev\yii\compat\yii;
 $app = [
     'controllerMap' => [
         'rbac' => [
-            yii::classKey() => \hipanel\rbac\console\RbacController::class,
+            '__class' => \hipanel\rbac\console\RbacController::class,
         ],
     ],
 ];
 
 $components = [
     'user' => [
-        yii::classKey() => \yii\web\User::class,
+        '__class' => \yii\web\User::class,
     ],
 ];
 

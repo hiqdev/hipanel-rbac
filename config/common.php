@@ -12,7 +12,7 @@ use hiqdev\yii\compat\yii;
 
 $components = [
     'authManager' => [
-        yii::classKey() => \hipanel\rbac\AuthManager::class,
+        '__class' => \hipanel\rbac\AuthManager::class,
     ],
 ];
 
@@ -21,9 +21,7 @@ $singletons = [
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
 
-return yii::is2() ? [
-    'components' => $components,
-    'container' => [
-        'singletons' => $singletons,
-    ],
-] : array_merge($components, $singletons);
+return yii::is3()
+    ? array_merge($components, $singletons)
+    : ['components' => $components, 'container' => ['singletons' => $singletons]]
+;
