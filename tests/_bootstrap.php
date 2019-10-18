@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-if (class_exists(\yii\helpers\Yii::class)) {
+if (class_exists(\Yiisoft\Factory\Definitions\Reference::class)) {
     $config = require \hiqdev\composer\config\Builder::path('console');
     \yii\helpers\Yii::setContainer(new \yii\di\Container($config));
 } else {
