@@ -70,4 +70,16 @@ class RbacController extends \yii\console\Controller
             printf("   %-12s %s\n", "$userId:", $roles);
         }
     }
+
+    public function actionPlantuml()
+    {
+        $path = dirname(__DIR__, 2) . '/docs/test.txt';
+
+        $auth = yii::getApp()->get('authManager');
+        $plant = new PlantUML($auth);
+
+        $uml = $plant->build();
+
+        file_put_contents($path, $uml);
+    }
 }
