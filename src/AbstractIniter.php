@@ -27,22 +27,37 @@ abstract class AbstractIniter implements RbacIniterInterface
     abstract public function getTree();
 
     /**
+     * Provides a tree of permissions to be set in AuthManager.
+     *
+     * @return array where:
+     * - key: permission or role name
+     * - array: role additional data according to `\yii\rbac\Permission` properties
+     */
+    abstract public function getMetadata();
+
+    /**
      * {@inheritdoc}
      */
     public function init(AuthManager $auth)
     {
-        foreach (array_keys($this->getTree()) as $role) {
-            $auth->setRole($role);
+        $metadata = $this->getMetadata();
+
+        foreach (array_keys($this->getTree()) as $roleName) {
+            $roleMeta = $metadata[$roleName];
+            $auth->setRole($roleName, $roleMeta['description'] ?? null);
         }
 
-        foreach ($this->getTree() as $role => $items) {
+        foreach ($this->getTree() as $roleName => $items) {
             foreach ($items as $name) {
                 $item = $auth->getItem($name);
                 if ($item === null) {
-                    $item = $auth->setPermission($name);
-                    $auth->setPermission("deny:$name");
+                    $itemMeta = $metadata[$name];
+                    $item = $auth->setPermission($name, $itemMeta['description'] ?? null);
+
+                    $itemMeta = $metadata["deny:$name"];
+                    $auth->setPermission("deny:$name", $itemMeta['description'] ?? null);
                 }
-                $auth->setChild($role, $item);
+                $auth->setChild($roleName, $item);
             }
         }
     }
