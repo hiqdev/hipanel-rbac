@@ -10,9 +10,12 @@
 
 namespace hipanel\rbac\console;
 
+use hipanel\rbac\AbstractIniter;
+use hipanel\rbac\AuthManager;
 use hipanel\rbac\RbacIniterInterface;
 use hiqdev\yii\compat\yii;
 use yii\base\Module;
+use yii\helpers\Console;
 
 /**
  * Class RbacController.
@@ -22,7 +25,7 @@ use yii\base\Module;
 class RbacController extends \yii\console\Controller
 {
     /**
-     * @var RbacIniterInterface
+     * @var RbacIniterInterface|AbstractIniter
      */
     protected $initer;
 
@@ -39,12 +42,18 @@ class RbacController extends \yii\console\Controller
     {
         $auth = yii::getApp()->get('authManager');
         $this->initer->init($auth);
+        $this->stdout('Consider running rbac/generate-descriptions to generate default role descriptions', Console::FG_YELLOW);
     }
 
     public function actionReinit()
     {
         $auth = yii::getApp()->get('authManager');
         $this->initer->reinit($auth);
+
+        $path = dirname(__DIR__) . '/files/source/metadata.php';
+        (new MetadataGenerator($auth, $this->initer))->dump($path);
+
+        $this->initer->reinit($auth); // Reinit using newly generated descriptions
     }
 
     public function actionShow()
@@ -55,20 +64,31 @@ class RbacController extends \yii\console\Controller
         $permissions = $auth->getPermissions();
         ksort($permissions);
         foreach ($permissions as $name => $perm) {
-            echo "   $perm->name $perm->description\n";
+            echo "   $perm->name – $perm->description\n";
         }
 
         echo "Roles:\n";
         foreach ($auth->getRoles() as $name => $role) {
-            $children = implode(',', array_keys($auth->getChildren($name)));
-            printf("   %-12s %s\n", "$role->name:", $children);
+            $children = implode(', ', array_keys($auth->getChildren($name)));
+            printf("   %-12s\n        %s\n\n", "$role->name – $role->description", $children);
         }
 
         echo "Assignments:\n";
         foreach ($auth->getAllAssignments() as $userId => $roles) {
-            $roles = implode(',', array_keys($roles));
+            $roles = implode(', ', array_keys($roles));
             printf("   %-12s %s\n", "$userId:", $roles);
         }
+    }
+
+    public function actionGenerateDescriptions()
+    {
+        /** @var AuthManager $auth */
+        $auth = yii::getApp()->get('authManager');
+
+        $path = dirname(__DIR__) . '/files/source/metadata.php';
+        (new MetadataGenerator($auth, $this->initer))->dump($path);
+
+        $this->initer->reinit($auth);
     }
 
     public function actionPlantuml()
