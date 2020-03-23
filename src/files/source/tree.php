@@ -128,7 +128,7 @@ return [
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
-        'bill.import', 'bill.exchange',
+        'bill.import', 'bill.create-exchange',
     ],
     // REQUISITES
     'role:requisites.user' => [

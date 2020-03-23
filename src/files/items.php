@@ -371,7 +371,7 @@ return [
             'bill.delete',
             'deposit',
             'bill.import',
-            'bill.exchange',
+            'bill.create-exchange',
         ],
     ],
     'role:requisites.user' => [
@@ -1701,11 +1701,11 @@ return [
         'type' => 2,
         'description' => 'Prohibits import bills',
     ],
-    'bill.exchange' => [
+    'bill.create-exchange' => [
         'type' => 2,
         'description' => 'Allows exchange currencies',
     ],
-    'deny:bill.exchange' => [
+    'deny:bill.create-exchange' => [
         'type' => 2,
         'description' => 'Prohibits exchange currencies',
     ],

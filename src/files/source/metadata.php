@@ -304,7 +304,7 @@ return [
     'bill.import' => [
         'description' => 'Allows import bills',
     ],
-    'bill.exchange' => [
+    'bill.create-exchange' => [
         'description' => 'Allows exchange currencies',
     ],
     'certificate.create' => [
@@ -481,7 +481,7 @@ return [
     'deny:bill.import' => [
         'description' => 'Prohibits import bills',
     ],
-    'deny:bill.exchange' => [
+    'deny:bill.create-exchange' => [
         'description' => 'Prohibits exchange currencies',
     ],
     'deny:certificate.create' => [
