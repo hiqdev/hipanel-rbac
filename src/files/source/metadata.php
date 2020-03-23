@@ -100,8 +100,11 @@ return [
     'role:bill.user' => [
         'description' => 'The role is generally assigned to users who are allowed to see bills',
     ],
-    'role:bill.manager' => [
+    'role:bill.junior-manager' => [
         'description' => 'The role is generally assigned to contractors who are in charge of bills management',
+    ],
+    'role:bill.manager' => [
+        'description' => 'The role is generally assigned to contractors who have high permissions on bills management',
     ],
     'role:bill.master' => [
         'description' => 'The role is generally assigned to contractors who have exceptionally high permissions on bills management',
@@ -298,6 +301,12 @@ return [
     'bill.update' => [
         'description' => 'Allows updating of the bill',
     ],
+    'bill.import' => [
+        'description' => 'Allows import bills',
+    ],
+    'bill.exchange' => [
+        'description' => 'Allows exchange currencies',
+    ],
     'certificate.create' => [
         'description' => 'Allows creating of the certificate',
     ],
@@ -468,6 +477,12 @@ return [
     ],
     'deny:bill.update' => [
         'description' => 'Prohibits updating of the bill',
+    ],
+    'deny:bill.import' => [
+        'description' => 'Prohibits import bills',
+    ],
+    'deny:bill.exchange' => [
+        'description' => 'Prohibits exchange currencies',
     ],
     'deny:certificate.create' => [
         'description' => 'Prohibits creating of the certificate',

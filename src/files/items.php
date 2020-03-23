@@ -343,11 +343,22 @@ return [
             'deposit',
         ],
     ],
-    'role:bill.manager' => [
+    'role:bill.junior-manager' => [
         'type' => 1,
         'description' => 'The role is generally assigned to contractors who are in charge of bills management',
         'children' => [
             'bill.read',
+        ],
+    ],
+    'role:bill.manager' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to contractors who have high permissions on bills management',
+        'children' => [
+            'bill.read',
+            'bill.create',
+            'bill.update',
+            'bill.delete',
+            'deposit',
         ],
     ],
     'role:bill.master' => [
@@ -359,6 +370,8 @@ return [
             'bill.update',
             'bill.delete',
             'deposit',
+            'bill.import',
+            'bill.exchange',
         ],
     ],
     'role:requisites.user' => [
@@ -502,7 +515,7 @@ return [
         'description' => 'The role is generally assigned to contractors who are in charge of finances management',
         'children' => [
             'role:finance.reader',
-            'role:bill.manager',
+            'role:bill.junior-manager',
             'role:plan.manager',
             'role:document.manager',
             'role:sale.manager',
@@ -514,7 +527,7 @@ return [
         'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for finances management',
         'children' => [
             'role:finance.manager',
-            'role:bill.master',
+            'role:bill.manager',
             'role:plan.master',
             'role:document.manager',
             'role:sale.master',
@@ -1679,6 +1692,22 @@ return [
     'deny:bill.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the bill',
+    ],
+    'bill.import' => [
+        'type' => 2,
+        'description' => 'Allows import bills',
+    ],
+    'deny:bill.import' => [
+        'type' => 2,
+        'description' => 'Prohibits import bills',
+    ],
+    'bill.exchange' => [
+        'type' => 2,
+        'description' => 'Allows exchange currencies',
+    ],
+    'deny:bill.exchange' => [
+        'type' => 2,
+        'description' => 'Prohibits exchange currencies',
     ],
     'requisites.read' => [
         'type' => 2,

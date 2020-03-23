@@ -120,11 +120,15 @@ return [
     'role:bill.user' => [
         'bill.read', 'deposit',
     ],
-    'role:bill.manager' => [
+    'role:bill.junior-manager' => [
         'bill.read',
+    ],
+    'role:bill.manager' => [
+        'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
+        'bill.import', 'bill.exchange',
     ],
     // REQUISITES
     'role:requisites.user' => [
@@ -185,7 +189,7 @@ return [
     ],
     'role:finance.manager' => [
         'role:finance.reader',
-        'role:bill.manager',
+        'role:bill.junior-manager',
         'role:plan.manager',
         'role:document.manager',
         'role:sale.manager',
@@ -193,7 +197,7 @@ return [
     ],
     'role:finance.master' => [
         'role:finance.manager',
-        'role:bill.master',
+        'role:bill.manager',
         'role:plan.master',
         'role:document.manager',
         'role:sale.master',
