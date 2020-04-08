@@ -16,9 +16,11 @@ return [
         'role:client.support', 'client.create', 'client.update', 'client.delete',
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note', 'client.set-description',
+        'purse.update',
     ],
     'role:employee.manager' => [
         'client.list', 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
+        'purse.update',
     ],
     'role:client.impersonator' => [
         'client.impersonate',

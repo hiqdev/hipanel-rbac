@@ -862,6 +862,9 @@ return [
     'deny:price.update' => [
         'description' => 'Prohibits updating of the price',
     ],
+    'deny:purse.update' => [
+        'description' => 'Prohibits updating of the purse',
+    ],
     'deny:ref.view.not-used' => [
         'description' => 'Prohibits view.not-used operation on the ref',
     ],
@@ -1272,6 +1275,9 @@ return [
     ],
     'price.update' => [
         'description' => 'Allows updating of the price',
+    ],
+    'purse.update' => [
+        'description' => 'Allows updating of the purse',
     ],
     'ref.view.not-used' => [
         'description' => 'Allows view.not-used operation on the ref',
