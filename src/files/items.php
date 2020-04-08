@@ -38,6 +38,7 @@ return [
             'client.get-note',
             'client.set-note',
             'client.set-description',
+            'purse.update',
         ],
     ],
     'role:employee.manager' => [
@@ -50,6 +51,7 @@ return [
             'employee.update',
             'employee.delete',
             'document.acceptance',
+            'purse.update',
         ],
     ],
     'role:client.impersonator' => [
@@ -967,6 +969,14 @@ return [
     'deny:client.set-description' => [
         'type' => 2,
         'description' => 'Prohibits set-description operation on the client',
+    ],
+    'purse.update' => [
+        'type' => 2,
+        'description' => 'Allows updating of the purse',
+    ],
+    'deny:purse.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the purse',
     ],
     'employee.read' => [
         'type' => 2,

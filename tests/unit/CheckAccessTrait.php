@@ -161,6 +161,7 @@ trait CheckAccessTrait
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
             'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read',
+            'purse.update',
             'sale.read', 'sale.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
@@ -203,6 +204,7 @@ trait CheckAccessTrait
             'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
             'client.get-note', 'client.set-note', 'client.set-description',
             'bill.read',
+            'purse.update',
             'sale.read', 'sale.delete',
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
@@ -243,6 +245,7 @@ trait CheckAccessTrait
             'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
             'price.read', 'price.create', 'price.update', 'price.delete',
             'sale.read', 'sale.delete',
+            'purse.update',
             'domain.read', 'domain.update', 'domain.delete', 'domain.pay', 'domain.push', 'domain.delete-agp', 'domain.set-nss',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
@@ -300,6 +303,8 @@ trait CheckAccessTrait
 
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
             'server.control-power', 'server.control-system', 'server.wizzard', 'server.manage-settings',
+
+            'purse.update',
 
             'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
