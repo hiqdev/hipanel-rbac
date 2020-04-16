@@ -52,7 +52,7 @@ return [
         'consumption.read',
     ],
     'role:consumption.manager' => [
-        'consumption.read', 'consumption.delete',
+        'consumption.read', 'consumption.update', 'consumption.delete',
     ],
     // CONFIG
     'role:config.manager' => [

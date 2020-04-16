@@ -144,6 +144,7 @@ return [
         'description' => 'The role is generally assigned to contractors who are in charge of client\'s devices consumption management',
         'children' => [
             'consumption.read',
+            'consumption.update',
             'consumption.delete',
         ],
     ],
@@ -1222,6 +1223,14 @@ return [
     'deny:hub.sell' => [
         'type' => 2,
         'description' => 'Prohibits selling of the hub',
+    ],
+    'consumption.update' => [
+        'type' => 2,
+        'description' => 'Allows updating of the consumption',
+    ],
+    'deny:consumption.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the consumption',
     ],
     'consumption.delete' => [
         'type' => 2,

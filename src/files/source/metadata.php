@@ -376,6 +376,9 @@ return [
     'config.update' => [
         'description' => 'Allows updating of the config',
     ],
+    'consumption.update' => [
+        'description' => 'Allows updating of the consumption',
+    ],
     'consumption.delete' => [
         'description' => 'Allows deleting of the consumption',
     ],
@@ -552,6 +555,9 @@ return [
     ],
     'deny:config.update' => [
         'description' => 'Prohibits updating of the config',
+    ],
+    'deny:consumption.update' => [
+        'description' => 'Prohibits updating of the consumption',
     ],
     'deny:consumption.delete' => [
         'description' => 'Prohibits deleting of the consumption',
