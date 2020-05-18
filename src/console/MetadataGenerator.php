@@ -1,9 +1,16 @@
 <?php
+/**
+ * RBAC implementation for HiPanel
+ *
+ * @link      https://github.com/hiqdev/hipanel-rbac
+ * @package   hipanel-rbac
+ * @license   BSD-3-Clause
+ * @copyright Copyright (c) 2016-2020, HiQDev (http://hiqdev.com/)
+ */
 
 namespace hipanel\rbac\console;
 
 use hipanel\rbac\AuthManager;
-use hipanel\rbac\Initer;
 use hipanel\rbac\RbacIniterInterface;
 use Laminas\Code\Generator\FileGenerator;
 use Laminas\Code\Generator\ValueGenerator;
@@ -32,7 +39,7 @@ final class MetadataGenerator
         $this->generatePermissionsDescriptions($metadata);
 
         $generator = FileGenerator::fromArray([
-            'body' => 'return ' . (new ValueGenerator($metadata, ValueGenerator::TYPE_ARRAY_SHORT))->generate() . ';'
+            'body' => 'return ' . (new ValueGenerator($metadata, ValueGenerator::TYPE_ARRAY_SHORT))->generate() . ';',
         ]);
         file_put_contents($path, $generator->generate(), LOCK_EX);
     }

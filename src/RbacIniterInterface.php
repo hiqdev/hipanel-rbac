@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2020, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac;
@@ -19,15 +19,11 @@ interface RbacIniterInterface
 {
     /**
      * Adds items to AuthManager.
-     *
-     * @param AuthManager $auth
      */
     public function init(AuthManager $auth);
 
     /**
      * Drops all the items in AuthManager and recreates them.
-     *
-     * @param AuthManager $auth
      */
     public function reinit(AuthManager $auth);
 }

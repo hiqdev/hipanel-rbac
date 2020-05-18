@@ -5,13 +5,12 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2020, HiQDev (http://hiqdev.com/)
  */
 
 namespace hipanel\rbac\console;
 
 use yii\rbac\PhpManager;
-use yii\rbac\Item;
 
 class PlantUML
 {
@@ -29,8 +28,8 @@ class PlantUML
     {
         $path = dirname(__DIR__, 2) . '/docs/test.md';
 
-        $header = "@startuml";
-        $footer = "@enduml";
+        $header = '@startuml';
+        $footer = '@enduml';
         $legend = '
 legend right
         |<#FFDDDD>  <b>E</b>  |  <b>Role</b> |

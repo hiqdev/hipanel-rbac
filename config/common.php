@@ -5,7 +5,7 @@
  * @link      https://github.com/hiqdev/hipanel-rbac
  * @package   hipanel-rbac
  * @license   BSD-3-Clause
- * @copyright Copyright (c) 2016-2019, HiQDev (http://hiqdev.com/)
+ * @copyright Copyright (c) 2016-2020, HiQDev (http://hiqdev.com/)
  */
 
 use hiqdev\yii\compat\yii;
@@ -23,5 +23,4 @@ $singletons = [
 
 return yii::is3()
     ? array_merge($components, $singletons)
-    : ['components' => $components, 'container' => ['singletons' => $singletons]]
-;
+    : ['components' => $components, 'container' => ['singletons' => $singletons]];
