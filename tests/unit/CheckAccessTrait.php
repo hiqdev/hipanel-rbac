@@ -64,7 +64,7 @@ trait CheckAccessTrait
     public function testUnauthorized()
     {
         $this->assertAccesses('', [
-            'restore-password', 'deposit', 'server.pay',
+            'restore-password', 'deposit', 'server.pay', 'plan.read',
         ]);
     }
 

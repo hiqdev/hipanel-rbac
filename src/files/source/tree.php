@@ -6,7 +6,7 @@ return [
         'nothing',
     ],
     'role:unauthorized' => [
-        'restore-password', 'deposit', 'server.pay',
+        'restore-password', 'deposit', 'server.pay', 'plan.read',
     ],
     // CLIENT MODULE
     'role:client.support' => [

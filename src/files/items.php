@@ -14,6 +14,7 @@ return [
             'restore-password',
             'deposit',
             'server.pay',
+            'plan.read',
         ],
     ],
     'role:client.support' => [
@@ -896,6 +897,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits paying of the server',
     ],
+    'plan.read' => [
+        'type' => 2,
+        'description' => 'Allows reading of the plan',
+    ],
+    'deny:plan.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the plan',
+    ],
     'client.read' => [
         'type' => 2,
         'description' => 'Allows reading of the client',
@@ -1759,14 +1768,6 @@ return [
     'deny:requisites.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the requisites',
-    ],
-    'plan.read' => [
-        'type' => 2,
-        'description' => 'Allows reading of the plan',
-    ],
-    'deny:plan.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the plan',
     ],
     'price.read' => [
         'type' => 2,
