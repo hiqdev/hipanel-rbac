@@ -35,6 +35,16 @@ or add
 
 to the require section of your composer.json.
 
+## Usage
+
+To add a role or permission you need to write it to `src/files/tree.php`.
+After adding roles you have to generate description to it by command:
+
+    ./vendor/bin/hidev rbac/reinit
+
+After these actions all rules are saved, and you need to check it by unit tests.
+Run `./vendor/bin/phpunit` and correct `CheckAccessTrait` to fix errors.
+
 ## License
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
