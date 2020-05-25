@@ -94,6 +94,7 @@ return [
             'server.set-label',
             'consumption.read',
             'server.manage-settings',
+            'server.see-label',
         ],
     ],
     'role:server.manager' => [
@@ -106,6 +107,7 @@ return [
             'server.pay',
             'server.sell',
             'server.set-label',
+            'server.see-label',
         ],
     ],
     'role:hub.user' => [
@@ -1168,6 +1170,14 @@ return [
     'deny:server.manage-settings' => [
         'type' => 2,
         'description' => 'Prohibits manage-settings operation on the server',
+    ],
+    'server.see-label' => [
+        'type' => 2,
+        'description' => 'Allows see-label operation on the server',
+    ],
+    'deny:server.see-label' => [
+        'type' => 2,
+        'description' => 'Prohibits see-label operation on the server',
     ],
     'server.enable-block' => [
         'type' => 2,
