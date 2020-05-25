@@ -171,7 +171,7 @@ trait CheckAccessTrait
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
             'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
-            'server.read', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
+            'server.read', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note', 'server.see-label',
             'consumption.read', 'consumption.update', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.acceptance', 'document.invoice',
@@ -309,7 +309,7 @@ trait CheckAccessTrait
 
             'purse.update',
 
-            'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note',
+            'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note', 'server.see-label',
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'config.read', 'config.create', 'config.update', 'config.delete',
             'consumption.read', 'consumption.update', 'consumption.delete',

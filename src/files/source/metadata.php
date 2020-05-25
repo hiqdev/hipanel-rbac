@@ -1435,4 +1435,10 @@ return [
     'zone.update' => [
         'description' => 'Allows updating of the zone',
     ],
+    'deny:server.see-label' => [
+        'description' => 'Prohibits see-label operation on the server',
+    ],
+    'server.see-label' => [
+        'description' => 'Allows see-label operation on the server',
+    ],
 ];
