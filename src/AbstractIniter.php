@@ -40,22 +40,20 @@ abstract class AbstractIniter implements RbacIniterInterface
      */
     public function init(AuthManager $auth)
     {
-        $metadata = $this->getMetadata();
+        $metadata = new SafeMetadata($this->getMetadata());
 
         foreach (array_keys($this->getTree()) as $roleName) {
-            $roleMeta = $metadata[$roleName];
-            $auth->setRole($roleName, $roleMeta['description'] ?? null);
+            $auth->setRole($roleName, $metadata->getItemDescription($roleName));
         }
 
         foreach ($this->getTree() as $roleName => $items) {
             foreach ($items as $name) {
                 $item = $auth->getItem($name);
                 if ($item === null) {
-                    $itemMeta = $metadata[$name];
-                    $item = $auth->setPermission($name, $itemMeta['description'] ?? null);
+                    $item = $auth->setPermission($name, $metadata->getItemDescription($name));
 
-                    $itemMeta = $metadata["deny:$name"];
-                    $auth->setPermission("deny:$name", $itemMeta['description'] ?? null);
+                    $denyName = "deny:$name";
+                    $auth->setPermission($denyName, $metadata->getItemDescription($denyName));
                 }
                 $auth->setChild($roleName, $item);
             }
