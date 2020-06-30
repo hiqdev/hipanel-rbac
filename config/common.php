@@ -17,7 +17,7 @@ $components = [
 ];
 
 $singletons = [
-    \yii\rbac\CheckAccessInterface::class => yii::referenceTo('authManager'),
+    \yii\rbac\CheckAccessInterface::class => \hipanel\rbac\AuthManager::class,
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
 
