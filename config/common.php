@@ -11,13 +11,13 @@
 use hiqdev\yii\compat\yii;
 
 $components = [
-    'authManager' => [
-        '__class' => \hipanel\rbac\AuthManager::class,
-    ],
+    'authManager' => \yii\rbac\CheckAccessInterface::class,
 ];
 
 $singletons = [
-    \yii\rbac\CheckAccessInterface::class => \hipanel\rbac\AuthManager::class,
+    \yii\rbac\CheckAccessInterface::class => [
+        '__class' => \hipanel\rbac\AuthManager::class,
+    ],
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
 
