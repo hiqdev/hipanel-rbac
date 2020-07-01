@@ -23,9 +23,9 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
 {
     use SetterTrait;
 
-    public $itemFile       = '@hipanel/rbac/files/items.php';
-    public $ruleFile       = '@hipanel/rbac/files/rules.php';
-    public $assignmentFile = '@hipanel/rbac/files/assignments.php';
+    public $itemFile       = __DIR__ . '/files/items.php';
+    public $ruleFile       = __DIR__ . '/files/rules.php';
+    public $assignmentFile = __DIR__ . '/files/assignments.php';
 
     public function __construct(array $config = [])
     {
