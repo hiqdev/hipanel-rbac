@@ -696,6 +696,7 @@ return [
             'mailing.prepare',
             'mailing.send',
             'client.set-tmp-pwd',
+            'client.notify',
         ],
     ],
     'role:reseller' => [
@@ -2202,6 +2203,14 @@ return [
     'deny:client.set-tmp-pwd' => [
         'type' => 2,
         'description' => 'Prohibits set-tmp-pwd operation on the client',
+    ],
+    'client.notify' => [
+        'type' => 2,
+        'description' => 'Allows notifying of the client',
+    ],
+    'deny:client.notify' => [
+        'type' => 2,
+        'description' => 'Prohibits notifying of the client',
     ],
     'resell' => [
         'type' => 2,
