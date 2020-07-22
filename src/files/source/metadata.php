@@ -1441,4 +1441,10 @@ return [
     'server.see-label' => [
         'description' => 'Allows see-label operation on the server',
     ],
+    'client.notify' => [
+        'description' => 'Allows notifying of the client',
+    ],
+    'deny:client.notify' => [
+        'description' => 'Prohibits notifying of the client',
+    ],
 ];

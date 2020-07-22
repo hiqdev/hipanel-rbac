@@ -283,7 +283,7 @@ return [
         'role:client.manager',
         'role:finance.manager',
         'mailing.prepare', 'mailing.send',
-        'client.set-tmp-pwd',
+        'client.set-tmp-pwd', 'client.notify',
     ],
     'role:reseller' => [
         'have-goods',

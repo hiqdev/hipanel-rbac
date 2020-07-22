@@ -192,7 +192,7 @@ trait CheckAccessTrait
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
-            'ip.read', 'service.read',
+            'ip.read', 'service.read', 'client.notify',
         ]);
     }
 
@@ -230,7 +230,7 @@ trait CheckAccessTrait
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
-            'ip.read', 'service.read',
+            'ip.read', 'service.read', 'client.notify',
         ]);
     }
 
@@ -268,7 +268,7 @@ trait CheckAccessTrait
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
-            'ip.read', 'service.read',
+            'ip.read', 'service.read', 'client.notify',
             'integration.read', 'integration.create', 'integration.update', 'integration.delete',
         ]);
     }
@@ -323,7 +323,7 @@ trait CheckAccessTrait
             'order.read', 'order.read', 'order.create', 'order.update', 'order.delete', 'order.read-profits',
             'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all', 'move.get-directions',
             'model.read', 'model.create', 'model.update', 'model.delete',
-            'employee.read',
+            'employee.read', 'client.notify',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read', 'plan.read', 'finance.read',
             'backup.read', 'backup.delete',
