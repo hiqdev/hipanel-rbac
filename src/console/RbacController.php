@@ -11,11 +11,10 @@
 namespace hipanel\rbac\console;
 
 use hipanel\rbac\AbstractIniter;
-use hipanel\rbac\AuthManager;
 use hipanel\rbac\RbacIniterInterface;
-use hiqdev\yii\compat\yii;
 use yii\base\Module;
 use yii\helpers\Console;
+use yii\rbac\CheckAccessInterface;
 
 /**
  * Class RbacController.
@@ -29,52 +28,59 @@ class RbacController extends \yii\console\Controller
      */
     protected $initer;
 
-    public function __construct($id, Module $module, RbacIniterInterface $initer, $config = [])
+    /**
+     * @var CheckAccessInterface
+     */
+    private $auth;
+
+    public function __construct(
+        $id,
+        Module $module,
+        RbacIniterInterface $initer,
+        CheckAccessInterface $auth,
+        $config = [])
     {
         parent::__construct($id, $module, $config);
 
         $this->initer = $initer;
+        $this->auth = $auth;
     }
 
     public $defaultAction = 'show';
 
     public function actionInit()
     {
-        $auth = yii::getApp()->get('authManager');
-        $this->initer->init($auth);
+        $this->initer->init($this->auth);
         $this->stdout('Consider running rbac/generate-descriptions to generate default role descriptions', Console::FG_YELLOW);
     }
 
     public function actionReinit()
     {
-        $auth = yii::getApp()->get('authManager');
-        $this->initer->reinit($auth);
+        $this->initer->reinit($this->auth);
 
         $path = dirname(__DIR__) . '/files/source/metadata.php';
-        (new MetadataGenerator($auth, $this->initer))->dump($path);
+        (new MetadataGenerator($this->auth, $this->initer))->dump($path);
 
-        $this->initer->reinit($auth); // Reinit using newly generated descriptions
+        $this->initer->reinit($this->auth); // Reinit using newly generated descriptions
     }
 
     public function actionShow()
     {
-        $auth = yii::getApp()->get('authManager');
-
         echo "Permissions:\n";
-        $permissions = $auth->getPermissions();
+        $permissions = $this->auth->getPermissions();
         ksort($permissions);
         foreach ($permissions as $name => $perm) {
             echo "   $perm->name – $perm->description\n";
         }
 
         echo "Roles:\n";
-        foreach ($auth->getRoles() as $name => $role) {
-            $children = implode(', ', array_keys($auth->getChildren($name)));
+        foreach ($this->auth->getRoles() as $name => $role) {
+            $children = implode(', ', array_keys($this->auth->getChildren($name)));
             printf("   %-12s\n        %s\n\n", "$role->name – $role->description", $children);
         }
 
         echo "Assignments:\n";
-        foreach ($auth->getAllAssignments() as $userId => $roles) {
+        foreach ($this->auth->getAllAssignments() as $userId => $roles) {
             $roles = implode(', ', array_keys($roles));
             printf("   %-12s %s\n", "$userId:", $roles);
         }
@@ -82,21 +88,17 @@ class RbacController extends \yii\console\Controller
 
     public function actionGenerateDescriptions()
     {
-        /** @var AuthManager $auth */
-        $auth = yii::getApp()->get('authManager');
-
         $path = dirname(__DIR__) . '/files/source/metadata.php';
-        (new MetadataGenerator($auth, $this->initer))->dump($path);
+        (new MetadataGenerator($this->auth, $this->initer))->dump($path);
 
-        $this->initer->reinit($auth);
+        $this->initer->reinit($this->auth);
     }
 
     public function actionPlantuml()
     {
         $path = dirname(__DIR__, 2) . '/docs/test.txt';
 
-        $auth = yii::getApp()->get('authManager');
-        $plant = new PlantUML($auth);
+        $plant = new PlantUML($this->auth);
 
         $uml = $plant->build();
 
