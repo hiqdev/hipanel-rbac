@@ -45,7 +45,7 @@
         "hiqdev/yii-compat": "dev-master"
     },
     "require-dev": {
-        "yiisoft/yii2": "^3.0@dev",
+        "yiisoft/yii2": "dev-master || 2.0.x-dev",
         "hiqdev/hidev": "dev-master",
         "hiqdev/hidev-php": "dev-master",
         "hiqdev/hidev-hiqdev": "dev-master",
