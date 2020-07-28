@@ -246,6 +246,7 @@ return [
         'role:server.user', 'server.pay',
         'role:hosting.user',
         'role:finance.user',
+        'client.notify',
     ],
     'role:support' => [
         'access-subclients', 'support',
