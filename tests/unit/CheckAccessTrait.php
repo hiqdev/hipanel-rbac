@@ -89,7 +89,7 @@ trait CheckAccessTrait
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
-            'ip.read', 'service.read',
+            'ip.read', 'service.read', 'client.notify',
         ]);
     }
 
@@ -360,7 +360,7 @@ trait CheckAccessTrait
             'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete', 'hdomain.set-dns',
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
-            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete', 'client.notify',
         ]);
     }
 

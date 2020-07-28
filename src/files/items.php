@@ -633,6 +633,7 @@ return [
             'role:hosting.user',
             'role:finance.user',
             'role:sale.user',
+            'client.notify',
         ],
     ],
     'role:support' => [
@@ -2133,6 +2134,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits pushing of the certificate',
     ],
+    'client.notify' => [
+        'type' => 2,
+        'description' => 'Allows notifying of the client',
+    ],
+    'deny:client.notify' => [
+        'type' => 2,
+        'description' => 'Prohibits notifying of the client',
+    ],
     'access-subclients' => [
         'type' => 2,
         'description' => 'Allows access-subclients operation',
@@ -2204,14 +2213,6 @@ return [
     'deny:client.set-tmp-pwd' => [
         'type' => 2,
         'description' => 'Prohibits set-tmp-pwd operation on the client',
-    ],
-    'client.notify' => [
-        'type' => 2,
-        'description' => 'Allows notifying of the client',
-    ],
-    'deny:client.notify' => [
-        'type' => 2,
-        'description' => 'Prohibits notifying of the client',
     ],
     'resell' => [
         'type' => 2,
