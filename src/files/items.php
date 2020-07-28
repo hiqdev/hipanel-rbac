@@ -632,6 +632,7 @@ return [
             'server.pay',
             'role:hosting.user',
             'role:finance.user',
+            'role:sale.user',
             'client.notify',
         ],
     ],
