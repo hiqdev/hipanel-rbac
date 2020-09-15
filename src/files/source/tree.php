@@ -171,10 +171,10 @@ return [
         'sale.read',
     ],
     'role:sale.manager' => [
-        'sale.read', 'sale.delete',
+        'sale.read', 'sale.delete', 'sale.update', 'sale.create',
     ],
     'role:sale.master' => [
-        'sale.read', 'sale.delete',
+        'role:sale.manager',
     ],
     // FINANCE
     'role:finance.reader' => [

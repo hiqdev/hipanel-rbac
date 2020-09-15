@@ -477,14 +477,15 @@ return [
         'children' => [
             'sale.read',
             'sale.delete',
+            'sale.update',
+            'sale.create',
         ],
     ],
     'role:sale.master' => [
         'type' => 1,
         'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for sales management',
         'children' => [
-            'sale.read',
-            'sale.delete',
+            'role:sale.manager',
         ],
     ],
     'role:finance.reader' => [
@@ -1917,6 +1918,18 @@ return [
     'deny:sale.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the sale',
+    ],
+    'sale.update' => [
+        'type' => 2,
+    ],
+    'deny:sale.update' => [
+        'type' => 2,
+    ],
+    'sale.create' => [
+        'type' => 2,
+    ],
+    'deny:sale.create' => [
+        'type' => 2,
     ],
     'finance.read' => [
         'type' => 2,
