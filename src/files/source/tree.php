@@ -143,7 +143,7 @@ return [
     ],
     // PLAN
     'role:plan.user' => [
-        'plan.read', 'price.read',
+        'plan.read', 'price.read', 'finance.read'
     ],
     'role:plan.manager' => [
         'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',

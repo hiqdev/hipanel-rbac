@@ -403,6 +403,7 @@ return [
         'children' => [
             'plan.read',
             'price.read',
+            'finance.read',
         ],
     ],
     'role:plan.manager' => [
@@ -1791,6 +1792,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the price',
     ],
+    'finance.read' => [
+        'type' => 2,
+        'description' => 'Allows reading of the finance',
+    ],
+    'deny:finance.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the finance',
+    ],
     'plan.create' => [
         'type' => 2,
         'description' => 'Allows creating of the plan',
@@ -1930,14 +1939,6 @@ return [
     ],
     'deny:sale.create' => [
         'type' => 2,
-    ],
-    'finance.read' => [
-        'type' => 2,
-        'description' => 'Allows reading of the finance',
-    ],
-    'deny:finance.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the finance',
     ],
     'stock.read' => [
         'type' => 2,
