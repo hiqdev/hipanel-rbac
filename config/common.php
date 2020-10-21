@@ -9,6 +9,7 @@
  */
 
 use hiqdev\yii\compat\yii;
+use hiqdev\yii\compat\Buildtime;
 
 $components = [
     'authManager' => \yii\rbac\CheckAccessInterface::class,
@@ -21,6 +22,7 @@ $singletons = [
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
 ];
 
-return yii::is3()
+return Buildtime::run(yii::is3())
     ? array_merge($components, $singletons)
-    : ['components' => $components, 'container' => ['singletons' => $singletons]];
+    : ['components' => $components, 'container' => ['singletons' => $singletons]]
+;

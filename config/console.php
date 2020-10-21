@@ -9,6 +9,7 @@
  */
 
 use hiqdev\yii\compat\yii;
+use hiqdev\yii\compat\Buildtime;
 
 $app = [
     'controllerMap' => [
@@ -24,4 +25,4 @@ $components = [
     ],
 ];
 
-return yii::is2() ? $app : array_merge($components, ['app' => $app]);
+return Buildtime::run(yii::is2()) ? $app : array_merge($components, ['app' => $app]);
