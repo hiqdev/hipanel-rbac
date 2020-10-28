@@ -361,6 +361,7 @@ return [
     ],
     'role:owner-staff' => [
         'ref.view.not-used',
-        'bill.charges.read'
+        'bill.charges.read',
+        'part.read-all-hierarchy',
     ]
 ];

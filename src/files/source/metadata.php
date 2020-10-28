@@ -1447,4 +1447,22 @@ return [
     'deny:client.notify' => [
         'description' => 'Prohibits notifying of the client',
     ],
+    'deny:part.read-all-hierarchy' => [
+        'description' => 'Prohibits read-all-hierarchy operation on the part',
+    ],
+    'deny:sale.create' => [
+        'description' => 'Prohibits creating of the sale',
+    ],
+    'deny:sale.update' => [
+        'description' => 'Prohibits updating of the sale',
+    ],
+    'part.read-all-hierarchy' => [
+        'description' => 'Allows read-all-hierarchy operation on the part',
+    ],
+    'sale.create' => [
+        'description' => 'Allows creating of the sale',
+    ],
+    'sale.update' => [
+        'description' => 'Allows updating of the sale',
+    ],
 ];
