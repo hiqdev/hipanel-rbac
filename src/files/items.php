@@ -870,6 +870,7 @@ return [
         'children' => [
             'ref.view.not-used',
             'bill.charges.read',
+            'part.read-all-hierarchy',
         ],
     ],
     'nothing' => [
@@ -1930,15 +1931,19 @@ return [
     ],
     'sale.update' => [
         'type' => 2,
+        'description' => 'Allows updating of the sale',
     ],
     'deny:sale.update' => [
         'type' => 2,
+        'description' => 'Prohibits updating of the sale',
     ],
     'sale.create' => [
         'type' => 2,
+        'description' => 'Allows creating of the sale',
     ],
     'deny:sale.create' => [
         'type' => 2,
+        'description' => 'Prohibits creating of the sale',
     ],
     'stock.read' => [
         'type' => 2,
@@ -2483,5 +2488,13 @@ return [
     'deny:bill.charges.read' => [
         'type' => 2,
         'description' => 'Prohibits charges.read operation on the bill',
+    ],
+    'part.read-all-hierarchy' => [
+        'type' => 2,
+        'description' => 'Allows read-all-hierarchy operation on the part',
+    ],
+    'deny:part.read-all-hierarchy' => [
+        'type' => 2,
+        'description' => 'Prohibits read-all-hierarchy operation on the part',
     ],
 ];
