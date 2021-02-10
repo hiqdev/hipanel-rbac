@@ -88,4 +88,9 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
             $this->setAssignments($roles, $userId);
         }
     }
+
+    public function getAllChildren(): array
+    {
+        return $this->children;
+    }
 }
