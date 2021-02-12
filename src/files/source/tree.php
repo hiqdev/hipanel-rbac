@@ -25,6 +25,9 @@ return [
     'role:client.impersonator' => [
         'client.impersonate',
     ],
+    'role:client.set-roles' => [
+        'client.set-roles',
+    ],
     'role:contact.user' => [
         'contact.read', 'contact.create', 'contact.update', 'contact.delete',
     ],
