@@ -1,4 +1,5 @@
 <?php
+
 return [
     'role:nobody' => [
         'type' => 1,
@@ -60,6 +61,12 @@ return [
         'description' => 'The role is generally assigned to contractors who are allowed to wear a client disguise',
         'children' => [
             'client.impersonate',
+        ],
+    ],
+    'role:client.master' => [
+        'type' => 1,
+        'children' => [
+            'client.set-roles',
         ],
     ],
     'role:contact.user' => [
@@ -1056,6 +1063,12 @@ return [
     'deny:client.impersonate' => [
         'type' => 2,
         'description' => 'Prohibits impersonateing of the client',
+    ],
+    'client.set-roles' => [
+        'type' => 2,
+    ],
+    'deny:client.set-roles' => [
+        'type' => 2,
     ],
     'contact.read' => [
         'type' => 2,
