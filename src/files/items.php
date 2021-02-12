@@ -63,7 +63,7 @@ return [
             'client.impersonate',
         ],
     ],
-    'role:client.set-roles' => [
+    'role:client.master' => [
         'type' => 1,
         'children' => [
             'client.set-roles',

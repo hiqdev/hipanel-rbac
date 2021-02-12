@@ -25,7 +25,7 @@ return [
     'role:client.impersonator' => [
         'client.impersonate',
     ],
-    'role:client.set-roles' => [
+    'role:client.master' => [
         'client.set-roles',
     ],
     'role:contact.user' => [
