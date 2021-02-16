@@ -1,8 +1,8 @@
 language: php
 php:
     - 7.4
-    - 8
-dist: trusty
+    - 8.0
+dist: focal
 cache:
     directories:
         - $HOME/.composer/cache
