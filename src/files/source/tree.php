@@ -2,7 +2,6 @@
 
 return [
     'role:nobody' => [
-
         'nothing',
     ],
     'role:unauthorized' => [
@@ -298,6 +297,24 @@ return [
         'role:manager',
         'role:integration.manager',
     ],
+    'role:employee' => [
+        'restore-password',
+        'role:contact.user',
+        'role:finance.employee',
+        'employee.read',
+    ],
+    /// SUPER POWERS
+    'role:master' => [
+        'role:client.master',
+        'role:finance.master',
+        'role:bill.master',
+        'role:document.master',
+        'role:plan.master',
+        'role:sale.master',
+        'role:stock.master',
+        'role:domain.master',
+        'resell',
+    ],
     'role:owner' => [
         'role:manager',
         'role:bill.master',
@@ -306,12 +323,6 @@ return [
     ],
     'role:superpowers' => [
         'see-no-mans', 'part.sell', 'client.set-others-allowed-ips',
-    ],
-    'role:employee' => [
-        'restore-password',
-        'role:contact.user',
-        'role:finance.employee',
-        'employee.read',
     ],
     /// LIMITED ROLES
     'role:junior-manager' => [

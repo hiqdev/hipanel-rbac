@@ -722,6 +722,30 @@ return [
             'role:integration.manager',
         ],
     ],
+    'role:employee' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to employees',
+        'children' => [
+            'restore-password',
+            'role:contact.user',
+            'role:finance.employee',
+            'employee.read',
+        ],
+    ],
+    'role:master' => [
+        'type' => 1,
+        'children' => [
+            'role:client.master',
+            'role:finance.master',
+            'role:bill.master',
+            'role:document.master',
+            'role:plan.master',
+            'role:sale.master',
+            'role:stock.master',
+            'role:domain.master',
+            'resell',
+        ],
+    ],
     'role:owner' => [
         'type' => 1,
         'description' => 'The role is generally assigned to a root user and is not used by any other customers',
@@ -740,16 +764,6 @@ return [
             'see-no-mans',
             'part.sell',
             'client.set-others-allowed-ips',
-        ],
-    ],
-    'role:employee' => [
-        'type' => 1,
-        'description' => 'The role is generally assigned to employees',
-        'children' => [
-            'restore-password',
-            'role:contact.user',
-            'role:finance.employee',
-            'employee.read',
         ],
     ],
     'role:junior-manager' => [
