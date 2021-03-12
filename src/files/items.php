@@ -815,6 +815,7 @@ return [
             'domain.force-push',
             'domain.force-send-foa',
             'domain.approve-trasfer-out',
+            'domain.maintain',
         ],
     ],
     'role:dns.user' => [
@@ -2371,6 +2372,14 @@ return [
     'deny:domain.approve-trasfer-out' => [
         'type' => 2,
         'description' => 'Prohibits approve-trasfer-out operation on the domain',
+    ],
+    'domain.maintain' => [
+        'type' => 2,
+        'description' => 'Allow operation with domain in DB',
+    ],
+    'deny:domain.maintain' => [
+        'type' => 2,
+        'description' => 'Prohibits operation with domain in DB',
     ],
     'dns.create' => [
         'type' => 2,

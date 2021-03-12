@@ -715,6 +715,9 @@ return [
     'deny:hdomain.update' => [
         'description' => 'Prohibits updating of the hdomain',
     ],
+    'deny:domain.maintain' => [
+        'description' => 'Prohibits operation with domain in DB',
+    ],
     'deny:hub.create' => [
         'description' => 'Prohibits creating of the hub',
     ],
@@ -1095,6 +1098,9 @@ return [
     ],
     'domain.update' => [
         'description' => 'Allows updating of the domain',
+    ],
+    'domain.maintain' => [
+        'description' => 'Allow operation with domain in DB',
     ],
     'employee.create' => [
         'description' => 'Allows creating of the employee',
