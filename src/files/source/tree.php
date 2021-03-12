@@ -347,6 +347,7 @@ return [
         'domain.push', 'domain.force-push',
         'domain.force-send-foa',
         'domain.approve-trasfer-out',
+        'domain.maintain',
     ],
     'role:dns.user' => [
         'dns.create', 'dns.read', 'dns.update', 'dns.delete',
