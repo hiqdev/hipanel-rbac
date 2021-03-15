@@ -11,10 +11,10 @@ return [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on everything',
     ],
     'role:client.support' => [
-        'description' => 'The role is generally assigned to contractors who are members of the support team',
+        'description' => 'The role is generally assigned to staff who are members of the support team',
     ],
     'role:client.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of client management',
+        'description' => 'The role is generally assigned to staff who are in charge of client management',
     ],
     'role:client.master' => [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on clients management',
@@ -23,7 +23,7 @@ return [
         'description' => 'The role is generally assigned to employees who are responsible for employee management',
     ],
     'role:client.impersonator' => [
-        'description' => 'The role is generally assigned to contractors who are allowed to wear a client disguise',
+        'description' => 'The role is generally assigned to staff who are allowed to wear a client disguise',
     ],
     'role:contact.user' => [
         'description' => 'The role is generally assigned to users who are allowed to use contacts',
@@ -32,10 +32,10 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to use servers',
     ],
     'role:server.admin' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s servers administration',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
     ],
     'role:server.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s servers management',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers management',
     ],
     'role:server.master' => [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
@@ -44,10 +44,10 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to rents hubs',
     ],
     'role:hub.admin' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s hubs administration',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
     ],
     'role:hub.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s hubs management',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs management',
     ],
     'role:hub.master' => [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
@@ -56,13 +56,13 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to see the device resources consumption details',
     ],
     'role:consumption.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s devices consumption management',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s devices consumption management',
     ],
     'role:config.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of publicly offered servers configuration management',
+        'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
     ],
     'role:integration.manager' => [
-        'description' => 'The role is generally assigned to contractors who are allowed to change technical configuration of integrations with 3rd party services',
+        'description' => 'The role is generally assigned to staff who are allowed to change technical configuration of integrations with 3rd party services',
     ],
     'role:account.user' => [
         'description' => 'The role is generally assigned to users who can use accounts with their hosting services',
@@ -80,13 +80,13 @@ return [
         'description' => 'The role is generally assigned to users who need access to DBMS configuration of their hosting services',
     ],
     'role:zone.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of domain zones management',
+        'description' => 'The role is generally assigned to staff who are in charge of domain zones management',
     ],
     'role:hdomain.user' => [
         'description' => 'The role is generally assigned to users who are allowed to have hosting domains on their services',
     ],
     'role:ip.admin' => [
-        'description' => 'The role is generally assigned to contractors who manage company IP addresses pool',
+        'description' => 'The role is generally assigned to staff who manage company IP addresses pool',
     ],
     'role:mail.user' => [
         'description' => 'The role is generally assigned to users who are allowed to use mailboxes on their hosting services',
@@ -95,7 +95,7 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to see configuration requests of their hosting services',
     ],
     'role:service.admin' => [
-        'description' => 'The role is generally assigned to contractors who manage software services of user\'s hosting services',
+        'description' => 'The role is generally assigned to staff who manage software services of user\'s hosting services',
     ],
     'role:vhost.user' => [
         'description' => 'The role is generally assigned to users who are allowed to have virtual hosts on their hosting services',
@@ -107,55 +107,55 @@ return [
         'description' => 'The role is generally assigned to users who have default user permissions for hosting services',
     ],
     'role:hosting.admin' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of the client\'s hosting services administration',
+        'description' => 'The role is generally assigned to staff who are in charge of the client\'s hosting services administration',
     ],
     'role:bill.user' => [
         'description' => 'The role is generally assigned to users who are allowed to see bills',
     ],
     'role:bill.junior-manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of bills management',
+        'description' => 'The role is generally assigned to staff who are in charge of bills management',
     ],
     'role:bill.manager' => [
-        'description' => 'The role is generally assigned to contractors who have high permissions on bills management',
+        'description' => 'The role is generally assigned to staff who have high permissions on bills management',
     ],
     'role:bill.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions on bills management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on bills management',
     ],
     'role:requisites.user' => [
         'description' => 'The role is generally assigned to users who are allowed to see bank requisites',
     ],
     'role:requisites.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of financial requisites management',
+        'description' => 'The role is generally assigned to staff who are in charge of financial requisites management',
     ],
     'role:plan.user' => [
         'description' => 'The role is generally assigned to users who are allowed to see tariff plans',
     ],
     'role:plan.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of tariff plans management',
+        'description' => 'The role is generally assigned to staff who are in charge of tariff plans management',
     ],
     'role:plan.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the tariff plans management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the tariff plans management',
     ],
     'role:document.user' => [
         'description' => 'The role is generally assigned to users who are allowed to work with documents',
     ],
     'role:document.employee' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of employees\' and other contractors\' documents management',
+        'description' => 'The role is generally assigned to staff who are in charge of employees\' and other contractors\' documents management',
     ],
     'role:document.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of customer\'s documents management',
+        'description' => 'The role is generally assigned to staff who are in charge of customer\'s documents management',
     ],
     'role:document.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the documents management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the documents management',
     ],
     'role:sale.user' => [
         'description' => 'The role is generally assigned to users who are allowed to see own sales',
     ],
     'role:sale.manager' => [
-        'description' => 'The role is generally assigned to contractors who are allowed to sell objects to clients',
+        'description' => 'The role is generally assigned to staff who are allowed to sell objects to clients',
     ],
     'role:sale.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for sales management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for sales management',
     ],
     'role:finance.reader' => [
         'description' => 'The role is generally assigned to users who have read-only access to financial information',
@@ -164,91 +164,91 @@ return [
         'description' => 'The role is generally assigned to users who have limited write permissions on the financial information',
     ],
     'role:finance.employee' => [
-        'description' => 'The role is generally assigned to employees and contractors who have access to payments information',
+        'description' => 'The role is generally assigned to employees and staff who have access to payments information',
     ],
     'role:finance.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of finances management',
+        'description' => 'The role is generally assigned to staff who are in charge of finances management',
     ],
     'role:finance.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for finances management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for finances management',
     ],
     'role:stock.user' => [
         'description' => 'The role is generally assigned to users who have limited stock reading access',
     ],
     'role:stock.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of stock management',
+        'description' => 'The role is generally assigned to staff who are in charge of stock management',
     ],
     'role:stock.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the stock management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the stock management',
     ],
     'role:order.user' => [
         'description' => 'The role is generally assigned to users who have access to orders information',
     ],
     'role:order.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of orders management',
+        'description' => 'The role is generally assigned to staff who are in charge of orders management',
     ],
     'role:order.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the orders management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the orders management',
     ],
     'role:project.user' => [
-        'description' => 'The role is generally assigned to contractors who manage internal company sub-projects',
+        'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
     ],
     'role:client' => [
         'description' => 'The role is generally assigned to users who are clients',
     ],
     'role:support' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of customer support',
+        'description' => 'The role is generally assigned to staff who are in charge of customer support',
     ],
     'role:admin' => [
-        'description' => 'The role is generally assigned to contractors who are in charge for the technical management of the resources',
+        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
     ],
     'role:accounter' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of accounting',
+        'description' => 'The role is generally assigned to staff who are in charge of accounting',
     ],
     'role:manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of services and clients management',
+        'description' => 'The role is generally assigned to staff who are in charge of services and clients management',
     ],
     'role:reseller' => [
-        'description' => 'The role is generally assigned to contractors who resell services',
+        'description' => 'The role is generally assigned to staff who resell services',
     ],
     'role:owner' => [
         'description' => 'The role is generally assigned to a root user and is not used by any other customers',
     ],
     'role:superpowers' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions',
     ],
     'role:employee' => [
         'description' => 'The role is generally assigned to employees',
     ],
     'role:junior-manager' => [
-        'description' => 'The role is generally assigned to contractors who are managers with reduced permissions',
+        'description' => 'The role is generally assigned to staff who are managers with reduced permissions',
     ],
     'role:domain.user' => [
         'description' => 'The role is generally assigned to users who have access to domain name registration services',
     ],
     'role:domain.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of domain name registration services',
+        'description' => 'The role is generally assigned to staff who are in charge of domain name registration services',
     ],
     'role:domain.master' => [
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions on domain name registration services',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on domain name registration services',
     ],
     'role:dns.user' => [
         'description' => 'The role is generally assigned to users who have access to DNS management',
     ],
     'role:dns.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of DNS services management',
+        'description' => 'The role is generally assigned to staff who are in charge of DNS services management',
     ],
     'role:certificate.user' => [
         'description' => 'The role is generally assigned to users who have access to SSL certificates services',
     ],
     'role:certificate.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of SSL certificates management',
+        'description' => 'The role is generally assigned to staff who are in charge of SSL certificates management',
     ],
     'role:ticket.user' => [
         'description' => 'The role is generally assigned to users who have access to the ticket system',
     ],
     'role:ticket.manager' => [
-        'description' => 'The role is generally assigned to contractors who are in charge of tickets management',
+        'description' => 'The role is generally assigned to staff who are in charge of tickets management',
     ],
     'role:beta-tester' => [
         'description' => 'The role is generally assigned to users who participate in beta testing program',
@@ -257,7 +257,7 @@ return [
         'description' => 'The role is generally assigned to users who participate in early access testing program',
     ],
     'role:owner-staff' => [
-        'description' => 'The role is generally assigned to contractors who represents owners of the company resources',
+        'description' => 'The role is generally assigned to staff who represents owners of the company resources',
     ],
     'access-reseller' => [
         'description' => 'Allows access-reseller operation',

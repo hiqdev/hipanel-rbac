@@ -20,7 +20,7 @@ return [
     ],
     'role:client.support' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are members of the support team',
+        'description' => 'The role is generally assigned to staff who are members of the support team',
         'children' => [
             'client.read',
             'client.list',
@@ -28,7 +28,7 @@ return [
     ],
     'role:client.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of client management',
+        'description' => 'The role is generally assigned to staff who are in charge of client management',
         'children' => [
             'role:client.support',
             'client.create',
@@ -58,7 +58,7 @@ return [
     ],
     'role:client.impersonator' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are allowed to wear a client disguise',
+        'description' => 'The role is generally assigned to staff who are allowed to wear a client disguise',
         'children' => [
             'client.impersonate',
         ],
@@ -92,7 +92,7 @@ return [
     ],
     'role:server.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s servers administration',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
         'children' => [
             'role:server.user',
             'server.create',
@@ -107,7 +107,7 @@ return [
     ],
     'role:server.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s servers management',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers management',
         'children' => [
             'role:server.user',
             'server.enable-block',
@@ -135,7 +135,7 @@ return [
     ],
     'role:hub.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s hubs administration',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
         'children' => [
             'hub.read',
             'hub.create',
@@ -145,7 +145,7 @@ return [
     ],
     'role:hub.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s hubs management',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs management',
         'children' => [
             'hub.read',
             'hub.sell',
@@ -168,7 +168,7 @@ return [
     ],
     'role:consumption.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of client\'s devices consumption management',
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s devices consumption management',
         'children' => [
             'consumption.read',
             'consumption.update',
@@ -177,7 +177,7 @@ return [
     ],
     'role:config.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of publicly offered servers configuration management',
+        'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
         'children' => [
             'config.read',
             'config.create',
@@ -187,7 +187,7 @@ return [
     ],
     'role:integration.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are allowed to change technical configuration of integrations with 3rd party services',
+        'description' => 'The role is generally assigned to staff who are allowed to change technical configuration of integrations with 3rd party services',
         'children' => [
             'integration.read',
             'integration.create',
@@ -245,7 +245,7 @@ return [
     ],
     'role:zone.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of domain zones management',
+        'description' => 'The role is generally assigned to staff who are in charge of domain zones management',
         'children' => [
             'zone.create',
             'zone.update',
@@ -266,7 +266,7 @@ return [
     ],
     'role:ip.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who manage company IP addresses pool',
+        'description' => 'The role is generally assigned to staff who manage company IP addresses pool',
         'children' => [
             'ip.read',
             'ip.create',
@@ -296,7 +296,7 @@ return [
     ],
     'role:service.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who manage software services of user\'s hosting services',
+        'description' => 'The role is generally assigned to staff who manage software services of user\'s hosting services',
         'children' => [
             'service.read',
             'service.create',
@@ -350,7 +350,7 @@ return [
     ],
     'role:hosting.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of the client\'s hosting services administration',
+        'description' => 'The role is generally assigned to staff who are in charge of the client\'s hosting services administration',
         'children' => [
             'role:account.user',
             'role:backup.user',
@@ -375,14 +375,14 @@ return [
     ],
     'role:bill.junior-manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of bills management',
+        'description' => 'The role is generally assigned to staff who are in charge of bills management',
         'children' => [
             'bill.read',
         ],
     ],
     'role:bill.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have high permissions on bills management',
+        'description' => 'The role is generally assigned to staff who have high permissions on bills management',
         'children' => [
             'bill.read',
             'bill.create',
@@ -393,7 +393,7 @@ return [
     ],
     'role:bill.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions on bills management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on bills management',
         'children' => [
             'bill.read',
             'bill.create',
@@ -413,7 +413,7 @@ return [
     ],
     'role:requisites.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of financial requisites management',
+        'description' => 'The role is generally assigned to staff who are in charge of financial requisites management',
         'children' => [
             'requisites.read',
             'requisites.create',
@@ -432,7 +432,7 @@ return [
     ],
     'role:plan.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of tariff plans management',
+        'description' => 'The role is generally assigned to staff who are in charge of tariff plans management',
         'children' => [
             'plan.read',
             'plan.create',
@@ -447,7 +447,7 @@ return [
     ],
     'role:plan.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the tariff plans management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the tariff plans management',
         'children' => [
             'role:plan.manager',
         ],
@@ -463,7 +463,7 @@ return [
     ],
     'role:document.employee' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of employees\' and other contractors\' documents management',
+        'description' => 'The role is generally assigned to staff who are in charge of employees\' and other contractors\' documents management',
         'children' => [
             'document.read',
             'document.create',
@@ -472,7 +472,7 @@ return [
     ],
     'role:document.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of customer\'s documents management',
+        'description' => 'The role is generally assigned to staff who are in charge of customer\'s documents management',
         'children' => [
             'role:document.user',
             'document.update',
@@ -484,7 +484,7 @@ return [
     ],
     'role:document.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the documents management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the documents management',
         'children' => [
             'document.generate-all',
         ],
@@ -498,7 +498,7 @@ return [
     ],
     'role:sale.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are allowed to sell objects to clients',
+        'description' => 'The role is generally assigned to staff who are allowed to sell objects to clients',
         'children' => [
             'sale.read',
             'sale.delete',
@@ -508,7 +508,7 @@ return [
     ],
     'role:sale.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for sales management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for sales management',
         'children' => [
             'role:sale.manager',
         ],
@@ -535,7 +535,7 @@ return [
     ],
     'role:finance.employee' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to employees and contractors who have access to payments information',
+        'description' => 'The role is generally assigned to employees and staff who have access to payments information',
         'children' => [
             'role:bill.user',
             'role:document.employee',
@@ -544,7 +544,7 @@ return [
     ],
     'role:finance.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of finances management',
+        'description' => 'The role is generally assigned to staff who are in charge of finances management',
         'children' => [
             'role:finance.reader',
             'role:bill.junior-manager',
@@ -556,7 +556,7 @@ return [
     ],
     'role:finance.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for finances management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for finances management',
         'children' => [
             'role:finance.manager',
             'role:bill.manager',
@@ -579,7 +579,7 @@ return [
     ],
     'role:stock.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of stock management',
+        'description' => 'The role is generally assigned to staff who are in charge of stock management',
         'children' => [
             'role:stock.user',
             'part.create',
@@ -595,7 +595,7 @@ return [
     ],
     'role:stock.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the stock management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the stock management',
         'children' => [
             'role:stock.manager',
             'move.read-all',
@@ -614,14 +614,14 @@ return [
     ],
     'role:order.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of orders management',
+        'description' => 'The role is generally assigned to staff who are in charge of orders management',
         'children' => [
             'role:order.user',
         ],
     ],
     'role:order.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions for the orders management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the orders management',
         'children' => [
             'role:order.manager',
             'order.read-profits',
@@ -629,7 +629,7 @@ return [
     ],
     'role:project.user' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who manage internal company sub-projects',
+        'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
         'children' => [
             'consumption.read',
             'part.read',
@@ -664,7 +664,7 @@ return [
     ],
     'role:support' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of customer support',
+        'description' => 'The role is generally assigned to staff who are in charge of customer support',
         'children' => [
             'access-subclients',
             'support',
@@ -680,7 +680,7 @@ return [
     ],
     'role:admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge for the technical management of the resources',
+        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
         'children' => [
             'admin',
             'role:support',
@@ -692,7 +692,7 @@ return [
     ],
     'role:accounter' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of accounting',
+        'description' => 'The role is generally assigned to staff who are in charge of accounting',
         'children' => [
             'role:manager',
             'role:hub.manager',
@@ -701,7 +701,7 @@ return [
     ],
     'role:manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of services and clients management',
+        'description' => 'The role is generally assigned to staff who are in charge of services and clients management',
         'children' => [
             'manage',
             'access-reseller',
@@ -729,7 +729,7 @@ return [
     ],
     'role:reseller' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who resell services',
+        'description' => 'The role is generally assigned to staff who resell services',
         'children' => [
             'have-goods',
             'resell',
@@ -779,7 +779,7 @@ return [
     ],
     'role:superpowers' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions',
         'children' => [
             'see-no-mans',
             'part.sell',
@@ -788,7 +788,7 @@ return [
     ],
     'role:junior-manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are managers with reduced permissions',
+        'description' => 'The role is generally assigned to staff who are managers with reduced permissions',
         'children' => [
             'access-subclients',
             'access-reseller',
@@ -818,7 +818,7 @@ return [
     ],
     'role:domain.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of domain name registration services',
+        'description' => 'The role is generally assigned to staff who are in charge of domain name registration services',
         'children' => [
             'role:domain.user',
             'domain.delete',
@@ -826,7 +826,7 @@ return [
     ],
     'role:domain.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who have exceptionally high permissions on domain name registration services',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on domain name registration services',
         'children' => [
             'role:domain.manager',
             'domain.freeze',
@@ -850,7 +850,7 @@ return [
     ],
     'role:dns.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of DNS services management',
+        'description' => 'The role is generally assigned to staff who are in charge of DNS services management',
         'children' => [
             'role:dns.user',
         ],
@@ -866,7 +866,7 @@ return [
     ],
     'role:certificate.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of SSL certificates management',
+        'description' => 'The role is generally assigned to staff who are in charge of SSL certificates management',
         'children' => [
             'role:certificate.user',
             'certificate.delete',
@@ -884,7 +884,7 @@ return [
     ],
     'role:ticket.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who are in charge of tickets management',
+        'description' => 'The role is generally assigned to staff who are in charge of tickets management',
         'children' => [
             'role:ticket.user',
             'ticket.update',
@@ -908,7 +908,7 @@ return [
     ],
     'role:owner-staff' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to contractors who represents owners of the company resources',
+        'description' => 'The role is generally assigned to staff who represents owners of the company resources',
         'children' => [
             'ref.view.not-used',
             'bill.charges.read',
