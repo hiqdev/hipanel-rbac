@@ -43,6 +43,9 @@ return [
         'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
         'server.see-label',
     ],
+    'role:server.master' => [
+        'role:server.admin', 'role:server.manager',
+    ],
     'role:hub.user' => [
         'hub.read',
     ],
@@ -51,6 +54,9 @@ return [
     ],
     'role:hub.manager' => [
         'hub.read', 'hub.sell',
+    ],
+    'role:hub.master' => [
+        'role:hub.admin', 'role:hub.manager',
     ],
     'role:consumption.user' => [
         'consumption.read',
@@ -313,6 +319,8 @@ return [
         'role:sale.master',
         'role:stock.master',
         'role:domain.master',
+        'role:server.master',
+        'role:hub.master',
         'resell',
     ],
     'role:owner' => [

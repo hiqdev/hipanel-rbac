@@ -65,6 +65,7 @@ return [
     ],
     'role:client.master' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on clients management',
         'children' => [
             'client.set-roles',
         ],
@@ -117,6 +118,14 @@ return [
             'server.see-label',
         ],
     ],
+    'role:server.master' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
+        'children' => [
+            'role:server.admin',
+            'role:server.manager',
+        ],
+    ],
     'role:hub.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who are allowed to rents hubs',
@@ -140,6 +149,14 @@ return [
         'children' => [
             'hub.read',
             'hub.sell',
+        ],
+    ],
+    'role:hub.master' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
+        'children' => [
+            'role:hub.admin',
+            'role:hub.manager',
         ],
     ],
     'role:consumption.user' => [
@@ -734,6 +751,7 @@ return [
     ],
     'role:master' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on everything',
         'children' => [
             'role:client.master',
             'role:finance.master',
@@ -743,6 +761,8 @@ return [
             'role:sale.master',
             'role:stock.master',
             'role:domain.master',
+            'role:server.master',
+            'role:hub.master',
             'resell',
         ],
     ],
@@ -1081,9 +1101,11 @@ return [
     ],
     'client.set-roles' => [
         'type' => 2,
+        'description' => 'Allows setting client roles',
     ],
     'deny:client.set-roles' => [
         'type' => 2,
+        'description' => 'Prohibits set-roles operation on the client',
     ],
     'contact.read' => [
         'type' => 2,
@@ -2255,7 +2277,7 @@ return [
     ],
     'client.set-tmp-pwd' => [
         'type' => 2,
-        'description' => 'Allows set-tmp-pwd operation on the client',
+        'description' => 'Allows to set client temporary password',
     ],
     'deny:client.set-tmp-pwd' => [
         'type' => 2,

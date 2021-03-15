@@ -7,11 +7,17 @@ return [
     'role:unauthorized' => [
         'description' => 'The role is generally assigned to guests automatically.',
     ],
+    'role:master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on everything',
+    ],
     'role:client.support' => [
         'description' => 'The role is generally assigned to contractors who are members of the support team',
     ],
     'role:client.manager' => [
         'description' => 'The role is generally assigned to contractors who are in charge of client management',
+    ],
+    'role:client.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on clients management',
     ],
     'role:employee.manager' => [
         'description' => 'The role is generally assigned to employees who are responsible for employee management',
@@ -31,6 +37,9 @@ return [
     'role:server.manager' => [
         'description' => 'The role is generally assigned to contractors who are in charge of client\'s servers management',
     ],
+    'role:server.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
+    ],
     'role:hub.user' => [
         'description' => 'The role is generally assigned to users who are allowed to rents hubs',
     ],
@@ -39,6 +48,9 @@ return [
     ],
     'role:hub.manager' => [
         'description' => 'The role is generally assigned to contractors who are in charge of client\'s hubs management',
+    ],
+    'role:hub.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
     ],
     'role:consumption.user' => [
         'description' => 'The role is generally assigned to users who are allowed to see the device resources consumption details',
@@ -356,7 +368,10 @@ return [
         'description' => 'Allows set-others-allowed-ips operation on the client',
     ],
     'client.set-tmp-pwd' => [
-        'description' => 'Allows set-tmp-pwd operation on the client',
+        'description' => 'Allows to set client temporary password',
+    ],
+    'client.set-roles' => [
+        'description' => 'Allows setting client roles',
     ],
     'client.unblock' => [
         'description' => 'Allows unblocking of the client',
@@ -537,6 +552,9 @@ return [
     ],
     'deny:client.set-tmp-pwd' => [
         'description' => 'Prohibits set-tmp-pwd operation on the client',
+    ],
+    'deny:client.set-roles' => [
+        'description' => 'Prohibits set-roles operation on the client',
     ],
     'deny:client.unblock' => [
         'description' => 'Prohibits unblocking of the client',
