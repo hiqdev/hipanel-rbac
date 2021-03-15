@@ -763,6 +763,7 @@ return [
             'role:domain.master',
             'role:server.master',
             'role:hub.master',
+            'role:superpowers',
             'resell',
         ],
     ],
