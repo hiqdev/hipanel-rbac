@@ -15,11 +15,11 @@ return [
         'role:client.support', 'client.create', 'client.update', 'client.delete',
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note', 'client.set-description',
-        'purse.update',
+        'purse.update', 'purse.read',
     ],
     'role:employee.manager' => [
         'client.list', 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
-        'purse.update',
+        'purse.update', 'purse.read',
     ],
     'role:client.impersonator' => [
         'client.impersonate',
@@ -129,6 +129,15 @@ return [
     ],
     // FINANCE MODULE
     // BILL
+    'role:purse.user' => [
+        'purse.read',
+    ],
+    'role:purse.manager' => [
+        'role:purse.user', 'purse.update', 'purse.create',
+    ],
+    'role:purse.master' => [
+        'role:purse.manager',
+    ],
     'role:bill.user' => [
         'bill.read', 'deposit',
     ],
@@ -137,10 +146,12 @@ return [
     ],
     'role:bill.manager' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
+        'role:purse.manager',
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'bill.import', 'bill.create-exchange',
+        'role:purse.master',
     ],
     // REQUISITES
     'role:requisites.user' => [
@@ -294,6 +305,7 @@ return [
         'role:finance.manager',
         'mailing.prepare', 'mailing.send',
         'client.set-tmp-pwd', 'client.notify',
+        'role:purse.user',
     ],
     'role:reseller' => [
         'have-goods',
