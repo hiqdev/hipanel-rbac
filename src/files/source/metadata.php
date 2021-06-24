@@ -259,6 +259,15 @@ return [
     'role:owner-staff' => [
         'description' => 'The role is generally assigned to staff who represents owners of the company resources',
     ],
+    'role:purse.user' => [
+        'description' => 'The role is generally assigned to users who have access to the purses',
+    ],
+    'role:purse.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of purses',
+    ],
+    'role:purse.master' => [
+        'description' => 'The role is generally assigned to staff who are in charge of purses',
+    ],
     'access-reseller' => [
         'description' => 'Allows access-reseller operation',
     ],

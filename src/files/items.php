@@ -41,6 +41,7 @@ return [
             'client.set-note',
             'client.set-description',
             'purse.update',
+            'purse.read',
         ],
     ],
     'role:employee.manager' => [
@@ -54,6 +55,7 @@ return [
             'employee.delete',
             'document.acceptance',
             'purse.update',
+            'purse.read',
         ],
     ],
     'role:client.impersonator' => [
@@ -365,6 +367,29 @@ return [
             'role:service.admin',
         ],
     ],
+    'role:purse.user' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to users who have access to the purses',
+        'children' => [
+            'purse.read',
+        ],
+    ],
+    'role:purse.manager' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of purses',
+        'children' => [
+            'role:purse.user',
+            'purse.update',
+            'purse.create',
+        ],
+    ],
+    'role:purse.master' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of purses',
+        'children' => [
+            'role:purse.manager',
+        ],
+    ],
     'role:bill.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who are allowed to see bills',
@@ -389,6 +414,7 @@ return [
             'bill.update',
             'bill.delete',
             'deposit',
+            'role:purse.manager',
         ],
     ],
     'role:bill.master' => [
@@ -402,6 +428,7 @@ return [
             'deposit',
             'bill.import',
             'bill.create-exchange',
+            'role:purse.master',
         ],
     ],
     'role:requisites.user' => [
@@ -725,6 +752,7 @@ return [
             'mailing.send',
             'client.set-tmp-pwd',
             'client.notify',
+            'role:purse.user',
         ],
     ],
     'role:reseller' => [
@@ -1051,6 +1079,12 @@ return [
     'deny:purse.update' => [
         'type' => 2,
         'description' => 'Prohibits updating of the purse',
+    ],
+    'purse.read' => [
+        'type' => 2,
+    ],
+    'deny:purse.read' => [
+        'type' => 2,
     ],
     'employee.read' => [
         'type' => 2,
@@ -1755,6 +1789,12 @@ return [
     'deny:vhost.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the vhost',
+    ],
+    'purse.create' => [
+        'type' => 2,
+    ],
+    'deny:purse.create' => [
+        'type' => 2,
     ],
     'bill.read' => [
         'type' => 2,
