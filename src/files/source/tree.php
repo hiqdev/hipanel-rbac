@@ -255,6 +255,7 @@ return [
         'role:hosting.user',
         'role:finance.user',
         'role:sale.user',
+        'role:stock.user',
         'client.notify',
     ],
     'role:support' => [
