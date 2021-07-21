@@ -339,6 +339,60 @@ trait CheckAccessTrait
         ]);
     }
 
+    public function testAlmighty()
+    {
+        $this->assertAccesses('role:almighty', [
+            'access-subclients', 'access-reseller',
+            'support', 'manage', 'admin',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read', 'client.create', 'client.update', 'client.delete', 'client.list',
+            'client.set-tmp-pwd', 'contact.set-verified', 'client.block', 'client.unblock',
+            'client.get-note', 'client.set-note', 'client.set-description',
+            'bill.read', 'bill.create', 'bill.update', 'bill.delete',
+            'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
+            'price.read', 'price.create', 'price.update', 'price.delete',
+            'sale.read', 'sale.delete', 'sale.create', 'sale.update',
+            'domain.freeze',
+            'domain.read', 'domain.update', 'domain.delete', 'domain.delete-agp', 'domain.set-nss',
+            'domain.pay', 'domain.push', 'domain.force-push', 'domain.force-send-foa',
+            'dns.create', 'dns.read', 'dns.update', 'dns.delete',
+            'certificate.read', 'certificate.create', 'certificate.update', 'certificate.delete', 'certificate.pay', 'certificate.push',
+
+            'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
+            'server.control-power', 'server.control-system', 'server.wizzard', 'server.manage-settings',
+
+            'purse.update', 'purse.read', 'purse.create',
+
+            'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note', 'server.see-label',
+            'hub.read', 'hub.create', 'hub.update', 'hub.delete',
+            'config.read', 'config.create', 'config.update', 'config.delete',
+            'consumption.read', 'consumption.update', 'consumption.delete',
+            'document.read', 'document.create', 'document.update', 'document.delete',
+            'document.generate', 'document.generate-all',
+            'document.acceptance', 'document.invoice',
+            'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
+            'mailing.prepare', 'mailing.send',
+            'stock.read',
+            'part.read', 'part.create', 'part.update', 'part.delete',
+            'order.read', 'order.read', 'order.create', 'order.update', 'order.delete', 'order.read-profits',
+            'move.read', 'move.create', 'move.update', 'move.delete', 'move.read-all', 'move.get-directions',
+            'model.read', 'model.create', 'model.update', 'model.delete',
+            'employee.read', 'client.notify',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'bill.read', 'plan.read', 'finance.read',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete', 'hdomain.set-dns',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'ip.create', 'ip.update', 'ip.delete',
+            'service.read', 'service.create', 'service.update', 'service.delete',
+        ]);
+    }
+
     public function testLimited()
     {
         $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.control-power,deny:server.control-system,deny:server.set-note,deny:ip.read,deny:service.read,deny:domain.delete-agp,deny:domain.set-nss', 'user:limited');

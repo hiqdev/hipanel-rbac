@@ -1498,4 +1498,19 @@ return [
     'sale.update' => [
         'description' => 'Allows updating of the sale',
     ],
+    'role:almighty' => [
+        'description' => 'The role is generally assigned to ____',
+    ],
+    'deny:purse.create' => [
+        'description' => 'Prohibits creating of the purse',
+    ],
+    'deny:purse.read' => [
+        'description' => 'Prohibits reading of the purse',
+    ],
+    'purse.create' => [
+        'description' => 'Allows creating of the purse',
+    ],
+    'purse.read' => [
+        'description' => 'Allows reading of the purse',
+    ],
 ];

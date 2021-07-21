@@ -944,6 +944,24 @@ return [
             'part.read-all-hierarchy',
         ],
     ],
+    'role:almighty' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to ____',
+        'children' => [
+            'role:admin',
+            'role:manager',
+            'role:document.master',
+            'role:finance.master',
+            'role:stock.master',
+            'role:config.manager',
+            'domain.freeze',
+            'domain.force-push',
+            'domain.delete',
+            'employee.read',
+            'domain.force-send-foa',
+            'deny:deposit',
+        ],
+    ],
     'nothing' => [
         'type' => 2,
         'description' => 'Allows nothinging',
@@ -1082,9 +1100,11 @@ return [
     ],
     'purse.read' => [
         'type' => 2,
+        'description' => 'Allows reading of the purse',
     ],
     'deny:purse.read' => [
         'type' => 2,
+        'description' => 'Prohibits reading of the purse',
     ],
     'employee.read' => [
         'type' => 2,
@@ -1792,9 +1812,11 @@ return [
     ],
     'purse.create' => [
         'type' => 2,
+        'description' => 'Allows creating of the purse',
     ],
     'deny:purse.create' => [
         'type' => 2,
+        'description' => 'Prohibits creating of the purse',
     ],
     'bill.read' => [
         'type' => 2,
