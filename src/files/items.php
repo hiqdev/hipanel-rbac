@@ -946,7 +946,7 @@ return [
     ],
     'role:almighty' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is for testing only',
         'children' => [
             'role:admin',
             'role:manager',

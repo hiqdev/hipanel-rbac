@@ -1499,7 +1499,7 @@ return [
         'description' => 'Allows updating of the sale',
     ],
     'role:almighty' => [
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is for testing only',
     ],
     'deny:purse.create' => [
         'description' => 'Prohibits creating of the purse',
