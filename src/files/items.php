@@ -609,6 +609,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of stock management',
         'children' => [
             'role:stock.user',
+            'part.read-all-hierarchy',
             'part.create',
             'part.update',
             'part.delete',
@@ -2106,6 +2107,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the order',
     ],
+    'part.read-all-hierarchy' => [
+        'type' => 2,
+        'description' => 'Allows read-all-hierarchy operation on the part',
+    ],
+    'deny:part.read-all-hierarchy' => [
+        'type' => 2,
+        'description' => 'Prohibits read-all-hierarchy operation on the part',
+    ],
     'part.create' => [
         'type' => 2,
         'description' => 'Allows creating of the part',
@@ -2609,13 +2618,5 @@ return [
     'deny:bill.charges.read' => [
         'type' => 2,
         'description' => 'Prohibits charges.read operation on the bill',
-    ],
-    'part.read-all-hierarchy' => [
-        'type' => 2,
-        'description' => 'Allows read-all-hierarchy operation on the part',
-    ],
-    'deny:part.read-all-hierarchy' => [
-        'type' => 2,
-        'description' => 'Prohibits read-all-hierarchy operation on the part',
     ],
 ];

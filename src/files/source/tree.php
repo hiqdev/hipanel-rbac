@@ -231,6 +231,7 @@ return [
     ],
     'role:stock.manager' => [
         'role:stock.user',
+        'part.read-all-hierarchy',
         'part.create', 'part.update', 'part.delete',
         'move.create', 'move.update', 'move.delete',
         'model.create', 'model.update', 'model.delete',
