@@ -45,6 +45,11 @@ After adding roles you have to generate description to it by command:
 After these actions all rules are saved, and you need to check it by unit tests.
 Run `./vendor/bin/phpunit` and correct `CheckAccessTrait` to fix errors.
 
+### TypeScript tree file
+
+`js/index.ts` file will be generated with all rbac console commands (`reinit, init, generate-descriptions`).
+Also you can generate it with `generate-js` command.
+
 ## License
 
 This project is released under the terms of the BSD-3-Clause [license](LICENSE).
