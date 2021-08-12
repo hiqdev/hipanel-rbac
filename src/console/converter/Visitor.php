@@ -22,6 +22,7 @@ class Visitor extends NodeVisitorAbstract
         if (!$node instanceof ArrayItem) {
             return;
         }
+
         if ($node->key instanceof String_) {
             $this->roles[] = $node->key->value;
         }
