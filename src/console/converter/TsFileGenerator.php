@@ -16,7 +16,7 @@ final class TsFileGenerator extends AbstractGenerator
 
     public function generate(): string
     {
-        return implode(self::LINE_FEED . self::LINE_FEED, $this->parts);
+        return implode(self::LINE_FEED . self::LINE_FEED, $this->parts) . self::LINE_FEED;
     }
 
     public static function fromParts(string ...$parts): string
