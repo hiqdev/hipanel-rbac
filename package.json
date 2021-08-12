@@ -1,0 +1,28 @@
+{
+  "name": "@hiqdev/hipanel-rbac",
+  "version": "1.0.0",
+  "description": "HiQDev RBAC items",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "lib": "js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiqdev/hipanel-rbac.git"
+  },
+  "keywords": [
+    "rbac",
+    "hiqdev",
+    "role"
+  ],
+  "author": "strorch",
+  "license": "proprietary",
+  "bugs": {
+    "url": "https://github.com/hiqdev/hipanel-rbac/issues"
+  },
+  "homepage": "https://github.com/hiqdev/hipanel-rbac#readme"
+}

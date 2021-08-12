@@ -11,6 +11,7 @@
 namespace hipanel\rbac\console;
 
 use hipanel\rbac\AbstractIniter;
+use hipanel\rbac\console\converter\ConverterInterface;
 use hipanel\rbac\RbacIniterInterface;
 use yii\base\Module;
 use yii\helpers\Console;
@@ -33,10 +34,13 @@ class RbacController extends \yii\console\Controller
      */
     private $auth;
 
+    private ConverterInterface $converter;
+
     public function __construct(
         $id,
         Module $module,
         RbacIniterInterface $initer,
+        ConverterInterface $converter,
         CheckAccessInterface $auth,
         $config = [])
     {
@@ -44,6 +48,7 @@ class RbacController extends \yii\console\Controller
 
         $this->initer = $initer;
         $this->auth = $auth;
+        $this->converter = $converter;
     }
 
     public $defaultAction = 'show';
@@ -51,7 +56,13 @@ class RbacController extends \yii\console\Controller
     public function actionInit()
     {
         $this->initer->init($this->auth);
+        $this->converter->convert();
         $this->stdout('Consider running rbac/generate-descriptions to generate default role descriptions', Console::FG_YELLOW);
+    }
+
+    public function actionGenerateJs()
+    {
+        $this->converter->convert();
     }
 
     public function actionReinit()
@@ -62,6 +73,8 @@ class RbacController extends \yii\console\Controller
         (new MetadataGenerator($this->auth, $this->initer))->dump($path);
 
         $this->initer->reinit($this->auth); // Reinit using newly generated descriptions
+
+        $this->converter->convert();
     }
 
     public function actionShow()
@@ -92,6 +105,7 @@ class RbacController extends \yii\console\Controller
         (new MetadataGenerator($this->auth, $this->initer))->dump($path);
 
         $this->initer->reinit($this->auth);
+        $this->converter->convert();
     }
 
     public function actionPlantuml()
