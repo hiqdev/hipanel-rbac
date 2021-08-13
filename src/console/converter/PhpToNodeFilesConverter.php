@@ -25,7 +25,7 @@ final class PhpToNodeFilesConverter implements ConverterInterface
             ->create(ParserFactory::PREFER_PHP7);
     }
 
-    public function convert()
+    public function convert(): void
     {
         $traverser = new NodeTraverser();
         $visitor = new Visitor();

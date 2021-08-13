@@ -5,5 +5,5 @@ namespace hipanel\rbac\console\converter;
 
 interface ConverterInterface
 {
-    public function convert();
+    public function convert(): void;
 }
