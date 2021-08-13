@@ -27,7 +27,11 @@ class Visitor extends NodeVisitorAbstract
             $this->roles[] = $node->key->value;
         }
 
-        if ($node->value instanceof String_ && !in_array($node->value->value, $this->permissions)) {
+        if (
+            $node->value instanceof String_
+            && !in_array($node->value->value, $this->permissions)
+            && !strstr($node->value->value, 'role:')
+        ) {
             $this->permissions[] = $node->value->value;
         }
     }
