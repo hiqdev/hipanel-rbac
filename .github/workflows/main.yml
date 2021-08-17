@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    tags:
+      - "*.*.*"
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2.2.4
+        with:
+          name: hiqdev-rbac.tar.gz
+          path: | 
+            js/index.ts
+            package.json
+            LICENSE
+            README.md
