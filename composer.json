@@ -50,6 +50,7 @@
         "hiqdev/hidev-php": "dev-master",
         "hiqdev/hidev-hiqdev": "dev-master",
         "phpunit/phpunit": "^7.5",
+        "nikic/php-parser": "^4.12",
         "laminas/laminas-code": "^3.4.1"
     },
     "autoload": {

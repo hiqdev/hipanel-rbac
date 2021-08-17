@@ -20,6 +20,11 @@ $singletons = [
         '__class' => \hipanel\rbac\AuthManager::class,
     ],
     \hipanel\rbac\RbacIniterInterface::class => \hipanel\rbac\Initer::class,
+    \hipanel\rbac\console\converter\ConverterInterface::class => [
+        '__class' => \hipanel\rbac\console\converter\PhpToNodeFilesConverter::class,
+        'storageDir' => dirname(__DIR__) . '/js',
+        'convertFile' => dirname(__DIR__) . '/src/files/source/tree.php',
+    ],
 ];
 
 return Buildtime::run(yii::is3())
