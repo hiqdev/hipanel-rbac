@@ -1,5 +1,7 @@
 # hiqdev/hipanel-rbac
 
+## [0.1.2] - 2021-08-17
+
 ## [0.1.0] - 2017-06-30
 
 - Refactored Initer with `tree` ([@hiqsol])
@@ -20,6 +22,8 @@
 
 ## [Development started] - 2016-04-08
 
+## [0.1.1] - 2021-08-17
+
 [@hiqsol]: https://github.com/hiqsol
 [sol@hiqdev.com]: https://github.com/hiqsol
 [@SilverFire]: https://github.com/SilverFire
@@ -32,3 +36,5 @@
 [0.0.2]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.1...0.0.2
 [0.0.1]: https://github.com/hiqdev/hipanel-rbac/releases/tag/0.0.1
 [0.1.0]: https://github.com/hiqdev/hipanel-rbac/compare/0.0.2...0.1.0
+[Development started]: https://github.com/hiqdev/hipanel-rbac/compare/0.1.1...Development started
+[0.1.2]: https://github.com/hiqdev/hipanel-rbac/compare/0.1.0...0.1.2

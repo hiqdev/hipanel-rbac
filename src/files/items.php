@@ -951,16 +951,6 @@ return [
         'children' => [
             'role:admin',
             'role:manager',
-            'role:document.master',
-            'role:finance.master',
-            'role:stock.master',
-            'role:config.manager',
-            'domain.freeze',
-            'domain.force-push',
-            'domain.delete',
-            'employee.read',
-            'domain.force-send-foa',
-            'deny:deposit',
         ],
     ],
     'nothing' => [

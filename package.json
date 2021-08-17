@@ -1,6 +1,6 @@
 {
   "name": "@hiqdev/hipanel-rbac",
-  "version": "1.0.0",
+  "version": "0.1.2",
   "description": "HiQDev RBAC items",
   "main": "index.js",
   "directories": {
