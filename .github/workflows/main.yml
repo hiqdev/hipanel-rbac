@@ -11,7 +11,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
       - name: Upload a Build Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
@@ -24,7 +23,7 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: hiqdev-rbac
-          path: .github/artifacts
+          path: .github/artifacts/hiqdev-rbac.zip
       - name: Upload binaries to release
         uses: svenstaro/upload-release-action@v2
         with:
