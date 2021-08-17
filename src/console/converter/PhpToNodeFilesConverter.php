@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace hipanel\rbac\console\converter;
 
+use hipanel\rbac\console\converter\formatter\EnumRowItemBuilder;
 use PhpParser\NodeTraverser;
 use PhpParser\Parser;
 use PhpParser\ParserFactory;
@@ -36,9 +37,9 @@ final class PhpToNodeFilesConverter implements ConverterInterface
             $traverser->traverse($stmts);
 
             $output = TsFileGenerator::fromParts(
-                (new TsObjectGenerator('ROLES_AND_PERMISSIONS', require $this->convertFile))->generate(),
-                (new TsEnumGenerator('ROLES_ENUM', $visitor->getRoles()))->generate(),
-                (new TsEnumGenerator('PERMISSIONS_ENUM', $visitor->getPermissions()))->generate(),
+                (new TsObjectGenerator('RoleHierarchy', require $this->convertFile))->generate(),
+                (new TsEnumGenerator('Role', $visitor->getRoles()))->withRowFormatter(new EnumRowItemBuilder())->generate(),
+                (new TsEnumGenerator('Permission', $visitor->getPermissions()))->generate(),
             );
 
             if (!is_dir($this->storageDir)) {
