@@ -41,3 +41,6 @@ phpunit.phar
 /tests/assignments.php
 /tests/items.php
 /tests/rules.php
+
+# js
+/node_modules
