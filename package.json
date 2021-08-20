@@ -1,11 +1,12 @@
 {
   "name": "@hiqdev/hipanel-rbac",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "HiQDev RBAC items",
-  "type": "module",
-  "main": "js/index.js",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -17,9 +18,16 @@
     "role"
   ],
   "author": "strorch",
+  "files": [
+    "js",
+    "dist"
+  ],
   "license": "proprietary",
   "bugs": {
     "url": "https://github.com/hiqdev/hipanel-rbac/issues"
   },
-  "homepage": "https://github.com/hiqdev/hipanel-rbac#readme"
+  "homepage": "https://github.com/hiqdev/hipanel-rbac#readme",
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
 }
