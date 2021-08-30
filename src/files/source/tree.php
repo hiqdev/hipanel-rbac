@@ -307,6 +307,7 @@ return [
         'mailing.prepare', 'mailing.send',
         'client.set-tmp-pwd', 'client.notify',
         'role:purse.user',
+        'have-goods',
     ],
     'role:reseller' => [
         'have-goods',
