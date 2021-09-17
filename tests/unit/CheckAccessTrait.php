@@ -342,6 +342,14 @@ trait CheckAccessTrait
         ]);
     }
 
+    public function testConsumptionMaster(): void
+    {
+        $this->assertAccesses('role:consumption.master', [
+            'consumption.read', 'consumption.update', 'consumption.delete',
+            'consumption.read-all',
+        ]);
+    }
+
     public function testAlmighty()
     {
         $this->assertAccesses('role:almighty', [
