@@ -64,6 +64,9 @@ return [
     'role:consumption.manager' => [
         'consumption.read', 'consumption.update', 'consumption.delete',
     ],
+    'role:consumption.master' => [
+        'consumption.read-all', 'role:consumption.user', 'role:consumption.manager',
+    ],
     // CONFIG
     'role:config.manager' => [
         'config.read', 'config.create', 'config.update', 'config.delete',

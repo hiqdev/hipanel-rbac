@@ -177,6 +177,14 @@ return [
             'consumption.delete',
         ],
     ],
+    'role:consumption.master' => [
+        'type' => 1,
+        'children' => [
+            'consumption.read-all',
+            'role:consumption.user',
+            'role:consumption.manager',
+        ],
+    ],
     'role:config.manager' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
@@ -951,6 +959,16 @@ return [
         'children' => [
             'role:admin',
             'role:manager',
+            'role:document.master',
+            'role:finance.master',
+            'role:stock.master',
+            'role:config.manager',
+            'domain.freeze',
+            'domain.force-push',
+            'domain.delete',
+            'employee.read',
+            'domain.force-send-foa',
+            'deny:deposit',
         ],
     ],
     'nothing' => [
@@ -1360,6 +1378,12 @@ return [
     'deny:consumption.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the consumption',
+    ],
+    'consumption.read-all' => [
+        'type' => 2,
+    ],
+    'deny:consumption.read-all' => [
+        'type' => 2,
     ],
     'config.read' => [
         'type' => 2,
