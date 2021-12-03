@@ -130,7 +130,7 @@ trait CheckAccessTrait
 
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power',
             'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
-            'server.see-label',
+            'server.see-label', 'server.move-disks',
 
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read',
@@ -308,6 +308,7 @@ trait CheckAccessTrait
 
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
             'server.control-power', 'server.control-system', 'server.wizzard', 'server.manage-settings',
+            'server.move-disks',
 
             'purse.update', 'purse.read', 'purse.create',
 
@@ -371,6 +372,7 @@ trait CheckAccessTrait
 
             'server.read', 'server.create', 'server.update', 'server.delete', 'server.pay', 'server.sell',
             'server.control-power', 'server.control-system', 'server.wizzard', 'server.manage-settings',
+            'server.move-disks',
 
             'purse.update', 'purse.read', 'purse.create',
 
