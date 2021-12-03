@@ -105,6 +105,7 @@ return [
             'consumption.read',
             'server.manage-settings',
             'server.see-label',
+            'server.move-disks',
         ],
     ],
     'role:server.manager' => [
@@ -1298,6 +1299,14 @@ return [
     'deny:server.see-label' => [
         'type' => 2,
         'description' => 'Prohibits see-label operation on the server',
+    ],
+    'server.move-disks' => [
+        'type' => 2,
+        'description' => 'Allows move disks between servers',
+    ],
+    'deny:server.move-disks' => [
+        'type' => 2,
+        'description' => 'Deny move disks between servers',
     ],
     'server.enable-block' => [
         'type' => 2,

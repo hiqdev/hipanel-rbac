@@ -37,7 +37,7 @@ return [
     'role:server.admin' => [
         'role:server.user', 'server.create', 'server.update', 'server.delete',
         'server.wizzard', 'server.set-label', 'consumption.read', 'server.manage-settings',
-        'server.see-label',
+        'server.see-label', 'server.move-disks',
     ],
     'role:server.manager' => [
         'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',

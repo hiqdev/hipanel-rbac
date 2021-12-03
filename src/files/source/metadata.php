@@ -1402,6 +1402,12 @@ return [
     'server.wizzard' => [
         'description' => 'Allows wizzarding of the server',
     ],
+    'server.move-disks' => [
+        'description' => 'Allows move disks between servers',
+    ],
+    'deny:server.move-disks' => [
+        'description' => 'Deny move disks between servers',
+    ],
     'service.create' => [
         'description' => 'Allows creating of the service',
     ],
