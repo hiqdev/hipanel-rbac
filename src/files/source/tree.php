@@ -402,6 +402,7 @@ return [
     'role:owner-staff' => [
         'ref.view.not-used',
         'bill.charges.read',
+        'bill.see-server-charges',
         'part.read-all-hierarchy',
     ],
     'role:almighty' => [

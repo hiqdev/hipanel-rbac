@@ -310,6 +310,12 @@ return [
     'bill.charges.read' => [
         'description' => 'Allows charges.read operation on the bill',
     ],
+    'bill.see-server-charges' => [
+        'description' => 'Allows to see server charges (detailed bill info)',
+    ],
+    'deny:bill.see-server-charges' => [
+        'description' => 'Denies to see server charges (detailed bill info)',
+    ],
     'bill.create' => [
         'description' => 'Allows creating of the bill',
     ],

@@ -951,6 +951,7 @@ return [
         'children' => [
             'ref.view.not-used',
             'bill.charges.read',
+            'bill.see-server-charges',
             'part.read-all-hierarchy',
         ],
     ],
@@ -2641,5 +2642,13 @@ return [
     'deny:bill.charges.read' => [
         'type' => 2,
         'description' => 'Prohibits charges.read operation on the bill',
+    ],
+    'bill.see-server-charges' => [
+        'type' => 2,
+        'description' => 'Allows to see server charges (detailed bill info)',
+    ],
+    'deny:bill.see-server-charges' => [
+        'type' => 2,
+        'description' => 'Denies to see server charges (detailed bill info)',
     ],
 ];
