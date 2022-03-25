@@ -42,7 +42,7 @@
         }
     ],
     "require": {
-        "hiqdev/yii-compat": "dev-master"
+        "hiqdev/yii-compat": "dev-php8"
     },
     "require-dev": {
         "yiisoft/yii2": "*@dev",
