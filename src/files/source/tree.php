@@ -404,6 +404,7 @@ return [
         'bill.charges.read',
         'bill.see-server-charges',
         'part.read-all-hierarchy',
+        'owner-staff',
     ],
     'role:almighty' => [
         'role:admin',
