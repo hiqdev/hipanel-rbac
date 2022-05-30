@@ -2648,15 +2648,15 @@ return [
         'type' => 2,
         'description' => 'Allows to see server charges (detailed bill info)',
     ],
-    'owner-staff' => [
-        'type' => 2,
-        'description' => 'Show is user is staff of organization',
-    ],
     'deny:bill.see-server-charges' => [
         'type' => 2,
         'description' => 'Denies to see server charges (detailed bill info)',
     ],
-    'deny:pay' => [
+    'owner-staff' => [
+        'type' => 2,
+        'description' => 'Show if user in staff of organization',
+    ],
+    'deny:owner-staff' => [
         'type' => 2,
     ],
 ];
