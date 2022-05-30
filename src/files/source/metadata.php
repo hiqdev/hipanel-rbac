@@ -1525,4 +1525,7 @@ return [
     'purse.read' => [
         'description' => 'Allows reading of the purse',
     ],
+    'owner-staff' => [
+        'description' => 'Show if user in staff of organization',
+    ],
 ];

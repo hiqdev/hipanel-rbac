@@ -953,6 +953,7 @@ return [
             'bill.charges.read',
             'bill.see-server-charges',
             'part.read-all-hierarchy',
+            'owner-staff',
         ],
     ],
     'role:almighty' => [
@@ -2650,5 +2651,12 @@ return [
     'deny:bill.see-server-charges' => [
         'type' => 2,
         'description' => 'Denies to see server charges (detailed bill info)',
+    ],
+    'owner-staff' => [
+        'type' => 2,
+        'description' => 'Show if user in staff of organization',
+    ],
+    'deny:owner-staff' => [
+        'type' => 2,
     ],
 ];
