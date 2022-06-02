@@ -1528,4 +1528,16 @@ return [
     'owner-staff' => [
         'description' => 'Show if user in staff of organization',
     ],
+    'role:consumption.master' => [
+        'description' => 'The role is generally assigned to ____',
+    ],
+    'consumption.read-all' => [
+        'description' => 'Allows read-all operation on the consumption',
+    ],
+    'deny:consumption.read-all' => [
+        'description' => 'Prohibits read-all operation on the consumption',
+    ],
+    'deny:owner-staff' => [
+        'description' => 'Prohibits owner-staff operation',
+    ],
 ];
