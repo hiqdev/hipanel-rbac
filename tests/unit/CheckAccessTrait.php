@@ -437,7 +437,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:junior-manager', [
             'access-subclients', 'access-reseller',
             'client.read', 'server.read', 'consumption.read',
-            'plan.force-read', 'plan.read', 'document.read', 'finance.read',
+            'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'part.read-all-hierarchy',
             'stock.read', 'part.read', 'move.read', 'model.read', 'order.read', 'move.get-directions',
             'hub.read', 'client.list', 'contact.read', 'bill.read',
         ]);

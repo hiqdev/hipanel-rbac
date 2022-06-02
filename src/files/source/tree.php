@@ -353,7 +353,7 @@ return [
     'role:junior-manager' => [
         'access-subclients', 'access-reseller',
         'role:hub.user',
-        'role:stock.user',
+        'role:stock.user', 'part.read-all-hierarchy',
         'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'bill.read',
         'client.read', 'client.list', 'contact.read',
         'server.read',
