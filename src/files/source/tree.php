@@ -232,6 +232,10 @@ return [
     'role:stock.user' => [
         'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions', 'order.read',
     ],
+    'role:stock.admin' => [
+        'role:stock.user',
+        'move.create', 'move.update', 'move.delete',
+    ],
     'role:stock.manager' => [
         'role:stock.user',
         'part.read-all-hierarchy',
@@ -287,7 +291,7 @@ return [
         'admin',
         'role:support',
         'role:hub.admin',
-        'role:stock.manager',
+        'role:stock.admin',
         'role:server.admin',
         'role:hosting.admin',
     ],

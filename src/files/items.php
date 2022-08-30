@@ -614,6 +614,15 @@ return [
             'order.read',
         ],
     ],
+    'role:stock.admin' => [
+        'type' => 1,
+        'children' => [
+            'role:stock.user',
+            'move.create',
+            'move.update',
+            'move.delete',
+        ],
+    ],
     'role:stock.manager' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of stock management',
@@ -723,7 +732,7 @@ return [
             'admin',
             'role:support',
             'role:hub.admin',
-            'role:stock.manager',
+            'role:stock.admin',
             'role:server.admin',
             'role:hosting.admin',
         ],
@@ -2136,6 +2145,30 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the order',
     ],
+    'move.create' => [
+        'type' => 2,
+        'description' => 'Allows creating of the move',
+    ],
+    'deny:move.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the move',
+    ],
+    'move.update' => [
+        'type' => 2,
+        'description' => 'Allows updating of the move',
+    ],
+    'deny:move.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the move',
+    ],
+    'move.delete' => [
+        'type' => 2,
+        'description' => 'Allows deleting of the move',
+    ],
+    'deny:move.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the move',
+    ],
     'part.read-all-hierarchy' => [
         'type' => 2,
         'description' => 'Allows read-all-hierarchy operation on the part',
@@ -2167,30 +2200,6 @@ return [
     'deny:part.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the part',
-    ],
-    'move.create' => [
-        'type' => 2,
-        'description' => 'Allows creating of the move',
-    ],
-    'deny:move.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the move',
-    ],
-    'move.update' => [
-        'type' => 2,
-        'description' => 'Allows updating of the move',
-    ],
-    'deny:move.update' => [
-        'type' => 2,
-        'description' => 'Prohibits updating of the move',
-    ],
-    'move.delete' => [
-        'type' => 2,
-        'description' => 'Allows deleting of the move',
-    ],
-    'deny:move.delete' => [
-        'type' => 2,
-        'description' => 'Prohibits deleting of the move',
     ],
     'model.create' => [
         'type' => 2,
