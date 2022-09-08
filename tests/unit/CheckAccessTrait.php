@@ -71,7 +71,7 @@ trait CheckAccessTrait
     public function testClient()
     {
         $this->assertAccesses('role:client', [
-            'restore-password', 'deposit', 'have-goods',
+            'restore-password', 'deposit', 'have-goods', 'pay',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close',
             'domain.read', 'domain.update', 'domain.pay', 'domain.push', 'domain.delete-agp', 'domain.set-nss',
             'dns.create', 'dns.read', 'dns.update', 'dns.delete',
@@ -409,7 +409,7 @@ trait CheckAccessTrait
 
     public function testLimited()
     {
-        $this->auth->setAssignments('role:client,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.control-power,deny:server.control-system,deny:server.set-note,deny:ip.read,deny:service.read,deny:domain.delete-agp,deny:domain.set-nss', 'user:limited');
+        $this->auth->setAssignments('role:client,deny:pay,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.control-power,deny:server.control-system,deny:server.set-note,deny:ip.read,deny:service.read,deny:domain.delete-agp,deny:domain.set-nss', 'user:limited');
 
         $this->assertAccesses('user:limited', [
             'have-goods',

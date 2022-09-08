@@ -264,7 +264,7 @@ return [
     ],
     // ROLES
     'role:client' => [
-        'role:unauthorized', 'have-goods',
+        'role:unauthorized', 'have-goods', 'pay',
         'role:ticket.user',
         'role:domain.user', 'domain.pay', 'domain.push', 'domain.delete-agp',
         'role:dns.user',

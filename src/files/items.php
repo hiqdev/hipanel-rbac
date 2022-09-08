@@ -689,6 +689,7 @@ return [
         'children' => [
             'role:unauthorized',
             'have-goods',
+            'pay',
             'role:ticket.user',
             'role:domain.user',
             'domain.pay',
@@ -2272,6 +2273,12 @@ return [
     'deny:have-goods' => [
         'type' => 2,
         'description' => 'Prohibits have-goods operation',
+    ],
+    'pay' => [
+        'type' => 2,
+    ],
+    'deny:pay' => [
+        'type' => 2,
     ],
     'domain.pay' => [
         'type' => 2,
