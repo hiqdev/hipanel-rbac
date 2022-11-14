@@ -400,6 +400,21 @@ return [
             'role:purse.manager',
         ],
     ],
+    'role:costprice.user' => [
+        'type' => 1,
+        'children' => [
+            'costprice.read',
+        ],
+    ],
+    'role:costprice.manager' => [
+        'type' => 1,
+        'children' => [
+            'role:costprice.user',
+            'costprice.create',
+            'costprice.update',
+            'costprice.delete',
+        ],
+    ],
     'role:bill.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who are allowed to see bills',
@@ -978,6 +993,7 @@ return [
             'role:finance.master',
             'role:stock.master',
             'role:config.manager',
+            'role:costprice.manager',
             'domain.freeze',
             'domain.force-push',
             'domain.delete',
@@ -1857,6 +1873,30 @@ return [
     'deny:purse.create' => [
         'type' => 2,
         'description' => 'Prohibits creating of the purse',
+    ],
+    'costprice.read' => [
+        'type' => 2,
+    ],
+    'deny:costprice.read' => [
+        'type' => 2,
+    ],
+    'costprice.create' => [
+        'type' => 2,
+    ],
+    'deny:costprice.create' => [
+        'type' => 2,
+    ],
+    'costprice.update' => [
+        'type' => 2,
+    ],
+    'deny:costprice.update' => [
+        'type' => 2,
+    ],
+    'costprice.delete' => [
+        'type' => 2,
+    ],
+    'deny:costprice.delete' => [
+        'type' => 2,
     ],
     'bill.read' => [
         'type' => 2,

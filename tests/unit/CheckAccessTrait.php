@@ -404,6 +404,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
+            'costprice.read', 'costprice.create', 'costprice.update', 'costprice.delete',
         ]);
     }
 

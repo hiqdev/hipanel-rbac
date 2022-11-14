@@ -141,6 +141,15 @@ return [
     'role:purse.master' => [
         'role:purse.manager',
     ],
+    'role:costprice.user' => [
+        'costprice.read',
+    ],
+    'role:costprice.manager' => [
+        'role:costprice.user',
+        'costprice.create',
+        'costprice.update',
+        'costprice.delete',
+    ],
     'role:bill.user' => [
         'bill.read', 'deposit',
     ],
@@ -417,6 +426,7 @@ return [
         'role:finance.master',
         'role:stock.master',
         'role:config.manager',
+        'role:costprice.manager',
         'domain.freeze',
         'domain.force-push',
         'domain.delete',
