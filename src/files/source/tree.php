@@ -14,7 +14,7 @@ return [
     'role:client.manager' => [
         'role:client.support', 'client.create', 'client.update', 'client.delete',
         'contact.set-verified', 'client.block', 'client.unblock',
-        'client.get-note', 'client.set-note', 'client.set-description',
+        'client.get-note', 'client.set-note',
         'purse.update', 'purse.read',
     ],
     'role:employee.manager' => [
@@ -417,6 +417,7 @@ return [
         'bill.charges.read',
         'bill.see-server-charges',
         'part.read-all-hierarchy',
+        'client.set-description',
         'owner-staff',
     ],
     'role:almighty' => [

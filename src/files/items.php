@@ -39,7 +39,6 @@ return [
             'client.unblock',
             'client.get-note',
             'client.set-note',
-            'client.set-description',
             'purse.update',
             'purse.read',
         ],
@@ -402,12 +401,14 @@ return [
     ],
     'role:costprice.user' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to ____',
         'children' => [
             'costprice.read',
         ],
     ],
     'role:costprice.manager' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to ____',
         'children' => [
             'role:costprice.user',
             'costprice.create',
@@ -631,6 +632,7 @@ return [
     ],
     'role:stock.admin' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to ____',
         'children' => [
             'role:stock.user',
             'move.create',
@@ -980,6 +982,7 @@ return [
             'bill.charges.read',
             'bill.see-server-charges',
             'part.read-all-hierarchy',
+            'client.set-description',
             'owner-staff',
         ],
     ],
@@ -1121,14 +1124,6 @@ return [
     'deny:client.set-note' => [
         'type' => 2,
         'description' => 'Prohibits set-note operation on the client',
-    ],
-    'client.set-description' => [
-        'type' => 2,
-        'description' => 'Allows set-description operation on the client',
-    ],
-    'deny:client.set-description' => [
-        'type' => 2,
-        'description' => 'Prohibits set-description operation on the client',
     ],
     'purse.update' => [
         'type' => 2,
@@ -1876,27 +1871,35 @@ return [
     ],
     'costprice.read' => [
         'type' => 2,
+        'description' => 'Allows reading of the costprice',
     ],
     'deny:costprice.read' => [
         'type' => 2,
+        'description' => 'Prohibits reading of the costprice',
     ],
     'costprice.create' => [
         'type' => 2,
+        'description' => 'Allows creating of the costprice',
     ],
     'deny:costprice.create' => [
         'type' => 2,
+        'description' => 'Prohibits creating of the costprice',
     ],
     'costprice.update' => [
         'type' => 2,
+        'description' => 'Allows updating of the costprice',
     ],
     'deny:costprice.update' => [
         'type' => 2,
+        'description' => 'Prohibits updating of the costprice',
     ],
     'costprice.delete' => [
         'type' => 2,
+        'description' => 'Allows deleting of the costprice',
     ],
     'deny:costprice.delete' => [
         'type' => 2,
+        'description' => 'Prohibits deleting of the costprice',
     ],
     'bill.read' => [
         'type' => 2,
@@ -2316,9 +2319,11 @@ return [
     ],
     'pay' => [
         'type' => 2,
+        'description' => 'Allows paying',
     ],
     'deny:pay' => [
         'type' => 2,
+        'description' => 'Prohibits paying',
     ],
     'domain.pay' => [
         'type' => 2,
@@ -2711,6 +2716,14 @@ return [
     'deny:bill.see-server-charges' => [
         'type' => 2,
         'description' => 'Denies to see server charges (detailed bill info)',
+    ],
+    'client.set-description' => [
+        'type' => 2,
+        'description' => 'Allows set-description operation on the client',
+    ],
+    'deny:client.set-description' => [
+        'type' => 2,
+        'description' => 'Prohibits set-description operation on the client',
     ],
     'owner-staff' => [
         'type' => 2,

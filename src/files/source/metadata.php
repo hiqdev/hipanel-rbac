@@ -1540,4 +1540,43 @@ return [
     'deny:owner-staff' => [
         'description' => 'Prohibits owner-staff operation',
     ],
+    'role:costprice.user' => [
+        'description' => 'The role is generally assigned to ____',
+    ],
+    'role:costprice.manager' => [
+        'description' => 'The role is generally assigned to ____',
+    ],
+    'role:stock.admin' => [
+        'description' => 'The role is generally assigned to ____',
+    ],
+    'costprice.create' => [
+        'description' => 'Allows creating of the costprice',
+    ],
+    'costprice.delete' => [
+        'description' => 'Allows deleting of the costprice',
+    ],
+    'costprice.read' => [
+        'description' => 'Allows reading of the costprice',
+    ],
+    'costprice.update' => [
+        'description' => 'Allows updating of the costprice',
+    ],
+    'deny:costprice.create' => [
+        'description' => 'Prohibits creating of the costprice',
+    ],
+    'deny:costprice.delete' => [
+        'description' => 'Prohibits deleting of the costprice',
+    ],
+    'deny:costprice.read' => [
+        'description' => 'Prohibits reading of the costprice',
+    ],
+    'deny:costprice.update' => [
+        'description' => 'Prohibits updating of the costprice',
+    ],
+    'deny:pay' => [
+        'description' => 'Prohibits paying',
+    ],
+    'pay' => [
+        'description' => 'Allows paying',
+    ],
 ];
