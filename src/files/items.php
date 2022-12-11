@@ -618,52 +618,79 @@ return [
             'role:sale.master',
         ],
     ],
-    'role:stock.user' => [
+    'role:part.user' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to users who have limited stock reading access',
+        'description' => 'The role is generally assigned to users who have access to part information',
         'children' => [
-            'stock.read',
             'part.read',
-            'move.read',
-            'model.read',
-            'move.get-directions',
-            'order.read',
         ],
     ],
-    'role:stock.admin' => [
+    'role:part.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who are in charge of parts management',
         'children' => [
-            'role:stock.user',
-            'move.create',
-            'move.update',
-            'move.delete',
-        ],
-    ],
-    'role:stock.manager' => [
-        'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge of stock management',
-        'children' => [
-            'role:stock.user',
-            'part.read-all-hierarchy',
+            'role:part.user',
             'part.create',
             'part.update',
             'part.delete',
+        ],
+    ],
+    'role:part.master' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the parts management',
+        'children' => [
+            'part.read-all-hierarchy',
+            'role:part.manager',
+        ],
+    ],
+    'role:move.user' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to users who have access to moves information',
+        'children' => [
+            'move.read',
+            'move.get-directions',
+        ],
+    ],
+    'role:move.manager' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of moves management',
+        'children' => [
+            'role:move.user',
             'move.create',
             'move.update',
             'move.delete',
-            'model.create',
-            'model.update',
-            'model.delete',
         ],
     ],
-    'role:stock.master' => [
+    'role:move.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the stock management',
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the moves management',
         'children' => [
-            'role:stock.manager',
+            'role:move.manager',
             'move.read-all',
-            'role:order.master',
+        ],
+    ],
+    'role:model.user' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to users who have access to models information',
+        'children' => [
+            'model.read',
+        ],
+    ],
+    'role:model.manager' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of models management',
+        'children' => [
+            'role:model.user',
+            'model.create',
+            'model.update',
+        ],
+    ],
+    'role:model.master' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the models management',
+        'children' => [
+            'role:model.manager',
+            'model.delete',
         ],
     ],
     'role:order.user' => [
@@ -671,9 +698,6 @@ return [
         'description' => 'The role is generally assigned to users who have access to orders information',
         'children' => [
             'order.read',
-            'order.create',
-            'order.update',
-            'order.delete',
         ],
     ],
     'role:order.manager' => [
@@ -681,6 +705,9 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of orders management',
         'children' => [
             'role:order.user',
+            'order.create',
+            'order.update',
+            'order.delete',
         ],
     ],
     'role:order.master' => [
@@ -689,6 +716,44 @@ return [
         'children' => [
             'role:order.manager',
             'order.read-profits',
+        ],
+    ],
+    'role:stock.user' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to users who have limited stock reading access',
+        'children' => [
+            'stock.read',
+            'role:part.user',
+            'role:move.user',
+            'role:model.user',
+            'role:order.user',
+        ],
+    ],
+    'role:stock.admin' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to ____',
+        'children' => [
+            'role:stock.user',
+            'role:move.manager',
+        ],
+    ],
+    'role:stock.manager' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of stock management',
+        'children' => [
+            'role:stock.user',
+            'role:part.master',
+            'role:move.manager',
+            'role:model.master',
+        ],
+    ],
+    'role:stock.master' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the stock management',
+        'children' => [
+            'role:stock.manager',
+            'role:move.master',
+            'role:order.master',
         ],
     ],
     'role:project.user' => [
@@ -2141,14 +2206,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits creating of the sale',
     ],
-    'stock.read' => [
-        'type' => 2,
-        'description' => 'Allows reading of the stock',
-    ],
-    'deny:stock.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the stock',
-    ],
     'part.read' => [
         'type' => 2,
         'description' => 'Allows reading of the part',
@@ -2156,70 +2213,6 @@ return [
     'deny:part.read' => [
         'type' => 2,
         'description' => 'Prohibits reading of the part',
-    ],
-    'move.read' => [
-        'type' => 2,
-        'description' => 'Allows reading of the move',
-    ],
-    'deny:move.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the move',
-    ],
-    'model.read' => [
-        'type' => 2,
-        'description' => 'Allows reading of the model',
-    ],
-    'deny:model.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the model',
-    ],
-    'move.get-directions' => [
-        'type' => 2,
-        'description' => 'Allows get-directions operation on the move',
-    ],
-    'deny:move.get-directions' => [
-        'type' => 2,
-        'description' => 'Prohibits get-directions operation on the move',
-    ],
-    'order.read' => [
-        'type' => 2,
-        'description' => 'Allows reading of the order',
-    ],
-    'deny:order.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the order',
-    ],
-    'move.create' => [
-        'type' => 2,
-        'description' => 'Allows creating of the move',
-    ],
-    'deny:move.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the move',
-    ],
-    'move.update' => [
-        'type' => 2,
-        'description' => 'Allows updating of the move',
-    ],
-    'deny:move.update' => [
-        'type' => 2,
-        'description' => 'Prohibits updating of the move',
-    ],
-    'move.delete' => [
-        'type' => 2,
-        'description' => 'Allows deleting of the move',
-    ],
-    'deny:move.delete' => [
-        'type' => 2,
-        'description' => 'Prohibits deleting of the move',
-    ],
-    'part.read-all-hierarchy' => [
-        'type' => 2,
-        'description' => 'Allows read-all-hierarchy operation on the part',
-    ],
-    'deny:part.read-all-hierarchy' => [
-        'type' => 2,
-        'description' => 'Prohibits read-all-hierarchy operation on the part',
     ],
     'part.create' => [
         'type' => 2,
@@ -2245,6 +2238,70 @@ return [
         'type' => 2,
         'description' => 'Prohibits deleting of the part',
     ],
+    'part.read-all-hierarchy' => [
+        'type' => 2,
+        'description' => 'Allows read-all-hierarchy operation on the part',
+    ],
+    'deny:part.read-all-hierarchy' => [
+        'type' => 2,
+        'description' => 'Prohibits read-all-hierarchy operation on the part',
+    ],
+    'move.read' => [
+        'type' => 2,
+        'description' => 'Allows reading of the move',
+    ],
+    'deny:move.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the move',
+    ],
+    'move.get-directions' => [
+        'type' => 2,
+        'description' => 'Allows get-directions operation on the move',
+    ],
+    'deny:move.get-directions' => [
+        'type' => 2,
+        'description' => 'Prohibits get-directions operation on the move',
+    ],
+    'move.create' => [
+        'type' => 2,
+        'description' => 'Allows creating of the move',
+    ],
+    'deny:move.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the move',
+    ],
+    'move.update' => [
+        'type' => 2,
+        'description' => 'Allows updating of the move',
+    ],
+    'deny:move.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the move',
+    ],
+    'move.delete' => [
+        'type' => 2,
+        'description' => 'Allows deleting of the move',
+    ],
+    'deny:move.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the move',
+    ],
+    'move.read-all' => [
+        'type' => 2,
+        'description' => 'Allows read-all operation on the move',
+    ],
+    'deny:move.read-all' => [
+        'type' => 2,
+        'description' => 'Prohibits read-all operation on the move',
+    ],
+    'model.read' => [
+        'type' => 2,
+        'description' => 'Allows reading of the model',
+    ],
+    'deny:model.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the model',
+    ],
     'model.create' => [
         'type' => 2,
         'description' => 'Allows creating of the model',
@@ -2269,13 +2326,13 @@ return [
         'type' => 2,
         'description' => 'Prohibits deleting of the model',
     ],
-    'move.read-all' => [
+    'order.read' => [
         'type' => 2,
-        'description' => 'Allows read-all operation on the move',
+        'description' => 'Allows reading of the order',
     ],
-    'deny:move.read-all' => [
+    'deny:order.read' => [
         'type' => 2,
-        'description' => 'Prohibits read-all operation on the move',
+        'description' => 'Prohibits reading of the order',
     ],
     'order.create' => [
         'type' => 2,
@@ -2308,6 +2365,14 @@ return [
     'deny:order.read-profits' => [
         'type' => 2,
         'description' => 'Prohibits read-profits operation on the order',
+    ],
+    'stock.read' => [
+        'type' => 2,
+        'description' => 'Allows reading of the stock',
+    ],
+    'deny:stock.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the stock',
     ],
     'have-goods' => [
         'type' => 2,
