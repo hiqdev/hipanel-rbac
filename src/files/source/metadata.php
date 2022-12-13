@@ -190,6 +190,33 @@ return [
     'role:order.master' => [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the orders management',
     ],
+    'role:part.user' => [
+        'description' => 'The role is generally assigned to users who have access to part information',
+    ],
+    'role:part.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of parts management',
+    ],
+    'role:part.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the parts management',
+    ],
+    'role:model.user' => [
+        'description' => 'The role is generally assigned to users who have access to models information',
+    ],
+    'role:model.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of models management',
+    ],
+    'role:model.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the models management',
+    ],
+    'role:move.user' => [
+        'description' => 'The role is generally assigned to users who have access to moves information',
+    ],
+    'role:move.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of moves management',
+    ],
+    'role:move.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the moves management',
+    ],
     'role:project.user' => [
         'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
     ],

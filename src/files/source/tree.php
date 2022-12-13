@@ -238,32 +238,71 @@ return [
         'role:sale.master',
     ],
     // STOCK MODULE
-    'role:stock.user' => [
-        'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions', 'order.read',
+    'role:part.user' => [
+        'part.read',
     ],
-    'role:stock.admin' => [
-        'role:stock.user',
-        'move.create', 'move.update', 'move.delete',
-    ],
-    'role:stock.manager' => [
-        'role:stock.user',
-        'part.read-all-hierarchy',
+    'role:part.manager' => [
+        'role:part.user',
         'part.create', 'part.update', 'part.delete',
+    ],
+    'role:part.master' => [
+        'part.read-all-hierarchy',
+        'role:part.manager',
+    ],
+    'role:move.user' => [
+        'move.read',
+    ],
+    'role:move.manager' => [
+        'role:move.user',
+        'move.get-directions',
         'move.create', 'move.update', 'move.delete',
+    ],
+    'role:move.master' => [
+        'role:move.manager',
+        'move.read-all',
+    ],
+    'role:model.user' => [
+        'model.read',
+    ],
+    'role:model.manager' => [
+        'role:model.user',
         'model.create', 'model.update', 'model.delete',
     ],
-    'role:stock.master' => [
-        'role:stock.manager', 'move.read-all', 'role:order.master',
+    'role:model.master' => [
+        'role:model.manager',
     ],
     'role:order.user' => [
-        'order.read', 'order.create', 'order.update', 'order.delete',
+        'order.read',
     ],
     'role:order.manager' => [
-        'role:order.user',
+        'role:order.user', 'order.create', 'order.update', 'order.delete',
     ],
     'role:order.master' => [
         'role:order.manager',
         'order.read-profits',
+    ],
+    'role:stock.user' => [
+        'stock.read',
+        'role:part.user',
+        'role:move.user',
+        'role:model.user',
+        'role:order.user',
+    ],
+    'role:stock.admin' => [
+        'role:stock.user',
+        'role:move.manager',
+    ],
+    'role:stock.manager' => [
+        'role:stock.user',
+        'role:part.master',
+        'role:move.manager',
+        'role:model.master',
+    ],
+    'role:stock.master' => [
+        'role:stock.manager',
+        'role:move.master',
+        'role:move.master',
+        'role:order.master',
     ],
     // PROJECT USER
     'role:project.user' => [
@@ -366,7 +405,7 @@ return [
     'role:junior-manager' => [
         'access-subclients', 'access-reseller',
         'role:hub.user',
-        'role:stock.user', 'part.read-all-hierarchy',
+        'role:stock.user', 'part.read-all-hierarchy', 'move.get-directions',
         'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'bill.read',
         'client.read', 'client.list', 'contact.read',
         'server.read',
@@ -419,6 +458,9 @@ return [
         'part.read-all-hierarchy',
         'client.set-description',
         'owner-staff',
+        'move.read-all',
+        'part.read-all-hierarchy',
+        'move.get-directions',
     ],
     'role:almighty' => [
         'role:admin',
