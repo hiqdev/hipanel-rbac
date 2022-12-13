@@ -648,7 +648,6 @@ return [
         'description' => 'The role is generally assigned to users who have access to moves information',
         'children' => [
             'move.read',
-            'move.get-directions',
         ],
     ],
     'role:move.manager' => [
@@ -656,6 +655,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of moves management',
         'children' => [
             'role:move.user',
+            'move.get-directions',
             'move.create',
             'move.update',
             'move.delete',
@@ -683,6 +683,7 @@ return [
             'role:model.user',
             'model.create',
             'model.update',
+            'model.delete',
         ],
     ],
     'role:model.master' => [
@@ -690,7 +691,6 @@ return [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the models management',
         'children' => [
             'role:model.manager',
-            'model.delete',
         ],
     ],
     'role:order.user' => [
@@ -927,6 +927,7 @@ return [
             'role:hub.user',
             'role:stock.user',
             'part.read-all-hierarchy',
+            'move.get-directions',
             'plan.force-read',
             'plan.read',
             'document.read',
@@ -1049,6 +1050,8 @@ return [
             'part.read-all-hierarchy',
             'client.set-description',
             'owner-staff',
+            'move.read-all',
+            'move.get-directions',
         ],
     ],
     'role:almighty' => [

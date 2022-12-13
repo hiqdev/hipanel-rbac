@@ -251,10 +251,10 @@ return [
     ],
     'role:move.user' => [
         'move.read',
-        'move.get-directions',
     ],
     'role:move.manager' => [
         'role:move.user',
+        'move.get-directions',
         'move.create', 'move.update', 'move.delete',
     ],
     'role:move.master' => [
@@ -266,10 +266,10 @@ return [
     ],
     'role:model.manager' => [
         'role:model.user',
-        'model.create', 'model.update',
+        'model.create', 'model.update', 'model.delete',
     ],
     'role:model.master' => [
-        'role:model.manager', 'model.delete',
+        'role:model.manager',
     ],
     'role:order.user' => [
         'order.read',
@@ -405,7 +405,7 @@ return [
     'role:junior-manager' => [
         'access-subclients', 'access-reseller',
         'role:hub.user',
-        'role:stock.user', 'part.read-all-hierarchy',
+        'role:stock.user', 'part.read-all-hierarchy', 'move.get-directions',
         'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'bill.read',
         'client.read', 'client.list', 'contact.read',
         'server.read',
@@ -458,6 +458,9 @@ return [
         'part.read-all-hierarchy',
         'client.set-description',
         'owner-staff',
+        'move.read-all',
+        'part.read-all-hierarchy',
+        'move.get-directions',
     ],
     'role:almighty' => [
         'role:admin',
