@@ -54,6 +54,22 @@ trait CheckAccessTrait
         return $this->allPermissions;
     }
 
+    public function testAccessSubclients()
+    {
+        $items = $this->auth->getAllItems();
+        foreach ($items as $item) {
+            $name = $item->name;
+            if ($this->auth->checkAccess($name, 'access-subclients')) {
+                $result[$name] = $name;
+            }
+        }
+        $this->assertEqualsCanonicalizing($result, [
+            'role:almighty', 'access-subclients',
+            'role:support', 'role:admin', 'role:accounter', 'role:manager',
+            'role:reseller', 'role:owner', 'role:junior-manager',
+        ]);
+    }
+
     public function testNobody()
     {
         $this->assertAccesses('role:nobody', [
