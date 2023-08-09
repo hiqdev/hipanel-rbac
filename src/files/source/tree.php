@@ -411,6 +411,9 @@ return [
         'server.read',
         'consumption.read',
     ],
+    'role:partner' => [
+        'document.read','finance.read','bill.read','contact.read','have-goods',
+    ],
     /// SUBROLES
     'role:domain.user' => [
         'domain.read', 'domain.update', 'domain.delete-agp', 'domain.set-nss',

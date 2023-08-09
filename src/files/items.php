@@ -940,6 +940,17 @@ return [
             'consumption.read',
         ],
     ],
+    'role:partner' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to partners',
+        'children' => [
+            'document.read',
+            'finance.read',
+            'bill.read',
+            'contact.read',
+            'have-goods',
+        ],
+    ],
     'role:domain.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who have access to domain name registration services',
