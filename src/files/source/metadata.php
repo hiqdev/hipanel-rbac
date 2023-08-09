@@ -250,6 +250,9 @@ return [
     'role:junior-manager' => [
         'description' => 'The role is generally assigned to staff who are managers with reduced permissions',
     ],
+    'role:partner' => [
+        'description' => 'The role is generally assigned to partners',
+    ],
     'role:domain.user' => [
         'description' => 'The role is generally assigned to users who have access to domain name registration services',
     ],
