@@ -421,6 +421,7 @@ trait CheckAccessTrait
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
             'costprice.read', 'costprice.create', 'costprice.update', 'costprice.delete',
+            'pnl.read', 'pnl.read-expenses', 'pnl.update',
         ]);
     }
 
