@@ -399,6 +399,20 @@ return [
             'role:purse.manager',
         ],
     ],
+    'role:pnl.master' => [
+        'type' => 1,
+        'children' => [
+            'pnl.read',
+            'pnl.update',
+            'pnl.read-expenses',
+        ],
+    ],
+    'role:pnl.user' => [
+        'type' => 1,
+        'children' => [
+            'pnl.read',
+        ],
+    ],
     'role:costprice.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to ____',
@@ -455,6 +469,7 @@ return [
             'bill.import',
             'bill.create-exchange',
             'role:purse.master',
+            'role:pnl.user',
         ],
     ],
     'role:requisites.user' => [
@@ -1076,6 +1091,7 @@ return [
             'role:stock.master',
             'role:config.manager',
             'role:costprice.manager',
+            'role:pnl.master',
             'domain.freeze',
             'domain.force-push',
             'domain.delete',
@@ -1947,6 +1963,24 @@ return [
     'deny:purse.create' => [
         'type' => 2,
         'description' => 'Prohibits creating of the purse',
+    ],
+    'pnl.read' => [
+        'type' => 2,
+    ],
+    'deny:pnl.read' => [
+        'type' => 2,
+    ],
+    'pnl.update' => [
+        'type' => 2,
+    ],
+    'deny:pnl.update' => [
+        'type' => 2,
+    ],
+    'pnl.read-expenses' => [
+        'type' => 2,
+    ],
+    'deny:pnl.read-expenses' => [
+        'type' => 2,
     ],
     'costprice.read' => [
         'type' => 2,

@@ -141,6 +141,12 @@ return [
     'role:purse.master' => [
         'role:purse.manager',
     ],
+    'role:pnl.master' => [
+        'pnl.read', 'pnl.update', 'pnl.read-expenses'
+    ],
+    'role:pnl.user' => [
+        'pnl.read',
+    ],
     'role:costprice.user' => [
         'costprice.read',
     ],
@@ -164,6 +170,7 @@ return [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'bill.import', 'bill.create-exchange',
         'role:purse.master',
+        'role:pnl.user',
     ],
     // REQUISITES
     'role:requisites.user' => [
@@ -473,6 +480,7 @@ return [
         'role:stock.master',
         'role:config.manager',
         'role:costprice.manager',
+        'role:pnl.master',
         'domain.freeze',
         'domain.force-push',
         'domain.delete',
