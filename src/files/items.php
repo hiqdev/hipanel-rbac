@@ -469,7 +469,6 @@ return [
             'bill.import',
             'bill.create-exchange',
             'role:purse.master',
-            'role:pnl.user',
         ],
     ],
     'role:requisites.user' => [

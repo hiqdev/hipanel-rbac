@@ -170,7 +170,6 @@ return [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'bill.import', 'bill.create-exchange',
         'role:purse.master',
-        'role:pnl.user',
     ],
     // REQUISITES
     'role:requisites.user' => [
