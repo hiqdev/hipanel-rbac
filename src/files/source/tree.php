@@ -464,6 +464,7 @@ return [
         'move.read-all',
         'part.read-all-hierarchy',
         'move.get-directions',
+        'see-no-mans',
     ],
     'role:almighty' => [
         'role:admin',

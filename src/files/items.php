@@ -1063,6 +1063,7 @@ return [
             'owner-staff',
             'move.read-all',
             'move.get-directions',
+            'see-no-mans',
         ],
     ],
     'role:almighty' => [
