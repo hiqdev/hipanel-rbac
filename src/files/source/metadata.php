@@ -739,6 +739,9 @@ return [
     'deny:domain.set-nss' => [
         'description' => 'Prohibits set-nss operation on the domain',
     ],
+    'deny:domain.force-set-nss' => [
+        'description' => 'Prohibits force-set-nss operation on the domain',
+    ],
     'deny:domain.unfreeze' => [
         'description' => 'Prohibits unfreezeing of the domain',
     ],
@@ -1155,6 +1158,9 @@ return [
     ],
     'domain.set-nss' => [
         'description' => 'Allows set-nss operation on the domain',
+    ],
+    'domain.force-set-nss' => [
+        'description' => 'Allows force-set-nss operation on the domain',
     ],
     'domain.unfreeze' => [
         'description' => 'Allows unfreezeing of the domain',
