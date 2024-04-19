@@ -431,7 +431,7 @@ return [
         'role:domain.manager',
         'domain.freeze', 'domain.unfreeze',
         'domain.push', 'domain.force-push',
-        'domain.force-send-foa',
+        'domain.force-send-foa', 'domain.force-set-nss',
         'domain.approve-trasfer-out',
         'domain.maintain',
     ],

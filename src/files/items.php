@@ -993,6 +993,7 @@ return [
             'domain.push',
             'domain.force-push',
             'domain.force-send-foa',
+            'domain.force-set-nss',
             'domain.approve-trasfer-out',
             'domain.maintain',
         ],
@@ -2661,6 +2662,14 @@ return [
     'deny:domain.force-send-foa' => [
         'type' => 2,
         'description' => 'Prohibits force-send-foa operation on the domain',
+    ],
+    'domain.force-set-nss' => [
+        'type' => 2,
+        'description' => 'Allows force-set-nss operation on the domain',
+    ],
+    'deny:domain.force-set-nss' => [
+        'type' => 2,
+        'description' => 'Prohibits force-set-nss operation on the domain',
     ],
     'domain.approve-trasfer-out' => [
         'type' => 2,
