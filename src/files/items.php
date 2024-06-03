@@ -186,6 +186,15 @@ return [
             'role:consumption.manager',
         ],
     ],
+    'role:blacklist.manager' => [
+        'type' => 1,
+        'children' => [
+            'blacklist.read',
+            'blacklist.create',
+            'blacklist.update',
+            'blacklist.delete',
+        ],
+    ],
     'role:config.manager' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
@@ -820,6 +829,7 @@ return [
             'role:contact.user',
             'role:server.user',
             'role:hosting.user',
+            'role:blacklist.manager',
         ],
     ],
     'role:admin' => [
@@ -1079,6 +1089,7 @@ return [
             'move.read-all',
             'move.get-directions',
             'see-no-mans',
+            'role:blacklist.manager',
         ],
     ],
     'role:almighty' => [
@@ -1093,6 +1104,7 @@ return [
             'role:config.manager',
             'role:costprice.manager',
             'role:pnl.master',
+            'role:blacklist.manager',
             'domain.freeze',
             'domain.force-push',
             'domain.delete',
@@ -1516,6 +1528,30 @@ return [
     'deny:consumption.read-all' => [
         'type' => 2,
         'description' => 'Prohibits read-all operation on the consumption',
+    ],
+    'blacklist.read' => [
+        'type' => 2,
+    ],
+    'deny:blacklist.read' => [
+        'type' => 2,
+    ],
+    'blacklist.create' => [
+        'type' => 2,
+    ],
+    'deny:blacklist.create' => [
+        'type' => 2,
+    ],
+    'blacklist.update' => [
+        'type' => 2,
+    ],
+    'deny:blacklist.update' => [
+        'type' => 2,
+    ],
+    'blacklist.delete' => [
+        'type' => 2,
+    ],
+    'deny:blacklist.delete' => [
+        'type' => 2,
     ],
     'config.read' => [
         'type' => 2,
