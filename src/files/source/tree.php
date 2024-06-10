@@ -67,6 +67,10 @@ return [
     'role:consumption.master' => [
         'consumption.read-all', 'role:consumption.user', 'role:consumption.manager',
     ],
+    // BLACKLIST
+    'role:blacklist.manager' => [
+        'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+    ],
     // CONFIG
     'role:config.manager' => [
         'config.read', 'config.create', 'config.update', 'config.delete',
@@ -340,6 +344,7 @@ return [
         'role:contact.user',
         'role:server.user',
         'role:hosting.user',
+        'role:blacklist.manager',
     ],
     'role:admin' => [
         'admin',
@@ -471,6 +476,7 @@ return [
         'part.read-all-hierarchy',
         'move.get-directions',
         'see-no-mans',
+        'role:blacklist.manager',
     ],
     'role:almighty' => [
         'role:admin',
@@ -481,6 +487,7 @@ return [
         'role:config.manager',
         'role:costprice.manager',
         'role:pnl.master',
+        'role:blacklist.manager',
         'domain.freeze',
         'domain.force-push',
         'domain.delete',

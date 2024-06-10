@@ -130,6 +130,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
@@ -167,6 +168,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
@@ -211,6 +213,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
@@ -249,6 +252,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
@@ -288,6 +292,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
             'integration.read', 'integration.create', 'integration.update', 'integration.delete',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
@@ -356,6 +361,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
@@ -422,6 +428,7 @@ trait CheckAccessTrait
             'service.read', 'service.create', 'service.update', 'service.delete',
             'costprice.read', 'costprice.create', 'costprice.update', 'costprice.delete',
             'pnl.read', 'pnl.read-expenses', 'pnl.update',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
         ]);
     }
 
