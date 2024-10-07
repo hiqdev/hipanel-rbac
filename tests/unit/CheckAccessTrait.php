@@ -87,7 +87,7 @@ trait CheckAccessTrait
         $this->assertEqualsCanonicalizing($result, [
             'role:almighty', 'access-subclients',
             'role:support', 'role:admin', 'role:accounter', 'role:manager',
-            'role:reseller', 'role:owner', 'role:junior-manager',
+            'role:reseller', 'role:owner', 'role:junior-manager', 'role:staff-admin',
         ]);
     }
 
@@ -166,7 +166,7 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
 
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power',
+            'server.read', 'server.control-power',
             'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
             'server.see-label', 'server.move-disks',
 
@@ -190,6 +190,14 @@ trait CheckAccessTrait
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+        ]);
+    }
+
+    public function testStaffAdmin()
+    {
+        $this->assertAccesses('role:staff-admin', [
+            'access-subclients', 'support', 'admin',
+            'server.create', 'server.update', 'server.delete',
         ]);
     }
 
@@ -329,7 +337,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:finance.master,role:stock.master,role:config.manager,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
+        $this->auth->setAssignments('role:staff-admin,role:manager,role:document.master,role:finance.master,role:stock.master,role:config.manager,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'access-reseller',
