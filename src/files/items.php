@@ -96,9 +96,6 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
         'children' => [
             'role:server.user',
-            'server.create',
-            'server.update',
-            'server.delete',
             'server.wizzard',
             'server.set-label',
             'consumption.read',
@@ -120,11 +117,20 @@ return [
             'server.see-label',
         ],
     ],
+    'role:staff-server.admin' => [
+        'type' => 1,
+        'children' => [
+            'role:server.admin',
+            'server.create',
+            'server.delete',
+            'server.update',
+        ],
+    ],
     'role:server.master' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
         'children' => [
-            'role:server.admin',
+            'role:staff-server.admin',
             'role:server.manager',
         ],
     ],
@@ -844,6 +850,13 @@ return [
             'role:hosting.admin',
         ],
     ],
+    'role:staff-admin' => [
+        'type' => 1,
+        'children' => [
+            'role:admin',
+            'role:staff-server.admin',
+        ],
+    ],
     'role:accounter' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of accounting',
@@ -1096,7 +1109,7 @@ return [
         'type' => 1,
         'description' => 'The role is for testing only',
         'children' => [
-            'role:admin',
+            'role:staff-admin',
             'role:manager',
             'role:document.master',
             'role:finance.master',
@@ -1369,30 +1382,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits set-note operation on the server',
     ],
-    'server.create' => [
-        'type' => 2,
-        'description' => 'Allows creating of the server',
-    ],
-    'deny:server.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the server',
-    ],
-    'server.update' => [
-        'type' => 2,
-        'description' => 'Allows updating of the server',
-    ],
-    'deny:server.update' => [
-        'type' => 2,
-        'description' => 'Prohibits updating of the server',
-    ],
-    'server.delete' => [
-        'type' => 2,
-        'description' => 'Allows deleting of the server',
-    ],
-    'deny:server.delete' => [
-        'type' => 2,
-        'description' => 'Prohibits deleting of the server',
-    ],
     'server.wizzard' => [
         'type' => 2,
         'description' => 'Allows wizzarding of the server',
@@ -1464,6 +1453,30 @@ return [
     'deny:server.sell' => [
         'type' => 2,
         'description' => 'Prohibits selling of the server',
+    ],
+    'server.create' => [
+        'type' => 2,
+        'description' => 'Allows creating of the server',
+    ],
+    'deny:server.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the server',
+    ],
+    'server.delete' => [
+        'type' => 2,
+        'description' => 'Allows deleting of the server',
+    ],
+    'deny:server.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the server',
+    ],
+    'server.update' => [
+        'type' => 2,
+        'description' => 'Allows updating of the server',
+    ],
+    'deny:server.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the server',
     ],
     'hub.read' => [
         'type' => 2,
