@@ -32,6 +32,9 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to use servers',
     ],
     'role:server.admin' => [
+        'description' => 'The role is generally assigned to reseller client who are in charge of client\'s servers administration',
+    ],
+    'role:staff-server.admin' => [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
     ],
     'role:server.manager' => [
@@ -227,6 +230,9 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of customer support',
     ],
     'role:admin' => [
+        'description' => 'The role is generally assigned to reseller\'s client who are in charge for the technical management of the resources',
+    ],
+    'role:staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
     ],
     'role:accounter' => [
