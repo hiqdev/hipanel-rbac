@@ -93,7 +93,7 @@ return [
     ],
     'role:server.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
+        'description' => 'The role is generally assigned to reseller client who are in charge of client\'s servers administration',
         'children' => [
             'role:server.user',
             'server.wizzard',
@@ -119,6 +119,7 @@ return [
     ],
     'role:staff-server.admin' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
         'children' => [
             'role:server.admin',
             'server.create',
@@ -840,7 +841,7 @@ return [
     ],
     'role:admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
+        'description' => 'The role is generally assigned to reseller\'s client who are in charge for the technical management of the resources',
         'children' => [
             'admin',
             'role:support',
@@ -852,6 +853,7 @@ return [
     ],
     'role:staff-admin' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
         'children' => [
             'role:admin',
             'role:staff-server.admin',
