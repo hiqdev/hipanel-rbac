@@ -28,6 +28,7 @@ jobs:
 
   release:
     runs-on: ubuntu-latest
+    if: startsWith(github.event.ref, 'refs/tags/')
     needs: test
     steps:
       - uses: actions/checkout@v4
