@@ -19,6 +19,13 @@ trait CheckAccessTrait
         }
     }
 
+    /**
+     * Check the $userId has exactly $allowedPermissions and no more.
+     *
+     * @param string $userId
+     * @param string[] $allowedPermissions
+     * @return void
+     */
     public function assertAccesses($userId, array $allowedPermissions)
     {
         $deniedPermissions = array_diff($this->getAllPermissions(), $allowedPermissions);
@@ -27,15 +34,29 @@ trait CheckAccessTrait
         $this->assertAccess($userId, false, $deniedPermissions);
     }
 
-    public function assertAccess($userId, $isAllowed, array $permissions)
+    /**
+     * @param string $userId
+     * @param bool $isAllowed whether the passed permissions should be allowed or denied
+     * @param string[] $permissions
+     */
+    public function assertAccess($userId, $isAllowed, array $permissions): void
     {
+        $wrongPermissions = [];
         foreach ($permissions as $permission) {
             $checked = $this->auth->checkAccess($userId, $permission);
             if ($checked !== $isAllowed) {
-                var_dump(compact('userId', 'isAllowed', 'permission'));
+                $wrongPermissions[] = $permission;
             }
-            $this->assertSame($isAllowed, $checked);
         }
+
+        $message = sprintf(
+            "The following permissions for user '%s' should be %s, but they are %s instead: \n\n %s",
+            $userId,
+            $isAllowed ? 'allowed' : 'denied',
+            $isAllowed ? 'denied' : 'allowed',
+            var_export($wrongPermissions, true)
+        );
+        $this->assertEmpty($wrongPermissions, $message);
     }
 
     protected $allPermissions;
