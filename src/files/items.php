@@ -93,12 +93,9 @@ return [
     ],
     'role:server.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
+        'description' => 'The role is generally assigned to reseller client who are in charge of client\'s servers administration',
         'children' => [
             'role:server.user',
-            'server.create',
-            'server.update',
-            'server.delete',
             'server.wizzard',
             'server.set-label',
             'consumption.read',
@@ -120,11 +117,21 @@ return [
             'server.see-label',
         ],
     ],
+    'role:staff-server.admin' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
+        'children' => [
+            'role:server.admin',
+            'server.create',
+            'server.delete',
+            'server.update',
+        ],
+    ],
     'role:server.master' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
         'children' => [
-            'role:server.admin',
+            'role:staff-server.admin',
             'role:server.manager',
         ],
     ],
@@ -137,11 +144,18 @@ return [
     ],
     'role:hub.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
+        'description' => 'The role is generally assigned to reseller staff who are in charge of client\'s hubs administration',
         'children' => [
             'hub.read',
-            'hub.create',
             'hub.update',
+        ],
+    ],
+    'role:staff-hub.admin' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
+        'children' => [
+            'role:hub.admin',
+            'hub.create',
             'hub.delete',
         ],
     ],
@@ -157,7 +171,7 @@ return [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
         'children' => [
-            'role:hub.admin',
+            'role:staff-hub.admin',
             'role:hub.manager',
         ],
     ],
@@ -834,7 +848,7 @@ return [
     ],
     'role:admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
+        'description' => 'The role is generally assigned to reseller\'s client who are in charge for the technical management of the resources',
         'children' => [
             'admin',
             'role:support',
@@ -842,6 +856,15 @@ return [
             'role:stock.admin',
             'role:server.admin',
             'role:hosting.admin',
+        ],
+    ],
+    'role:staff-admin' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
+        'children' => [
+            'role:admin',
+            'role:staff-server.admin',
+            'role:staff-hub.admin',
         ],
     ],
     'role:accounter' => [
@@ -1096,7 +1119,7 @@ return [
         'type' => 1,
         'description' => 'The role is for testing only',
         'children' => [
-            'role:admin',
+            'role:staff-admin',
             'role:manager',
             'role:document.master',
             'role:finance.master',
@@ -1369,30 +1392,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits set-note operation on the server',
     ],
-    'server.create' => [
-        'type' => 2,
-        'description' => 'Allows creating of the server',
-    ],
-    'deny:server.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the server',
-    ],
-    'server.update' => [
-        'type' => 2,
-        'description' => 'Allows updating of the server',
-    ],
-    'deny:server.update' => [
-        'type' => 2,
-        'description' => 'Prohibits updating of the server',
-    ],
-    'server.delete' => [
-        'type' => 2,
-        'description' => 'Allows deleting of the server',
-    ],
-    'deny:server.delete' => [
-        'type' => 2,
-        'description' => 'Prohibits deleting of the server',
-    ],
     'server.wizzard' => [
         'type' => 2,
         'description' => 'Allows wizzarding of the server',
@@ -1465,6 +1464,30 @@ return [
         'type' => 2,
         'description' => 'Prohibits selling of the server',
     ],
+    'server.create' => [
+        'type' => 2,
+        'description' => 'Allows creating of the server',
+    ],
+    'deny:server.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the server',
+    ],
+    'server.delete' => [
+        'type' => 2,
+        'description' => 'Allows deleting of the server',
+    ],
+    'deny:server.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the server',
+    ],
+    'server.update' => [
+        'type' => 2,
+        'description' => 'Allows updating of the server',
+    ],
+    'deny:server.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the server',
+    ],
     'hub.read' => [
         'type' => 2,
         'description' => 'Allows reading of the hub',
@@ -1473,14 +1496,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the hub',
     ],
-    'hub.create' => [
-        'type' => 2,
-        'description' => 'Allows creating of the hub',
-    ],
-    'deny:hub.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the hub',
-    ],
     'hub.update' => [
         'type' => 2,
         'description' => 'Allows updating of the hub',
@@ -1488,6 +1503,14 @@ return [
     'deny:hub.update' => [
         'type' => 2,
         'description' => 'Prohibits updating of the hub',
+    ],
+    'hub.create' => [
+        'type' => 2,
+        'description' => 'Allows creating of the hub',
+    ],
+    'deny:hub.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the hub',
     ],
     'hub.delete' => [
         'type' => 2,

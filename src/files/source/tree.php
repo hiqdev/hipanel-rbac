@@ -35,7 +35,7 @@ return [
         'server.read', 'server.control-power', 'server.control-system', 'server.set-note',
     ],
     'role:server.admin' => [
-        'role:server.user', 'server.create', 'server.update', 'server.delete',
+        'role:server.user',
         'server.wizzard', 'server.set-label', 'consumption.read', 'server.manage-settings',
         'server.see-label', 'server.move-disks',
     ],
@@ -43,20 +43,29 @@ return [
         'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
         'server.see-label',
     ],
+    'role:staff-server.admin' => [
+        'role:server.admin',
+        'server.create',
+        'server.delete',
+        'server.update',
+    ],
     'role:server.master' => [
-        'role:server.admin', 'role:server.manager',
+        'role:staff-server.admin', 'role:server.manager',
     ],
     'role:hub.user' => [
         'hub.read',
     ],
     'role:hub.admin' => [
-        'hub.read', 'hub.create', 'hub.update', 'hub.delete',
+        'hub.read', 'hub.update',
+    ],
+    'role:staff-hub.admin' => [
+        'role:hub.admin', 'hub.create', 'hub.delete',
     ],
     'role:hub.manager' => [
         'hub.read', 'hub.sell',
     ],
     'role:hub.master' => [
-        'role:hub.admin', 'role:hub.manager',
+        'role:staff-hub.admin', 'role:hub.manager',
     ],
     'role:consumption.user' => [
         'consumption.read',
@@ -354,6 +363,11 @@ return [
         'role:server.admin',
         'role:hosting.admin',
     ],
+    'role:staff-admin' => [
+        'role:admin',
+        'role:staff-server.admin',
+        'role:staff-hub.admin',
+    ],
     'role:accounter' => [
         'role:manager',
         'role:hub.manager',
@@ -479,7 +493,7 @@ return [
         'role:blacklist.manager',
     ],
     'role:almighty' => [
-        'role:admin',
+        'role:staff-admin',
         'role:manager',
         'role:document.master',
         'role:finance.master',
