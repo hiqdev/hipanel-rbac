@@ -170,7 +170,7 @@ trait CheckAccessTrait
             'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
             'server.see-label', 'server.move-disks',
 
-            'hub.read', 'hub.create', 'hub.update', 'hub.delete',
+            'hub.read', 'hub.update',
             'consumption.read',
             'stock.read',
             'part.read', // 'part.create', 'part.update', 'part.delete',

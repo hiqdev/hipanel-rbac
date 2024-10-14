@@ -144,11 +144,18 @@ return [
     ],
     'role:hub.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
+        'description' => 'The role is generally assigned to reseller staff who are in charge of client\'s hubs administration',
         'children' => [
             'hub.read',
-            'hub.create',
             'hub.update',
+        ],
+    ],
+    'role:staff-hub.admin' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
+        'children' => [
+            'role:hub.admin',
+            'hub.create',
             'hub.delete',
         ],
     ],
@@ -164,7 +171,7 @@ return [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
         'children' => [
-            'role:hub.admin',
+            'role:staff-hub.admin',
             'role:hub.manager',
         ],
     ],
@@ -857,6 +864,7 @@ return [
         'children' => [
             'role:admin',
             'role:staff-server.admin',
+            'role:staff-hub.admin',
         ],
     ],
     'role:accounter' => [
@@ -1488,14 +1496,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the hub',
     ],
-    'hub.create' => [
-        'type' => 2,
-        'description' => 'Allows creating of the hub',
-    ],
-    'deny:hub.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the hub',
-    ],
     'hub.update' => [
         'type' => 2,
         'description' => 'Allows updating of the hub',
@@ -1503,6 +1503,14 @@ return [
     'deny:hub.update' => [
         'type' => 2,
         'description' => 'Prohibits updating of the hub',
+    ],
+    'hub.create' => [
+        'type' => 2,
+        'description' => 'Allows creating of the hub',
+    ],
+    'deny:hub.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the hub',
     ],
     'hub.delete' => [
         'type' => 2,
