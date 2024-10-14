@@ -1,23 +1,44 @@
 name: CI
 
 on:
+  pull_request:
   push:
+    branches: [ master ]
     tags:
       - "*.*.*"
 
 jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          tools: composer:v2
+      - name: Cache Composer packages
+        uses: actions/cache@v4
+        with:
+          path: vendor
+          key: composer-${{ hashFiles('composer.json') }}
+      - name: Install composer packages
+        run: composer install
+      - name: Test PHPUnit
+        run: vendor/bin/phpunit
+
   release:
     runs-on: ubuntu-latest
-
+    if: startsWith(github.event.ref, 'refs/tags/')
+    needs: test
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
       - run: npm install && npm run build
       - run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
