@@ -16,6 +16,7 @@ return [
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note',
         'purse.update', 'purse.read',
+        'purse.set-credit',
     ],
     'role:employee.manager' => [
         'client.list', 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
@@ -36,18 +37,29 @@ return [
     ],
     'role:server.admin' => [
         'role:server.user',
+        'server.wizzard-read',
+        'server.read-legend',
+        'server.read-all',
         'server.wizzard', 'server.set-label', 'consumption.read', 'server.manage-settings',
         'server.see-label', 'server.move-disks',
     ],
     'role:server.manager' => [
-        'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
+        'role:server.user',
+        'server.wizzard-read',
+        'server.enable-block', 'server.disable-block',
+        'server.pay', 'server.sell', 'server.set-label',
         'server.see-label',
+        'server.read-legend',
+        'server.read-all',
+        'server.read-manager',
+        'server.read-billing',
     ],
     'role:staff-server.admin' => [
         'role:server.admin',
         'server.create',
         'server.delete',
         'server.update',
+        'server.asssign-hub',
     ],
     'role:server.master' => [
         'role:staff-server.admin', 'role:server.manager',
@@ -174,10 +186,12 @@ return [
     ],
     'role:bill.junior-manager' => [
         'bill.read',
+        'charge.read',
     ],
     'role:bill.manager' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'role:purse.manager',
+        'charge.read',
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
@@ -198,6 +212,7 @@ return [
     'role:plan.manager' => [
         'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
         'price.read', 'price.update', 'price.delete', 'price.create',
+        'plan.set-note',
     ],
     'role:plan.master' => [
         'role:plan.manager',

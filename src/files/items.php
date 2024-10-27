@@ -41,6 +41,7 @@ return [
             'client.set-note',
             'purse.update',
             'purse.read',
+            'purse.set-credit',
         ],
     ],
     'role:employee.manager' => [
@@ -96,6 +97,9 @@ return [
         'description' => 'The role is generally assigned to reseller client who are in charge of client\'s servers administration',
         'children' => [
             'role:server.user',
+            'server.wizzard-read',
+            'server.read-legend',
+            'server.read-all',
             'server.wizzard',
             'server.set-label',
             'consumption.read',
@@ -109,12 +113,17 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers management',
         'children' => [
             'role:server.user',
+            'server.wizzard-read',
             'server.enable-block',
             'server.disable-block',
             'server.pay',
             'server.sell',
             'server.set-label',
             'server.see-label',
+            'server.read-legend',
+            'server.read-all',
+            'server.read-manager',
+            'server.read-billing',
         ],
     ],
     'role:staff-server.admin' => [
@@ -125,6 +134,7 @@ return [
             'server.create',
             'server.delete',
             'server.update',
+            'server.asssign-hub',
         ],
     ],
     'role:server.master' => [
@@ -466,6 +476,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of bills management',
         'children' => [
             'bill.read',
+            'charge.read',
         ],
     ],
     'role:bill.manager' => [
@@ -478,6 +489,7 @@ return [
             'bill.delete',
             'deposit',
             'role:purse.manager',
+            'charge.read',
         ],
     ],
     'role:bill.master' => [
@@ -533,6 +545,7 @@ return [
             'price.update',
             'price.delete',
             'price.create',
+            'plan.set-note',
         ],
     ],
     'role:plan.master' => [
@@ -1272,6 +1285,13 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the purse',
     ],
+    'purse.set-credit' => [
+        'type' => 2,
+    ],
+    'deny:purse.set-credit' => [
+        'type' => 2,
+        'description' => 'Prohibits set credit to purse',
+    ],
     'employee.read' => [
         'type' => 2,
         'description' => 'Allows reading of the employee',
@@ -1392,6 +1412,30 @@ return [
         'type' => 2,
         'description' => 'Prohibits set-note operation on the server',
     ],
+    'server.wizzard-read' => [
+        'type' => 2,
+        'description' => 'Allows reading info about wizzarding of the server',
+    ],
+    'deny:server.wizzard-read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the info about wizzarding of server',
+    ],
+    'server.read-legend' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the server',
+    ],
+    'deny:server.read-legend' => [
+        'type' => 2,
+        'description' => 'Prohibits reading label of the server',
+    ],
+    'server.read-all' => [
+        'type' => 2,
+        'description' => 'Allows reading of extended data of the server',
+    ],
+    'deny:server.read-all' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of extended data fo the server',
+    ],
     'server.wizzard' => [
         'type' => 2,
         'description' => 'Allows wizzarding of the server',
@@ -1464,6 +1508,20 @@ return [
         'type' => 2,
         'description' => 'Prohibits selling of the server',
     ],
+    'server.read-manager' => [
+        'type' => 2,
+    ],
+    'deny:server.read-manager' => [
+        'type' => 2,
+    ],
+    'server.read-billing' => [
+        'type' => 2,
+        'description' => 'Allow reading of tariff and sale information of server',
+    ],
+    'deny:server.read-billing' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of tariff and sale information of server',
+    ],
     'server.create' => [
         'type' => 2,
         'description' => 'Allows creating of the server',
@@ -1487,6 +1545,14 @@ return [
     'deny:server.update' => [
         'type' => 2,
         'description' => 'Prohibits updating of the server',
+    ],
+    'server.asssign-hub' => [
+        'type' => 2,
+        'description' => 'Allows assign hubs to server',
+    ],
+    'deny:server.asssign-hub' => [
+        'type' => 2,
+        'description' => 'Prohibits assign hub to server',
     ],
     'hub.read' => [
         'type' => 2,
@@ -2082,6 +2148,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the bill',
     ],
+    'charge.read' => [
+        'type' => 2,
+        'description' => 'Allow reading of the charges',
+    ],
+    'deny:charge.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the charges',
+    ],
     'bill.create' => [
         'type' => 2,
         'description' => 'Allows creating of the bill',
@@ -2225,6 +2299,14 @@ return [
     'deny:price.create' => [
         'type' => 2,
         'description' => 'Prohibits creating of the price',
+    ],
+    'plan.set-note' => [
+        'type' => 2,
+        'description' => 'Allows set note to plan',
+    ],
+    'deny:plan.set-note' => [
+        'type' => 2,
+        'description' => 'Prohibits set note to plan',
     ],
     'document.read' => [
         'type' => 2,
