@@ -70,14 +70,14 @@ return [
     'role:hub.admin' => [
         'hub.read', 'hub.update',
     ],
-    'role:staff-hub.admin' => [
+    'role:hub.staff-admin' => [
         'role:hub.admin', 'hub.create', 'hub.delete',
     ],
     'role:hub.manager' => [
         'hub.read', 'hub.sell',
     ],
     'role:hub.master' => [
-        'role:staff-hub.admin', 'role:hub.manager',
+        'role:hub.staff-admin', 'role:hub.manager',
     ],
     'role:consumption.user' => [
         'consumption.read',
@@ -381,7 +381,7 @@ return [
     'role:staff-admin' => [
         'role:admin',
         'role:server.staff-admin',
-        'role:staff-hub.admin',
+        'role:hub.staff-admin',
     ],
     'role:accounter' => [
         'role:manager',

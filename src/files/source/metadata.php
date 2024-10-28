@@ -49,7 +49,7 @@ return [
     'role:hub.admin' => [
         'description' => 'The role is generally assigned to reseller staff who are in charge of client\'s hubs administration',
     ],
-    'role:staff-hub.admin' => [
+    'role:hub.staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
     ],
     'role:hub.manager' => [

@@ -160,7 +160,7 @@ return [
             'hub.update',
         ],
     ],
-    'role:staff-hub.admin' => [
+    'role:hub.staff-admin' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
         'children' => [
@@ -181,7 +181,7 @@ return [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
         'children' => [
-            'role:staff-hub.admin',
+            'role:hub.staff-admin',
             'role:hub.manager',
         ],
     ],
@@ -877,7 +877,7 @@ return [
         'children' => [
             'role:admin',
             'role:server.staff-admin',
-            'role:staff-hub.admin',
+            'role:hub.staff-admin',
         ],
     ],
     'role:accounter' => [
