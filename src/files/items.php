@@ -126,7 +126,7 @@ return [
             'server.read-billing',
         ],
     ],
-    'role:staff-server.admin' => [
+    'role:server.staff-admin' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
         'children' => [
@@ -141,7 +141,7 @@ return [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
         'children' => [
-            'role:staff-server.admin',
+            'role:server.staff-admin',
             'role:server.manager',
         ],
     ],
@@ -876,7 +876,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
         'children' => [
             'role:admin',
-            'role:staff-server.admin',
+            'role:server.staff-admin',
             'role:staff-hub.admin',
         ],
     ],

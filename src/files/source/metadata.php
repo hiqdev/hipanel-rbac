@@ -34,7 +34,7 @@ return [
     'role:server.admin' => [
         'description' => 'The role is generally assigned to reseller client who are in charge of client\'s servers administration',
     ],
-    'role:staff-server.admin' => [
+    'role:server.staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
     ],
     'role:server.manager' => [

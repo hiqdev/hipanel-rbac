@@ -54,7 +54,7 @@ return [
         'server.read-manager',
         'server.read-billing',
     ],
-    'role:staff-server.admin' => [
+    'role:server.staff-admin' => [
         'role:server.admin',
         'server.create',
         'server.delete',
@@ -62,7 +62,7 @@ return [
         'server.asssign-hub',
     ],
     'role:server.master' => [
-        'role:staff-server.admin', 'role:server.manager',
+        'role:server.staff-admin', 'role:server.manager',
     ],
     'role:hub.user' => [
         'hub.read',
@@ -380,7 +380,7 @@ return [
     ],
     'role:staff-admin' => [
         'role:admin',
-        'role:staff-server.admin',
+        'role:server.staff-admin',
         'role:staff-hub.admin',
     ],
     'role:accounter' => [
