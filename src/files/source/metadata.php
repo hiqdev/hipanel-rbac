@@ -1030,11 +1030,11 @@ return [
     'deny:server.read-billing' => [
         'description' => 'Prohibits reading of tariff and sale information of server',
     ],
-    'deny:server.wizzard-read' => [
+    'deny:server.read-wizzard' => [
         'description' => 'Prohibits reading of the info about wizzarding of server',
     ],
     'deny:server.read-legend' => [
-        'description' => 'Prohibits reading label of the server',
+        'description' => 'Prohibits reading legend of the server',
     ],
     'deny:server.sell' => [
         'description' => 'Prohibits selling of the server',
@@ -1393,7 +1393,7 @@ return [
     'purse.update' => [
         'description' => 'Allows updating of the purse',
     ],
-    'purse.st-credit' => [
+    'purse.set-credit' => [
         'description' => 'Allows set credit to the purse',
     ],
     'ref.view.not-used' => [
@@ -1471,11 +1471,11 @@ return [
     'server.read-all' => [
         'description' => 'Allows reading of extended data of the server',
     ],
-    'server.wizzard-read' => [
+    'server.read-wizzard' => [
         'description' => 'Allows reading info about wizzarding of the server',
     ],
     'server.read-legend' => [
-        'description' => 'Prohibits reading of the server',
+        'description' => 'Prohibits reading legend of the server',
     ],
     'server.read-billing' => [
         'description' => 'Allow reading of tariff and sale information of server',

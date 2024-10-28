@@ -37,7 +37,7 @@ return [
     ],
     'role:server.admin' => [
         'role:server.user',
-        'server.wizzard-read',
+        'server.read-wizzard',
         'server.read-legend',
         'server.read-all',
         'server.wizzard', 'server.set-label', 'consumption.read', 'server.manage-settings',
@@ -45,7 +45,7 @@ return [
     ],
     'role:server.manager' => [
         'role:server.user',
-        'server.wizzard-read',
+        'server.read-wizzard',
         'server.enable-block', 'server.disable-block',
         'server.pay', 'server.sell', 'server.set-label',
         'server.see-label',

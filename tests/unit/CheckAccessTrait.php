@@ -169,7 +169,7 @@ trait CheckAccessTrait
             'server.read', 'server.control-power',
             'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
             'server.see-label', 'server.move-disks',
-            'server.wizzard-read', 'server.read-legend', 'server.read-all',
+            'server.read-wizzard', 'server.read-legend', 'server.read-all',
 
             'hub.read', 'hub.update',
             'consumption.read',
@@ -199,7 +199,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:staff-admin', [
             'access-subclients', 'support', 'admin',
             'server.create', 'server.update', 'server.delete',
-            'server.wizzard-read', 'server.read-legend', 'server.read-all',
+            'server.read-wizzard', 'server.read-legend', 'server.read-all',
             'access-subclients', 'support', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.list',
@@ -277,7 +277,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
-            'purse.set-credit','server.wizzard-read','server.read-legend','server.read-all','server.read-manager',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-all','server.read-manager',
             'server.read-billing','charge.read','plan.set-note',
         ]);
     }
@@ -318,7 +318,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
-            'purse.set-credit','server.wizzard-read','server.read-legend','server.read-all','server.read-manager',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-all','server.read-manager',
             'server.read-billing','charge.read','plan.set-note',
         ]);
     }
@@ -360,7 +360,7 @@ trait CheckAccessTrait
             'ip.read', 'service.read', 'client.notify',
             'integration.read', 'integration.create', 'integration.update', 'integration.delete',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
-            'purse.set-credit','server.wizzard-read','server.read-legend','server.read-all','server.read-manager',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-all','server.read-manager',
             'server.read-billing','charge.read','plan.set-note',
         ]);
     }
@@ -432,7 +432,7 @@ trait CheckAccessTrait
             'service.read', 'service.create', 'service.update', 'service.delete',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
 
-            'purse.set-credit','server.wizzard-read','server.read-legend','server.read-all','server.read-manager',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-all','server.read-manager',
             'server.read-billing','server.asssign-hub','charge.read','plan.set-note',
         ]);
     }
@@ -501,7 +501,7 @@ trait CheckAccessTrait
             'costprice.read', 'costprice.create', 'costprice.update', 'costprice.delete',
             'pnl.read', 'pnl.read-expenses', 'pnl.update',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
-            'purse.set-credit','server.wizzard-read','server.read-legend','server.read-all','server.read-manager',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-all','server.read-manager',
             'server.read-billing','server.asssign-hub','charge.read','plan.set-note',
         ]);
     }

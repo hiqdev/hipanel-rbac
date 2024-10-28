@@ -97,7 +97,7 @@ return [
         'description' => 'The role is generally assigned to reseller client who are in charge of client\'s servers administration',
         'children' => [
             'role:server.user',
-            'server.wizzard-read',
+            'server.read-wizzard',
             'server.read-legend',
             'server.read-all',
             'server.wizzard',
@@ -113,7 +113,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers management',
         'children' => [
             'role:server.user',
-            'server.wizzard-read',
+            'server.read-wizzard',
             'server.enable-block',
             'server.disable-block',
             'server.pay',
@@ -1287,6 +1287,7 @@ return [
     ],
     'purse.set-credit' => [
         'type' => 2,
+        'description' => 'Allows set credit to the purse',
     ],
     'deny:purse.set-credit' => [
         'type' => 2,
@@ -1412,11 +1413,11 @@ return [
         'type' => 2,
         'description' => 'Prohibits set-note operation on the server',
     ],
-    'server.wizzard-read' => [
+    'server.read-wizzard' => [
         'type' => 2,
         'description' => 'Allows reading info about wizzarding of the server',
     ],
-    'deny:server.wizzard-read' => [
+    'deny:server.read-wizzard' => [
         'type' => 2,
         'description' => 'Prohibits reading of the info about wizzarding of server',
     ],
