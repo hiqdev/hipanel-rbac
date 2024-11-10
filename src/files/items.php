@@ -99,7 +99,7 @@ return [
             'role:server.user',
             'server.read-wizzard',
             'server.read-legend',
-            'server.read-all',
+            'server.read-system-info',
             'server.wizzard',
             'server.set-label',
             'consumption.read',
@@ -121,7 +121,7 @@ return [
             'server.set-label',
             'server.see-label',
             'server.read-legend',
-            'server.read-all',
+            'server.read-financial-info',
             'server.read-manager',
             'server.read-billing',
         ],
@@ -1423,19 +1423,19 @@ return [
     ],
     'server.read-legend' => [
         'type' => 2,
-        'description' => 'Prohibits reading of the server',
+        'description' => 'Prohibits reading legend of the server',
     ],
     'deny:server.read-legend' => [
         'type' => 2,
-        'description' => 'Prohibits reading label of the server',
+        'description' => 'Prohibits reading legend of the server',
     ],
-    'server.read-all' => [
+    'server.read-system-info' => [
         'type' => 2,
-        'description' => 'Allows reading of extended data of the server',
+        'description' => 'Allows reading system info of the server',
     ],
-    'deny:server.read-all' => [
+    'deny:server.read-system-info' => [
         'type' => 2,
-        'description' => 'Prohibits reading of extended data fo the server',
+        'description' => 'Prohibits reading system info of the server',
     ],
     'server.wizzard' => [
         'type' => 2,
@@ -1508,6 +1508,14 @@ return [
     'deny:server.sell' => [
         'type' => 2,
         'description' => 'Prohibits selling of the server',
+    ],
+    'server.read-financial-info' => [
+        'type' => 2,
+        'description' => 'Allows reading financial info of the server',
+    ],
+    'deny:server.read-financial-info' => [
+        'type' => 2,
+        'description' => 'Prohibits reading financial info of the server',
     ],
     'server.read-manager' => [
         'type' => 2,

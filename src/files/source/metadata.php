@@ -1024,8 +1024,11 @@ return [
     'deny:server.read' => [
         'description' => 'Prohibits reading of the server',
     ],
-    'deny:server.read-all' => [
-        'description' => 'Prohibits reading of extended data fo the server',
+    'deny:server.read-financial-info' => [
+        'description' => 'Prohibits reading financial info of the server',
+    ],
+    'deny:server.read-system-info' => [
+        'description' => 'Prohibits reading system info of the server',
     ],
     'deny:server.read-billing' => [
         'description' => 'Prohibits reading of tariff and sale information of server',
@@ -1468,8 +1471,11 @@ return [
     'server.read' => [
         'description' => 'Allows reading of the server',
     ],
-    'server.read-all' => [
-        'description' => 'Allows reading of extended data of the server',
+    'server.read-financial-info' => [
+        'description' => 'Allows reading financial info of the server',
+    ],
+    'server.read-system-info' => [
+        'description' => 'Allows reading system info of the server',
     ],
     'server.read-wizzard' => [
         'description' => 'Allows reading info about wizzarding of the server',
