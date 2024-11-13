@@ -200,7 +200,6 @@ trait CheckAccessTrait
             'access-subclients', 'support', 'admin',
             'server.create', 'server.update', 'server.delete',
             'server.read-wizzard', 'server.read-legend', 'server.read-system-info',
-            'access-subclients', 'support', 'admin',
             'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
             'client.read', 'client.list',
             'domain.read', 'domain.update', 'domain.delete-agp', 'domain.set-nss',

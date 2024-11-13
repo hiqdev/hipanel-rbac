@@ -1519,9 +1519,11 @@ return [
     ],
     'server.read-manager' => [
         'type' => 2,
+        'description' => 'Allows reading manager info of the server',
     ],
     'deny:server.read-manager' => [
         'type' => 2,
+        'description' => 'Prohibits reading manager info of the server',
     ],
     'server.read-billing' => [
         'type' => 2,

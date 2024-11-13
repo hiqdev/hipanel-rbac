@@ -1039,6 +1039,9 @@ return [
     'deny:server.read-legend' => [
         'description' => 'Prohibits reading legend of the server',
     ],
+    'deny:server.read-manager' => [
+        'description' => 'Prohibits reading manager info of the server',
+    ],
     'deny:server.sell' => [
         'description' => 'Prohibits selling of the server',
     ],
@@ -1485,6 +1488,9 @@ return [
     ],
     'server.read-billing' => [
         'description' => 'Allow reading of tariff and sale information of server',
+    ],
+    'server.read-manager' => [
+        'description' => 'Allows reading manager info of the server',
     ],
     'server.sell' => [
         'description' => 'Allows selling of the server',
