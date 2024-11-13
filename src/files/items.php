@@ -861,7 +861,7 @@ return [
     ],
     'role:admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to reseller\'s client who are in charge for the technical management of the resources',
+        'description' => 'The role is generally assigned to reseller\'s clients who are in charge of the technical management of the resources',
         'children' => [
             'admin',
             'role:support',

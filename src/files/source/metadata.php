@@ -233,7 +233,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of customer support',
     ],
     'role:admin' => [
-        'description' => 'The role is generally assigned to reseller\'s client who are in charge for the technical management of the resources',
+        'description' => 'The role is generally assigned to reseller\'s clients who are in charge of the technical management of the resources',
     ],
     'role:staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
