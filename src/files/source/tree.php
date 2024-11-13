@@ -16,6 +16,7 @@ return [
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note',
         'purse.update', 'purse.read',
+        'purse.set-credit',
     ],
     'role:employee.manager' => [
         'client.list', 'employee.read', 'employee.create', 'employee.update', 'employee.delete', 'document.acceptance',
@@ -36,33 +37,47 @@ return [
     ],
     'role:server.admin' => [
         'role:server.user',
+        'server.read-wizzard',
+        'server.read-legend',
+        'server.read-system-info',
         'server.wizzard', 'server.set-label', 'consumption.read', 'server.manage-settings',
         'server.see-label', 'server.move-disks',
     ],
     'role:server.manager' => [
-        'role:server.user', 'server.enable-block', 'server.disable-block', 'server.pay', 'server.sell', 'server.set-label',
+        'role:server.user',
+        'server.read-wizzard',
+        'server.enable-block', 'server.disable-block',
+        'server.pay', 'server.sell', 'server.set-label',
         'server.see-label',
+        'server.read-legend',
+        'server.read-financial-info',
+        'server.read-manager',
+        'server.read-billing',
     ],
-    'role:staff-server.admin' => [
+    'role:server.staff-admin' => [
         'role:server.admin',
         'server.create',
         'server.delete',
         'server.update',
+        'server.assign-hub',
     ],
     'role:server.master' => [
-        'role:staff-server.admin', 'role:server.manager',
+        'role:server.staff-admin', 'role:server.manager',
     ],
     'role:hub.user' => [
         'hub.read',
     ],
     'role:hub.admin' => [
-        'hub.read', 'hub.create', 'hub.update', 'hub.delete',
+        'hub.read', 'hub.update',
+    ],
+    'role:hub.staff-admin' => [
+        'role:hub.admin', 'hub.create', 'hub.delete',
     ],
     'role:hub.manager' => [
         'hub.read', 'hub.sell',
     ],
     'role:hub.master' => [
-        'role:hub.admin', 'role:hub.manager',
+        'role:hub.staff-admin', 'role:hub.manager',
     ],
     'role:consumption.user' => [
         'consumption.read',
@@ -171,10 +186,12 @@ return [
     ],
     'role:bill.junior-manager' => [
         'bill.read',
+        'charge.read',
     ],
     'role:bill.manager' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'role:purse.manager',
+        'charge.read',
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
@@ -195,6 +212,7 @@ return [
     'role:plan.manager' => [
         'plan.read', 'plan.create', 'plan.update', 'plan.delete', 'plan.force-read',
         'price.read', 'price.update', 'price.delete', 'price.create',
+        'plan.set-note',
     ],
     'role:plan.master' => [
         'role:plan.manager',
@@ -362,7 +380,8 @@ return [
     ],
     'role:staff-admin' => [
         'role:admin',
-        'role:staff-server.admin',
+        'role:server.staff-admin',
+        'role:hub.staff-admin',
     ],
     'role:accounter' => [
         'role:manager',
