@@ -32,6 +32,9 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to use servers',
     ],
     'role:server.admin' => [
+        'description' => 'The role is generally assigned to reseller clients who are in charge of clients\' server administration',
+    ],
+    'role:server.staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
     ],
     'role:server.manager' => [
@@ -44,6 +47,9 @@ return [
         'description' => 'The role is generally assigned to users who are allowed to rents hubs',
     ],
     'role:hub.admin' => [
+        'description' => 'The role is generally assigned to reseller staff who are in charge of clients\' hub administration',
+    ],
+    'role:hub.staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
     ],
     'role:hub.manager' => [
@@ -227,6 +233,9 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of customer support',
     ],
     'role:admin' => [
+        'description' => 'The role is generally assigned to reseller\'s clients who are in charge of the technical management of the resources',
+    ],
+    'role:staff-admin' => [
         'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
     ],
     'role:accounter' => [
@@ -925,6 +934,9 @@ return [
     'deny:plan.update' => [
         'description' => 'Prohibits updating of the plan',
     ],
+    'deny:plan.set-note' => [
+        'description' => 'Prohibits set note to plan',
+    ],
     'deny:price.create' => [
         'description' => 'Prohibits creating of the price',
     ],
@@ -939,6 +951,9 @@ return [
     ],
     'deny:purse.update' => [
         'description' => 'Prohibits updating of the purse',
+    ],
+    'deny:purse.set-credit' => [
+         'description' => 'Prohibits set credit to purse',
     ],
     'deny:ref.view.not-used' => [
         'description' => 'Prohibits view.not-used operation on the ref',
@@ -1009,6 +1024,24 @@ return [
     'deny:server.read' => [
         'description' => 'Prohibits reading of the server',
     ],
+    'deny:server.read-financial-info' => [
+        'description' => 'Prohibits reading financial info of the server',
+    ],
+    'deny:server.read-system-info' => [
+        'description' => 'Prohibits reading system info of the server',
+    ],
+    'deny:server.read-billing' => [
+        'description' => 'Prohibits reading of tariff and sale information of server',
+    ],
+    'deny:server.read-wizzard' => [
+        'description' => 'Prohibits reading of the info about wizzarding of server',
+    ],
+    'deny:server.read-legend' => [
+        'description' => 'Prohibits reading legend of the server',
+    ],
+    'deny:server.read-manager' => [
+        'description' => 'Prohibits reading manager info of the server',
+    ],
     'deny:server.sell' => [
         'description' => 'Prohibits selling of the server',
     ],
@@ -1023,6 +1056,9 @@ return [
     ],
     'deny:server.wizzard' => [
         'description' => 'Prohibits wizzarding of the server',
+    ],
+    'deny:server.assign-hub' => [
+        'description' => 'Prohibits assign hub to server',
     ],
     'deny:service.create' => [
         'description' => 'Prohibits creating of the service',
@@ -1345,6 +1381,9 @@ return [
     'plan.update' => [
         'description' => 'Allows updating of the plan',
     ],
+    'plan.set-note' => [
+        'description' => 'Allows set note to plan',
+    ],
     'price.create' => [
         'description' => 'Allows creating of the price',
     ],
@@ -1359,6 +1398,9 @@ return [
     ],
     'purse.update' => [
         'description' => 'Allows updating of the purse',
+    ],
+    'purse.set-credit' => [
+        'description' => 'Allows set credit to the purse',
     ],
     'ref.view.not-used' => [
         'description' => 'Allows view.not-used operation on the ref',
@@ -1411,6 +1453,9 @@ return [
     'server.create' => [
         'description' => 'Allows creating of the server',
     ],
+    'server.assign-hub' => [
+        'description' => 'Allows assign hubs to server',
+    ],
     'server.delete' => [
         'description' => 'Allows deleting of the server',
     ],
@@ -1428,6 +1473,24 @@ return [
     ],
     'server.read' => [
         'description' => 'Allows reading of the server',
+    ],
+    'server.read-financial-info' => [
+        'description' => 'Allows reading financial info of the server',
+    ],
+    'server.read-system-info' => [
+        'description' => 'Allows reading system info of the server',
+    ],
+    'server.read-wizzard' => [
+        'description' => 'Allows reading info about wizzarding of the server',
+    ],
+    'server.read-legend' => [
+        'description' => 'Allows reading legend of the server',
+    ],
+    'server.read-billing' => [
+        'description' => 'Allow reading of tariff and sale information of server',
+    ],
+    'server.read-manager' => [
+        'description' => 'Allows reading manager info of the server',
     ],
     'server.sell' => [
         'description' => 'Allows selling of the server',
@@ -1608,6 +1671,12 @@ return [
     ],
     'deny:costprice.update' => [
         'description' => 'Prohibits updating of the costprice',
+    ],
+    'charge.read' => [
+        'description' => 'Allow reading of the charges',
+    ],
+    'deny:charge.read' => [
+        'description' => 'Prohibits reading of the charges',
     ],
     'deny:pay' => [
         'description' => 'Prohibits paying',

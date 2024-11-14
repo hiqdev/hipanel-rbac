@@ -87,7 +87,7 @@ trait CheckAccessTrait
         $this->assertEqualsCanonicalizing($result, [
             'role:almighty', 'access-subclients',
             'role:support', 'role:admin', 'role:accounter', 'role:manager',
-            'role:reseller', 'role:owner', 'role:junior-manager',
+            'role:reseller', 'role:owner', 'role:junior-manager', 'role:staff-admin',
         ]);
     }
 
@@ -166,9 +166,50 @@ trait CheckAccessTrait
             'certificate.read', 'certificate.create', 'certificate.update',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
 
-            'server.read', 'server.create', 'server.update', 'server.delete', 'server.control-power',
+            'server.read', 'server.control-power',
             'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
             'server.see-label', 'server.move-disks',
+            'server.read-wizzard', 'server.read-legend', 'server.read-system-info',
+
+            'hub.read', 'hub.update',
+            'consumption.read',
+            'stock.read',
+            'part.read', // 'part.create', 'part.update', 'part.delete',
+            'move.read', 'move.create', 'move.update', 'move.delete',
+            'move.get-directions',
+            'order.read',
+            'model.read', // 'model.create', 'model.update', 'model.delete',
+            'account.read', 'account.create', 'account.update', 'account.delete',
+            'backup.read', 'backup.delete',
+            'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
+            'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
+            'db.read', 'db.create', 'db.update', 'db.delete',
+            'hdomain.read', 'hdomain.create', 'hdomain.update', 'hdomain.delete', 'hdomain.set-dns',
+            'mail.read', 'mail.create', 'mail.update', 'mail.delete',
+            'request.read', 'request.create', 'request.update', 'request.delete',
+            'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
+            'ip.read', 'ip.create', 'ip.update', 'ip.delete',
+            'service.read', 'service.create', 'service.update', 'service.delete',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+        ]);
+    }
+
+    public function testStaffAdmin()
+    {
+        $this->assertAccesses('role:staff-admin', [
+            'access-subclients', 'support', 'admin',
+            'server.create', 'server.update', 'server.delete',
+            'server.read-wizzard', 'server.read-legend', 'server.read-system-info',
+            'ticket.read', 'ticket.create', 'ticket.answer', 'ticket.close', 'ticket.update', 'ticket.delete',
+            'client.read', 'client.list',
+            'domain.read', 'domain.update', 'domain.delete-agp', 'domain.set-nss',
+            'dns.create', 'dns.read', 'dns.update', 'dns.delete',
+            'certificate.read', 'certificate.create', 'certificate.update',
+            'contact.read', 'contact.create', 'contact.update', 'contact.delete',
+
+            'server.read', 'server.control-power',
+            'server.control-system', 'server.wizzard', 'server.set-label', 'server.set-note', 'server.manage-settings',
+            'server.see-label', 'server.move-disks', 'server.assign-hub',
 
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read',
@@ -235,6 +276,8 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+            'purse.set-credit','server.read-wizzard','server.read-legend', 'server.read-financial-info', 'server.read-manager',
+            'server.read-billing','charge.read','plan.set-note',
         ]);
     }
 
@@ -274,6 +317,8 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info','server.read-manager',
+            'server.read-billing','charge.read','plan.set-note',
         ]);
     }
 
@@ -314,6 +359,8 @@ trait CheckAccessTrait
             'ip.read', 'service.read', 'client.notify',
             'integration.read', 'integration.create', 'integration.update', 'integration.delete',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info', 'server.read-manager',
+            'server.read-billing','charge.read','plan.set-note',
         ]);
     }
 
@@ -329,7 +376,7 @@ trait CheckAccessTrait
 
     public function testMighty()
     {
-        $this->auth->setAssignments('role:admin,role:manager,role:document.master,role:finance.master,role:stock.master,role:config.manager,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
+        $this->auth->setAssignments('role:staff-admin,role:manager,role:document.master,role:finance.master,role:stock.master,role:config.manager,domain.freeze,domain.force-push,domain.delete,employee.read,domain.force-send-foa,deny:deposit', 'user:mighty');
 
         $this->assertAccesses('user:mighty', [
             'access-subclients', 'access-reseller',
@@ -383,6 +430,9 @@ trait CheckAccessTrait
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-system-info', 'server.read-financial-info', 'server.read-manager',
+            'server.read-billing','server.assign-hub','charge.read','plan.set-note',
         ]);
     }
 
@@ -450,6 +500,8 @@ trait CheckAccessTrait
             'costprice.read', 'costprice.create', 'costprice.update', 'costprice.delete',
             'pnl.read', 'pnl.read-expenses', 'pnl.update',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+            'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info', 'server.read-system-info', 'server.read-manager',
+            'server.read-billing','server.assign-hub','charge.read','plan.set-note',
         ]);
     }
 
