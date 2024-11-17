@@ -24,6 +24,7 @@ return [
         'children' => [
             'client.read',
             'client.list',
+            'client.read-ip',
         ],
     ],
     'role:client.manager' => [
@@ -39,6 +40,10 @@ return [
             'client.unblock',
             'client.get-note',
             'client.set-note',
+            'client.read-financial-info',
+            'client.read-requisite',
+            'client.read-referral',
+            'client.read-deleted',
             'purse.update',
             'purse.read',
             'purse.set-credit',
@@ -122,7 +127,6 @@ return [
             'server.see-label',
             'server.read-legend',
             'server.read-financial-info',
-            'server.read-manager',
             'server.read-billing',
         ],
     ],
@@ -785,6 +789,7 @@ return [
         'children' => [
             'role:stock.user',
             'role:move.manager',
+            'part.read-administrative',
         ],
     ],
     'role:stock.manager' => [
@@ -1095,6 +1100,11 @@ return [
             'role:ticket.user',
             'ticket.update',
             'ticket.delete',
+            'ticket.read-templates',
+            'ticket.read-statistics',
+            'ticket.set-private',
+            'ticket.set-recipient',
+            'ticket.set-time',
         ],
     ],
     'role:beta-tester' => [
@@ -1205,6 +1215,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits listing of the client',
     ],
+    'client.read-ip' => [
+        'type' => 2,
+        'description' => 'Allows viewing client\'s IP',
+    ],
+    'deny:client.read-ip' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing client\'s IP',
+    ],
     'client.create' => [
         'type' => 2,
         'description' => 'Allows creating of the client',
@@ -1268,6 +1286,38 @@ return [
     'deny:client.set-note' => [
         'type' => 2,
         'description' => 'Prohibits set-note operation on the client',
+    ],
+    'client.read-financial-info' => [
+        'type' => 2,
+        'description' => 'Allows viewing client\'s financial info',
+    ],
+    'deny:client.read-financial-info' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing client\'s financial info',
+    ],
+    'client.read-requisite' => [
+        'type' => 2,
+        'description' => 'Allows viewing setted requisite to client',
+    ],
+    'deny:client.read-requisite' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing setted requisite to client',
+    ],
+    'client.read-referral' => [
+        'type' => 2,
+        'description' => 'Allows viewing client\'s referral',
+    ],
+    'deny:client.read-referral' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing client\'s referral',
+    ],
+    'client.read-deleted' => [
+        'type' => 2,
+        'description' => 'Allows viewing deleted clients',
+    ],
+    'deny:client.read-deleted' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing deleted clients',
     ],
     'purse.update' => [
         'type' => 2,
@@ -1516,14 +1566,6 @@ return [
     'deny:server.read-financial-info' => [
         'type' => 2,
         'description' => 'Prohibits reading financial info of the server',
-    ],
-    'server.read-manager' => [
-        'type' => 2,
-        'description' => 'Allows reading manager info of the server',
-    ],
-    'deny:server.read-manager' => [
-        'type' => 2,
-        'description' => 'Prohibits reading manager info of the server',
     ],
     'server.read-billing' => [
         'type' => 2,
@@ -2575,6 +2617,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading of the stock',
     ],
+    'part.read-administrative' => [
+        'type' => 2,
+        'description' => 'Allows reading administrative data of the part',
+    ],
+    'deny:part.read-administrative' => [
+        'type' => 2,
+        'description' => 'Prohibits reading admin data of the parts',
+    ],
     'have-goods' => [
         'type' => 2,
         'description' => 'Allows have-goods operation',
@@ -2950,6 +3000,46 @@ return [
     'deny:ticket.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the ticket',
+    ],
+    'ticket.read-templates' => [
+        'type' => 2,
+        'description' => 'Allows viewing ticket templates',
+    ],
+    'deny:ticket.read-templates' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing ticket templates',
+    ],
+    'ticket.read-statistics' => [
+        'type' => 2,
+        'description' => 'Allows viewing tickets statistics',
+    ],
+    'deny:ticket.read-statistics' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing tickets statistics',
+    ],
+    'ticket.set-private' => [
+        'type' => 2,
+        'description' => 'Allows setting `private` to answer',
+    ],
+    'deny:ticket.set-private' => [
+        'type' => 2,
+        'description' => 'Prohibits setting `private` to answer',
+    ],
+    'ticket.set-recipient' => [
+        'type' => 2,
+        'description' => 'Allows setting ticket\'s recipient',
+    ],
+    'deny:ticket.set-recipient' => [
+        'type' => 2,
+        'description' => 'Prohibits setting ticket\'s recipient',
+    ],
+    'ticket.set-time' => [
+        'type' => 2,
+        'description' => 'Allows setting spent time to ticket',
+    ],
+    'deny:ticket.set-time' => [
+        'type' => 2,
+        'description' => 'Prohibits setting spent time to ticket',
     ],
     'test.beta' => [
         'type' => 2,
