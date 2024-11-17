@@ -1732,6 +1732,12 @@ return [
     'deny:costprice.update' => [
         'description' => 'Prohibits updating of the costprice',
     ],
+    'charge.read' => [
+        'description' => 'Allow reading of the charges',
+    ],
+    'deny:charge.read' => [
+        'description' => 'Prohibits reading of the charges',
+    ],
     'deny:pay' => [
         'description' => 'Prohibits paying',
     ],

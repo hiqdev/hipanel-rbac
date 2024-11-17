@@ -480,6 +480,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of bills management',
         'children' => [
             'bill.read',
+            'charge.read',
         ],
     ],
     'role:bill.manager' => [
@@ -492,6 +493,7 @@ return [
             'bill.delete',
             'deposit',
             'role:purse.manager',
+            'charge.read',
         ],
     ],
     'role:bill.master' => [
@@ -1571,6 +1573,7 @@ return [
     ],
     'deny:server.read-billing' => [
         'type' => 2,
+
         'description' => 'Prohibits reading of tariff and sale information of server',
     ],
     'server.create' => [
@@ -2198,6 +2201,14 @@ return [
     'deny:bill.read' => [
         'type' => 2,
         'description' => 'Prohibits reading of the bill',
+    ],
+    'charge.read' => [
+        'type' => 2,
+        'description' => 'Allow reading of the charges',
+    ],
+    'deny:charge.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the charges',
     ],
     'bill.create' => [
         'type' => 2,
