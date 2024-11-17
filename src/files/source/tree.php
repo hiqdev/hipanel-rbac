@@ -187,12 +187,10 @@ return [
     ],
     'role:bill.junior-manager' => [
         'bill.read',
-        'charge.read',
     ],
     'role:bill.manager' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'role:purse.manager',
-        'charge.read',
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
