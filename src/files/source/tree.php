@@ -9,12 +9,14 @@ return [
     ],
     // CLIENT MODULE
     'role:client.support' => [
-        'client.read', 'client.list',
+        'client.read', 'client.list', 'client.read-ip',
     ],
     'role:client.manager' => [
         'role:client.support', 'client.create', 'client.update', 'client.delete',
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note',
+        'client.read-financial-info', 'client.read-requisite', 'client.read-referral',
+        'client.read-deleted',
         'purse.update', 'purse.read',
         'purse.set-credit',
     ],
@@ -51,7 +53,6 @@ return [
         'server.see-label',
         'server.read-legend',
         'server.read-financial-info',
-        'server.read-manager',
         'server.read-billing',
     ],
     'role:server.staff-admin' => [
@@ -186,12 +187,10 @@ return [
     ],
     'role:bill.junior-manager' => [
         'bill.read',
-        'charge.read',
     ],
     'role:bill.manager' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'role:purse.manager',
-        'charge.read',
     ],
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
@@ -325,6 +324,7 @@ return [
     'role:stock.admin' => [
         'role:stock.user',
         'role:move.manager',
+        'part.read-administrative',
     ],
     'role:stock.manager' => [
         'role:stock.user',
@@ -486,6 +486,8 @@ return [
     ],
     'role:ticket.manager' => [
         'role:ticket.user', 'ticket.update', 'ticket.delete',
+        'ticket.read-templates', 'ticket.read-statistics',
+        'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
     ],
     'role:beta-tester' => [
         'test.beta',

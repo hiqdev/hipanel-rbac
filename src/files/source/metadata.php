@@ -433,6 +433,21 @@ return [
     'client.update' => [
         'description' => 'Allows updating of the client',
     ],
+    'client.read-ip' => [
+        'description' => 'Allows viewing client\'s IP',
+    ],
+    'client.read-financial-info' => [
+        'description' => 'Allows viewing client\'s financial info',
+    ],
+    'client.read-requisite' => [
+        'description' => 'Allows viewing setted requisite to client',
+    ],
+    'client.read-referral' => [
+        'description' => 'Allows viewing client\'s referral',
+    ],
+    'client.read-deleted' => [
+        'description' => 'Allows viewing deleted clients',
+    ],
     'config.create' => [
         'description' => 'Allows creating of the config',
     ],
@@ -919,6 +934,9 @@ return [
     'deny:part.update' => [
         'description' => 'Prohibits updating of the part',
     ],
+    'deny:part.read-administrative' => [
+        'description' => 'Prohibits reading admin data of the parts',
+    ],
     'deny:plan.create' => [
         'description' => 'Prohibits creating of the plan',
     ],
@@ -1039,9 +1057,6 @@ return [
     'deny:server.read-legend' => [
         'description' => 'Prohibits reading legend of the server',
     ],
-    'deny:server.read-manager' => [
-        'description' => 'Prohibits reading manager info of the server',
-    ],
     'deny:server.sell' => [
         'description' => 'Prohibits selling of the server',
     ],
@@ -1101,6 +1116,21 @@ return [
     ],
     'deny:ticket.update' => [
         'description' => 'Prohibits updating of the ticket',
+    ],
+    'deny:ticket.read-templates' => [
+        'description' => 'Prohibits viewing ticket templates',
+    ],
+    'deny:ticket.read-statistics' => [
+        'description' => 'Prohibits viewing tickets statistics',
+    ],
+    'deny:ticket.set-private' => [
+        'description' => 'Prohibits setting `private` to answer',
+    ],
+    'deny:ticket.set-recipient' => [
+        'description' => 'Prohibits setting ticket\'s recipient',
+    ],
+    'deny:ticket.set-time' => [
+        'description' => 'Prohibits setting spent time to ticket',
     ],
     'deny:vhost.create' => [
         'description' => 'Prohibits creating of the vhost',
@@ -1366,6 +1396,9 @@ return [
     'part.update' => [
         'description' => 'Allows updating of the part',
     ],
+    'part.read-administrative' => [
+        'description' => 'Allows reading administrative data of the part',
+    ],
     'plan.create' => [
         'description' => 'Allows creating of the plan',
     ],
@@ -1489,9 +1522,6 @@ return [
     'server.read-billing' => [
         'description' => 'Allow reading of tariff and sale information of server',
     ],
-    'server.read-manager' => [
-        'description' => 'Allows reading manager info of the server',
-    ],
     'server.sell' => [
         'description' => 'Allows selling of the server',
     ],
@@ -1555,6 +1585,21 @@ return [
     'ticket.update' => [
         'description' => 'Allows updating of the ticket',
     ],
+    'ticket.read-templates' => [
+        'description' => 'Allows viewing ticket templates',
+    ],
+    'ticket.read-statistics' => [
+        'description' => 'Allows viewing tickets statistics',
+    ],
+    'ticket.set-private' => [
+        'description' => 'Allows setting `private` to answer',
+    ],
+    'ticket.set-recipient' => [
+        'description' => 'Allows setting ticket\'s recipient',
+    ],
+    'ticket.set-time' => [
+        'description' => 'Allows setting spent time to ticket',
+    ],
     'vhost.create' => [
         'description' => 'Allows creating of the vhost',
     ],
@@ -1590,6 +1635,21 @@ return [
     ],
     'deny:client.notify' => [
         'description' => 'Prohibits notifying of the client',
+    ],
+    'deny:client.read-ip' => [
+        'description' => 'Prohibits viewing client\'s IP',
+    ],
+    'deny:client.read-financial-info' => [
+        'description' => 'Prohibits viewing client\'s financial info',
+    ],
+    'deny:client.read-requisite' => [
+        'description' => 'Prohibits viewing setted requisite to client',
+    ],
+    'deny:client.read-referral' => [
+        'description' => 'Prohibits viewing client\'s referral',
+    ],
+    'deny:client.read-deleted' => [
+        'description' => 'Prohibits viewing deleted clients',
     ],
     'deny:part.read-all-hierarchy' => [
         'description' => 'Prohibits read-all-hierarchy operation on the part',
@@ -1671,12 +1731,6 @@ return [
     ],
     'deny:costprice.update' => [
         'description' => 'Prohibits updating of the costprice',
-    ],
-    'charge.read' => [
-        'description' => 'Allow reading of the charges',
-    ],
-    'deny:charge.read' => [
-        'description' => 'Prohibits reading of the charges',
     ],
     'deny:pay' => [
         'description' => 'Prohibits paying',
