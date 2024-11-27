@@ -843,6 +843,7 @@ return [
             'role:finance.user',
             'role:sale.user',
             'client.notify',
+            'access-subclients',
         ],
     ],
     'role:support' => [
