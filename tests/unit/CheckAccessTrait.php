@@ -87,7 +87,7 @@ trait CheckAccessTrait
         $this->assertEqualsCanonicalizing($result, [
             'role:almighty', 'access-subclients',
             'role:support', 'role:admin', 'role:accounter', 'role:manager',
-            'role:reseller', 'role:owner', 'role:junior-manager', 'role:staff-admin',
+            'role:reseller', 'role:owner', 'role:junior-manager', 'role:staff-admin', 'role:client',
         ]);
     }
 
@@ -127,6 +127,7 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
+	    'access-subclients',
         ]);
     }
 
@@ -533,7 +534,7 @@ trait CheckAccessTrait
 
     public function testLimited()
     {
-        $this->auth->setAssignments('role:client,deny:pay,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.control-power,deny:server.control-system,deny:server.set-note,deny:ip.read,deny:service.read,deny:domain.delete-agp,deny:domain.set-nss', 'user:limited');
+        $this->auth->setAssignments('role:client,deny:pay,deny:deposit,deny:domain.push,deny:server.pay,deny:server.read,deny:server.control-power,deny:server.control-system,deny:server.set-note,deny:ip.read,deny:service.read,deny:domain.delete-agp,deny:domain.set-nss,deny:access-subclients', 'user:limited');
 
         $this->assertAccesses('user:limited', [
             'have-goods',
@@ -553,6 +554,7 @@ trait CheckAccessTrait
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete', 'client.notify',
+
         ]);
     }
 
