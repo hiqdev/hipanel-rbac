@@ -51,7 +51,8 @@
         "hiqdev/hidev-hiqdev": "dev-master",
         "phpunit/phpunit": "^9.5",
         "nikic/php-parser": "^4.12",
-        "laminas/laminas-code": "^4.5"
+        "laminas/laminas-code": "^4.5",
+        "opis/closure": "3.x-dev as 3.6.x-dev"
     },
     "autoload": {
         "psr-4": {
