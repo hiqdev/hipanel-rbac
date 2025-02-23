@@ -62,6 +62,11 @@ return [
         'server.update',
         'server.assign-hub',
     ],
+    'role:bill.staff-manager' => [
+        'role:bill.manager',
+        'bill.charges.read',
+        'bill.see-server-charges',
+    ],
     'role:server.master' => [
         'role:server.staff-admin', 'role:server.manager',
     ],
@@ -384,6 +389,10 @@ return [
         'role:server.staff-admin',
         'role:hub.staff-admin',
     ],
+    'role:staff-manager' => [
+        'role:bill.staff-manager',
+        'see-no-mans',
+    ],
     'role:accounter' => [
         'role:manager',
         'role:hub.manager',
@@ -512,6 +521,7 @@ return [
     ],
     'role:almighty' => [
         'role:staff-admin',
+        'role:staff-manager',
         'role:manager',
         'role:document.master',
         'role:finance.master',

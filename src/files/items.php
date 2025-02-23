@@ -141,6 +141,14 @@ return [
             'server.assign-hub',
         ],
     ],
+    'role:bill.staff-manager' => [
+        'type' => 1,
+        'children' => [
+            'role:bill.manager',
+            'bill.charges.read',
+            'bill.see-server-charges',
+        ],
+    ],
     'role:server.master' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
@@ -884,6 +892,13 @@ return [
             'role:hub.staff-admin',
         ],
     ],
+    'role:staff-manager' => [
+        'type' => 1,
+        'children' => [
+            'role:bill.staff-manager',
+            'see-no-mans',
+        ],
+    ],
     'role:accounter' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are in charge of accounting',
@@ -1142,6 +1157,7 @@ return [
         'description' => 'The role is for testing only',
         'children' => [
             'role:staff-admin',
+            'role:staff-manager',
             'role:manager',
             'role:document.master',
             'role:finance.master',
@@ -1605,6 +1621,22 @@ return [
     'deny:server.assign-hub' => [
         'type' => 2,
         'description' => 'Prohibits assign hub to server',
+    ],
+    'bill.charges.read' => [
+        'type' => 2,
+        'description' => 'Allows charges.read operation on the bill',
+    ],
+    'deny:bill.charges.read' => [
+        'type' => 2,
+        'description' => 'Prohibits charges.read operation on the bill',
+    ],
+    'bill.see-server-charges' => [
+        'type' => 2,
+        'description' => 'Allows to see server charges (detailed bill info)',
+    ],
+    'deny:bill.see-server-charges' => [
+        'type' => 2,
+        'description' => 'Denies to see server charges (detailed bill info)',
     ],
     'hub.read' => [
         'type' => 2,
@@ -2704,6 +2736,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits admining',
     ],
+    'see-no-mans' => [
+        'type' => 2,
+        'description' => 'Allows see-no-mans operation',
+    ],
+    'deny:see-no-mans' => [
+        'type' => 2,
+        'description' => 'Prohibits see-no-mans operation',
+    ],
     'manage' => [
         'type' => 2,
         'description' => 'Allows manageing',
@@ -2767,14 +2807,6 @@ return [
     'deny:own' => [
         'type' => 2,
         'description' => 'Prohibits owning',
-    ],
-    'see-no-mans' => [
-        'type' => 2,
-        'description' => 'Allows see-no-mans operation',
-    ],
-    'deny:see-no-mans' => [
-        'type' => 2,
-        'description' => 'Prohibits see-no-mans operation',
     ],
     'part.sell' => [
         'type' => 2,
@@ -3055,22 +3087,6 @@ return [
     'deny:ref.view.not-used' => [
         'type' => 2,
         'description' => 'Prohibits view.not-used operation on the ref',
-    ],
-    'bill.charges.read' => [
-        'type' => 2,
-        'description' => 'Allows charges.read operation on the bill',
-    ],
-    'deny:bill.charges.read' => [
-        'type' => 2,
-        'description' => 'Prohibits charges.read operation on the bill',
-    ],
-    'bill.see-server-charges' => [
-        'type' => 2,
-        'description' => 'Allows to see server charges (detailed bill info)',
-    ],
-    'deny:bill.see-server-charges' => [
-        'type' => 2,
-        'description' => 'Denies to see server charges (detailed bill info)',
     ],
     'client.set-description' => [
         'type' => 2,
