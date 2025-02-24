@@ -86,7 +86,7 @@ trait CheckAccessTrait
         }
         $this->assertEqualsCanonicalizing($result, [
             'role:almighty', 'access-subclients',
-            'role:support', 'role:admin', 'role:accounter', 'role:manager',
+            'role:support', 'role:admin', 'role:accounter', 'role:manager', 'role:staff-manager',
             'role:reseller', 'role:owner', 'role:junior-manager', 'role:staff-admin', 'role:client',
         ]);
     }
@@ -528,7 +528,9 @@ trait CheckAccessTrait
             'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info', 'server.read-system-info',
             'server.read-billing','server.assign-hub', 'plan.set-note',
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
-            'part.read-administrative', 'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time'
+            'part.read-administrative', 'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
+
+            'see-no-mans', 'bill.charges.read', 'bill.see-server-charges',
         ]);
     }
 
