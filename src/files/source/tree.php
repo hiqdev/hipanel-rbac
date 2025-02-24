@@ -391,6 +391,7 @@ return [
     ],
     'role:staff-manager' => [
         'role:bill.staff-manager',
+        'role:manager',
         'see-no-mans',
     ],
     'role:accounter' => [

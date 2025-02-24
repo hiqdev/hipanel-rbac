@@ -896,6 +896,7 @@ return [
         'type' => 1,
         'children' => [
             'role:bill.staff-manager',
+            'role:manager',
             'see-no-mans',
         ],
     ],

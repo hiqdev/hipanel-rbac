@@ -86,7 +86,7 @@ trait CheckAccessTrait
         }
         $this->assertEqualsCanonicalizing($result, [
             'role:almighty', 'access-subclients',
-            'role:support', 'role:admin', 'role:accounter', 'role:manager',
+            'role:support', 'role:admin', 'role:accounter', 'role:manager', 'role:staff-manager',
             'role:reseller', 'role:owner', 'role:junior-manager', 'role:staff-admin', 'role:client',
         ]);
     }
