@@ -388,6 +388,7 @@ return [
         'role:admin',
         'role:server.staff-admin',
         'role:hub.staff-admin',
+        'see-no-mans',
     ],
     'role:staff-manager' => [
         'role:bill.staff-manager',
