@@ -292,7 +292,8 @@ trait CheckAccessTrait
             'purse.set-credit','server.read-wizzard','server.read-legend', 'server.read-financial-info',
             'server.read-billing','plan.set-note',
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
-            'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time'
+            'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
+            'target.read', 'target.create', 'target.update', 'target.delete',
         ]);
     }
 
@@ -336,7 +337,8 @@ trait CheckAccessTrait
             'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info',
             'server.read-billing','plan.set-note',
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
-            'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time'
+            'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
+            'target.read', 'target.create', 'target.update', 'target.delete',
 
         ]);
     }
@@ -381,8 +383,8 @@ trait CheckAccessTrait
             'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info',
             'server.read-billing', 'plan.set-note',
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
-            'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time'
-
+            'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
+            'target.read', 'target.create', 'target.update', 'target.delete',
         ]);
     }
 
@@ -458,6 +460,7 @@ trait CheckAccessTrait
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
             'part.read-administrative', 'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
             'see-no-mans',
+            'target.read', 'target.create', 'target.update', 'target.delete',
         ]);
     }
 
@@ -532,6 +535,7 @@ trait CheckAccessTrait
             'part.read-administrative', 'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
 
             'see-no-mans', 'bill.charges.read', 'bill.see-server-charges',
+            'target.read', 'target.create', 'target.update', 'target.delete',
         ]);
     }
 
