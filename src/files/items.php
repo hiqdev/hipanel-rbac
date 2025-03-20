@@ -678,6 +678,15 @@ return [
             'role:sale.master',
         ],
     ],
+    'role:target.manager' => [
+        'type' => 1,
+        'children' => [
+            'target.read',
+            'target.create',
+            'target.update',
+            'target.delete',
+        ],
+    ],
     'role:part.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who have access to part information',
@@ -937,6 +946,7 @@ return [
             'client.set-tmp-pwd',
             'client.notify',
             'role:purse.user',
+            'role:target.manager',
         ],
     ],
     'role:reseller' => [
@@ -2473,6 +2483,30 @@ return [
     'deny:sale.create' => [
         'type' => 2,
         'description' => 'Prohibits creating of the sale',
+    ],
+    'target.read' => [
+        'type' => 2,
+    ],
+    'deny:target.read' => [
+        'type' => 2,
+    ],
+    'target.create' => [
+        'type' => 2,
+    ],
+    'deny:target.create' => [
+        'type' => 2,
+    ],
+    'target.update' => [
+        'type' => 2,
+    ],
+    'deny:target.update' => [
+        'type' => 2,
+    ],
+    'target.delete' => [
+        'type' => 2,
+    ],
+    'deny:target.delete' => [
+        'type' => 2,
     ],
     'part.read' => [
         'type' => 2,

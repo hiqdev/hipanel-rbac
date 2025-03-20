@@ -275,6 +275,12 @@ return [
         'role:document.manager',
         'role:sale.master',
     ],
+    'role:target.manager' => [
+        'target.read',
+        'target.create',
+        'target.update',
+        'target.delete',
+    ],
     // STOCK MODULE
     'role:part.user' => [
         'part.read',
@@ -414,6 +420,7 @@ return [
         'mailing.prepare', 'mailing.send',
         'client.set-tmp-pwd', 'client.notify',
         'role:purse.user',
+        'role:target.manager',
     ],
     'role:reseller' => [
         'have-goods',
