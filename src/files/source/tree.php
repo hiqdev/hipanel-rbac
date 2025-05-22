@@ -455,6 +455,7 @@ return [
         'role:manager',
         'role:bill.master',
         'role:stock.manager',
+        'role:costprice.manager',
         'resell', 'own',
     ],
     'role:superpowers' => [
