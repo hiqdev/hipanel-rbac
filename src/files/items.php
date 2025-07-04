@@ -996,6 +996,7 @@ return [
             'role:manager',
             'role:bill.master',
             'role:stock.manager',
+            'role:costprice.manager',
             'resell',
             'own',
         ],
@@ -1162,6 +1163,7 @@ return [
             'move.get-directions',
             'see-no-mans',
             'role:blacklist.manager',
+            'audit.see-everything',
         ],
     ],
     'role:almighty' => [
@@ -3139,5 +3141,11 @@ return [
     'deny:owner-staff' => [
         'type' => 2,
         'description' => 'Prohibits owner-staff operation',
+    ],
+    'audit.see-everything' => [
+        'type' => 2,
+    ],
+    'deny:audit.see-everything' => [
+        'type' => 2,
     ],
 ];

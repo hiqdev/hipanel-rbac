@@ -528,6 +528,7 @@ return [
         'move.get-directions',
         'see-no-mans',
         'role:blacklist.manager',
+        'audit.see-everything',
     ],
     'role:almighty' => [
         'role:staff-admin',
