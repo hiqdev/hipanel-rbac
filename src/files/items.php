@@ -826,6 +826,19 @@ return [
             'role:order.master',
         ],
     ],
+    'role:audit.user' => [
+        'type' => 1,
+        'children' => [
+            'audit.read',
+        ],
+    ],
+    'role:audit.master' => [
+        'type' => 1,
+        'children' => [
+            'role:audit.user',
+            'audit.read_everything',
+        ],
+    ],
     'role:project.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
@@ -1163,7 +1176,7 @@ return [
             'move.get-directions',
             'see-no-mans',
             'role:blacklist.manager',
-            'audit.see-everything',
+            'role:audit.user',
         ],
     ],
     'role:almighty' => [
@@ -2686,6 +2699,18 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading admin data of the parts',
     ],
+    'audit.read' => [
+        'type' => 2,
+    ],
+    'deny:audit.read' => [
+        'type' => 2,
+    ],
+    'audit.read_everything' => [
+        'type' => 2,
+    ],
+    'deny:audit.read_everything' => [
+        'type' => 2,
+    ],
     'have-goods' => [
         'type' => 2,
         'description' => 'Allows have-goods operation',
@@ -3141,11 +3166,5 @@ return [
     'deny:owner-staff' => [
         'type' => 2,
         'description' => 'Prohibits owner-staff operation',
-    ],
-    'audit.see-everything' => [
-        'type' => 2,
-    ],
-    'deny:audit.see-everything' => [
-        'type' => 2,
     ],
 ];
