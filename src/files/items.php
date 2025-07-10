@@ -2701,15 +2701,19 @@ return [
     ],
     'audit.read' => [
         'type' => 2,
+        'description' => 'Allows reading the change history of core objects, you have direct access to.',
     ],
     'deny:audit.read' => [
         'type' => 2,
+        'description' => 'Explicitly denies reading the change history of core objects.',
     ],
     'audit.read_everything' => [
         'type' => 2,
+        'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
     ],
     'deny:audit.read_everything' => [
         'type' => 2,
+        'description' => 'Explicitly denies reading system objects and comprehensive audit data.',
     ],
     'have-goods' => [
         'type' => 2,
