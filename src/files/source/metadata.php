@@ -1738,4 +1738,16 @@ return [
     'pay' => [
         'description' => 'Allows paying',
     ],
+    'audit.read' => [
+        'description' => 'Allows reading the change history of core objects, you have direct access to.',
+    ],
+    'audit.read_everything' => [
+        'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
+    ],
+    'deny:audit.read' => [
+        'description' => 'Explicitly denies reading the change history of core objects.',
+    ],
+    'deny:audit.read_everything' => [
+        'description' => 'Explicitly denies reading system objects and comprehensive audit data.',
+    ],
 ];

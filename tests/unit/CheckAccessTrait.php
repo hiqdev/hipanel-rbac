@@ -561,7 +561,6 @@ trait CheckAccessTrait
             'mail.read', 'mail.create', 'mail.update', 'mail.delete',
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete', 'client.notify',
-
         ]);
     }
 
@@ -598,6 +597,27 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:superpowers', [
             'see-no-mans', 'part.sell', 'client.set-others-allowed-ips',
+        ]);
+    }
+
+    public function testOwnerStaff(): void
+    {
+        $this->assertAccesses('role:owner-staff', [
+            'ref.view.not-used',
+            'bill.charges.read',
+            'bill.see-server-charges',
+            'part.read-all-hierarchy',
+            'client.set-description',
+            'owner-staff',
+            'move.read-all',
+            'part.read-all-hierarchy',
+            'move.get-directions',
+            'see-no-mans',
+            'blacklist.read',
+            'blacklist.create',
+            'blacklist.update',
+            'blacklist.delete',
+            'audit.read',
         ]);
     }
 }

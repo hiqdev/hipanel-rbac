@@ -349,6 +349,14 @@ return [
         'role:move.master',
         'role:order.master',
     ],
+    // AUDIT
+    'role:audit.user' => [
+        'audit.read',
+    ],
+    'role:audit.master' => [
+        'role:audit.user',
+        'audit.read_everything',
+    ],
     // PROJECT USER
     'role:project.user' => [
         'consumption.read',
@@ -528,6 +536,7 @@ return [
         'move.get-directions',
         'see-no-mans',
         'role:blacklist.manager',
+        'role:audit.user',
     ],
     'role:almighty' => [
         'role:staff-admin',

@@ -826,6 +826,19 @@ return [
             'role:order.master',
         ],
     ],
+    'role:audit.user' => [
+        'type' => 1,
+        'children' => [
+            'audit.read',
+        ],
+    ],
+    'role:audit.master' => [
+        'type' => 1,
+        'children' => [
+            'role:audit.user',
+            'audit.read_everything',
+        ],
+    ],
     'role:project.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
@@ -996,6 +1009,7 @@ return [
             'role:manager',
             'role:bill.master',
             'role:stock.manager',
+            'role:costprice.manager',
             'resell',
             'own',
         ],
@@ -1162,6 +1176,7 @@ return [
             'move.get-directions',
             'see-no-mans',
             'role:blacklist.manager',
+            'role:audit.user',
         ],
     ],
     'role:almighty' => [
@@ -2683,6 +2698,22 @@ return [
     'deny:part.read-administrative' => [
         'type' => 2,
         'description' => 'Prohibits reading admin data of the parts',
+    ],
+    'audit.read' => [
+        'type' => 2,
+        'description' => 'Allows reading the change history of core objects, you have direct access to.',
+    ],
+    'deny:audit.read' => [
+        'type' => 2,
+        'description' => 'Explicitly denies reading the change history of core objects.',
+    ],
+    'audit.read_everything' => [
+        'type' => 2,
+        'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
+    ],
+    'deny:audit.read_everything' => [
+        'type' => 2,
+        'description' => 'Explicitly denies reading system objects and comprehensive audit data.',
     ],
     'have-goods' => [
         'type' => 2,
