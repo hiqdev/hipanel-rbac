@@ -193,7 +193,7 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
-                'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
+            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
 
             'client.read-ip',
             'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
