@@ -903,6 +903,7 @@ return [
             'role:stock.admin',
             'role:server.admin',
             'role:hosting.admin',
+            'access-reseller',
         ],
     ],
     'role:staff-admin' => [
@@ -2803,6 +2804,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits admining',
     ],
+    'access-reseller' => [
+        'type' => 2,
+        'description' => 'Allows access-reseller operation',
+    ],
+    'deny:access-reseller' => [
+        'type' => 2,
+        'description' => 'Prohibits access-reseller operation',
+    ],
     'see-no-mans' => [
         'type' => 2,
         'description' => 'Allows see-no-mans operation',
@@ -2818,14 +2827,6 @@ return [
     'deny:manage' => [
         'type' => 2,
         'description' => 'Prohibits manageing',
-    ],
-    'access-reseller' => [
-        'type' => 2,
-        'description' => 'Allows access-reseller operation',
-    ],
-    'deny:access-reseller' => [
-        'type' => 2,
-        'description' => 'Prohibits access-reseller operation',
     ],
     'contact.force-verify' => [
         'type' => 2,

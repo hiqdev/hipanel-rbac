@@ -397,6 +397,7 @@ return [
         'role:stock.admin',
         'role:server.admin',
         'role:hosting.admin',
+        'access-reseller',
     ],
     'role:staff-admin' => [
         'role:admin',
