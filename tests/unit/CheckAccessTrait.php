@@ -174,7 +174,7 @@ trait CheckAccessTrait
             'server.see-label', 'server.move-disks',
             'server.read-wizzard', 'server.read-legend', 'server.read-system-info',
 
-            'hub.read', 'hub.update',
+            'hub.read',
             'consumption.read',
             'stock.read',
             'part.read', // 'part.create', 'part.update', 'part.delete',

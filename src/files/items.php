@@ -899,7 +899,7 @@ return [
         'children' => [
             'admin',
             'role:support',
-            'role:hub.admin',
+            'role:hub.user',
             'role:stock.admin',
             'role:server.admin',
             'role:hosting.admin',
