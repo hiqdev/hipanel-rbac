@@ -143,6 +143,7 @@ return [
     ],
     'role:bill.staff-manager' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who are responsible for supervising billing operations.',
         'children' => [
             'role:bill.manager',
             'bill.charges.read',
@@ -224,6 +225,7 @@ return [
     ],
     'role:blacklist.manager' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of blacklist management.',
         'children' => [
             'blacklist.read',
             'blacklist.create',
@@ -446,6 +448,7 @@ return [
     ],
     'role:pnl.master' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for profit and loss management.',
         'children' => [
             'pnl.read',
             'pnl.update',
@@ -454,6 +457,7 @@ return [
     ],
     'role:pnl.user' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to users who are allowed to view profit and loss information.',
         'children' => [
             'pnl.read',
         ],
@@ -513,6 +517,7 @@ return [
             'deposit',
             'bill.import',
             'bill.create-exchange',
+            'bill.see-server-charges',
             'role:purse.master',
         ],
     ],
@@ -680,6 +685,7 @@ return [
     ],
     'role:target.manager' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to users who can manage target details.',
         'children' => [
             'target.read',
             'target.create',
@@ -828,12 +834,14 @@ return [
     ],
     'role:audit.user' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to users who are allowed to read audit logs for objects they have access to.',
         'children' => [
             'audit.read',
         ],
     ],
     'role:audit.master' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who have full audit permissions across all system objects.',
         'children' => [
             'role:audit.user',
             'audit.read_everything',
@@ -917,6 +925,7 @@ return [
     ],
     'role:staff-manager' => [
         'type' => 1,
+        'description' => 'The role is generally assigned to staff who are responsible for managing company resources.',
         'children' => [
             'role:bill.staff-manager',
             'role:manager',
@@ -1731,27 +1740,35 @@ return [
     ],
     'blacklist.read' => [
         'type' => 2,
+        'description' => 'Allows reading of the blacklist',
     ],
     'deny:blacklist.read' => [
         'type' => 2,
+        'description' => 'Prohibits reading of the blacklist',
     ],
     'blacklist.create' => [
         'type' => 2,
+        'description' => 'Allows creating of the blacklist',
     ],
     'deny:blacklist.create' => [
         'type' => 2,
+        'description' => 'Prohibits creating of the blacklist',
     ],
     'blacklist.update' => [
         'type' => 2,
+        'description' => 'Allows updating of the blacklist',
     ],
     'deny:blacklist.update' => [
         'type' => 2,
+        'description' => 'Prohibits updating of the blacklist',
     ],
     'blacklist.delete' => [
         'type' => 2,
+        'description' => 'Allows deleting of the blacklist',
     ],
     'deny:blacklist.delete' => [
         'type' => 2,
+        'description' => 'Prohibits deleting of the blacklist',
     ],
     'config.read' => [
         'type' => 2,
@@ -2203,21 +2220,27 @@ return [
     ],
     'pnl.read' => [
         'type' => 2,
+        'description' => 'Allows reading of the pnl',
     ],
     'deny:pnl.read' => [
         'type' => 2,
+        'description' => 'Prohibits reading of the pnl',
     ],
     'pnl.update' => [
         'type' => 2,
+        'description' => 'Allows updating of the pnl',
     ],
     'deny:pnl.update' => [
         'type' => 2,
+        'description' => 'Prohibits updating of the pnl',
     ],
     'pnl.read-expenses' => [
         'type' => 2,
+        'description' => 'Allows read-expenses operation on the pnl',
     ],
     'deny:pnl.read-expenses' => [
         'type' => 2,
+        'description' => 'Prohibits read-expenses operation on the pnl',
     ],
     'costprice.read' => [
         'type' => 2,
@@ -2501,27 +2524,35 @@ return [
     ],
     'target.read' => [
         'type' => 2,
+        'description' => 'Allows reading of the target',
     ],
     'deny:target.read' => [
         'type' => 2,
+        'description' => 'Prohibits reading of the target',
     ],
     'target.create' => [
         'type' => 2,
+        'description' => 'Allows creating of the target',
     ],
     'deny:target.create' => [
         'type' => 2,
+        'description' => 'Prohibits creating of the target',
     ],
     'target.update' => [
         'type' => 2,
+        'description' => 'Allows updating of the target',
     ],
     'deny:target.update' => [
         'type' => 2,
+        'description' => 'Prohibits updating of the target',
     ],
     'target.delete' => [
         'type' => 2,
+        'description' => 'Allows deleting of the target',
     ],
     'deny:target.delete' => [
         'type' => 2,
+        'description' => 'Prohibits deleting of the target',
     ],
     'part.read' => [
         'type' => 2,

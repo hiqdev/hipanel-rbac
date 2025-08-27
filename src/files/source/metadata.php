@@ -971,7 +971,7 @@ return [
         'description' => 'Prohibits updating of the purse',
     ],
     'deny:purse.set-credit' => [
-         'description' => 'Prohibits set credit to purse',
+        'description' => 'Prohibits set credit to purse',
     ],
     'deny:ref.view.not-used' => [
         'description' => 'Prohibits view.not-used operation on the ref',
@@ -1749,5 +1749,95 @@ return [
     ],
     'deny:audit.read_everything' => [
         'description' => 'Explicitly denies reading system objects and comprehensive audit data.',
+    ],
+    'role:bill.staff-manager' => [
+        'description' => 'The role is generally assigned to staff who are responsible for supervising billing operations.',
+    ],
+    'role:blacklist.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of blacklist management.',
+    ],
+    'role:pnl.user' => [
+        'description' => 'The role is generally assigned to users who are allowed to view profit and loss information.',
+    ],
+    'role:pnl.master' => [
+        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for profit and loss management.',
+    ],
+    'role:target.manager' => [
+        'description' => 'The role is generally assigned to users who can manage target details.',
+    ],
+    'role:audit.user' => [
+        'description' => 'The role is generally assigned to users who are allowed to read audit logs for objects they have access to.',
+    ],
+    'role:audit.master' => [
+        'description' => 'The role is generally assigned to staff who have full audit permissions across all system objects.',
+    ],
+    'role:staff-manager' => [
+        'description' => 'The role is generally assigned to staff who are responsible for managing company resources.',
+    ],
+    'blacklist.create' => [
+        'description' => 'Allows creating of the blacklist',
+    ],
+    'blacklist.delete' => [
+        'description' => 'Allows deleting of the blacklist',
+    ],
+    'blacklist.read' => [
+        'description' => 'Allows reading of the blacklist',
+    ],
+    'blacklist.update' => [
+        'description' => 'Allows updating of the blacklist',
+    ],
+    'deny:blacklist.create' => [
+        'description' => 'Prohibits creating of the blacklist',
+    ],
+    'deny:blacklist.delete' => [
+        'description' => 'Prohibits deleting of the blacklist',
+    ],
+    'deny:blacklist.read' => [
+        'description' => 'Prohibits reading of the blacklist',
+    ],
+    'deny:blacklist.update' => [
+        'description' => 'Prohibits updating of the blacklist',
+    ],
+    'deny:pnl.read' => [
+        'description' => 'Prohibits reading of the pnl',
+    ],
+    'deny:pnl.read-expenses' => [
+        'description' => 'Prohibits read-expenses operation on the pnl',
+    ],
+    'deny:pnl.update' => [
+        'description' => 'Prohibits updating of the pnl',
+    ],
+    'deny:target.create' => [
+        'description' => 'Prohibits creating of the target',
+    ],
+    'deny:target.delete' => [
+        'description' => 'Prohibits deleting of the target',
+    ],
+    'deny:target.read' => [
+        'description' => 'Prohibits reading of the target',
+    ],
+    'deny:target.update' => [
+        'description' => 'Prohibits updating of the target',
+    ],
+    'pnl.read' => [
+        'description' => 'Allows reading of the pnl',
+    ],
+    'pnl.read-expenses' => [
+        'description' => 'Allows read-expenses operation on the pnl',
+    ],
+    'pnl.update' => [
+        'description' => 'Allows updating of the pnl',
+    ],
+    'target.create' => [
+        'description' => 'Allows creating of the target',
+    ],
+    'target.delete' => [
+        'description' => 'Allows deleting of the target',
+    ],
+    'target.read' => [
+        'description' => 'Allows reading of the target',
+    ],
+    'target.update' => [
+        'description' => 'Allows updating of the target',
     ],
 ];
