@@ -200,6 +200,7 @@ return [
     'role:bill.master' => [
         'bill.read', 'bill.create', 'bill.update', 'bill.delete', 'deposit',
         'bill.import', 'bill.create-exchange',
+        'bill.see-server-charges',
         'role:purse.master',
     ],
     // REQUISITES
