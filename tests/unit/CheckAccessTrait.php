@@ -198,7 +198,7 @@ trait CheckAccessTrait
             'client.read-ip',
             'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
             'part.read-administrative',
-
+            'access-reseller',
         ]);
     }
 
@@ -243,6 +243,7 @@ trait CheckAccessTrait
             'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
             'part.read-administrative',
             'see-no-mans',
+            'access-reseller',
         ]);
     }
 
