@@ -348,9 +348,11 @@ return [
     ],
     'bill.charges.read' => [
         'description' => 'Allows charges.read operation on the bill',
+        'internal' => true,
     ],
     'bill.see-server-charges' => [
         'description' => 'Allows to see server charges (detailed bill info)',
+        'internal' => true,
     ],
     'deny:bill.see-server-charges' => [
         'description' => 'Denies to see server charges (detailed bill info)',
@@ -414,6 +416,7 @@ return [
     ],
     'client.set-description' => [
         'description' => 'Allows set-description operation on the client',
+        'internal' => true,
     ],
     'client.set-note' => [
         'description' => 'Allows set-note operation on the client',
@@ -462,9 +465,11 @@ return [
     ],
     'consumption.update' => [
         'description' => 'Allows updating of the consumption',
+        'internal' => true,
     ],
     'consumption.delete' => [
         'description' => 'Allows deleting of the consumption',
+        'internal' => true,
     ],
     'consumption.read' => [
         'description' => 'Allows reading of the consumption',
@@ -1239,15 +1244,19 @@ return [
     ],
     'employee.create' => [
         'description' => 'Allows creating of the employee',
+        'internal' => true,
     ],
     'employee.delete' => [
         'description' => 'Allows deleting of the employee',
+        'internal' => true,
     ],
     'employee.read' => [
         'description' => 'Allows reading of the employee',
+        'internal' => true,
     ],
     'employee.update' => [
         'description' => 'Allows updating of the employee',
+        'internal' => true,
     ],
     'finance.read' => [
         'description' => 'Allows reading of the finance',
@@ -1272,9 +1281,11 @@ return [
     ],
     'hub.create' => [
         'description' => 'Allows creating of the hub',
+        'internal' => true,
     ],
     'hub.delete' => [
         'description' => 'Allows deleting of the hub',
+        'internal' => true,
     ],
     'hub.read' => [
         'description' => 'Allows reading of the hub',
@@ -1284,6 +1295,7 @@ return [
     ],
     'hub.update' => [
         'description' => 'Allows updating of the hub',
+        'internal' => true,
     ],
     'integration.create' => [
         'description' => 'Allows creating of the integration',
@@ -1344,18 +1356,21 @@ return [
     ],
     'move.create' => [
         'description' => 'Allows creating of the move',
+        'internal' => true,
     ],
     'move.delete' => [
         'description' => 'Allows deleting of the move',
     ],
     'move.get-directions' => [
         'description' => 'Allows get-directions operation on the move',
+        'internal' => true,
     ],
     'move.read' => [
         'description' => 'Allows reading of the move',
     ],
     'move.read-all' => [
         'description' => 'Allows read-all operation on the move',
+        'internal' => true,
     ],
     'move.update' => [
         'description' => 'Allows updating of the move',
@@ -1365,18 +1380,23 @@ return [
     ],
     'order.create' => [
         'description' => 'Allows creating of the order',
+        'internal' => true,
     ],
     'order.delete' => [
         'description' => 'Allows deleting of the order',
+        'internal' => true,
     ],
     'order.read' => [
         'description' => 'Allows reading of the order',
+        'internal' => true,
     ],
     'order.read-profits' => [
         'description' => 'Allows read-profits operation on the order',
+        'internal' => true,
     ],
     'order.update' => [
         'description' => 'Allows updating of the order',
+        'internal' => true,
     ],
     'own' => [
         'description' => 'Allows owning',
@@ -1437,6 +1457,7 @@ return [
     ],
     'ref.view.not-used' => [
         'description' => 'Allows view.not-used operation on the ref',
+        'internal' => true,
     ],
     'request.create' => [
         'description' => 'Allows creating of the request',
@@ -1476,6 +1497,7 @@ return [
     ],
     'see-no-mans' => [
         'description' => 'Allows see-no-mans operation',
+        'internal' => true,
     ],
     'server.control-power' => [
         'description' => 'Allows control-power operation on the server',
@@ -1485,12 +1507,15 @@ return [
     ],
     'server.create' => [
         'description' => 'Allows creating of the server',
+        'internal' => true,
     ],
     'server.assign-hub' => [
         'description' => 'Allows assign hubs to server',
+        'internal' => true,
     ],
     'server.delete' => [
         'description' => 'Allows deleting of the server',
+        'internal' => true,
     ],
     'server.disable-block' => [
         'description' => 'Allows disable-block operation on the server',
@@ -1533,6 +1558,7 @@ return [
     ],
     'server.update' => [
         'description' => 'Allows updating of the server',
+        'internal' => true,
     ],
     'server.wizzard' => [
         'description' => 'Allows wizzarding of the server',
@@ -1614,15 +1640,19 @@ return [
     ],
     'zone.create' => [
         'description' => 'Allows creating of the zone',
+        'internal' => true,
     ],
     'zone.delete' => [
         'description' => 'Allows deleting of the zone',
+        'internal' => true,
     ],
     'zone.read' => [
         'description' => 'Allows reading of the zone',
+        'internal' => true,
     ],
     'zone.update' => [
         'description' => 'Allows updating of the zone',
+        'internal' => true,
     ],
     'deny:server.see-label' => [
         'description' => 'Prohibits see-label operation on the server',
@@ -1662,6 +1692,7 @@ return [
     ],
     'part.read-all-hierarchy' => [
         'description' => 'Allows read-all-hierarchy operation on the part',
+        'internal' => true,
     ],
     'sale.create' => [
         'description' => 'Allows creating of the sale',
@@ -1686,12 +1717,14 @@ return [
     ],
     'owner-staff' => [
         'description' => 'Show if user in staff of organization',
+        'internal' => true,
     ],
     'role:consumption.master' => [
         'description' => 'The role is generally assigned to ____',
     ],
     'consumption.read-all' => [
         'description' => 'Allows read-all operation on the consumption',
+        'internal' => true,
     ],
     'deny:consumption.read-all' => [
         'description' => 'Prohibits read-all operation on the consumption',
@@ -1710,15 +1743,19 @@ return [
     ],
     'costprice.create' => [
         'description' => 'Allows creating of the costprice',
+        'internal' => true,
     ],
     'costprice.delete' => [
         'description' => 'Allows deleting of the costprice',
+        'internal' => true,
     ],
     'costprice.read' => [
         'description' => 'Allows reading of the costprice',
+        'internal' => true,
     ],
     'costprice.update' => [
         'description' => 'Allows updating of the costprice',
+        'internal' => true,
     ],
     'deny:costprice.create' => [
         'description' => 'Prohibits creating of the costprice',
@@ -1740,9 +1777,11 @@ return [
     ],
     'audit.read' => [
         'description' => 'Allows reading the change history of core objects, you have direct access to.',
+        'internal' => true,
     ],
     'audit.read_everything' => [
         'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
+        'internal' => true,
     ],
     'deny:audit.read' => [
         'description' => 'Explicitly denies reading the change history of core objects.',
@@ -1776,15 +1815,19 @@ return [
     ],
     'blacklist.create' => [
         'description' => 'Allows creating of the blacklist',
+        'internal' => true,
     ],
     'blacklist.delete' => [
         'description' => 'Allows deleting of the blacklist',
+        'internal' => true,
     ],
     'blacklist.read' => [
         'description' => 'Allows reading of the blacklist',
+        'internal' => true,
     ],
     'blacklist.update' => [
         'description' => 'Allows updating of the blacklist',
+        'internal' => true,
     ],
     'deny:blacklist.create' => [
         'description' => 'Prohibits creating of the blacklist',
@@ -1821,12 +1864,15 @@ return [
     ],
     'pnl.read' => [
         'description' => 'Allows reading of the pnl',
+        'internal' => true,
     ],
     'pnl.read-expenses' => [
         'description' => 'Allows read-expenses operation on the pnl',
+        'internal' => true,
     ],
     'pnl.update' => [
         'description' => 'Allows updating of the pnl',
+        'internal' => true,
     ],
     'target.create' => [
         'description' => 'Allows creating of the target',
