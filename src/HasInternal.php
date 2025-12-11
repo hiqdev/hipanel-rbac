@@ -13,4 +13,3 @@ trait HasInternal
         return $this->internal;
     }
 }
-
