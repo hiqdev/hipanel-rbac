@@ -67,7 +67,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
             && !parent::checkAccess($userId, "deny:$permission", $params);
     }
 
-    public function applyUserAssignments($userId)
+    private function applyUserAssignments($userId)
     {
         $roles = '';
 
@@ -179,7 +179,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
         $this->saveToFile($items, $this->itemFile);
     }
 
-    public function createRole($name)
+    public function createRole($name): Role
     {
         $role = new Role();
         $role->name = $name;
@@ -189,10 +189,24 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
     /**
      * {@inheritdoc}
      */
-    public function createPermission($name)
+    public function createPermission($name): Permission
     {
         $permission = new Permission();
         $permission->name = $name;
         return $permission;
+    }
+
+    public function isRoleInternal(Role $role): bool
+    {
+        /** @var Permission $child */
+        foreach ($this->getChildren($role->name) as $child) {
+            $isInternal = ($child instanceof Role) ? $this->isRoleInternal($child) : $child->isInternal();
+
+            if ($isInternal) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

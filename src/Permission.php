@@ -6,12 +6,7 @@ namespace hipanel\rbac;
 
 use yii\rbac\Permission as YiiPermission;
 
-class Permission extends YiiPermission implements RbacItem
+class Permission extends YiiPermission
 {
     use HasInternal;
-
-    public function isInternal(): bool
-    {
-       return $this->internal;
-    }
 }
