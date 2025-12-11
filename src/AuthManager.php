@@ -98,7 +98,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
 
     /**
      * Loads authorization data from persistent storage.
-     * The original library doesn't changed more than 11 years, so just overwrote the original method
+     * The original library hasn't been updated in over 11 years, so this method overrides the original implementation.
      */
     protected function load()
     {
@@ -123,7 +123,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
                 'data' => isset($item['data']) ? $item['data'] : null,
                 'createdAt' => $itemsMtime,
                 'updatedAt' => $itemsMtime,
-                'internal' => (bool)$item['internal'] ?? false,
+                'internal' => (bool)($item['internal'] ?? false),
             ]);
         }
 
