@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * RBAC implementation for HiPanel
  *
@@ -14,7 +17,6 @@ use hiqdev\yii\compat\yii;
 use yii\base\Configurable;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
-use yii\rbac\RuleFactory;
 
 /**
  * HiPanel AuthManager.
@@ -36,7 +38,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
             parent::init();
         } else {
             $dir = __DIR__ . '/files';
-            parent::__construct($dir, new RuleFactory());
+            parent::__construct($dir);
         }
     }
 
@@ -118,9 +120,9 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
 
             $this->items[$name] = new $class([
                 'name' => $name,
-                'description' => isset($item['description']) ? $item['description'] : null,
-                'ruleName' => isset($item['ruleName']) ? $item['ruleName'] : null,
-                'data' => isset($item['data']) ? $item['data'] : null,
+                'description' => $item['description'] ?? null,
+                'ruleName' => $item['ruleName'] ?? null,
+                'data' => $item['data'] ?? null,
                 'createdAt' => $itemsMtime,
                 'updatedAt' => $itemsMtime,
                 'internal' => (bool)($item['internal'] ?? false),
@@ -196,9 +198,12 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
         return $permission;
     }
 
+    /**
+     * Determines if a role is internal by checking itself and its children recursively.
+     */
     public function isRoleInternal(Role $role): bool
     {
-        /** @var Permission $child */
+        /** @var Role|Permission $child */
         foreach ($this->getChildren($role->name) as $child) {
             $isInternal = ($child instanceof Role) ? $this->isRoleInternal($child) : $child->isInternal();
 
