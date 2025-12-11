@@ -25,15 +25,19 @@ trait SetterTrait
     /**
      * Set permission.
      * @param string $name
-     * @param string $description
+     * @param string|null $description
+     * @param bool $isInternal
      * @return Item
+     * @throws Exception
      */
-    public function setPermission($name, $description = null)
+    public function setPermission(string $name, ?string $description = null, bool $isInternal = false)
     {
         $permission = $this->getPermission($name) ?: $this->createPermission($name);
         if ($description) {
             $permission->description = $description;
         }
+        $permission->internal = $isInternal;
+
         $this->add($permission);
 
         return $permission;

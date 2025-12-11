@@ -17,4 +17,9 @@ class SafeMetadata
     {
         return $this->metadata[$itemName]['description'] ?? null;
     }
+
+    public function isInternal(string $itemName): bool
+    {
+        return (bool)($this->metadata[$itemName]['internal'] ?? false);
+    }
 }
