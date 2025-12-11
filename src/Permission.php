@@ -8,8 +8,10 @@ use yii\rbac\Permission as YiiPermission;
 
 class Permission extends YiiPermission implements RbacItem
 {
+    use HasInternal;
+
     public function isInternal(): bool
     {
-        // TODO: Implement isInternal() method.
+       return $this->internal;
     }
 }

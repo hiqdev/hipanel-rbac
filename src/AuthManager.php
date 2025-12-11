@@ -14,8 +14,6 @@ use hiqdev\yii\compat\yii;
 use yii\base\Configurable;
 use yii\rbac\Assignment;
 use yii\rbac\Item;
-use yii\rbac\Permission;
-use yii\rbac\Role;
 use yii\rbac\RuleFactory;
 
 /**
@@ -125,7 +123,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
                 'data' => isset($item['data']) ? $item['data'] : null,
                 'createdAt' => $itemsMtime,
                 'updatedAt' => $itemsMtime,
-                'internal' => $item['internal'] ?? null,
+                'internal' => (bool)$item['internal'] ?? false,
             ]);
         }
 
@@ -152,5 +150,49 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
         foreach ($rules as $name => $ruleData) {
             $this->rules[$name] = unserialize($ruleData);
         }
+    }
+
+    /**
+     * Saves items data into persistent storage.
+     */
+    protected function saveItems()
+    {
+        $items = [];
+        foreach ($this->items as $name => $item) {
+            /** @var Item $item */
+            $items[$name] = array_filter(
+                [
+                    'type' => $item->type,
+                    'description' => $item->description,
+                    'ruleName' => $item->ruleName,
+                    'data' => $item->data,
+                    'internal' => $item->isInternal(),
+                ]
+            );
+            if (isset($this->children[$name])) {
+                foreach ($this->children[$name] as $child) {
+                    /** @var Item $child */
+                    $items[$name]['children'][] = $child->name;
+                }
+            }
+        }
+        $this->saveToFile($items, $this->itemFile);
+    }
+
+    public function createRole($name)
+    {
+        $role = new Role();
+        $role->name = $name;
+        return $role;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createPermission($name)
+    {
+        $permission = new Permission();
+        $permission->name = $name;
+        return $permission;
     }
 }
