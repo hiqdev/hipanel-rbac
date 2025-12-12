@@ -201,11 +201,15 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
     /**
      * Determines if a role is internal by checking itself and its children recursively.
      */
-    public function isRoleInternal(Role $role): bool
+    public function isItemInternal(Item $item): bool
     {
+        if ($item instanceof Permission) {
+            return $item->isInternal();
+        }
+
         /** @var Role|Permission $child */
-        foreach ($this->getChildren($role->name) as $child) {
-            $isInternal = ($child instanceof Role) ? $this->isRoleInternal($child) : $child->isInternal();
+        foreach ($this->getChildren($item->name) as $child) {
+            $isInternal = $this->isItemInternal($child);
 
             if ($isInternal) {
                 return true;
