@@ -708,6 +708,7 @@ return [
             'part.create',
             'part.update',
             'part.delete',
+            'part.erase',
         ],
     ],
     'role:part.master' => [
@@ -2581,6 +2582,10 @@ return [
     'part.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the part',
+    ],
+    'part.erase' => [
+        'type' => 2,
+        'description' => 'Allows completely delete the part along with its move history',
     ],
     'deny:part.delete' => [
         'type' => 2,

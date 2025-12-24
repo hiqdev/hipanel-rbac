@@ -288,7 +288,7 @@ return [
     ],
     'role:part.manager' => [
         'role:part.user',
-        'part.create', 'part.update', 'part.delete',
+        'part.create', 'part.update', 'part.delete', 'part.erase',
     ],
     'role:part.master' => [
         'part.read-all-hierarchy',
