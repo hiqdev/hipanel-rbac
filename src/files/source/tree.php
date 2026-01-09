@@ -288,11 +288,12 @@ return [
     ],
     'role:part.manager' => [
         'role:part.user',
-        'part.create', 'part.update', 'part.delete', 'part.erase',
+        'part.create', 'part.update', 'part.delete',
     ],
     'role:part.master' => [
         'part.read-all-hierarchy',
         'role:part.manager',
+        'part.erase',
     ],
     'role:move.user' => [
         'move.read',
