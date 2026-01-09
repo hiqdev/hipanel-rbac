@@ -1387,6 +1387,9 @@ return [
     'part.delete' => [
         'description' => 'Allows deleting of the part',
     ],
+    'part.erase' => [
+        'description' => 'Allows completely delete the part along with its move history',
+    ],
     'part.read' => [
         'description' => 'Allows reading of the part',
     ],

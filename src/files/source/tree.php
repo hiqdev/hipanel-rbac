@@ -293,6 +293,7 @@ return [
     'role:part.master' => [
         'part.read-all-hierarchy',
         'role:part.manager',
+        'part.erase',
     ],
     'role:move.user' => [
         'move.read',
