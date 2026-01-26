@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * RBAC implementation for HiPanel
  *
@@ -12,7 +15,8 @@ namespace hipanel\rbac;
 
 use hiqdev\yii\compat\yii;
 use yii\base\Configurable;
-use yii\rbac\RuleFactory;
+use yii\rbac\Assignment;
+use yii\rbac\Item;
 
 /**
  * HiPanel AuthManager.
@@ -34,7 +38,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
             parent::init();
         } else {
             $dir = __DIR__ . '/files';
-            parent::__construct($dir, new RuleFactory());
+            parent::__construct($dir);
         }
     }
 
@@ -65,7 +69,7 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
             && !parent::checkAccess($userId, "deny:$permission", $params);
     }
 
-    public function applyUserAssignments($userId)
+    private function applyUserAssignments($userId)
     {
         $roles = '';
 
@@ -92,5 +96,126 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
     public function getAllChildren(): array
     {
         return $this->children;
+    }
+
+    /**
+     * Loads authorization data from persistent storage.
+     * The original library hasn't been updated in over 11 years, so this method overrides the original implementation.
+     */
+    protected function load()
+    {
+        $this->children = [];
+        $this->rules = [];
+        $this->assignments = [];
+        $this->items = [];
+
+        $items = $this->loadFromFile($this->itemFile);
+        $itemsMtime = @filemtime($this->itemFile);
+        $assignments = $this->loadFromFile($this->assignmentFile);
+        $assignmentsMtime = @filemtime($this->assignmentFile);
+        $rules = $this->loadFromFile($this->ruleFile);
+
+        foreach ($items as $name => $item) {
+            $class = $item['type'] == Item::TYPE_PERMISSION ? Permission::class : Role::class;
+
+            $this->items[$name] = new $class([
+                'name' => $name,
+                'description' => $item['description'] ?? null,
+                'ruleName' => $item['ruleName'] ?? null,
+                'data' => $item['data'] ?? null,
+                'createdAt' => $itemsMtime,
+                'updatedAt' => $itemsMtime,
+                'internal' => (bool)($item['internal'] ?? false),
+            ]);
+        }
+
+        foreach ($items as $name => $item) {
+            if (isset($item['children'])) {
+                foreach ($item['children'] as $childName) {
+                    if (isset($this->items[$childName])) {
+                        $this->children[$name][$childName] = $this->items[$childName];
+                    }
+                }
+            }
+        }
+
+        foreach ($assignments as $userId => $roles) {
+            foreach ($roles as $role) {
+                $this->assignments[$userId][$role] = new Assignment([
+                    'userId' => $userId,
+                    'roleName' => $role,
+                    'createdAt' => $assignmentsMtime,
+                ]);
+            }
+        }
+
+        foreach ($rules as $name => $ruleData) {
+            $this->rules[$name] = unserialize($ruleData);
+        }
+    }
+
+    /**
+     * Saves items data into persistent storage.
+     */
+    protected function saveItems()
+    {
+        $items = [];
+        foreach ($this->items as $name => $item) {
+            /** @var Item $item */
+            $items[$name] = array_filter(
+                [
+                    'type' => $item->type,
+                    'description' => $item->description,
+                    'ruleName' => $item->ruleName,
+                    'data' => $item->data,
+                    'internal' => $item->isInternal(),
+                ]
+            );
+            if (isset($this->children[$name])) {
+                foreach ($this->children[$name] as $child) {
+                    /** @var Item $child */
+                    $items[$name]['children'][] = $child->name;
+                }
+            }
+        }
+        $this->saveToFile($items, $this->itemFile);
+    }
+
+    public function createRole($name): Role
+    {
+        $role = new Role();
+        $role->name = $name;
+        return $role;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createPermission($name): Permission
+    {
+        $permission = new Permission();
+        $permission->name = $name;
+        return $permission;
+    }
+
+    /**
+     * Determines if a role is internal by checking itself and its children recursively.
+     */
+    public function isItemInternal(Item $item): bool
+    {
+        if ($item instanceof Permission) {
+            return $item->isInternal();
+        }
+
+        /** @var Role|Permission $child */
+        foreach ($this->getChildren($item->name) as $child) {
+            $isInternal = $this->isItemInternal($child);
+
+            if ($isInternal) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

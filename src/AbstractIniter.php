@@ -50,7 +50,11 @@ abstract class AbstractIniter implements RbacIniterInterface
             foreach ($items as $name) {
                 $item = $auth->getItem($name);
                 if ($item === null) {
-                    $item = $auth->setPermission($name, $metadata->getItemDescription($name));
+                    $item = $auth->setPermission(
+                        $name,
+                        $metadata->getItemDescription($name),
+                        $metadata->isInternal($name),
+                    );
 
                     $denyName = "deny:$name";
                     $auth->setPermission($denyName, $metadata->getItemDescription($denyName));
