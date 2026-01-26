@@ -464,14 +464,14 @@ return [
     ],
     'role:costprice.user' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can see cost prices',
         'children' => [
             'costprice.read',
         ],
     ],
     'role:costprice.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can manage cost prices',
         'children' => [
             'role:costprice.user',
             'costprice.create',
@@ -807,7 +807,7 @@ return [
     ],
     'role:stock.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can manage stock',
         'children' => [
             'role:stock.user',
             'role:move.manager',
@@ -909,7 +909,7 @@ return [
             'admin',
             'role:support',
             'role:hub.user',
-            'role:stock.admin',
+            'role:stock.user',
             'role:server.admin',
             'role:hosting.admin',
         ],
@@ -919,6 +919,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
         'children' => [
             'role:admin',
+            'role:stock.admin',
             'role:server.staff-admin',
             'role:hub.staff-admin',
             'see-no-mans',

@@ -1703,13 +1703,13 @@ return [
         'description' => 'Prohibits owner-staff operation',
     ],
     'role:costprice.user' => [
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can see cost prices',
     ],
     'role:costprice.manager' => [
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can manage cost prices',
     ],
     'role:stock.admin' => [
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can manage stock',
     ],
     'costprice.create' => [
         'description' => 'Allows creating of the costprice',
@@ -1845,5 +1845,8 @@ return [
     ],
     'deny:part.erase' => [
         'description' => 'Prohibits eraseing of the part',
+    ],
+    'deny:role:stock.admin' => [
+        'description' => 'Prohibits role:stock-admin operation',
     ],
 ];
