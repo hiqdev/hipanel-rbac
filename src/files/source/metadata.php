@@ -1843,4 +1843,7 @@ return [
     'target.update' => [
         'description' => 'Allows updating of the target',
     ],
+    'deny:part.erase' => [
+        'description' => 'Prohibits eraseing of the part',
+    ],
 ];

@@ -708,7 +708,6 @@ return [
             'part.create',
             'part.update',
             'part.delete',
-            'part.erase',
         ],
     ],
     'role:part.master' => [
@@ -717,6 +716,7 @@ return [
         'children' => [
             'part.read-all-hierarchy',
             'role:part.manager',
+            'part.erase',
         ],
     ],
     'role:move.user' => [
@@ -2583,10 +2583,6 @@ return [
         'type' => 2,
         'description' => 'Allows deleting of the part',
     ],
-    'part.erase' => [
-        'type' => 2,
-        'description' => 'Allows completely delete the part along with its move history',
-    ],
     'deny:part.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the part',
@@ -2598,6 +2594,14 @@ return [
     'deny:part.read-all-hierarchy' => [
         'type' => 2,
         'description' => 'Prohibits read-all-hierarchy operation on the part',
+    ],
+    'part.erase' => [
+        'type' => 2,
+        'description' => 'Allows completely delete the part along with its move history',
+    ],
+    'deny:part.erase' => [
+        'type' => 2,
+        'description' => 'Prohibits eraseing of the part',
     ],
     'move.read' => [
         'type' => 2,
