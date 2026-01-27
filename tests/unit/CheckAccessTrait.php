@@ -177,11 +177,10 @@ trait CheckAccessTrait
             'hub.read',
             'consumption.read',
             'stock.read',
-            'part.read', // 'part.create', 'part.update', 'part.delete',
-            'move.read', 'move.create', 'move.update', 'move.delete',
-            'move.get-directions',
+            'part.read',
+            'move.read',
             'order.read',
-            'model.read', // 'model.create', 'model.update', 'model.delete',
+            'model.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
@@ -197,8 +196,6 @@ trait CheckAccessTrait
 
             'client.read-ip',
             'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
-            'part.read-administrative',
-
         ]);
     }
 
@@ -222,11 +219,11 @@ trait CheckAccessTrait
             'hub.read', 'hub.create', 'hub.update', 'hub.delete',
             'consumption.read',
             'stock.read',
-            'part.read', // 'part.create', 'part.update', 'part.delete',
+            'part.read',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'move.get-directions',
             'order.read',
-            'model.read', // 'model.create', 'model.update', 'model.delete',
+            'model.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',

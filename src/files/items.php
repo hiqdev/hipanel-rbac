@@ -464,14 +464,14 @@ return [
     ],
     'role:costprice.user' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can see cost prices',
         'children' => [
             'costprice.read',
         ],
     ],
     'role:costprice.manager' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can manage cost prices',
         'children' => [
             'role:costprice.user',
             'costprice.create',
@@ -807,7 +807,7 @@ return [
     ],
     'role:stock.admin' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who can manage stock',
         'children' => [
             'role:stock.user',
             'role:move.manager',
@@ -909,7 +909,7 @@ return [
             'admin',
             'role:support',
             'role:hub.user',
-            'role:stock.admin',
+            'role:stock.user',
             'role:server.admin',
             'role:hosting.admin',
         ],
@@ -919,6 +919,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
         'children' => [
             'role:admin',
+            'role:stock.admin',
             'role:server.staff-admin',
             'role:hub.staff-admin',
             'see-no-mans',
@@ -1398,6 +1399,7 @@ return [
     'employee.read' => [
         'type' => 2,
         'description' => 'Allows reading of the employee',
+        'internal' => true,
     ],
     'deny:employee.read' => [
         'type' => 2,
@@ -1406,6 +1408,7 @@ return [
     'employee.create' => [
         'type' => 2,
         'description' => 'Allows creating of the employee',
+        'internal' => true,
     ],
     'deny:employee.create' => [
         'type' => 2,
@@ -1414,6 +1417,7 @@ return [
     'employee.update' => [
         'type' => 2,
         'description' => 'Allows updating of the employee',
+        'internal' => true,
     ],
     'deny:employee.update' => [
         'type' => 2,
@@ -1422,6 +1426,7 @@ return [
     'employee.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the employee',
+        'internal' => true,
     ],
     'deny:employee.delete' => [
         'type' => 2,
@@ -1630,6 +1635,7 @@ return [
     'server.create' => [
         'type' => 2,
         'description' => 'Allows creating of the server',
+        'internal' => true,
     ],
     'deny:server.create' => [
         'type' => 2,
@@ -1638,6 +1644,7 @@ return [
     'server.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the server',
+        'internal' => true,
     ],
     'deny:server.delete' => [
         'type' => 2,
@@ -1646,6 +1653,7 @@ return [
     'server.update' => [
         'type' => 2,
         'description' => 'Allows updating of the server',
+        'internal' => true,
     ],
     'deny:server.update' => [
         'type' => 2,
@@ -1654,6 +1662,7 @@ return [
     'server.assign-hub' => [
         'type' => 2,
         'description' => 'Allows assign hubs to server',
+        'internal' => true,
     ],
     'deny:server.assign-hub' => [
         'type' => 2,
@@ -1662,6 +1671,7 @@ return [
     'bill.charges.read' => [
         'type' => 2,
         'description' => 'Allows charges.read operation on the bill',
+        'internal' => true,
     ],
     'deny:bill.charges.read' => [
         'type' => 2,
@@ -1670,6 +1680,7 @@ return [
     'bill.see-server-charges' => [
         'type' => 2,
         'description' => 'Allows to see server charges (detailed bill info)',
+        'internal' => true,
     ],
     'deny:bill.see-server-charges' => [
         'type' => 2,
@@ -1686,6 +1697,7 @@ return [
     'hub.update' => [
         'type' => 2,
         'description' => 'Allows updating of the hub',
+        'internal' => true,
     ],
     'deny:hub.update' => [
         'type' => 2,
@@ -1694,6 +1706,7 @@ return [
     'hub.create' => [
         'type' => 2,
         'description' => 'Allows creating of the hub',
+        'internal' => true,
     ],
     'deny:hub.create' => [
         'type' => 2,
@@ -1702,6 +1715,7 @@ return [
     'hub.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the hub',
+        'internal' => true,
     ],
     'deny:hub.delete' => [
         'type' => 2,
@@ -1718,6 +1732,7 @@ return [
     'consumption.update' => [
         'type' => 2,
         'description' => 'Allows updating of the consumption',
+        'internal' => true,
     ],
     'deny:consumption.update' => [
         'type' => 2,
@@ -1726,6 +1741,7 @@ return [
     'consumption.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the consumption',
+        'internal' => true,
     ],
     'deny:consumption.delete' => [
         'type' => 2,
@@ -1734,6 +1750,7 @@ return [
     'consumption.read-all' => [
         'type' => 2,
         'description' => 'Allows read-all operation on the consumption',
+        'internal' => true,
     ],
     'deny:consumption.read-all' => [
         'type' => 2,
@@ -1742,6 +1759,7 @@ return [
     'blacklist.read' => [
         'type' => 2,
         'description' => 'Allows reading of the blacklist',
+        'internal' => true,
     ],
     'deny:blacklist.read' => [
         'type' => 2,
@@ -1750,6 +1768,7 @@ return [
     'blacklist.create' => [
         'type' => 2,
         'description' => 'Allows creating of the blacklist',
+        'internal' => true,
     ],
     'deny:blacklist.create' => [
         'type' => 2,
@@ -1758,6 +1777,7 @@ return [
     'blacklist.update' => [
         'type' => 2,
         'description' => 'Allows updating of the blacklist',
+        'internal' => true,
     ],
     'deny:blacklist.update' => [
         'type' => 2,
@@ -1766,6 +1786,7 @@ return [
     'blacklist.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the blacklist',
+        'internal' => true,
     ],
     'deny:blacklist.delete' => [
         'type' => 2,
@@ -1982,6 +2003,7 @@ return [
     'zone.create' => [
         'type' => 2,
         'description' => 'Allows creating of the zone',
+        'internal' => true,
     ],
     'deny:zone.create' => [
         'type' => 2,
@@ -1990,6 +2012,7 @@ return [
     'zone.update' => [
         'type' => 2,
         'description' => 'Allows updating of the zone',
+        'internal' => true,
     ],
     'deny:zone.update' => [
         'type' => 2,
@@ -1998,6 +2021,7 @@ return [
     'zone.read' => [
         'type' => 2,
         'description' => 'Allows reading of the zone',
+        'internal' => true,
     ],
     'deny:zone.read' => [
         'type' => 2,
@@ -2006,6 +2030,7 @@ return [
     'zone.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the zone',
+        'internal' => true,
     ],
     'deny:zone.delete' => [
         'type' => 2,
@@ -2222,6 +2247,7 @@ return [
     'pnl.read' => [
         'type' => 2,
         'description' => 'Allows reading of the pnl',
+        'internal' => true,
     ],
     'deny:pnl.read' => [
         'type' => 2,
@@ -2230,6 +2256,7 @@ return [
     'pnl.update' => [
         'type' => 2,
         'description' => 'Allows updating of the pnl',
+        'internal' => true,
     ],
     'deny:pnl.update' => [
         'type' => 2,
@@ -2238,6 +2265,7 @@ return [
     'pnl.read-expenses' => [
         'type' => 2,
         'description' => 'Allows read-expenses operation on the pnl',
+        'internal' => true,
     ],
     'deny:pnl.read-expenses' => [
         'type' => 2,
@@ -2246,6 +2274,7 @@ return [
     'costprice.read' => [
         'type' => 2,
         'description' => 'Allows reading of the costprice',
+        'internal' => true,
     ],
     'deny:costprice.read' => [
         'type' => 2,
@@ -2254,6 +2283,7 @@ return [
     'costprice.create' => [
         'type' => 2,
         'description' => 'Allows creating of the costprice',
+        'internal' => true,
     ],
     'deny:costprice.create' => [
         'type' => 2,
@@ -2262,6 +2292,7 @@ return [
     'costprice.update' => [
         'type' => 2,
         'description' => 'Allows updating of the costprice',
+        'internal' => true,
     ],
     'deny:costprice.update' => [
         'type' => 2,
@@ -2270,6 +2301,7 @@ return [
     'costprice.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the costprice',
+        'internal' => true,
     ],
     'deny:costprice.delete' => [
         'type' => 2,
@@ -2590,6 +2622,7 @@ return [
     'part.read-all-hierarchy' => [
         'type' => 2,
         'description' => 'Allows read-all-hierarchy operation on the part',
+        'internal' => true,
     ],
     'deny:part.read-all-hierarchy' => [
         'type' => 2,
@@ -2614,6 +2647,7 @@ return [
     'move.get-directions' => [
         'type' => 2,
         'description' => 'Allows get-directions operation on the move',
+        'internal' => true,
     ],
     'deny:move.get-directions' => [
         'type' => 2,
@@ -2622,6 +2656,7 @@ return [
     'move.create' => [
         'type' => 2,
         'description' => 'Allows creating of the move',
+        'internal' => true,
     ],
     'deny:move.create' => [
         'type' => 2,
@@ -2646,6 +2681,7 @@ return [
     'move.read-all' => [
         'type' => 2,
         'description' => 'Allows read-all operation on the move',
+        'internal' => true,
     ],
     'deny:move.read-all' => [
         'type' => 2,
@@ -2686,6 +2722,7 @@ return [
     'order.read' => [
         'type' => 2,
         'description' => 'Allows reading of the order',
+        'internal' => true,
     ],
     'deny:order.read' => [
         'type' => 2,
@@ -2694,6 +2731,7 @@ return [
     'order.create' => [
         'type' => 2,
         'description' => 'Allows creating of the order',
+        'internal' => true,
     ],
     'deny:order.create' => [
         'type' => 2,
@@ -2702,6 +2740,7 @@ return [
     'order.update' => [
         'type' => 2,
         'description' => 'Allows updating of the order',
+        'internal' => true,
     ],
     'deny:order.update' => [
         'type' => 2,
@@ -2710,6 +2749,7 @@ return [
     'order.delete' => [
         'type' => 2,
         'description' => 'Allows deleting of the order',
+        'internal' => true,
     ],
     'deny:order.delete' => [
         'type' => 2,
@@ -2718,6 +2758,7 @@ return [
     'order.read-profits' => [
         'type' => 2,
         'description' => 'Allows read-profits operation on the order',
+        'internal' => true,
     ],
     'deny:order.read-profits' => [
         'type' => 2,
@@ -2742,6 +2783,7 @@ return [
     'audit.read' => [
         'type' => 2,
         'description' => 'Allows reading the change history of core objects, you have direct access to.',
+        'internal' => true,
     ],
     'deny:audit.read' => [
         'type' => 2,
@@ -2750,6 +2792,7 @@ return [
     'audit.read_everything' => [
         'type' => 2,
         'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
+        'internal' => true,
     ],
     'deny:audit.read_everything' => [
         'type' => 2,
@@ -2846,6 +2889,7 @@ return [
     'see-no-mans' => [
         'type' => 2,
         'description' => 'Allows see-no-mans operation',
+        'internal' => true,
     ],
     'deny:see-no-mans' => [
         'type' => 2,
@@ -3190,6 +3234,7 @@ return [
     'ref.view.not-used' => [
         'type' => 2,
         'description' => 'Allows view.not-used operation on the ref',
+        'internal' => true,
     ],
     'deny:ref.view.not-used' => [
         'type' => 2,
@@ -3198,6 +3243,7 @@ return [
     'client.set-description' => [
         'type' => 2,
         'description' => 'Allows set-description operation on the client',
+        'internal' => true,
     ],
     'deny:client.set-description' => [
         'type' => 2,
@@ -3206,6 +3252,7 @@ return [
     'owner-staff' => [
         'type' => 2,
         'description' => 'Show if user in staff of organization',
+        'internal' => true,
     ],
     'deny:owner-staff' => [
         'type' => 2,
