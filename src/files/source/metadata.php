@@ -342,13 +342,13 @@ return [
         'description' => 'Create backups',
     ],
     'backuping.delete' => [
-        'description' => 'Allows deleting of the backuping',
+        'description' => 'Delete backups',
     ],
     'backuping.read' => [
-        'description' => 'Allows reading of the backuping',
+        'description' => 'Read backups',
     ],
     'backuping.update' => [
-        'description' => 'Allows updating of the backuping',
+        'description' => 'Update backups',
     ],
     'bill.charges.read' => [
         'description' => 'Read charges (detailed bill info)',
@@ -358,167 +358,164 @@ return [
         'description' => 'Read server charges (detailed server bill info)',
         'internal' => true,
     ],
-    'deny:bill.see-server-charges' => [
-        'description' => 'Denies to see server charges (detailed bill info)',
-    ],
     'bill.create' => [
-        'description' => 'Allows creating of the bill',
+        'description' => 'Create bills',
     ],
     'bill.delete' => [
-        'description' => 'Allows deleting of the bill',
+        'description' => 'Delete bills',
     ],
     'bill.read' => [
-        'description' => 'Allows reading of the bill',
+        'description' => 'Read bills',
     ],
     'bill.update' => [
-        'description' => 'Allows updating of the bill',
+        'description' => 'Update bills',
     ],
     'bill.import' => [
-        'description' => 'Allows import bills',
+        'description' => 'Import bills',
     ],
     'bill.create-exchange' => [
-        'description' => 'Allows exchange currencies',
+        'description' => 'Exchange currencies',
     ],
     'certificate.create' => [
-        'description' => 'Allows creating of the certificate',
+        'description' => 'Create certificates',
     ],
     'certificate.delete' => [
-        'description' => 'Allows deleting of the certificate',
+        'description' => 'Delete certificates',
     ],
     'certificate.pay' => [
-        'description' => 'Allows paying of the certificate',
+        'description' => 'Pay certificates',
     ],
     'certificate.push' => [
-        'description' => 'Allows pushing of the certificate',
+        'description' => 'Push certificates',
     ],
     'certificate.read' => [
-        'description' => 'Allows reading of the certificate',
+        'description' => 'Read certificates',
     ],
     'certificate.update' => [
-        'description' => 'Allows updating of the certificate',
+        'description' => 'Update certificates',
     ],
     'client.block' => [
-        'description' => 'Allows blocking of the client',
+        'description' => 'Block clients',
     ],
     'client.create' => [
-        'description' => 'Allows creating of the client',
+        'description' => 'Create clients',
     ],
     'client.delete' => [
-        'description' => 'Allows deleting of the client',
+        'description' => 'Delete clients',
     ],
     'client.get-note' => [
-        'description' => 'Allows get-note operation on the client',
+        'description' => 'Get client note',
     ],
     'client.impersonate' => [
-        'description' => 'Allows impersonateing of the client',
+        'description' => 'Impersonate',
     ],
     'client.list' => [
-        'description' => 'Allows listing of the client',
+        'description' => 'List clients',
     ],
     'client.read' => [
-        'description' => 'Allows reading of the client',
+        'description' => 'Read clients',
     ],
     'client.set-description' => [
-        'description' => 'Allows set-description operation on the client',
+        'description' => 'Set client description',
         'internal' => true,
     ],
     'client.set-note' => [
-        'description' => 'Allows set-note operation on the client',
+        'description' => 'Set client note',
     ],
     'client.set-others-allowed-ips' => [
-        'description' => 'Allows set-others-allowed-ips operation on the client',
+        'description' => 'Set allowed IPs to other clients',
     ],
     'client.set-tmp-pwd' => [
-        'description' => 'Allows to set client temporary password',
+        'description' => 'Set temporary password to client',
     ],
     'client.set-roles' => [
-        'description' => 'Allows setting client roles',
+        'description' => 'Set roles to clients',
     ],
     'client.unblock' => [
-        'description' => 'Allows unblocking of the client',
+        'description' => 'Unblock clients',
     ],
     'client.update' => [
-        'description' => 'Allows updating of the client',
+        'description' => 'Update clients',
     ],
     'client.read-ip' => [
-        'description' => 'Allows viewing client\'s IP',
+        'description' => 'See client IP',
     ],
     'client.read-financial-info' => [
-        'description' => 'Allows viewing client\'s financial info',
+        'description' => 'Read client financial info',
     ],
     'client.read-requisite' => [
-        'description' => 'Allows viewing setted requisite to client',
+        'description' => 'Read requisites set to client',
     ],
     'client.read-referral' => [
-        'description' => 'Allows viewing client\'s referral',
+        'description' => 'Read referral set to client',
     ],
     'client.read-deleted' => [
-        'description' => 'Allows viewing deleted clients',
+        'description' => 'Read deleted clients',
     ],
     'config.create' => [
-        'description' => 'Allows creating of the config',
+        'description' => 'Create configs',
     ],
     'config.delete' => [
-        'description' => 'Allows deleting of the config',
+        'description' => 'Delete configs',
     ],
     'config.read' => [
-        'description' => 'Allows reading of the config',
+        'description' => 'Read configs',
     ],
     'config.update' => [
-        'description' => 'Allows updating of the config',
+        'description' => 'Update configs',
     ],
     'consumption.update' => [
-        'description' => 'Allows updating of the consumption',
+        'description' => 'Update consumptions',
         'internal' => true,
     ],
     'consumption.delete' => [
-        'description' => 'Allows deleting of the consumption',
+        'description' => 'Delete consumptions',
         'internal' => true,
     ],
     'consumption.read' => [
-        'description' => 'Allows reading of the consumption',
+        'description' => 'Read consumptions',
     ],
     'contact.create' => [
-        'description' => 'Allows creating of the contact',
+        'description' => 'Create contacts',
     ],
     'contact.delete' => [
-        'description' => 'Allows deleting of the contact',
+        'description' => 'Delete contacts',
     ],
     'contact.force-verify' => [
-        'description' => 'Allows force-verify operation on the contact',
+        'description' => 'Force-verify contacts',
     ],
     'contact.read' => [
-        'description' => 'Allows reading of the contact',
+        'description' => 'Read contacts',
     ],
     'contact.set-verified' => [
-        'description' => 'Allows set-verified operation on the contact',
+        'description' => 'Set contact verified',
     ],
     'contact.update' => [
-        'description' => 'Allows updating of the contact',
+        'description' => 'Update contacts',
     ],
     'crontab.create' => [
-        'description' => 'Allows creating of the crontab',
+        'description' => 'Create crontabs',
     ],
     'crontab.delete' => [
-        'description' => 'Allows deleting of the crontab',
+        'description' => 'Delete crontabs',
     ],
     'crontab.read' => [
-        'description' => 'Allows reading of the crontab',
+        'description' => 'Read crontabs',
     ],
     'crontab.update' => [
-        'description' => 'Allows updating of the crontab',
+        'description' => 'Update crontabs',
     ],
     'db.create' => [
-        'description' => 'Allows creating of the db',
+        'description' => 'Create DBs',
     ],
     'db.delete' => [
-        'description' => 'Allows deleting of the db',
+        'description' => 'Delete DBs',
     ],
     'db.read' => [
-        'description' => 'Allows reading of the db',
+        'description' => 'Read DBs',
     ],
     'db.update' => [
-        'description' => 'Allows updating of the db',
+        'description' => 'Update DBs',
     ],
     'deny:access-reseller' => [
         'description' => 'Prohibits access-reseller operation',
@@ -580,6 +577,9 @@ return [
     'deny:bill.create-exchange' => [
         'description' => 'Prohibits exchange currencies',
     ],
+    'deny:bill.see-server-charges' => [
+        'description' => 'Denies to see server charges (detailed bill info)',
+    ],
     'deny:certificate.create' => [
         'description' => 'Prohibits creating of the certificate',
     ],
@@ -611,7 +611,7 @@ return [
         'description' => 'Prohibits get-note operation on the client',
     ],
     'deny:client.impersonate' => [
-        'description' => 'Prohibits impersonateing of the client',
+        'description' => 'Prohibits impersonating of the client',
     ],
     'deny:client.list' => [
         'description' => 'Prohibits listing of the client',
@@ -719,7 +719,7 @@ return [
         'description' => 'Prohibits updating of the dns',
     ],
     'deny:document.acceptance' => [
-        'description' => 'Prohibits acceptanceing of the document',
+        'description' => 'Prohibits accepting of the document',
     ],
     'deny:document.create' => [
         'description' => 'Prohibits creating of the document',
@@ -728,13 +728,13 @@ return [
         'description' => 'Prohibits deleting of the document',
     ],
     'deny:document.generate' => [
-        'description' => 'Prohibits generateing of the document',
+        'description' => 'Prohibits generating of the document',
     ],
     'deny:document.generate-all' => [
         'description' => 'Prohibits generate-all operation on the document',
     ],
     'deny:document.invoice' => [
-        'description' => 'Prohibits invoiceing of the document',
+        'description' => 'Prohibits invoicing of the document',
     ],
     'deny:document.read' => [
         'description' => 'Prohibits reading of the document',
@@ -758,7 +758,7 @@ return [
         'description' => 'Prohibits force-send-foa operation on the domain',
     ],
     'deny:domain.freeze' => [
-        'description' => 'Prohibits freezeing of the domain',
+        'description' => 'Prohibits freezing of the domain',
     ],
     'deny:domain.pay' => [
         'description' => 'Prohibits paying of the domain',
@@ -776,7 +776,7 @@ return [
         'description' => 'Prohibits force-set-nss operation on the domain',
     ],
     'deny:domain.unfreeze' => [
-        'description' => 'Prohibits unfreezeing of the domain',
+        'description' => 'Prohibits unfreezing of the domain',
     ],
     'deny:domain.update' => [
         'description' => 'Prohibits updating of the domain',
@@ -869,13 +869,13 @@ return [
         'description' => 'Prohibits updating of the mail',
     ],
     'deny:mailing.prepare' => [
-        'description' => 'Prohibits prepareing of the mailing',
+        'description' => 'Prohibits preparing of the mailing',
     ],
     'deny:mailing.send' => [
         'description' => 'Prohibits sending of the mailing',
     ],
     'deny:manage' => [
-        'description' => 'Prohibits manageing',
+        'description' => 'Prohibits managing',
     ],
     'deny:model.create' => [
         'description' => 'Prohibits creating of the model',
@@ -1103,16 +1103,16 @@ return [
         'description' => 'Prohibits supporting',
     ],
     'deny:test.alpha' => [
-        'description' => 'Prohibits alphaing of the test',
+        'description' => 'Prohibits alphatesting of the test',
     ],
     'deny:test.beta' => [
-        'description' => 'Prohibits betaing of the test',
+        'description' => 'Prohibits betatesting of the test',
     ],
     'deny:ticket.answer' => [
         'description' => 'Prohibits answering of the ticket',
     ],
     'deny:ticket.close' => [
-        'description' => 'Prohibits closeing of the ticket',
+        'description' => 'Prohibits closing of the ticket',
     ],
     'deny:ticket.create' => [
         'description' => 'Prohibits creating of the ticket',
@@ -1166,509 +1166,509 @@ return [
         'description' => 'Prohibits updating of the zone',
     ],
     'deposit' => [
-        'description' => 'Allows depositing',
+        'description' => 'Deposit money',
     ],
     'dns.create' => [
-        'description' => 'Allows creating of the dns',
+        'description' => 'Create DNS records',
     ],
     'dns.delete' => [
-        'description' => 'Allows deleting of the dns',
+        'description' => 'Delete DNS records',
     ],
     'dns.read' => [
-        'description' => 'Allows reading of the dns',
+        'description' => 'Read DNS records',
     ],
     'dns.update' => [
-        'description' => 'Allows updating of the dns',
+        'description' => 'Update DNS records',
     ],
     'document.acceptance' => [
-        'description' => 'Allows acceptanceing of the document',
+        'description' => 'Access acceptance documents',
     ],
     'document.create' => [
-        'description' => 'Allows creating of the document',
+        'description' => 'Create documents',
     ],
     'document.delete' => [
-        'description' => 'Allows deleting of the document',
+        'description' => 'Delete documents',
     ],
     'document.generate' => [
-        'description' => 'Allows generateing of the document',
+        'description' => 'Generate documents',
     ],
     'document.generate-all' => [
-        'description' => 'Allows generate-all operation on the document',
+        'description' => 'Generate all documents',
     ],
     'document.invoice' => [
-        'description' => 'Allows invoiceing of the document',
+        'description' => 'Access invoice documents',
     ],
     'document.read' => [
-        'description' => 'Allows reading of the document',
+        'description' => 'Read documents',
     ],
     'document.update' => [
-        'description' => 'Allows updating of the document',
+        'description' => 'Update documents',
     ],
     'domain.approve-trasfer-out' => [
-        'description' => 'Allows approve-trasfer-out operation on the domain',
+        'description' => 'Approve domain trasfer out',
     ],
     'domain.delete' => [
-        'description' => 'Allows deleting of the domain',
+        'description' => 'Delete domains',
     ],
     'domain.delete-agp' => [
-        'description' => 'Allows delete-agp operation on the domain',
+        'description' => 'Delete AGP domains',
     ],
     'domain.force-push' => [
-        'description' => 'Allows force-push operation on the domain',
+        'description' => 'Force push domains',
     ],
     'domain.force-send-foa' => [
-        'description' => 'Allows force-send-foa operation on the domain',
+        'description' => 'Force send FOA for domains',
     ],
     'domain.freeze' => [
-        'description' => 'Allows freezeing of the domain',
+        'description' => 'Freeze domains',
     ],
     'domain.pay' => [
-        'description' => 'Allows paying of the domain',
+        'description' => 'Pay domains',
     ],
     'domain.push' => [
-        'description' => 'Allows pushing of the domain',
+        'description' => 'Push domains',
     ],
     'domain.read' => [
-        'description' => 'Allows reading of the domain',
+        'description' => 'Read domains',
     ],
     'domain.set-nss' => [
-        'description' => 'Allows set-nss operation on the domain',
+        'description' => 'Set domain NSs',
     ],
     'domain.force-set-nss' => [
-        'description' => 'Allows force-set-nss operation on the domain',
+        'description' => 'Force set domain NSs',
     ],
     'domain.unfreeze' => [
-        'description' => 'Allows unfreezeing of the domain',
+        'description' => 'Unfreeze domains',
     ],
     'domain.update' => [
-        'description' => 'Allows updating of the domain',
+        'description' => 'Update domains',
     ],
     'domain.maintain' => [
-        'description' => 'Allow operation with domain in DB',
+        'description' => 'Modify domains in DB',
     ],
     'employee.create' => [
-        'description' => 'Allows creating of the employee',
+        'description' => 'Create employees',
         'internal' => true,
     ],
     'employee.delete' => [
-        'description' => 'Allows deleting of the employee',
+        'description' => 'Delete employees',
         'internal' => true,
     ],
     'employee.read' => [
-        'description' => 'Allows reading of the employee',
+        'description' => 'Read employees',
         'internal' => true,
     ],
     'employee.update' => [
-        'description' => 'Allows updating of the employee',
+        'description' => 'Update employees',
         'internal' => true,
     ],
     'finance.read' => [
-        'description' => 'Allows reading of the finance',
+        'description' => 'Read finances',
     ],
     'have-goods' => [
         'description' => 'OBSOLETE. To be removed',
     ],
     'hdomain.create' => [
-        'description' => 'Allows creating of the hdomain',
+        'description' => 'Create hosting domains',
     ],
     'hdomain.delete' => [
-        'description' => 'Allows deleting of the hdomain',
+        'description' => 'Delete hosting domains',
     ],
     'hdomain.read' => [
-        'description' => 'Allows reading of the hdomain',
+        'description' => 'Read hosting domains',
     ],
     'hdomain.set-dns' => [
-        'description' => 'Allows set-dns operation on the hdomain',
+        'description' => 'Set DNS for hosting domains',
     ],
     'hdomain.update' => [
-        'description' => 'Allows updating of the hdomain',
+        'description' => 'Update hosting domains',
     ],
     'hub.create' => [
-        'description' => 'Allows creating of the hub',
+        'description' => 'Create switches/hubs',
         'internal' => true,
     ],
     'hub.delete' => [
-        'description' => 'Allows deleting of the hub',
+        'description' => 'Delete switches/hubs',
         'internal' => true,
     ],
     'hub.read' => [
-        'description' => 'Allows reading of the hub',
+        'description' => 'Read switches/hubs',
     ],
     'hub.sell' => [
-        'description' => 'Allows selling of the hub',
+        'description' => 'Sell switches/hubs',
     ],
     'hub.update' => [
-        'description' => 'Allows updating of the hub',
+        'description' => 'Update switches/hubs',
         'internal' => true,
     ],
     'integration.create' => [
-        'description' => 'Allows creating of the integration',
+        'description' => 'Create integrations',
     ],
     'integration.delete' => [
-        'description' => 'Allows deleting of the integration',
+        'description' => 'Delete integrations',
     ],
     'integration.read' => [
-        'description' => 'Allows reading of the integration',
+        'description' => 'Read integrations',
     ],
     'integration.update' => [
-        'description' => 'Allows updating of the integration',
+        'description' => 'Update integrations',
     ],
     'ip.create' => [
-        'description' => 'Allows creating of the ip',
+        'description' => 'Create IPs',
     ],
     'ip.delete' => [
-        'description' => 'Allows deleting of the ip',
+        'description' => 'Delete IPs',
     ],
     'ip.read' => [
-        'description' => 'Allows reading of the ip',
+        'description' => 'Read IPs',
     ],
     'ip.update' => [
-        'description' => 'Allows updating of the ip',
+        'description' => 'Update IPs',
     ],
     'mail.create' => [
-        'description' => 'Allows creating of the mail',
+        'description' => 'Create mail records',
     ],
     'mail.delete' => [
-        'description' => 'Allows deleting of the mail',
+        'description' => 'Delete mail records',
     ],
     'mail.read' => [
-        'description' => 'Allows reading of the mail',
+        'description' => 'Read mail records',
     ],
     'mail.update' => [
-        'description' => 'Allows updating of the mail',
+        'description' => 'Update mail records',
     ],
     'mailing.prepare' => [
-        'description' => 'Allows prepareing of the mailing',
+        'description' => 'Mailing preparation',
     ],
     'mailing.send' => [
-        'description' => 'Allows sending of the mailing',
+        'description' => 'Send mailings',
     ],
     'manage' => [
-        'description' => 'Allows manageing',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'model.create' => [
-        'description' => 'Allows creating of the model',
+        'description' => 'Create stock models',
     ],
     'model.delete' => [
-        'description' => 'Allows deleting of the model',
+        'description' => 'Delete stock models',
     ],
     'model.read' => [
-        'description' => 'Allows reading of the model',
+        'description' => 'Read stock models',
     ],
     'model.update' => [
-        'description' => 'Allows updating of the model',
+        'description' => 'Update stock models',
     ],
     'move.create' => [
-        'description' => 'Allows creating of the move',
+        'description' => 'Create stock moves',
         'internal' => true,
     ],
     'move.delete' => [
-        'description' => 'Allows deleting of the move',
+        'description' => 'Delete stock moves',
     ],
     'move.get-directions' => [
-        'description' => 'Allows get-directions operation on the move',
+        'description' => 'Get available stock move directions',
         'internal' => true,
     ],
     'move.read' => [
-        'description' => 'Allows reading of the move',
+        'description' => 'Read stock moves',
     ],
     'move.read-all' => [
-        'description' => 'Allows read-all operation on the move',
+        'description' => 'Read all stock moves',
         'internal' => true,
     ],
     'move.update' => [
-        'description' => 'Allows updating of the move',
+        'description' => 'Update stock moves',
     ],
     'nothing' => [
-        'description' => 'System permission that allows nothing',
+        'description' => 'SYSTEM. Allows nothing',
     ],
     'order.create' => [
-        'description' => 'Create orders',
+        'description' => 'Create stock orders',
         'internal' => true,
     ],
     'order.delete' => [
-        'description' => 'Delete orders',
+        'description' => 'Delete stock orders',
         'internal' => true,
     ],
     'order.read' => [
-        'description' => 'Read orders',
+        'description' => 'Read stock orders',
         'internal' => true,
     ],
     'order.read-profits' => [
-        'description' => 'Read info about order profits',
+        'description' => 'Read info about stock order profits',
         'internal' => true,
     ],
     'order.update' => [
-        'description' => 'Update orders',
+        'description' => 'Update stock orders',
         'internal' => true,
     ],
     'own' => [
         'description' => 'OBSOLETE. Replaced with more specific permissions',
     ],
     'part.create' => [
-        'description' => 'Allows creating of the part',
+        'description' => 'Create stock parts',
     ],
     'part.delete' => [
-        'description' => 'Allows deleting of the part',
+        'description' => 'Delete stock parts',
     ],
     'part.erase' => [
-        'description' => 'Allows completely delete the part along with its move history',
+        'description' => 'Completely delete the part along with its move history',
     ],
     'part.read' => [
-        'description' => 'Allows reading of the part',
+        'description' => 'Read stock parts',
     ],
     'part.sell' => [
-        'description' => 'Allows selling of the part',
+        'description' => 'Sell stock parts',
     ],
     'part.update' => [
-        'description' => 'Allows updating of the part',
+        'description' => 'Update stock parts',
     ],
     'part.read-administrative' => [
-        'description' => 'Allows reading administrative data of the part',
+        'description' => 'Reading parts administrative data',
     ],
     'plan.create' => [
-        'description' => 'Allows creating of the plan',
+        'description' => 'Create tariff plans',
     ],
     'plan.delete' => [
-        'description' => 'Allows deleting of the plan',
+        'description' => 'Delete tariff plans',
     ],
     'plan.force-read' => [
-        'description' => 'Allows force-read operation on the plan',
+        'description' => 'Read tariff plans additional data',
     ],
     'plan.read' => [
-        'description' => 'Allows reading of the plan',
+        'description' => 'Read tariff plans',
     ],
     'plan.update' => [
-        'description' => 'Allows updating of the plan',
+        'description' => 'Update tariff plans',
     ],
     'plan.set-note' => [
-        'description' => 'Allows set note to plan',
+        'description' => 'Set tariff plans notes',
     ],
     'price.create' => [
-        'description' => 'Allows creating of the price',
+        'description' => 'Create tariff prices',
     ],
     'price.delete' => [
-        'description' => 'Allows deleting of the price',
+        'description' => 'Delete tariff prices',
     ],
     'price.read' => [
-        'description' => 'Allows reading of the price',
+        'description' => 'Read tariff prices',
     ],
     'price.update' => [
-        'description' => 'Allows updating of the price',
+        'description' => 'Update tariff prices',
     ],
     'purse.update' => [
-        'description' => 'Allows updating of the purse',
+        'description' => 'Update purses',
     ],
     'purse.set-credit' => [
-        'description' => 'Allows set credit to the purse',
+        'description' => 'Set purse credit',
     ],
     'ref.view.not-used' => [
-        'description' => 'Allows view.not-used operation on the ref',
+        'description' => 'Read not used refs',
         'internal' => true,
     ],
     'request.create' => [
-        'description' => 'Allows creating of the request',
+        'description' => 'Create requests',
     ],
     'request.delete' => [
-        'description' => 'Allows deleting of the request',
+        'description' => 'Delete requests',
     ],
     'request.read' => [
-        'description' => 'Allows reading of the request',
+        'description' => 'Read requests',
     ],
     'request.update' => [
-        'description' => 'Allows updating of the request',
+        'description' => 'Update requests',
     ],
     'requisites.create' => [
-        'description' => 'Allows creating of the requisites',
+        'description' => 'Create requisites',
     ],
     'requisites.delete' => [
-        'description' => 'Allows deleting of the requisites',
+        'description' => 'Delete requisites',
     ],
     'requisites.read' => [
-        'description' => 'Allows reading of the requisites',
+        'description' => 'Read requisites',
     ],
     'requisites.update' => [
-        'description' => 'Allows updating of the requisites',
+        'description' => 'Update requisites',
     ],
     'resell' => [
-        'description' => 'Allows reselling',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'restore-password' => [
-        'description' => 'Allows restore-password operation',
+        'description' => 'Restore password',
     ],
     'sale.delete' => [
-        'description' => 'Allows deleting of the sale',
+        'description' => 'Delete sales',
     ],
     'sale.read' => [
-        'description' => 'Allows reading of the sale',
+        'description' => 'Read sales',
     ],
     'see-no-mans' => [
-        'description' => 'Allows see-no-mans operation',
+        'description' => 'See unsold objects',
         'internal' => true,
     ],
     'server.control-power' => [
-        'description' => 'Allows control-power operation on the server',
+        'description' => 'Control server power',
     ],
     'server.control-system' => [
-        'description' => 'Allows control-system operation on the server',
+        'description' => 'Control server system',
     ],
     'server.create' => [
-        'description' => 'Allows creating of the server',
+        'description' => 'Create servers',
         'internal' => true,
     ],
     'server.assign-hub' => [
-        'description' => 'Allows assign hubs to server',
+        'description' => 'Assign switches/hubs to server',
         'internal' => true,
     ],
     'server.delete' => [
-        'description' => 'Allows deleting of the server',
+        'description' => 'Delete servers',
         'internal' => true,
     ],
     'server.disable-block' => [
-        'description' => 'Allows disable-block operation on the server',
+        'description' => 'Unblock servers',
     ],
     'server.enable-block' => [
-        'description' => 'Allows enable-block operation on the server',
+        'description' => 'Block servers',
     ],
     'server.manage-settings' => [
-        'description' => 'Allows manage-settings operation on the server',
+        'description' => 'Manage server settings',
     ],
     'server.pay' => [
-        'description' => 'Allows paying of the server',
+        'description' => 'Pay servers',
     ],
     'server.read' => [
-        'description' => 'Allows reading of the server',
+        'description' => 'Read servers',
     ],
     'server.read-financial-info' => [
-        'description' => 'Allows reading financial info of the server',
+        'description' => 'Read server financial info',
     ],
     'server.read-system-info' => [
-        'description' => 'Allows reading system info of the server',
+        'description' => 'Read server system info',
     ],
     'server.read-wizzard' => [
-        'description' => 'Allows reading info about wizzarding of the server',
+        'description' => 'Read server wizzarding info',
     ],
     'server.read-legend' => [
-        'description' => 'Allows reading legend of the server',
+        'description' => 'Read servers legend',
     ],
     'server.read-billing' => [
-        'description' => 'Allow reading of tariff and sale information of server',
+        'description' => 'Read server billing information',
     ],
     'server.sell' => [
-        'description' => 'Allows selling of the server',
+        'description' => 'Sell servers',
     ],
     'server.set-label' => [
-        'description' => 'Allows set-label operation on the server',
+        'description' => 'Set server label',
     ],
     'server.set-note' => [
-        'description' => 'Allows set-note operation on the server',
+        'description' => 'Set server note',
     ],
     'server.update' => [
-        'description' => 'Allows updating of the server',
+        'description' => 'Update servers',
         'internal' => true,
     ],
     'server.wizzard' => [
-        'description' => 'Allows wizzarding of the server',
+        'description' => 'Wizards servers',
     ],
     'server.move-disks' => [
-        'description' => 'Allows move disks between servers',
+        'description' => 'Move disks in servers',
     ],
     'deny:server.move-disks' => [
         'description' => 'Deny move disks between servers',
     ],
     'service.create' => [
-        'description' => 'Allows creating of the service',
+        'description' => 'Create services',
     ],
     'service.delete' => [
-        'description' => 'Allows deleting of the service',
+        'description' => 'Delete services',
     ],
     'service.read' => [
-        'description' => 'Allows reading of the service',
+        'description' => 'Read services',
     ],
     'service.update' => [
-        'description' => 'Allows updating of the service',
+        'description' => 'Update services',
     ],
     'stock.read' => [
-        'description' => 'Allows reading of the stock',
+        'description' => 'Read stock',
     ],
     'support' => [
-        'description' => 'Allows supporting',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'test.alpha' => [
-        'description' => 'Allows alphaing of the test',
+        'description' => 'Alpha testing',
     ],
     'test.beta' => [
-        'description' => 'Allows betaing of the test',
+        'description' => 'Beta testing',
     ],
     'ticket.answer' => [
-        'description' => 'Allows answering of the ticket',
+        'description' => 'Answer tickets',
     ],
     'ticket.close' => [
-        'description' => 'Allows closeing of the ticket',
+        'description' => 'Close tickets',
     ],
     'ticket.create' => [
-        'description' => 'Allows creating of the ticket',
+        'description' => 'Create tickets',
     ],
     'ticket.delete' => [
-        'description' => 'Allows deleting of the ticket',
+        'description' => 'Delete tickets',
     ],
     'ticket.read' => [
-        'description' => 'Allows reading of the ticket',
+        'description' => 'Read tickets',
     ],
     'ticket.update' => [
-        'description' => 'Allows updating of the ticket',
+        'description' => 'Update tickets',
     ],
     'ticket.read-templates' => [
-        'description' => 'Allows viewing ticket templates',
+        'description' => 'Read ticket templates',
     ],
     'ticket.read-statistics' => [
-        'description' => 'Allows viewing tickets statistics',
+        'description' => 'Read ticket statistics',
     ],
     'ticket.set-private' => [
-        'description' => 'Allows setting `private` to answer',
+        'description' => 'Make private ticket answers',
     ],
     'ticket.set-recipient' => [
-        'description' => 'Allows setting ticket\'s recipient',
+        'description' => 'Set ticket recipient',
     ],
     'ticket.set-time' => [
-        'description' => 'Allows setting spent time to ticket',
+        'description' => 'Set ticket answer spent time',
     ],
     'vhost.create' => [
-        'description' => 'Allows creating of the vhost',
+        'description' => 'Create virthosts',
     ],
     'vhost.delete' => [
-        'description' => 'Allows deleting of the vhost',
+        'description' => 'Delete virthosts',
     ],
     'vhost.read' => [
-        'description' => 'Allows reading of the vhost',
+        'description' => 'Read virthosts',
     ],
     'vhost.update' => [
-        'description' => 'Allows updating of the vhost',
+        'description' => 'Update virthosts',
     ],
     'zone.create' => [
-        'description' => 'Allows creating of the zone',
+        'description' => 'Create DNS zones',
         'internal' => true,
     ],
     'zone.delete' => [
-        'description' => 'Allows deleting of the zone',
+        'description' => 'Delete DNS zones',
         'internal' => true,
     ],
     'zone.read' => [
-        'description' => 'Allows reading of the zone',
+        'description' => 'Read DNS zones',
         'internal' => true,
     ],
     'zone.update' => [
-        'description' => 'Allows updating of the zone',
+        'description' => 'Update DNS zones',
         'internal' => true,
     ],
     'deny:server.see-label' => [
         'description' => 'Prohibits see-label operation on the server',
     ],
     'server.see-label' => [
-        'description' => 'Allows see-label operation on the server',
+        'description' => 'Read server label',
     ],
     'client.notify' => [
-        'description' => 'Allows notifying of the client',
+        'description' => 'Notify clients',
     ],
     'deny:client.notify' => [
         'description' => 'Prohibits notifying of the client',
@@ -1698,14 +1698,14 @@ return [
         'description' => 'Prohibits updating of the sale',
     ],
     'part.read-all-hierarchy' => [
-        'description' => 'Allows read-all-hierarchy operation on the part',
+        'description' => 'Read all parts',
         'internal' => true,
     ],
     'sale.create' => [
-        'description' => 'Allows creating of the sale',
+        'description' => 'Create sales',
     ],
     'sale.update' => [
-        'description' => 'Allows updating of the sale',
+        'description' => 'Update sales',
     ],
     'role:almighty' => [
         'description' => 'The role is for testing only',
@@ -1717,20 +1717,20 @@ return [
         'description' => 'Prohibits reading of the purse',
     ],
     'purse.create' => [
-        'description' => 'Allows creating of the purse',
+        'description' => 'Create purses',
     ],
     'purse.read' => [
-        'description' => 'Allows reading of the purse',
+        'description' => 'Read purses',
     ],
     'owner-staff' => [
-        'description' => 'Marks staff. In process of replacing with specific owner roles',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
         'internal' => true,
     ],
     'role:consumption.master' => [
         'description' => 'The role is generally assigned to ____',
     ],
     'consumption.read-all' => [
-        'description' => 'Allows read-all operation on the consumption',
+        'description' => 'Read all resource consumptions',
         'internal' => true,
     ],
     'deny:consumption.read-all' => [
@@ -1749,19 +1749,19 @@ return [
         'description' => 'The role is generally assigned to staff who can manage stock',
     ],
     'costprice.create' => [
-        'description' => 'Allows creating of the costprice',
+        'description' => 'Create costprices',
         'internal' => true,
     ],
     'costprice.delete' => [
-        'description' => 'Allows deleting of the costprice',
+        'description' => 'Delete costprices',
         'internal' => true,
     ],
     'costprice.read' => [
-        'description' => 'Allows reading of the costprice',
+        'description' => 'Read costprices',
         'internal' => true,
     ],
     'costprice.update' => [
-        'description' => 'Allows updating of the costprice',
+        'description' => 'Update costprices',
         'internal' => true,
     ],
     'deny:costprice.create' => [
@@ -1783,11 +1783,11 @@ return [
         'description' => 'OBSOLETE. Replaced with specific pay permissions like server.pay and domain.pay',
     ],
     'audit.read' => [
-        'description' => 'Allows reading the change history of core objects, you have direct access to.',
+        'description' => 'Read changes history of core objects, you have direct access to',
         'internal' => true,
     ],
     'audit.read_everything' => [
-        'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
+        'description' => 'Read changes history of any objects',
         'internal' => true,
     ],
     'deny:audit.read' => [
@@ -1821,19 +1821,19 @@ return [
         'description' => 'The role is generally assigned to staff who are responsible for managing company resources.',
     ],
     'blacklist.create' => [
-        'description' => 'Allows creating of the blacklist',
+        'description' => 'Create blacklists',
         'internal' => true,
     ],
     'blacklist.delete' => [
-        'description' => 'Allows deleting of the blacklist',
+        'description' => 'Delete blacklists',
         'internal' => true,
     ],
     'blacklist.read' => [
-        'description' => 'Allows reading of the blacklist',
+        'description' => 'Read blacklists',
         'internal' => true,
     ],
     'blacklist.update' => [
-        'description' => 'Allows updating of the blacklist',
+        'description' => 'Update blacklists',
         'internal' => true,
     ],
     'deny:blacklist.create' => [
@@ -1870,28 +1870,28 @@ return [
         'description' => 'Prohibits updating of the target',
     ],
     'pnl.read' => [
-        'description' => 'Allows reading of the pnl',
+        'description' => 'Read PNL report',
         'internal' => true,
     ],
     'pnl.read-expenses' => [
-        'description' => 'Allows read-expenses operation on the pnl',
+        'description' => 'Read expenses data in PNL report',
         'internal' => true,
     ],
     'pnl.update' => [
-        'description' => 'Allows updating of the pnl',
+        'description' => 'Update PNL report',
         'internal' => true,
     ],
     'target.create' => [
-        'description' => 'Allows creating of the target',
+        'description' => 'Create billing targets',
     ],
     'target.delete' => [
-        'description' => 'Allows deleting of the target',
+        'description' => 'Delete billing targets',
     ],
     'target.read' => [
-        'description' => 'Allows reading of the target',
+        'description' => 'Read billing targets',
     ],
     'target.update' => [
-        'description' => 'Allows updating of the target',
+        'description' => 'Update billing targets',
     ],
     'deny:part.erase' => [
         'description' => 'Prohibits eraseing of the part',

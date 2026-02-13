@@ -1214,7 +1214,7 @@ return [
     ],
     'nothing' => [
         'type' => 2,
-        'description' => 'System permission that allows nothing',
+        'description' => 'SYSTEM. Allows nothing',
     ],
     'deny:nothing' => [
         'type' => 2,
@@ -1222,7 +1222,7 @@ return [
     ],
     'restore-password' => [
         'type' => 2,
-        'description' => 'Allows restore-password operation',
+        'description' => 'Restore password',
     ],
     'deny:restore-password' => [
         'type' => 2,
@@ -1230,7 +1230,7 @@ return [
     ],
     'deposit' => [
         'type' => 2,
-        'description' => 'Allows depositing',
+        'description' => 'Deposit money',
     ],
     'deny:deposit' => [
         'type' => 2,
@@ -1238,7 +1238,7 @@ return [
     ],
     'server.pay' => [
         'type' => 2,
-        'description' => 'Allows paying of the server',
+        'description' => 'Pay servers',
     ],
     'deny:server.pay' => [
         'type' => 2,
@@ -1246,7 +1246,7 @@ return [
     ],
     'plan.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the plan',
+        'description' => 'Read tariff plans',
     ],
     'deny:plan.read' => [
         'type' => 2,
@@ -1254,7 +1254,7 @@ return [
     ],
     'client.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the client',
+        'description' => 'Read clients',
     ],
     'deny:client.read' => [
         'type' => 2,
@@ -1262,7 +1262,7 @@ return [
     ],
     'client.list' => [
         'type' => 2,
-        'description' => 'Allows listing of the client',
+        'description' => 'List clients',
     ],
     'deny:client.list' => [
         'type' => 2,
@@ -1270,7 +1270,7 @@ return [
     ],
     'client.read-ip' => [
         'type' => 2,
-        'description' => 'Allows viewing client\'s IP',
+        'description' => 'See client IP',
     ],
     'deny:client.read-ip' => [
         'type' => 2,
@@ -1278,7 +1278,7 @@ return [
     ],
     'client.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the client',
+        'description' => 'Create clients',
     ],
     'deny:client.create' => [
         'type' => 2,
@@ -1286,7 +1286,7 @@ return [
     ],
     'client.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the client',
+        'description' => 'Update clients',
     ],
     'deny:client.update' => [
         'type' => 2,
@@ -1294,7 +1294,7 @@ return [
     ],
     'client.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the client',
+        'description' => 'Delete clients',
     ],
     'deny:client.delete' => [
         'type' => 2,
@@ -1302,7 +1302,7 @@ return [
     ],
     'contact.set-verified' => [
         'type' => 2,
-        'description' => 'Allows set-verified operation on the contact',
+        'description' => 'Set contact verified',
     ],
     'deny:contact.set-verified' => [
         'type' => 2,
@@ -1310,7 +1310,7 @@ return [
     ],
     'client.block' => [
         'type' => 2,
-        'description' => 'Allows blocking of the client',
+        'description' => 'Block clients',
     ],
     'deny:client.block' => [
         'type' => 2,
@@ -1318,7 +1318,7 @@ return [
     ],
     'client.unblock' => [
         'type' => 2,
-        'description' => 'Allows unblocking of the client',
+        'description' => 'Unblock clients',
     ],
     'deny:client.unblock' => [
         'type' => 2,
@@ -1326,7 +1326,7 @@ return [
     ],
     'client.get-note' => [
         'type' => 2,
-        'description' => 'Allows get-note operation on the client',
+        'description' => 'Get client note',
     ],
     'deny:client.get-note' => [
         'type' => 2,
@@ -1334,7 +1334,7 @@ return [
     ],
     'client.set-note' => [
         'type' => 2,
-        'description' => 'Allows set-note operation on the client',
+        'description' => 'Set client note',
     ],
     'deny:client.set-note' => [
         'type' => 2,
@@ -1342,7 +1342,7 @@ return [
     ],
     'client.read-financial-info' => [
         'type' => 2,
-        'description' => 'Allows viewing client\'s financial info',
+        'description' => 'Read client financial info',
     ],
     'deny:client.read-financial-info' => [
         'type' => 2,
@@ -1350,7 +1350,7 @@ return [
     ],
     'client.read-requisite' => [
         'type' => 2,
-        'description' => 'Allows viewing setted requisite to client',
+        'description' => 'Read requisites set to client',
     ],
     'deny:client.read-requisite' => [
         'type' => 2,
@@ -1358,7 +1358,7 @@ return [
     ],
     'client.read-referral' => [
         'type' => 2,
-        'description' => 'Allows viewing client\'s referral',
+        'description' => 'Read referral set to client',
     ],
     'deny:client.read-referral' => [
         'type' => 2,
@@ -1366,7 +1366,7 @@ return [
     ],
     'client.read-deleted' => [
         'type' => 2,
-        'description' => 'Allows viewing deleted clients',
+        'description' => 'Read deleted clients',
     ],
     'deny:client.read-deleted' => [
         'type' => 2,
@@ -1374,7 +1374,7 @@ return [
     ],
     'purse.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the purse',
+        'description' => 'Update purses',
     ],
     'deny:purse.update' => [
         'type' => 2,
@@ -1382,7 +1382,7 @@ return [
     ],
     'purse.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the purse',
+        'description' => 'Read purses',
     ],
     'deny:purse.read' => [
         'type' => 2,
@@ -1390,7 +1390,7 @@ return [
     ],
     'purse.set-credit' => [
         'type' => 2,
-        'description' => 'Allows set credit to the purse',
+        'description' => 'Set purse credit',
     ],
     'deny:purse.set-credit' => [
         'type' => 2,
@@ -1398,7 +1398,7 @@ return [
     ],
     'employee.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the employee',
+        'description' => 'Read employees',
         'internal' => true,
     ],
     'deny:employee.read' => [
@@ -1407,7 +1407,7 @@ return [
     ],
     'employee.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the employee',
+        'description' => 'Create employees',
         'internal' => true,
     ],
     'deny:employee.create' => [
@@ -1416,7 +1416,7 @@ return [
     ],
     'employee.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the employee',
+        'description' => 'Update employees',
         'internal' => true,
     ],
     'deny:employee.update' => [
@@ -1425,7 +1425,7 @@ return [
     ],
     'employee.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the employee',
+        'description' => 'Delete employees',
         'internal' => true,
     ],
     'deny:employee.delete' => [
@@ -1434,23 +1434,23 @@ return [
     ],
     'document.acceptance' => [
         'type' => 2,
-        'description' => 'Allows acceptanceing of the document',
+        'description' => 'Access acceptance documents',
     ],
     'deny:document.acceptance' => [
         'type' => 2,
-        'description' => 'Prohibits acceptanceing of the document',
+        'description' => 'Prohibits accepting of the document',
     ],
     'client.impersonate' => [
         'type' => 2,
-        'description' => 'Allows impersonateing of the client',
+        'description' => 'Impersonate',
     ],
     'deny:client.impersonate' => [
         'type' => 2,
-        'description' => 'Prohibits impersonateing of the client',
+        'description' => 'Prohibits impersonating of the client',
     ],
     'client.set-roles' => [
         'type' => 2,
-        'description' => 'Allows setting client roles',
+        'description' => 'Set roles to clients',
     ],
     'deny:client.set-roles' => [
         'type' => 2,
@@ -1458,7 +1458,7 @@ return [
     ],
     'contact.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the contact',
+        'description' => 'Read contacts',
     ],
     'deny:contact.read' => [
         'type' => 2,
@@ -1466,7 +1466,7 @@ return [
     ],
     'contact.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the contact',
+        'description' => 'Create contacts',
     ],
     'deny:contact.create' => [
         'type' => 2,
@@ -1474,7 +1474,7 @@ return [
     ],
     'contact.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the contact',
+        'description' => 'Update contacts',
     ],
     'deny:contact.update' => [
         'type' => 2,
@@ -1482,7 +1482,7 @@ return [
     ],
     'contact.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the contact',
+        'description' => 'Delete contacts',
     ],
     'deny:contact.delete' => [
         'type' => 2,
@@ -1490,7 +1490,7 @@ return [
     ],
     'server.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the server',
+        'description' => 'Read servers',
     ],
     'deny:server.read' => [
         'type' => 2,
@@ -1498,7 +1498,7 @@ return [
     ],
     'server.control-power' => [
         'type' => 2,
-        'description' => 'Allows control-power operation on the server',
+        'description' => 'Control server power',
     ],
     'deny:server.control-power' => [
         'type' => 2,
@@ -1506,7 +1506,7 @@ return [
     ],
     'server.control-system' => [
         'type' => 2,
-        'description' => 'Allows control-system operation on the server',
+        'description' => 'Control server system',
     ],
     'deny:server.control-system' => [
         'type' => 2,
@@ -1514,7 +1514,7 @@ return [
     ],
     'server.set-note' => [
         'type' => 2,
-        'description' => 'Allows set-note operation on the server',
+        'description' => 'Set server note',
     ],
     'deny:server.set-note' => [
         'type' => 2,
@@ -1522,7 +1522,7 @@ return [
     ],
     'server.read-wizzard' => [
         'type' => 2,
-        'description' => 'Allows reading info about wizzarding of the server',
+        'description' => 'Read server wizzarding info',
     ],
     'deny:server.read-wizzard' => [
         'type' => 2,
@@ -1530,7 +1530,7 @@ return [
     ],
     'server.read-legend' => [
         'type' => 2,
-        'description' => 'Allows reading legend of the server',
+        'description' => 'Read servers legend',
     ],
     'deny:server.read-legend' => [
         'type' => 2,
@@ -1538,7 +1538,7 @@ return [
     ],
     'server.read-system-info' => [
         'type' => 2,
-        'description' => 'Allows reading system info of the server',
+        'description' => 'Read server system info',
     ],
     'deny:server.read-system-info' => [
         'type' => 2,
@@ -1546,7 +1546,7 @@ return [
     ],
     'server.wizzard' => [
         'type' => 2,
-        'description' => 'Allows wizzarding of the server',
+        'description' => 'Wizards servers',
     ],
     'deny:server.wizzard' => [
         'type' => 2,
@@ -1554,7 +1554,7 @@ return [
     ],
     'server.set-label' => [
         'type' => 2,
-        'description' => 'Allows set-label operation on the server',
+        'description' => 'Set server label',
     ],
     'deny:server.set-label' => [
         'type' => 2,
@@ -1562,7 +1562,7 @@ return [
     ],
     'consumption.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the consumption',
+        'description' => 'Read consumptions',
     ],
     'deny:consumption.read' => [
         'type' => 2,
@@ -1570,7 +1570,7 @@ return [
     ],
     'server.manage-settings' => [
         'type' => 2,
-        'description' => 'Allows manage-settings operation on the server',
+        'description' => 'Manage server settings',
     ],
     'deny:server.manage-settings' => [
         'type' => 2,
@@ -1578,7 +1578,7 @@ return [
     ],
     'server.see-label' => [
         'type' => 2,
-        'description' => 'Allows see-label operation on the server',
+        'description' => 'Read server label',
     ],
     'deny:server.see-label' => [
         'type' => 2,
@@ -1586,7 +1586,7 @@ return [
     ],
     'server.move-disks' => [
         'type' => 2,
-        'description' => 'Allows move disks between servers',
+        'description' => 'Move disks in servers',
     ],
     'deny:server.move-disks' => [
         'type' => 2,
@@ -1594,7 +1594,7 @@ return [
     ],
     'server.enable-block' => [
         'type' => 2,
-        'description' => 'Allows enable-block operation on the server',
+        'description' => 'Block servers',
     ],
     'deny:server.enable-block' => [
         'type' => 2,
@@ -1602,7 +1602,7 @@ return [
     ],
     'server.disable-block' => [
         'type' => 2,
-        'description' => 'Allows disable-block operation on the server',
+        'description' => 'Unblock servers',
     ],
     'deny:server.disable-block' => [
         'type' => 2,
@@ -1610,7 +1610,7 @@ return [
     ],
     'server.sell' => [
         'type' => 2,
-        'description' => 'Allows selling of the server',
+        'description' => 'Sell servers',
     ],
     'deny:server.sell' => [
         'type' => 2,
@@ -1618,7 +1618,7 @@ return [
     ],
     'server.read-financial-info' => [
         'type' => 2,
-        'description' => 'Allows reading financial info of the server',
+        'description' => 'Read server financial info',
     ],
     'deny:server.read-financial-info' => [
         'type' => 2,
@@ -1626,7 +1626,7 @@ return [
     ],
     'server.read-billing' => [
         'type' => 2,
-        'description' => 'Allow reading of tariff and sale information of server',
+        'description' => 'Read server billing information',
     ],
     'deny:server.read-billing' => [
         'type' => 2,
@@ -1634,7 +1634,7 @@ return [
     ],
     'server.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the server',
+        'description' => 'Create servers',
         'internal' => true,
     ],
     'deny:server.create' => [
@@ -1643,7 +1643,7 @@ return [
     ],
     'server.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the server',
+        'description' => 'Delete servers',
         'internal' => true,
     ],
     'deny:server.delete' => [
@@ -1652,7 +1652,7 @@ return [
     ],
     'server.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the server',
+        'description' => 'Update servers',
         'internal' => true,
     ],
     'deny:server.update' => [
@@ -1661,7 +1661,7 @@ return [
     ],
     'server.assign-hub' => [
         'type' => 2,
-        'description' => 'Allows assign hubs to server',
+        'description' => 'Assign switches/hubs to server',
         'internal' => true,
     ],
     'deny:server.assign-hub' => [
@@ -1688,7 +1688,7 @@ return [
     ],
     'hub.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the hub',
+        'description' => 'Read switches/hubs',
     ],
     'deny:hub.read' => [
         'type' => 2,
@@ -1696,7 +1696,7 @@ return [
     ],
     'hub.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the hub',
+        'description' => 'Update switches/hubs',
         'internal' => true,
     ],
     'deny:hub.update' => [
@@ -1705,7 +1705,7 @@ return [
     ],
     'hub.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the hub',
+        'description' => 'Create switches/hubs',
         'internal' => true,
     ],
     'deny:hub.create' => [
@@ -1714,7 +1714,7 @@ return [
     ],
     'hub.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the hub',
+        'description' => 'Delete switches/hubs',
         'internal' => true,
     ],
     'deny:hub.delete' => [
@@ -1723,7 +1723,7 @@ return [
     ],
     'hub.sell' => [
         'type' => 2,
-        'description' => 'Allows selling of the hub',
+        'description' => 'Sell switches/hubs',
     ],
     'deny:hub.sell' => [
         'type' => 2,
@@ -1731,7 +1731,7 @@ return [
     ],
     'consumption.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the consumption',
+        'description' => 'Update consumptions',
         'internal' => true,
     ],
     'deny:consumption.update' => [
@@ -1740,7 +1740,7 @@ return [
     ],
     'consumption.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the consumption',
+        'description' => 'Delete consumptions',
         'internal' => true,
     ],
     'deny:consumption.delete' => [
@@ -1749,7 +1749,7 @@ return [
     ],
     'consumption.read-all' => [
         'type' => 2,
-        'description' => 'Allows read-all operation on the consumption',
+        'description' => 'Read all resource consumptions',
         'internal' => true,
     ],
     'deny:consumption.read-all' => [
@@ -1758,7 +1758,7 @@ return [
     ],
     'blacklist.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the blacklist',
+        'description' => 'Read blacklists',
         'internal' => true,
     ],
     'deny:blacklist.read' => [
@@ -1767,7 +1767,7 @@ return [
     ],
     'blacklist.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the blacklist',
+        'description' => 'Create blacklists',
         'internal' => true,
     ],
     'deny:blacklist.create' => [
@@ -1776,7 +1776,7 @@ return [
     ],
     'blacklist.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the blacklist',
+        'description' => 'Update blacklists',
         'internal' => true,
     ],
     'deny:blacklist.update' => [
@@ -1785,7 +1785,7 @@ return [
     ],
     'blacklist.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the blacklist',
+        'description' => 'Delete blacklists',
         'internal' => true,
     ],
     'deny:blacklist.delete' => [
@@ -1794,7 +1794,7 @@ return [
     ],
     'config.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the config',
+        'description' => 'Read configs',
     ],
     'deny:config.read' => [
         'type' => 2,
@@ -1802,7 +1802,7 @@ return [
     ],
     'config.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the config',
+        'description' => 'Create configs',
     ],
     'deny:config.create' => [
         'type' => 2,
@@ -1810,7 +1810,7 @@ return [
     ],
     'config.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the config',
+        'description' => 'Update configs',
     ],
     'deny:config.update' => [
         'type' => 2,
@@ -1818,7 +1818,7 @@ return [
     ],
     'config.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the config',
+        'description' => 'Delete configs',
     ],
     'deny:config.delete' => [
         'type' => 2,
@@ -1826,7 +1826,7 @@ return [
     ],
     'integration.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the integration',
+        'description' => 'Read integrations',
     ],
     'deny:integration.read' => [
         'type' => 2,
@@ -1834,7 +1834,7 @@ return [
     ],
     'integration.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the integration',
+        'description' => 'Create integrations',
     ],
     'deny:integration.create' => [
         'type' => 2,
@@ -1842,7 +1842,7 @@ return [
     ],
     'integration.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the integration',
+        'description' => 'Update integrations',
     ],
     'deny:integration.update' => [
         'type' => 2,
@@ -1850,7 +1850,7 @@ return [
     ],
     'integration.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the integration',
+        'description' => 'Delete integrations',
     ],
     'deny:integration.delete' => [
         'type' => 2,
@@ -1906,7 +1906,7 @@ return [
     ],
     'backuping.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the backuping',
+        'description' => 'Read backups',
     ],
     'deny:backuping.read' => [
         'type' => 2,
@@ -1922,7 +1922,7 @@ return [
     ],
     'backuping.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the backuping',
+        'description' => 'Update backups',
     ],
     'deny:backuping.update' => [
         'type' => 2,
@@ -1930,7 +1930,7 @@ return [
     ],
     'backuping.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the backuping',
+        'description' => 'Delete backups',
     ],
     'deny:backuping.delete' => [
         'type' => 2,
@@ -1938,7 +1938,7 @@ return [
     ],
     'crontab.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the crontab',
+        'description' => 'Read crontabs',
     ],
     'deny:crontab.read' => [
         'type' => 2,
@@ -1946,7 +1946,7 @@ return [
     ],
     'crontab.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the crontab',
+        'description' => 'Create crontabs',
     ],
     'deny:crontab.create' => [
         'type' => 2,
@@ -1954,7 +1954,7 @@ return [
     ],
     'crontab.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the crontab',
+        'description' => 'Update crontabs',
     ],
     'deny:crontab.update' => [
         'type' => 2,
@@ -1962,7 +1962,7 @@ return [
     ],
     'crontab.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the crontab',
+        'description' => 'Delete crontabs',
     ],
     'deny:crontab.delete' => [
         'type' => 2,
@@ -1970,7 +1970,7 @@ return [
     ],
     'db.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the db',
+        'description' => 'Read DBs',
     ],
     'deny:db.read' => [
         'type' => 2,
@@ -1978,7 +1978,7 @@ return [
     ],
     'db.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the db',
+        'description' => 'Create DBs',
     ],
     'deny:db.create' => [
         'type' => 2,
@@ -1986,7 +1986,7 @@ return [
     ],
     'db.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the db',
+        'description' => 'Update DBs',
     ],
     'deny:db.update' => [
         'type' => 2,
@@ -1994,7 +1994,7 @@ return [
     ],
     'db.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the db',
+        'description' => 'Delete DBs',
     ],
     'deny:db.delete' => [
         'type' => 2,
@@ -2002,7 +2002,7 @@ return [
     ],
     'zone.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the zone',
+        'description' => 'Create DNS zones',
         'internal' => true,
     ],
     'deny:zone.create' => [
@@ -2011,7 +2011,7 @@ return [
     ],
     'zone.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the zone',
+        'description' => 'Update DNS zones',
         'internal' => true,
     ],
     'deny:zone.update' => [
@@ -2020,7 +2020,7 @@ return [
     ],
     'zone.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the zone',
+        'description' => 'Read DNS zones',
         'internal' => true,
     ],
     'deny:zone.read' => [
@@ -2029,7 +2029,7 @@ return [
     ],
     'zone.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the zone',
+        'description' => 'Delete DNS zones',
         'internal' => true,
     ],
     'deny:zone.delete' => [
@@ -2038,7 +2038,7 @@ return [
     ],
     'hdomain.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the hdomain',
+        'description' => 'Read hosting domains',
     ],
     'deny:hdomain.read' => [
         'type' => 2,
@@ -2046,7 +2046,7 @@ return [
     ],
     'hdomain.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the hdomain',
+        'description' => 'Create hosting domains',
     ],
     'deny:hdomain.create' => [
         'type' => 2,
@@ -2054,7 +2054,7 @@ return [
     ],
     'hdomain.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the hdomain',
+        'description' => 'Update hosting domains',
     ],
     'deny:hdomain.update' => [
         'type' => 2,
@@ -2062,7 +2062,7 @@ return [
     ],
     'hdomain.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the hdomain',
+        'description' => 'Delete hosting domains',
     ],
     'deny:hdomain.delete' => [
         'type' => 2,
@@ -2070,7 +2070,7 @@ return [
     ],
     'hdomain.set-dns' => [
         'type' => 2,
-        'description' => 'Allows set-dns operation on the hdomain',
+        'description' => 'Set DNS for hosting domains',
     ],
     'deny:hdomain.set-dns' => [
         'type' => 2,
@@ -2078,7 +2078,7 @@ return [
     ],
     'ip.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the ip',
+        'description' => 'Read IPs',
     ],
     'deny:ip.read' => [
         'type' => 2,
@@ -2086,7 +2086,7 @@ return [
     ],
     'ip.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the ip',
+        'description' => 'Create IPs',
     ],
     'deny:ip.create' => [
         'type' => 2,
@@ -2094,7 +2094,7 @@ return [
     ],
     'ip.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the ip',
+        'description' => 'Update IPs',
     ],
     'deny:ip.update' => [
         'type' => 2,
@@ -2102,7 +2102,7 @@ return [
     ],
     'ip.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the ip',
+        'description' => 'Delete IPs',
     ],
     'deny:ip.delete' => [
         'type' => 2,
@@ -2110,7 +2110,7 @@ return [
     ],
     'mail.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the mail',
+        'description' => 'Read mail records',
     ],
     'deny:mail.read' => [
         'type' => 2,
@@ -2118,7 +2118,7 @@ return [
     ],
     'mail.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the mail',
+        'description' => 'Create mail records',
     ],
     'deny:mail.create' => [
         'type' => 2,
@@ -2126,7 +2126,7 @@ return [
     ],
     'mail.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the mail',
+        'description' => 'Update mail records',
     ],
     'deny:mail.update' => [
         'type' => 2,
@@ -2134,7 +2134,7 @@ return [
     ],
     'mail.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the mail',
+        'description' => 'Delete mail records',
     ],
     'deny:mail.delete' => [
         'type' => 2,
@@ -2142,7 +2142,7 @@ return [
     ],
     'request.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the request',
+        'description' => 'Read requests',
     ],
     'deny:request.read' => [
         'type' => 2,
@@ -2150,7 +2150,7 @@ return [
     ],
     'request.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the request',
+        'description' => 'Create requests',
     ],
     'deny:request.create' => [
         'type' => 2,
@@ -2158,7 +2158,7 @@ return [
     ],
     'request.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the request',
+        'description' => 'Update requests',
     ],
     'deny:request.update' => [
         'type' => 2,
@@ -2166,7 +2166,7 @@ return [
     ],
     'request.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the request',
+        'description' => 'Delete requests',
     ],
     'deny:request.delete' => [
         'type' => 2,
@@ -2174,7 +2174,7 @@ return [
     ],
     'service.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the service',
+        'description' => 'Read services',
     ],
     'deny:service.read' => [
         'type' => 2,
@@ -2182,7 +2182,7 @@ return [
     ],
     'service.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the service',
+        'description' => 'Create services',
     ],
     'deny:service.create' => [
         'type' => 2,
@@ -2190,7 +2190,7 @@ return [
     ],
     'service.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the service',
+        'description' => 'Update services',
     ],
     'deny:service.update' => [
         'type' => 2,
@@ -2198,7 +2198,7 @@ return [
     ],
     'service.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the service',
+        'description' => 'Delete services',
     ],
     'deny:service.delete' => [
         'type' => 2,
@@ -2206,7 +2206,7 @@ return [
     ],
     'vhost.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the vhost',
+        'description' => 'Read virthosts',
     ],
     'deny:vhost.read' => [
         'type' => 2,
@@ -2214,7 +2214,7 @@ return [
     ],
     'vhost.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the vhost',
+        'description' => 'Create virthosts',
     ],
     'deny:vhost.create' => [
         'type' => 2,
@@ -2222,7 +2222,7 @@ return [
     ],
     'vhost.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the vhost',
+        'description' => 'Update virthosts',
     ],
     'deny:vhost.update' => [
         'type' => 2,
@@ -2230,7 +2230,7 @@ return [
     ],
     'vhost.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the vhost',
+        'description' => 'Delete virthosts',
     ],
     'deny:vhost.delete' => [
         'type' => 2,
@@ -2238,7 +2238,7 @@ return [
     ],
     'purse.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the purse',
+        'description' => 'Create purses',
     ],
     'deny:purse.create' => [
         'type' => 2,
@@ -2246,7 +2246,7 @@ return [
     ],
     'pnl.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the pnl',
+        'description' => 'Read PNL report',
         'internal' => true,
     ],
     'deny:pnl.read' => [
@@ -2255,7 +2255,7 @@ return [
     ],
     'pnl.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the pnl',
+        'description' => 'Update PNL report',
         'internal' => true,
     ],
     'deny:pnl.update' => [
@@ -2264,7 +2264,7 @@ return [
     ],
     'pnl.read-expenses' => [
         'type' => 2,
-        'description' => 'Allows read-expenses operation on the pnl',
+        'description' => 'Read expenses data in PNL report',
         'internal' => true,
     ],
     'deny:pnl.read-expenses' => [
@@ -2273,7 +2273,7 @@ return [
     ],
     'costprice.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the costprice',
+        'description' => 'Read costprices',
         'internal' => true,
     ],
     'deny:costprice.read' => [
@@ -2282,7 +2282,7 @@ return [
     ],
     'costprice.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the costprice',
+        'description' => 'Create costprices',
         'internal' => true,
     ],
     'deny:costprice.create' => [
@@ -2291,7 +2291,7 @@ return [
     ],
     'costprice.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the costprice',
+        'description' => 'Update costprices',
         'internal' => true,
     ],
     'deny:costprice.update' => [
@@ -2300,7 +2300,7 @@ return [
     ],
     'costprice.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the costprice',
+        'description' => 'Delete costprices',
         'internal' => true,
     ],
     'deny:costprice.delete' => [
@@ -2309,7 +2309,7 @@ return [
     ],
     'bill.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the bill',
+        'description' => 'Read bills',
     ],
     'deny:bill.read' => [
         'type' => 2,
@@ -2317,7 +2317,7 @@ return [
     ],
     'bill.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the bill',
+        'description' => 'Create bills',
     ],
     'deny:bill.create' => [
         'type' => 2,
@@ -2325,7 +2325,7 @@ return [
     ],
     'bill.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the bill',
+        'description' => 'Update bills',
     ],
     'deny:bill.update' => [
         'type' => 2,
@@ -2333,7 +2333,7 @@ return [
     ],
     'bill.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the bill',
+        'description' => 'Delete bills',
     ],
     'deny:bill.delete' => [
         'type' => 2,
@@ -2341,7 +2341,7 @@ return [
     ],
     'bill.import' => [
         'type' => 2,
-        'description' => 'Allows import bills',
+        'description' => 'Import bills',
     ],
     'deny:bill.import' => [
         'type' => 2,
@@ -2349,7 +2349,7 @@ return [
     ],
     'bill.create-exchange' => [
         'type' => 2,
-        'description' => 'Allows exchange currencies',
+        'description' => 'Exchange currencies',
     ],
     'deny:bill.create-exchange' => [
         'type' => 2,
@@ -2357,7 +2357,7 @@ return [
     ],
     'requisites.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the requisites',
+        'description' => 'Read requisites',
     ],
     'deny:requisites.read' => [
         'type' => 2,
@@ -2365,7 +2365,7 @@ return [
     ],
     'requisites.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the requisites',
+        'description' => 'Create requisites',
     ],
     'deny:requisites.create' => [
         'type' => 2,
@@ -2373,7 +2373,7 @@ return [
     ],
     'requisites.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the requisites',
+        'description' => 'Update requisites',
     ],
     'deny:requisites.update' => [
         'type' => 2,
@@ -2381,7 +2381,7 @@ return [
     ],
     'requisites.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the requisites',
+        'description' => 'Delete requisites',
     ],
     'deny:requisites.delete' => [
         'type' => 2,
@@ -2389,7 +2389,7 @@ return [
     ],
     'price.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the price',
+        'description' => 'Read tariff prices',
     ],
     'deny:price.read' => [
         'type' => 2,
@@ -2397,7 +2397,7 @@ return [
     ],
     'finance.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the finance',
+        'description' => 'Read finances',
     ],
     'deny:finance.read' => [
         'type' => 2,
@@ -2405,7 +2405,7 @@ return [
     ],
     'plan.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the plan',
+        'description' => 'Create tariff plans',
     ],
     'deny:plan.create' => [
         'type' => 2,
@@ -2413,7 +2413,7 @@ return [
     ],
     'plan.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the plan',
+        'description' => 'Update tariff plans',
     ],
     'deny:plan.update' => [
         'type' => 2,
@@ -2421,7 +2421,7 @@ return [
     ],
     'plan.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the plan',
+        'description' => 'Delete tariff plans',
     ],
     'deny:plan.delete' => [
         'type' => 2,
@@ -2429,7 +2429,7 @@ return [
     ],
     'plan.force-read' => [
         'type' => 2,
-        'description' => 'Allows force-read operation on the plan',
+        'description' => 'Read tariff plans additional data',
     ],
     'deny:plan.force-read' => [
         'type' => 2,
@@ -2437,7 +2437,7 @@ return [
     ],
     'price.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the price',
+        'description' => 'Update tariff prices',
     ],
     'deny:price.update' => [
         'type' => 2,
@@ -2445,7 +2445,7 @@ return [
     ],
     'price.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the price',
+        'description' => 'Delete tariff prices',
     ],
     'deny:price.delete' => [
         'type' => 2,
@@ -2453,7 +2453,7 @@ return [
     ],
     'price.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the price',
+        'description' => 'Create tariff prices',
     ],
     'deny:price.create' => [
         'type' => 2,
@@ -2461,7 +2461,7 @@ return [
     ],
     'plan.set-note' => [
         'type' => 2,
-        'description' => 'Allows set note to plan',
+        'description' => 'Set tariff plans notes',
     ],
     'deny:plan.set-note' => [
         'type' => 2,
@@ -2469,7 +2469,7 @@ return [
     ],
     'document.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the document',
+        'description' => 'Read documents',
     ],
     'deny:document.read' => [
         'type' => 2,
@@ -2477,7 +2477,7 @@ return [
     ],
     'document.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the document',
+        'description' => 'Create documents',
     ],
     'deny:document.create' => [
         'type' => 2,
@@ -2485,15 +2485,15 @@ return [
     ],
     'document.invoice' => [
         'type' => 2,
-        'description' => 'Allows invoiceing of the document',
+        'description' => 'Access invoice documents',
     ],
     'deny:document.invoice' => [
         'type' => 2,
-        'description' => 'Prohibits invoiceing of the document',
+        'description' => 'Prohibits invoicing of the document',
     ],
     'document.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the document',
+        'description' => 'Update documents',
     ],
     'deny:document.update' => [
         'type' => 2,
@@ -2501,7 +2501,7 @@ return [
     ],
     'document.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the document',
+        'description' => 'Delete documents',
     ],
     'deny:document.delete' => [
         'type' => 2,
@@ -2509,15 +2509,15 @@ return [
     ],
     'document.generate' => [
         'type' => 2,
-        'description' => 'Allows generateing of the document',
+        'description' => 'Generate documents',
     ],
     'deny:document.generate' => [
         'type' => 2,
-        'description' => 'Prohibits generateing of the document',
+        'description' => 'Prohibits generating of the document',
     ],
     'document.generate-all' => [
         'type' => 2,
-        'description' => 'Allows generate-all operation on the document',
+        'description' => 'Generate all documents',
     ],
     'deny:document.generate-all' => [
         'type' => 2,
@@ -2525,7 +2525,7 @@ return [
     ],
     'sale.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the sale',
+        'description' => 'Read sales',
     ],
     'deny:sale.read' => [
         'type' => 2,
@@ -2533,7 +2533,7 @@ return [
     ],
     'sale.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the sale',
+        'description' => 'Delete sales',
     ],
     'deny:sale.delete' => [
         'type' => 2,
@@ -2541,7 +2541,7 @@ return [
     ],
     'sale.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the sale',
+        'description' => 'Update sales',
     ],
     'deny:sale.update' => [
         'type' => 2,
@@ -2549,7 +2549,7 @@ return [
     ],
     'sale.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the sale',
+        'description' => 'Create sales',
     ],
     'deny:sale.create' => [
         'type' => 2,
@@ -2557,7 +2557,7 @@ return [
     ],
     'target.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the target',
+        'description' => 'Read billing targets',
     ],
     'deny:target.read' => [
         'type' => 2,
@@ -2565,7 +2565,7 @@ return [
     ],
     'target.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the target',
+        'description' => 'Create billing targets',
     ],
     'deny:target.create' => [
         'type' => 2,
@@ -2573,7 +2573,7 @@ return [
     ],
     'target.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the target',
+        'description' => 'Update billing targets',
     ],
     'deny:target.update' => [
         'type' => 2,
@@ -2581,7 +2581,7 @@ return [
     ],
     'target.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the target',
+        'description' => 'Delete billing targets',
     ],
     'deny:target.delete' => [
         'type' => 2,
@@ -2589,7 +2589,7 @@ return [
     ],
     'part.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the part',
+        'description' => 'Read stock parts',
     ],
     'deny:part.read' => [
         'type' => 2,
@@ -2597,7 +2597,7 @@ return [
     ],
     'part.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the part',
+        'description' => 'Create stock parts',
     ],
     'deny:part.create' => [
         'type' => 2,
@@ -2605,7 +2605,7 @@ return [
     ],
     'part.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the part',
+        'description' => 'Update stock parts',
     ],
     'deny:part.update' => [
         'type' => 2,
@@ -2613,7 +2613,7 @@ return [
     ],
     'part.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the part',
+        'description' => 'Delete stock parts',
     ],
     'deny:part.delete' => [
         'type' => 2,
@@ -2621,7 +2621,7 @@ return [
     ],
     'part.read-all-hierarchy' => [
         'type' => 2,
-        'description' => 'Allows read-all-hierarchy operation on the part',
+        'description' => 'Read all parts',
         'internal' => true,
     ],
     'deny:part.read-all-hierarchy' => [
@@ -2630,7 +2630,7 @@ return [
     ],
     'part.erase' => [
         'type' => 2,
-        'description' => 'Allows completely delete the part along with its move history',
+        'description' => 'Completely delete the part along with its move history',
     ],
     'deny:part.erase' => [
         'type' => 2,
@@ -2638,7 +2638,7 @@ return [
     ],
     'move.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the move',
+        'description' => 'Read stock moves',
     ],
     'deny:move.read' => [
         'type' => 2,
@@ -2646,7 +2646,7 @@ return [
     ],
     'move.get-directions' => [
         'type' => 2,
-        'description' => 'Allows get-directions operation on the move',
+        'description' => 'Get available stock move directions',
         'internal' => true,
     ],
     'deny:move.get-directions' => [
@@ -2655,7 +2655,7 @@ return [
     ],
     'move.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the move',
+        'description' => 'Create stock moves',
         'internal' => true,
     ],
     'deny:move.create' => [
@@ -2664,7 +2664,7 @@ return [
     ],
     'move.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the move',
+        'description' => 'Update stock moves',
     ],
     'deny:move.update' => [
         'type' => 2,
@@ -2672,7 +2672,7 @@ return [
     ],
     'move.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the move',
+        'description' => 'Delete stock moves',
     ],
     'deny:move.delete' => [
         'type' => 2,
@@ -2680,7 +2680,7 @@ return [
     ],
     'move.read-all' => [
         'type' => 2,
-        'description' => 'Allows read-all operation on the move',
+        'description' => 'Read all stock moves',
         'internal' => true,
     ],
     'deny:move.read-all' => [
@@ -2689,7 +2689,7 @@ return [
     ],
     'model.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the model',
+        'description' => 'Read stock models',
     ],
     'deny:model.read' => [
         'type' => 2,
@@ -2697,7 +2697,7 @@ return [
     ],
     'model.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the model',
+        'description' => 'Create stock models',
     ],
     'deny:model.create' => [
         'type' => 2,
@@ -2705,7 +2705,7 @@ return [
     ],
     'model.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the model',
+        'description' => 'Update stock models',
     ],
     'deny:model.update' => [
         'type' => 2,
@@ -2713,7 +2713,7 @@ return [
     ],
     'model.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the model',
+        'description' => 'Delete stock models',
     ],
     'deny:model.delete' => [
         'type' => 2,
@@ -2721,7 +2721,7 @@ return [
     ],
     'order.read' => [
         'type' => 2,
-        'description' => 'Read orders',
+        'description' => 'Read stock orders',
         'internal' => true,
     ],
     'deny:order.read' => [
@@ -2730,7 +2730,7 @@ return [
     ],
     'order.create' => [
         'type' => 2,
-        'description' => 'Create orders',
+        'description' => 'Create stock orders',
         'internal' => true,
     ],
     'deny:order.create' => [
@@ -2739,7 +2739,7 @@ return [
     ],
     'order.update' => [
         'type' => 2,
-        'description' => 'Update orders',
+        'description' => 'Update stock orders',
         'internal' => true,
     ],
     'deny:order.update' => [
@@ -2748,7 +2748,7 @@ return [
     ],
     'order.delete' => [
         'type' => 2,
-        'description' => 'Delete orders',
+        'description' => 'Delete stock orders',
         'internal' => true,
     ],
     'deny:order.delete' => [
@@ -2757,7 +2757,7 @@ return [
     ],
     'order.read-profits' => [
         'type' => 2,
-        'description' => 'Read info about order profits',
+        'description' => 'Read info about stock order profits',
         'internal' => true,
     ],
     'deny:order.read-profits' => [
@@ -2766,7 +2766,7 @@ return [
     ],
     'stock.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the stock',
+        'description' => 'Read stock',
     ],
     'deny:stock.read' => [
         'type' => 2,
@@ -2774,7 +2774,7 @@ return [
     ],
     'part.read-administrative' => [
         'type' => 2,
-        'description' => 'Allows reading administrative data of the part',
+        'description' => 'Reading parts administrative data',
     ],
     'deny:part.read-administrative' => [
         'type' => 2,
@@ -2782,7 +2782,7 @@ return [
     ],
     'audit.read' => [
         'type' => 2,
-        'description' => 'Allows reading the change history of core objects, you have direct access to.',
+        'description' => 'Read changes history of core objects, you have direct access to',
         'internal' => true,
     ],
     'deny:audit.read' => [
@@ -2791,7 +2791,7 @@ return [
     ],
     'audit.read_everything' => [
         'type' => 2,
-        'description' => 'Root permission allows history reading on system objects or objects you don’t have access to.',
+        'description' => 'Read changes history of any objects',
         'internal' => true,
     ],
     'deny:audit.read_everything' => [
@@ -2816,7 +2816,7 @@ return [
     ],
     'domain.pay' => [
         'type' => 2,
-        'description' => 'Allows paying of the domain',
+        'description' => 'Pay domains',
     ],
     'deny:domain.pay' => [
         'type' => 2,
@@ -2824,7 +2824,7 @@ return [
     ],
     'domain.push' => [
         'type' => 2,
-        'description' => 'Allows pushing of the domain',
+        'description' => 'Push domains',
     ],
     'deny:domain.push' => [
         'type' => 2,
@@ -2832,7 +2832,7 @@ return [
     ],
     'domain.delete-agp' => [
         'type' => 2,
-        'description' => 'Allows delete-agp operation on the domain',
+        'description' => 'Delete AGP domains',
     ],
     'deny:domain.delete-agp' => [
         'type' => 2,
@@ -2840,7 +2840,7 @@ return [
     ],
     'certificate.pay' => [
         'type' => 2,
-        'description' => 'Allows paying of the certificate',
+        'description' => 'Pay certificates',
     ],
     'deny:certificate.pay' => [
         'type' => 2,
@@ -2848,7 +2848,7 @@ return [
     ],
     'certificate.push' => [
         'type' => 2,
-        'description' => 'Allows pushing of the certificate',
+        'description' => 'Push certificates',
     ],
     'deny:certificate.push' => [
         'type' => 2,
@@ -2856,7 +2856,7 @@ return [
     ],
     'client.notify' => [
         'type' => 2,
-        'description' => 'Allows notifying of the client',
+        'description' => 'Notify clients',
     ],
     'deny:client.notify' => [
         'type' => 2,
@@ -2876,7 +2876,7 @@ return [
     ],
     'support' => [
         'type' => 2,
-        'description' => 'Allows supporting',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'deny:support' => [
         'type' => 2,
@@ -2892,7 +2892,7 @@ return [
     ],
     'see-no-mans' => [
         'type' => 2,
-        'description' => 'Allows see-no-mans operation',
+        'description' => 'See unsold objects',
         'internal' => true,
     ],
     'deny:see-no-mans' => [
@@ -2901,11 +2901,11 @@ return [
     ],
     'manage' => [
         'type' => 2,
-        'description' => 'Allows manageing',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'deny:manage' => [
         'type' => 2,
-        'description' => 'Prohibits manageing',
+        'description' => 'Prohibits managing',
     ],
     'access-reseller' => [
         'type' => 2,
@@ -2917,7 +2917,7 @@ return [
     ],
     'contact.force-verify' => [
         'type' => 2,
-        'description' => 'Allows force-verify operation on the contact',
+        'description' => 'Force-verify contacts',
     ],
     'deny:contact.force-verify' => [
         'type' => 2,
@@ -2925,15 +2925,15 @@ return [
     ],
     'mailing.prepare' => [
         'type' => 2,
-        'description' => 'Allows prepareing of the mailing',
+        'description' => 'Mailing preparation',
     ],
     'deny:mailing.prepare' => [
         'type' => 2,
-        'description' => 'Prohibits prepareing of the mailing',
+        'description' => 'Prohibits preparing of the mailing',
     ],
     'mailing.send' => [
         'type' => 2,
-        'description' => 'Allows sending of the mailing',
+        'description' => 'Send mailings',
     ],
     'deny:mailing.send' => [
         'type' => 2,
@@ -2941,7 +2941,7 @@ return [
     ],
     'client.set-tmp-pwd' => [
         'type' => 2,
-        'description' => 'Allows to set client temporary password',
+        'description' => 'Set temporary password to client',
     ],
     'deny:client.set-tmp-pwd' => [
         'type' => 2,
@@ -2949,7 +2949,7 @@ return [
     ],
     'resell' => [
         'type' => 2,
-        'description' => 'Allows reselling',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'deny:resell' => [
         'type' => 2,
@@ -2965,7 +2965,7 @@ return [
     ],
     'part.sell' => [
         'type' => 2,
-        'description' => 'Allows selling of the part',
+        'description' => 'Sell stock parts',
     ],
     'deny:part.sell' => [
         'type' => 2,
@@ -2973,7 +2973,7 @@ return [
     ],
     'client.set-others-allowed-ips' => [
         'type' => 2,
-        'description' => 'Allows set-others-allowed-ips operation on the client',
+        'description' => 'Set allowed IPs to other clients',
     ],
     'deny:client.set-others-allowed-ips' => [
         'type' => 2,
@@ -2981,7 +2981,7 @@ return [
     ],
     'domain.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the domain',
+        'description' => 'Read domains',
     ],
     'deny:domain.read' => [
         'type' => 2,
@@ -2989,7 +2989,7 @@ return [
     ],
     'domain.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the domain',
+        'description' => 'Update domains',
     ],
     'deny:domain.update' => [
         'type' => 2,
@@ -2997,7 +2997,7 @@ return [
     ],
     'domain.set-nss' => [
         'type' => 2,
-        'description' => 'Allows set-nss operation on the domain',
+        'description' => 'Set domain NSs',
     ],
     'deny:domain.set-nss' => [
         'type' => 2,
@@ -3005,7 +3005,7 @@ return [
     ],
     'domain.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the domain',
+        'description' => 'Delete domains',
     ],
     'deny:domain.delete' => [
         'type' => 2,
@@ -3013,23 +3013,23 @@ return [
     ],
     'domain.freeze' => [
         'type' => 2,
-        'description' => 'Allows freezeing of the domain',
+        'description' => 'Freeze domains',
     ],
     'deny:domain.freeze' => [
         'type' => 2,
-        'description' => 'Prohibits freezeing of the domain',
+        'description' => 'Prohibits freezing of the domain',
     ],
     'domain.unfreeze' => [
         'type' => 2,
-        'description' => 'Allows unfreezeing of the domain',
+        'description' => 'Unfreeze domains',
     ],
     'deny:domain.unfreeze' => [
         'type' => 2,
-        'description' => 'Prohibits unfreezeing of the domain',
+        'description' => 'Prohibits unfreezing of the domain',
     ],
     'domain.force-push' => [
         'type' => 2,
-        'description' => 'Allows force-push operation on the domain',
+        'description' => 'Force push domains',
     ],
     'deny:domain.force-push' => [
         'type' => 2,
@@ -3037,7 +3037,7 @@ return [
     ],
     'domain.force-send-foa' => [
         'type' => 2,
-        'description' => 'Allows force-send-foa operation on the domain',
+        'description' => 'Force send FOA for domains',
     ],
     'deny:domain.force-send-foa' => [
         'type' => 2,
@@ -3045,7 +3045,7 @@ return [
     ],
     'domain.force-set-nss' => [
         'type' => 2,
-        'description' => 'Allows force-set-nss operation on the domain',
+        'description' => 'Force set domain NSs',
     ],
     'deny:domain.force-set-nss' => [
         'type' => 2,
@@ -3053,7 +3053,7 @@ return [
     ],
     'domain.approve-trasfer-out' => [
         'type' => 2,
-        'description' => 'Allows approve-trasfer-out operation on the domain',
+        'description' => 'Approve domain trasfer out',
     ],
     'deny:domain.approve-trasfer-out' => [
         'type' => 2,
@@ -3061,7 +3061,7 @@ return [
     ],
     'domain.maintain' => [
         'type' => 2,
-        'description' => 'Allow operation with domain in DB',
+        'description' => 'Modify domains in DB',
     ],
     'deny:domain.maintain' => [
         'type' => 2,
@@ -3069,7 +3069,7 @@ return [
     ],
     'dns.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the dns',
+        'description' => 'Create DNS records',
     ],
     'deny:dns.create' => [
         'type' => 2,
@@ -3077,7 +3077,7 @@ return [
     ],
     'dns.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the dns',
+        'description' => 'Read DNS records',
     ],
     'deny:dns.read' => [
         'type' => 2,
@@ -3085,7 +3085,7 @@ return [
     ],
     'dns.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the dns',
+        'description' => 'Update DNS records',
     ],
     'deny:dns.update' => [
         'type' => 2,
@@ -3093,7 +3093,7 @@ return [
     ],
     'dns.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the dns',
+        'description' => 'Delete DNS records',
     ],
     'deny:dns.delete' => [
         'type' => 2,
@@ -3101,7 +3101,7 @@ return [
     ],
     'certificate.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the certificate',
+        'description' => 'Read certificates',
     ],
     'deny:certificate.read' => [
         'type' => 2,
@@ -3109,7 +3109,7 @@ return [
     ],
     'certificate.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the certificate',
+        'description' => 'Create certificates',
     ],
     'deny:certificate.create' => [
         'type' => 2,
@@ -3117,7 +3117,7 @@ return [
     ],
     'certificate.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the certificate',
+        'description' => 'Update certificates',
     ],
     'deny:certificate.update' => [
         'type' => 2,
@@ -3125,7 +3125,7 @@ return [
     ],
     'certificate.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the certificate',
+        'description' => 'Delete certificates',
     ],
     'deny:certificate.delete' => [
         'type' => 2,
@@ -3133,7 +3133,7 @@ return [
     ],
     'ticket.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the ticket',
+        'description' => 'Read tickets',
     ],
     'deny:ticket.read' => [
         'type' => 2,
@@ -3141,7 +3141,7 @@ return [
     ],
     'ticket.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the ticket',
+        'description' => 'Create tickets',
     ],
     'deny:ticket.create' => [
         'type' => 2,
@@ -3149,7 +3149,7 @@ return [
     ],
     'ticket.answer' => [
         'type' => 2,
-        'description' => 'Allows answering of the ticket',
+        'description' => 'Answer tickets',
     ],
     'deny:ticket.answer' => [
         'type' => 2,
@@ -3157,15 +3157,15 @@ return [
     ],
     'ticket.close' => [
         'type' => 2,
-        'description' => 'Allows closeing of the ticket',
+        'description' => 'Close tickets',
     ],
     'deny:ticket.close' => [
         'type' => 2,
-        'description' => 'Prohibits closeing of the ticket',
+        'description' => 'Prohibits closing of the ticket',
     ],
     'ticket.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the ticket',
+        'description' => 'Update tickets',
     ],
     'deny:ticket.update' => [
         'type' => 2,
@@ -3173,7 +3173,7 @@ return [
     ],
     'ticket.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the ticket',
+        'description' => 'Delete tickets',
     ],
     'deny:ticket.delete' => [
         'type' => 2,
@@ -3181,7 +3181,7 @@ return [
     ],
     'ticket.read-templates' => [
         'type' => 2,
-        'description' => 'Allows viewing ticket templates',
+        'description' => 'Read ticket templates',
     ],
     'deny:ticket.read-templates' => [
         'type' => 2,
@@ -3189,7 +3189,7 @@ return [
     ],
     'ticket.read-statistics' => [
         'type' => 2,
-        'description' => 'Allows viewing tickets statistics',
+        'description' => 'Read ticket statistics',
     ],
     'deny:ticket.read-statistics' => [
         'type' => 2,
@@ -3197,7 +3197,7 @@ return [
     ],
     'ticket.set-private' => [
         'type' => 2,
-        'description' => 'Allows setting `private` to answer',
+        'description' => 'Make private ticket answers',
     ],
     'deny:ticket.set-private' => [
         'type' => 2,
@@ -3205,7 +3205,7 @@ return [
     ],
     'ticket.set-recipient' => [
         'type' => 2,
-        'description' => 'Allows setting ticket\'s recipient',
+        'description' => 'Set ticket recipient',
     ],
     'deny:ticket.set-recipient' => [
         'type' => 2,
@@ -3213,7 +3213,7 @@ return [
     ],
     'ticket.set-time' => [
         'type' => 2,
-        'description' => 'Allows setting spent time to ticket',
+        'description' => 'Set ticket answer spent time',
     ],
     'deny:ticket.set-time' => [
         'type' => 2,
@@ -3221,23 +3221,23 @@ return [
     ],
     'test.beta' => [
         'type' => 2,
-        'description' => 'Allows betaing of the test',
+        'description' => 'Beta testing',
     ],
     'deny:test.beta' => [
         'type' => 2,
-        'description' => 'Prohibits betaing of the test',
+        'description' => 'Prohibits betatesting of the test',
     ],
     'test.alpha' => [
         'type' => 2,
-        'description' => 'Allows alphaing of the test',
+        'description' => 'Alpha testing',
     ],
     'deny:test.alpha' => [
         'type' => 2,
-        'description' => 'Prohibits alphaing of the test',
+        'description' => 'Prohibits alphatesting of the test',
     ],
     'ref.view.not-used' => [
         'type' => 2,
-        'description' => 'Allows view.not-used operation on the ref',
+        'description' => 'Read not used refs',
         'internal' => true,
     ],
     'deny:ref.view.not-used' => [
@@ -3246,7 +3246,7 @@ return [
     ],
     'client.set-description' => [
         'type' => 2,
-        'description' => 'Allows set-description operation on the client',
+        'description' => 'Set client description',
         'internal' => true,
     ],
     'deny:client.set-description' => [
@@ -3255,7 +3255,7 @@ return [
     ],
     'owner-staff' => [
         'type' => 2,
-        'description' => 'Marks staff. In process of replacing with specific owner roles',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
         'internal' => true,
     ],
     'deny:owner-staff' => [
