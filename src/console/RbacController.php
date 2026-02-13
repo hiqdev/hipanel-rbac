@@ -102,35 +102,58 @@ class RbacController extends \yii\console\Controller
     public function actionExport()
     {
         $rawps = $this->auth->getPermissions();
-        ksort($rawps);
         $perms = [];
         foreach ($rawps as $name => $perm) {
             if (str_starts_with($name, 'deny:')) continue;
-            if (strpos($name, '.') !== false) continue;
             $perms[$name] = $perm;
         }
 
+        uasort($perms, function ($a, $b) {
+            $aHasDot = strpos($a->name, '.') !== false;
+            $bHasDot = strpos($b->name, '.') !== false;
+
+            return ($bHasDot <=> $aHasDot) ?: strcasecmp($a->name, $b->name);
+        });
+
         $roles = $this->auth->getRoles();
         ksort($roles);
-        $role2perms = [];
         $perm2roles = [];
         foreach ($roles as $role => $roleObj) {
             $this->auth->setAssignment($role, $role);
             foreach ($perms as $perm => $permObj) {
                 if ($this->auth->checkAccess($role, $perm)) {
-                    $role2perms[$role][$perm] = $permObj;
                     $perm2roles[$perm][$role] = $roleObj;
                 }
             }
         }
 
-        echo "Permissions: ".count($perms)."\n";
+        $filename = 'permissions.csv';
+        $file = fopen($filename, 'w');
+
+        $header = ['name', 'description', 'isInternal', 'rolesNum', 'roles'];
+        fputcsv($file, $header);
+
         foreach ($perms as $name => $perm) {
-            $rs = $perm2roles[$name] ?? [];
-            $rn = count($rs);
-            $rr = implode(', ', array_keys($rs));
-            echo "  $perm->name – $perm->description | $rn: $rr\n\n";
+            $rolesForPerm = $perm2roles[$name] ?? [];
+            $rolesCount = count($rolesForPerm);
+            $rolesList = implode(', ', array_map(function ($roleName) {
+                return str_replace('role:', '', $roleName);
+            }, array_keys($rolesForPerm)));
+            $isInternal = method_exists($perm, 'isInternal') && $perm->isInternal();
+
+            $row = [
+                $perm->name,
+                $perm->description,
+                $isInternal ? 'true' : 'false',
+                $rolesCount,
+                $rolesList,
+            ];
+            fputcsv($file, $row);
         }
+
+        fclose($file);
+
+        $this->stdout("Permissions exported to $filename\n", Console::FG_GREEN);
     }
 
     public function actionGenerateDescriptions()
