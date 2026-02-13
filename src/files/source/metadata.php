@@ -311,31 +311,35 @@ return [
         'description' => 'Allows access-reseller operation',
     ],
     'access-subclients' => [
-        'description' => 'Allows access-subclients operation',
+        'description' => 'Access to subclients
+            - Simple clients are NOT granted with this permission
+            - This permission is given to resellers and personnel (both internal and external)
+            - Without this permission user is limited to see ONLY their own objects
+        ',
     ],
     'account.create' => [
-        'description' => 'Allows creating of the account',
+        'description' => 'Create accounts',
     ],
     'account.delete' => [
-        'description' => 'Allows deleting of the account',
+        'description' => 'Delete accounts',
     ],
     'account.read' => [
-        'description' => 'Allows reading of the account',
+        'description' => 'Read accounts',
     ],
     'account.update' => [
-        'description' => 'Allows updating of the account',
+        'description' => 'Update accounts',
     ],
     'admin' => [
-        'description' => 'Allows admining',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'backup.delete' => [
-        'description' => 'Allows deleting of the backup',
+        'description' => 'Delete backups',
     ],
     'backup.read' => [
-        'description' => 'Allows reading of the backup',
+        'description' => 'Read backups',
     ],
     'backuping.create' => [
-        'description' => 'Allows creating of the backuping',
+        'description' => 'Create backups',
     ],
     'backuping.delete' => [
         'description' => 'Allows deleting of the backuping',
@@ -347,11 +351,11 @@ return [
         'description' => 'Allows updating of the backuping',
     ],
     'bill.charges.read' => [
-        'description' => 'Allows charges.read operation on the bill',
+        'description' => 'Read charges (detailed bill info)',
         'internal' => true,
     ],
     'bill.see-server-charges' => [
-        'description' => 'Allows to see server charges (detailed bill info)',
+        'description' => 'Read server charges (detailed server bill info)',
         'internal' => true,
     ],
     'deny:bill.see-server-charges' => [
@@ -1262,7 +1266,7 @@ return [
         'description' => 'Allows reading of the finance',
     ],
     'have-goods' => [
-        'description' => 'Allows have-goods operation',
+        'description' => 'OBSOLETE. To be removed',
     ],
     'hdomain.create' => [
         'description' => 'Allows creating of the hdomain',
@@ -1376,30 +1380,30 @@ return [
         'description' => 'Allows updating of the move',
     ],
     'nothing' => [
-        'description' => 'Allows nothinging',
+        'description' => 'System permission that allows nothing',
     ],
     'order.create' => [
-        'description' => 'Allows creating of the order',
+        'description' => 'Create orders',
         'internal' => true,
     ],
     'order.delete' => [
-        'description' => 'Allows deleting of the order',
+        'description' => 'Delete orders',
         'internal' => true,
     ],
     'order.read' => [
-        'description' => 'Allows reading of the order',
+        'description' => 'Read orders',
         'internal' => true,
     ],
     'order.read-profits' => [
-        'description' => 'Allows read-profits operation on the order',
+        'description' => 'Read info about order profits',
         'internal' => true,
     ],
     'order.update' => [
-        'description' => 'Allows updating of the order',
+        'description' => 'Update orders',
         'internal' => true,
     ],
     'own' => [
-        'description' => 'Allows owning',
+        'description' => 'OBSOLETE. Replaced with more specific permissions',
     ],
     'part.create' => [
         'description' => 'Allows creating of the part',
@@ -1719,7 +1723,7 @@ return [
         'description' => 'Allows reading of the purse',
     ],
     'owner-staff' => [
-        'description' => 'Show if user in staff of organization',
+        'description' => 'Marks staff. In process of replacing with specific owner roles',
         'internal' => true,
     ],
     'role:consumption.master' => [
@@ -1776,7 +1780,7 @@ return [
         'description' => 'Prohibits paying',
     ],
     'pay' => [
-        'description' => 'Allows paying',
+        'description' => 'OBSOLETE. Replaced with specific pay permissions like server.pay and domain.pay',
     ],
     'audit.read' => [
         'description' => 'Allows reading the change history of core objects, you have direct access to.',

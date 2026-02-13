@@ -99,6 +99,40 @@ class RbacController extends \yii\console\Controller
         }
     }
 
+    public function actionExport()
+    {
+        $rawps = $this->auth->getPermissions();
+        ksort($rawps);
+        $perms = [];
+        foreach ($rawps as $name => $perm) {
+            if (str_starts_with($name, 'deny:')) continue;
+            if (strpos($name, '.') !== false) continue;
+            $perms[$name] = $perm;
+        }
+
+        $roles = $this->auth->getRoles();
+        ksort($roles);
+        $role2perms = [];
+        $perm2roles = [];
+        foreach ($roles as $role => $roleObj) {
+            $this->auth->setAssignment($role, $role);
+            foreach ($perms as $perm => $permObj) {
+                if ($this->auth->checkAccess($role, $perm)) {
+                    $role2perms[$role][$perm] = $permObj;
+                    $perm2roles[$perm][$role] = $roleObj;
+                }
+            }
+        }
+
+        echo "Permissions: ".count($perms)."\n";
+        foreach ($perms as $name => $perm) {
+            $rs = $perm2roles[$name] ?? [];
+            $rn = count($rs);
+            $rr = implode(', ', array_keys($rs));
+            echo "  $perm->name – $perm->description | $rn: $rr\n\n";
+        }
+    }
+
     public function actionGenerateDescriptions()
     {
         $path = dirname(__DIR__) . '/files/source/metadata.php';

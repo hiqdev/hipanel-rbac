@@ -1214,7 +1214,7 @@ return [
     ],
     'nothing' => [
         'type' => 2,
-        'description' => 'Allows nothinging',
+        'description' => 'System permission that allows nothing',
     ],
     'deny:nothing' => [
         'type' => 2,
@@ -1670,7 +1670,7 @@ return [
     ],
     'bill.charges.read' => [
         'type' => 2,
-        'description' => 'Allows charges.read operation on the bill',
+        'description' => 'Read charges (detailed bill info)',
         'internal' => true,
     ],
     'deny:bill.charges.read' => [
@@ -1679,7 +1679,7 @@ return [
     ],
     'bill.see-server-charges' => [
         'type' => 2,
-        'description' => 'Allows to see server charges (detailed bill info)',
+        'description' => 'Read server charges (detailed server bill info)',
         'internal' => true,
     ],
     'deny:bill.see-server-charges' => [
@@ -1858,7 +1858,7 @@ return [
     ],
     'account.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the account',
+        'description' => 'Read accounts',
     ],
     'deny:account.read' => [
         'type' => 2,
@@ -1866,7 +1866,7 @@ return [
     ],
     'account.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the account',
+        'description' => 'Create accounts',
     ],
     'deny:account.create' => [
         'type' => 2,
@@ -1874,7 +1874,7 @@ return [
     ],
     'account.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the account',
+        'description' => 'Update accounts',
     ],
     'deny:account.update' => [
         'type' => 2,
@@ -1882,7 +1882,7 @@ return [
     ],
     'account.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the account',
+        'description' => 'Delete accounts',
     ],
     'deny:account.delete' => [
         'type' => 2,
@@ -1890,7 +1890,7 @@ return [
     ],
     'backup.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the backup',
+        'description' => 'Read backups',
     ],
     'deny:backup.read' => [
         'type' => 2,
@@ -1898,7 +1898,7 @@ return [
     ],
     'backup.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the backup',
+        'description' => 'Delete backups',
     ],
     'deny:backup.delete' => [
         'type' => 2,
@@ -1914,7 +1914,7 @@ return [
     ],
     'backuping.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the backuping',
+        'description' => 'Create backups',
     ],
     'deny:backuping.create' => [
         'type' => 2,
@@ -2721,7 +2721,7 @@ return [
     ],
     'order.read' => [
         'type' => 2,
-        'description' => 'Allows reading of the order',
+        'description' => 'Read orders',
         'internal' => true,
     ],
     'deny:order.read' => [
@@ -2730,7 +2730,7 @@ return [
     ],
     'order.create' => [
         'type' => 2,
-        'description' => 'Allows creating of the order',
+        'description' => 'Create orders',
         'internal' => true,
     ],
     'deny:order.create' => [
@@ -2739,7 +2739,7 @@ return [
     ],
     'order.update' => [
         'type' => 2,
-        'description' => 'Allows updating of the order',
+        'description' => 'Update orders',
         'internal' => true,
     ],
     'deny:order.update' => [
@@ -2748,7 +2748,7 @@ return [
     ],
     'order.delete' => [
         'type' => 2,
-        'description' => 'Allows deleting of the order',
+        'description' => 'Delete orders',
         'internal' => true,
     ],
     'deny:order.delete' => [
@@ -2757,7 +2757,7 @@ return [
     ],
     'order.read-profits' => [
         'type' => 2,
-        'description' => 'Allows read-profits operation on the order',
+        'description' => 'Read info about order profits',
         'internal' => true,
     ],
     'deny:order.read-profits' => [
@@ -2800,7 +2800,7 @@ return [
     ],
     'have-goods' => [
         'type' => 2,
-        'description' => 'Allows have-goods operation',
+        'description' => 'OBSOLETE. To be removed',
     ],
     'deny:have-goods' => [
         'type' => 2,
@@ -2808,7 +2808,7 @@ return [
     ],
     'pay' => [
         'type' => 2,
-        'description' => 'Allows paying',
+        'description' => 'OBSOLETE. Replaced with specific pay permissions like server.pay and domain.pay',
     ],
     'deny:pay' => [
         'type' => 2,
@@ -2864,7 +2864,11 @@ return [
     ],
     'access-subclients' => [
         'type' => 2,
-        'description' => 'Allows access-subclients operation',
+        'description' => 'Access to subclients
+            - Simple clients are NOT granted with this permission
+            - This permission is given to resellers and personnel (both internal and external)
+            - Without this permission user is limited to see ONLY their own objects
+        ',
     ],
     'deny:access-subclients' => [
         'type' => 2,
@@ -2880,7 +2884,7 @@ return [
     ],
     'admin' => [
         'type' => 2,
-        'description' => 'Allows admining',
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'deny:admin' => [
         'type' => 2,
@@ -2953,7 +2957,7 @@ return [
     ],
     'own' => [
         'type' => 2,
-        'description' => 'Allows owning',
+        'description' => 'OBSOLETE. Replaced with more specific permissions',
     ],
     'deny:own' => [
         'type' => 2,
@@ -3251,7 +3255,7 @@ return [
     ],
     'owner-staff' => [
         'type' => 2,
-        'description' => 'Show if user in staff of organization',
+        'description' => 'Marks staff. In process of replacing with specific owner roles',
         'internal' => true,
     ],
     'deny:owner-staff' => [
