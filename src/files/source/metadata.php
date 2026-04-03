@@ -1518,7 +1518,7 @@ return [
         'description' => 'Prohibits reading of the installment plan',
     ],
     'deny:installment-plan.delete' => [
-        'description' => 'Prohibits deleting of the installment plan',
+        'description' => 'Prohibits deleting and restoring of the installment plan',
     ],
     'see-no-mans' => [
         'description' => 'See unsold objects',
