@@ -2611,6 +2611,7 @@ return [
     ],
     'deny:installment-plan.read' => [
         'type' => 2,
+        'description' => 'Prohibits reading of the installment plan',
     ],
     'installment-plan.delete' => [
         'type' => 2,
@@ -2618,6 +2619,7 @@ return [
     ],
     'deny:installment-plan.delete' => [
         'type' => 2,
+        'description' => 'Prohibits deleting of the installment plan',
     ],
     'part.read' => [
         'type' => 2,
