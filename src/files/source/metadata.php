@@ -1502,6 +1502,12 @@ return [
     'sale.read' => [
         'description' => 'Read sales',
     ],
+    'installment-plan.read' => [
+        'description' => 'Read installment plans',
+    ],
+    'installment-plan.delete' => [
+        'description' => 'Delete and restore installment plans',
+    ],
     'see-no-mans' => [
         'description' => 'See unsold objects',
         'internal' => true,

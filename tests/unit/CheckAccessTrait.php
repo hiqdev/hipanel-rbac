@@ -461,6 +461,20 @@ trait CheckAccessTrait
         ]);
     }
 
+    public function testInstallmentPlanUser(): void
+    {
+        $this->assertAccesses('role:installment-plan.user', [
+            'installment-plan.read', 'sale.read',
+        ]);
+    }
+
+    public function testInstallmentPlanManager(): void
+    {
+        $this->assertAccesses('role:installment-plan.manager', [
+            'installment-plan.read', 'sale.read', 'installment-plan.delete',
+        ]);
+    }
+
     public function testConsumptionMaster(): void
     {
         $this->assertAccesses('role:consumption.master', [
