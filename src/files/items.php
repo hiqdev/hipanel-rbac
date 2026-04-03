@@ -2619,7 +2619,7 @@ return [
     ],
     'deny:installment-plan.delete' => [
         'type' => 2,
-        'description' => 'Prohibits deleting of the installment plan',
+        'description' => 'Prohibits deleting and restoring of the installment plan',
     ],
     'part.read' => [
         'type' => 2,
