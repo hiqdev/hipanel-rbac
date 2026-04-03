@@ -693,6 +693,22 @@ return [
             'target.delete',
         ],
     ],
+    'role:installment-plan.user' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to users who have access to installment plan information',
+        'children' => [
+            'installment-plan.read',
+            'sale.read',
+        ],
+    ],
+    'role:installment-plan.manager' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who are in charge of installment plan management',
+        'children' => [
+            'role:installment-plan.user',
+            'installment-plan.delete',
+        ],
+    ],
     'role:part.user' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who have access to part information',
@@ -881,6 +897,7 @@ return [
             'role:hosting.user',
             'role:finance.user',
             'role:sale.user',
+            'role:installment-plan.user',
             'client.notify',
             'access-subclients',
         ],
@@ -1188,6 +1205,7 @@ return [
             'see-no-mans',
             'role:blacklist.manager',
             'role:audit.user',
+            'role:installment-plan.manager',
         ],
     ],
     'role:almighty' => [
@@ -2586,6 +2604,20 @@ return [
     'deny:target.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the target',
+    ],
+    'installment-plan.read' => [
+        'type' => 2,
+        'description' => 'Read installment plans',
+    ],
+    'deny:installment-plan.read' => [
+        'type' => 2,
+    ],
+    'installment-plan.delete' => [
+        'type' => 2,
+        'description' => 'Delete and restore installment plans',
+    ],
+    'deny:installment-plan.delete' => [
+        'type' => 2,
     ],
     'part.read' => [
         'type' => 2,

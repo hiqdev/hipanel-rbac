@@ -205,6 +205,12 @@ return [
     'role:part.master' => [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the parts management',
     ],
+    'role:installment-plan.user' => [
+        'description' => 'The role is generally assigned to users who have access to installment plan information',
+    ],
+    'role:installment-plan.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of installment plan management',
+    ],
     'role:model.user' => [
         'description' => 'The role is generally assigned to users who have access to models information',
     ],
