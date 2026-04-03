@@ -117,7 +117,7 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'server.read', 'server.pay', 'server.control-power', 'server.control-system', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read',
+            'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read', 'installment-plan.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -461,6 +461,20 @@ trait CheckAccessTrait
         ]);
     }
 
+    public function testInstallmentPlanUser(): void
+    {
+        $this->assertAccesses('role:installment-plan.user', [
+            'installment-plan.read', 'sale.read',
+        ]);
+    }
+
+    public function testInstallmentPlanManager(): void
+    {
+        $this->assertAccesses('role:installment-plan.manager', [
+            'installment-plan.read', 'sale.read', 'installment-plan.delete',
+        ]);
+    }
+
     public function testConsumptionMaster(): void
     {
         $this->assertAccesses('role:consumption.master', [
@@ -549,7 +563,7 @@ trait CheckAccessTrait
             'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'restore-password', 'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read',
+            'restore-password', 'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read', 'installment-plan.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -615,6 +629,9 @@ trait CheckAccessTrait
             'blacklist.update',
             'blacklist.delete',
             'audit.read',
+            'sale.read',
+            'installment-plan.read',
+            'installment-plan.delete',
         ]);
     }
 }

@@ -283,6 +283,12 @@ return [
         'target.delete',
     ],
     // STOCK MODULE
+    'role:installment-plan.user' => [
+        'installment-plan.read', 'sale.read',
+    ],
+    'role:installment-plan.manager' => [
+        'role:installment-plan.user', 'installment-plan.delete',
+    ],
     'role:part.user' => [
         'part.read',
     ],
@@ -377,6 +383,7 @@ return [
         'role:hosting.user',
         'role:finance.user',
         'role:sale.user',
+        'role:installment-plan.user',
         'client.notify',
         'access-subclients',
     ],
@@ -540,6 +547,7 @@ return [
         'see-no-mans',
         'role:blacklist.manager',
         'role:audit.user',
+        'role:installment-plan.manager',
     ],
     'role:almighty' => [
         'role:staff-admin',

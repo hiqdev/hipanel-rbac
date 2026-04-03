@@ -88,6 +88,7 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'zone.update',
             'owner-staff',
             'see-no-mans',
+            'installment-plan.delete',
 
             // Roles
             'role:employee.manager',
@@ -133,6 +134,7 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'role:superpowers',
             'role:owner-staff',
             'role:almighty',
+            'role:installment-plan.manager',
         ];
 
         $actualInternalItems = [];

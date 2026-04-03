@@ -205,6 +205,13 @@ return [
     'role:part.master' => [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the parts management',
     ],
+    'role:installment-plan.user' => [
+        'description' => 'The role is generally assigned to users who have access to installment plan information',
+    ],
+    'role:installment-plan.manager' => [
+        'description' => 'The role is generally assigned to staff who are in charge of installment plan management',
+        'internal' => true,
+    ],
     'role:model.user' => [
         'description' => 'The role is generally assigned to users who have access to models information',
     ],
@@ -1501,6 +1508,19 @@ return [
     ],
     'sale.read' => [
         'description' => 'Read sales',
+    ],
+    'installment-plan.read' => [
+        'description' => 'Read installment plans',
+    ],
+    'installment-plan.delete' => [
+        'description' => 'Delete and restore installment plans',
+        'internal' => true,
+    ],
+    'deny:installment-plan.read' => [
+        'description' => 'Prohibits reading of the installment plan',
+    ],
+    'deny:installment-plan.delete' => [
+        'description' => 'Prohibits deleting and restoring of the installment plan',
     ],
     'see-no-mans' => [
         'description' => 'See unsold objects',
