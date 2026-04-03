@@ -2616,6 +2616,7 @@ return [
     'installment-plan.delete' => [
         'type' => 2,
         'description' => 'Delete and restore installment plans',
+        'internal' => true,
     ],
     'deny:installment-plan.delete' => [
         'type' => 2,

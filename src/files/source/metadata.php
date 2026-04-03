@@ -210,6 +210,7 @@ return [
     ],
     'role:installment-plan.manager' => [
         'description' => 'The role is generally assigned to staff who are in charge of installment plan management',
+        'internal' => true,
     ],
     'role:model.user' => [
         'description' => 'The role is generally assigned to users who have access to models information',
@@ -1513,6 +1514,7 @@ return [
     ],
     'installment-plan.delete' => [
         'description' => 'Delete and restore installment plans',
+        'internal' => true,
     ],
     'deny:installment-plan.read' => [
         'description' => 'Prohibits reading of the installment plan',
