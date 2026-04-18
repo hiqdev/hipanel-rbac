@@ -288,6 +288,7 @@ return [
     ],
     'role:installment-plan.manager' => [
         'role:installment-plan.user', 'installment-plan.delete',
+        'installment-plan.update', 'installment-plan.restore',
     ],
     'role:part.user' => [
         'part.read',
@@ -416,6 +417,7 @@ return [
     ],
     'role:staff-manager' => [
         'role:bill.staff-manager',
+        'role:installment-plan.manager',
         'role:manager',
         'see-no-mans',
     ],

@@ -117,7 +117,8 @@ trait CheckAccessTrait
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'server.read', 'server.pay', 'server.control-power', 'server.control-system', 'server.set-note',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read', 'installment-plan.read',
+            'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read',
+            'installment-plan.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -472,6 +473,7 @@ trait CheckAccessTrait
     {
         $this->assertAccesses('role:installment-plan.manager', [
             'installment-plan.read', 'sale.read', 'installment-plan.delete',
+            'installment-plan.restore', 'installment-plan.update',
         ]);
     }
 
@@ -547,6 +549,8 @@ trait CheckAccessTrait
 
             'see-no-mans', 'bill.charges.read', 'bill.see-server-charges',
             'target.read', 'target.create', 'target.update', 'target.delete',
+
+            'installment-plan.read', 'installment-plan.delete', 'installment-plan.update', 'installment-plan.restore',
         ]);
     }
 
@@ -563,7 +567,8 @@ trait CheckAccessTrait
             'document.read', 'document.create', 'document.invoice',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete',
             'account.read', 'account.create', 'account.update', 'account.delete',
-            'restore-password', 'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read', 'installment-plan.read',
+            'restore-password', 'bill.read', 'plan.read', 'finance.read', 'price.read', 'sale.read',
+            'installment-plan.read',
             'backup.read', 'backup.delete',
             'backuping.read', 'backuping.create', 'backuping.update', 'backuping.delete',
             'crontab.read', 'crontab.create', 'crontab.update', 'crontab.delete',
@@ -632,6 +637,8 @@ trait CheckAccessTrait
             'sale.read',
             'installment-plan.read',
             'installment-plan.delete',
+            'installment-plan.restore',
+            'installment-plan.update',
         ]);
     }
 }

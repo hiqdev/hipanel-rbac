@@ -1513,14 +1513,28 @@ return [
         'description' => 'Read installment plans',
     ],
     'installment-plan.delete' => [
-        'description' => 'Delete and restore installment plans',
+        'description' => 'Delete installment plans',
+        'internal' => true,
+    ],
+    'installment-plan.restore' => [
+        'description' => 'Restore installment plans',
+        'internal' => true,
+    ],
+    'installment-plan.update' => [
+        'description' => 'Update installment plans',
         'internal' => true,
     ],
     'deny:installment-plan.read' => [
         'description' => 'Prohibits reading of the installment plan',
     ],
     'deny:installment-plan.delete' => [
-        'description' => 'Prohibits deleting and restoring of the installment plan',
+        'description' => 'Prohibits deleting of installment plans',
+    ],
+    'deny:installment-plan.restore' => [
+        'description' => 'Prohibits restoring of installment plans',
+    ],
+    'deny:installment-plan.update' => [
+        'description' => 'Prohibits updating of installment plans',
     ],
     'see-no-mans' => [
         'description' => 'See unsold objects',

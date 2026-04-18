@@ -10,13 +10,13 @@
 
 error_reporting(E_ALL);
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../../autoload.php';
 
 if (class_exists(\Yiisoft\Factory\Definitions\Reference::class)) {
     $config = require \Yiisoft\Composer\Config\Builder::path('console');
     \yii\helpers\Yii::setContainer(new \yii\di\Container($config));
 } else {
-    require_once __DIR__ . '/../vendor/yiisoft/yii2/Yii.php';
+    require_once __DIR__ . '/../../../yiisoft/yii2/Yii.php';
 
     Yii::setAlias('@hipanel/rbac', dirname(__DIR__) . '/src');
     Yii::setAlias('@hipanel/rbac/tests', __DIR__);
