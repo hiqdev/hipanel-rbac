@@ -88,7 +88,9 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'zone.update',
             'owner-staff',
             'see-no-mans',
-            'installment-plan.delete',
+	    'installment-plan.delete',
+	    'installment-plan.update',
+	    'installment-plan.restore',
 
             // Roles
             'role:employee.manager',

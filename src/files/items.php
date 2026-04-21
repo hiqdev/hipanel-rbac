@@ -707,6 +707,8 @@ return [
         'children' => [
             'role:installment-plan.user',
             'installment-plan.delete',
+            'installment-plan.update',
+            'installment-plan.restore',
         ],
     ],
     'role:part.user' => [
@@ -947,6 +949,7 @@ return [
         'description' => 'The role is generally assigned to staff who are responsible for managing company resources.',
         'children' => [
             'role:bill.staff-manager',
+            'role:installment-plan.manager',
             'role:manager',
             'see-no-mans',
         ],
@@ -2615,12 +2618,30 @@ return [
     ],
     'installment-plan.delete' => [
         'type' => 2,
-        'description' => 'Delete and restore installment plans',
+        'description' => 'Delete installment plans',
         'internal' => true,
     ],
     'deny:installment-plan.delete' => [
         'type' => 2,
-        'description' => 'Prohibits deleting and restoring of the installment plan',
+        'description' => 'Prohibits deleting of installment plans',
+    ],
+    'installment-plan.update' => [
+        'type' => 2,
+        'description' => 'Update installment plans',
+        'internal' => true,
+    ],
+    'deny:installment-plan.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of installment plans',
+    ],
+    'installment-plan.restore' => [
+        'type' => 2,
+        'description' => 'Restore installment plans',
+        'internal' => true,
+    ],
+    'deny:installment-plan.restore' => [
+        'type' => 2,
+        'description' => 'Prohibits restoring of installment plans',
     ],
     'part.read' => [
         'type' => 2,
