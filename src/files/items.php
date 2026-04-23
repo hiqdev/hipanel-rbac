@@ -709,6 +709,7 @@ return [
             'installment-plan.delete',
             'installment-plan.update',
             'installment-plan.restore',
+            'installment-plan.process',
         ],
     ],
     'role:part.user' => [
@@ -2642,6 +2643,15 @@ return [
     'deny:installment-plan.restore' => [
         'type' => 2,
         'description' => 'Prohibits restoring of installment plans',
+    ],
+    'installment-plan.process' => [
+        'type' => 2,
+        'description' => 'Process installment plans',
+        'internal' => true,
+    ],
+    'deny:installment-plan.process' => [
+        'type' => 2,
+        'description' => 'Prohibits processing of installment plans',
     ],
     'part.read' => [
         'type' => 2,
