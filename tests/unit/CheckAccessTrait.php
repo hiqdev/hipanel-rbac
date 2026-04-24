@@ -474,6 +474,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:installment-plan.manager', [
             'installment-plan.read', 'sale.read', 'installment-plan.delete',
             'installment-plan.restore', 'installment-plan.update',
+            'installment-plan.process',
         ]);
     }
 
@@ -550,7 +551,7 @@ trait CheckAccessTrait
             'see-no-mans', 'bill.charges.read', 'bill.see-server-charges',
             'target.read', 'target.create', 'target.update', 'target.delete',
 
-            'installment-plan.read', 'installment-plan.delete', 'installment-plan.update', 'installment-plan.restore',
+            'installment-plan.read', 'installment-plan.delete', 'installment-plan.update', 'installment-plan.restore', 'installment-plan.process',
         ]);
     }
 
@@ -639,6 +640,7 @@ trait CheckAccessTrait
             'installment-plan.delete',
             'installment-plan.restore',
             'installment-plan.update',
+            'installment-plan.process',
         ]);
     }
 }

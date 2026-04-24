@@ -289,6 +289,7 @@ return [
     'role:installment-plan.manager' => [
         'role:installment-plan.user', 'installment-plan.delete',
         'installment-plan.update', 'installment-plan.restore',
+        'installment-plan.process',
     ],
     'role:part.user' => [
         'part.read',
