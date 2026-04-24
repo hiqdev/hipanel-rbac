@@ -1525,7 +1525,7 @@ return [
         'internal' => true,
     ],
     'installment-plan.process' => [
-        'description' => 'Process installment plans',
+        'description' => 'Maually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.read' => [
