@@ -1541,7 +1541,7 @@ return [
         'description' => 'Prohibits updating of installment plans',
     ],
     'deny:installment-plan.process' => [
-        'description' => 'Prohibits processing of installment plans',
+        'description' => 'Prohibits maual initiation of installment plan processing',
     ],
     'see-no-mans' => [
         'description' => 'See unsold objects',
