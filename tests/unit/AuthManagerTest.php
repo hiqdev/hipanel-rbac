@@ -130,6 +130,7 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'role:staff-manager',
             'role:accounter',
             'role:manager',
+            'role:client',
             'role:reseller',
             'role:employee',
             'role:master',

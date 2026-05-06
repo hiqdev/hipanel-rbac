@@ -247,6 +247,7 @@ return [
     ],
     'role:accounter' => [
         'description' => 'The role is generally assigned to staff who are in charge of accounting',
+        'internal' => true,
     ],
     'role:manager' => [
         'description' => 'The role is generally assigned to staff who are in charge of services and clients management',
@@ -1218,7 +1219,7 @@ return [
         'description' => 'Delete domains',
     ],
     'domain.delete-agp' => [
-        'description' => 'Delete AGP domains',
+        'description' => 'Delete domain and get partial money refund. Applicable for domains that are just registered, before the Add Grace Period is passed.',
     ],
     'domain.force-push' => [
         'description' => 'Force push domains',

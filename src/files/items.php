@@ -903,6 +903,9 @@ return [
             'role:installment-plan.user',
             'client.notify',
             'access-subclients',
+            'role:support',
+            'role:admin',
+            'role:manager',
         ],
     ],
     'role:support' => [
@@ -2646,12 +2649,12 @@ return [
     ],
     'installment-plan.process' => [
         'type' => 2,
-        'description' => 'Process installment plans',
+        'description' => 'Maually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.process' => [
         'type' => 2,
-        'description' => 'Prohibits processing of installment plans',
+        'description' => 'Prohibits maual initiation of installment plan processing',
     ],
     'part.read' => [
         'type' => 2,
@@ -2898,7 +2901,7 @@ return [
     ],
     'domain.delete-agp' => [
         'type' => 2,
-        'description' => 'Delete AGP domains',
+        'description' => 'Delete domain and get partial money refund. Applicable for domains that are just registered, before the Add Grace Period is passed.',
     ],
     'deny:domain.delete-agp' => [
         'type' => 2,
