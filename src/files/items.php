@@ -922,7 +922,6 @@ return [
             'role:contact.user',
             'role:server.user',
             'role:hosting.user',
-            'role:blacklist.manager',
         ],
     ],
     'role:admin' => [
@@ -945,6 +944,7 @@ return [
             'role:stock.admin',
             'role:server.staff-admin',
             'role:hub.staff-admin',
+            'role:blacklist.manager',
             'see-no-mans',
         ],
     ],
@@ -955,6 +955,7 @@ return [
             'role:bill.staff-manager',
             'role:installment-plan.manager',
             'role:manager',
+            'role:blacklist.manager',
             'see-no-mans',
         ],
     ],
@@ -965,6 +966,7 @@ return [
             'role:manager',
             'role:hub.manager',
             'role:stock.manager',
+            'role:blacklist.manager',
         ],
     ],
     'role:manager' => [

@@ -145,7 +145,6 @@ trait CheckAccessTrait
             'client.create', 'client.update', 'client.delete',
             'client.set-tmp-pwd', 'client.block', 'client.unblock', 'client.get-note', 'client.set-note',
             'client.read-ip', 'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted',
-            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
             'mailing.prepare', 'mailing.send',
             'target.read', 'target.create', 'target.update', 'target.delete',
         ]);
@@ -172,7 +171,6 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read',
-            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
             'client.read-ip',
             'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
         ]);
@@ -212,7 +210,6 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
-            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
 
             'client.read-ip',
             'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
@@ -349,7 +346,6 @@ trait CheckAccessTrait
             'request.read', 'request.create', 'request.update', 'request.delete',
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
-            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
 
             'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info',
             'server.read-billing','plan.set-note',
@@ -396,7 +392,6 @@ trait CheckAccessTrait
             'vhost.read', 'vhost.create', 'vhost.update', 'vhost.delete',
             'ip.read', 'service.read', 'client.notify',
             'integration.read', 'integration.create', 'integration.update', 'integration.delete',
-            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
             'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info',
             'server.read-billing', 'plan.set-note',
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
@@ -615,7 +610,6 @@ trait CheckAccessTrait
             'client.create', 'client.update', 'client.delete',
             'client.set-tmp-pwd', 'client.block', 'client.unblock', 'client.get-note', 'client.set-note',
             'client.read-ip', 'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted',
-            'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
             'mailing.prepare', 'mailing.send',
             'target.read', 'target.create', 'target.update', 'target.delete',
         ]);
