@@ -1296,7 +1296,7 @@ return [
     ],
     'client.read-ip' => [
         'type' => 2,
-        'description' => 'See client IP',
+        'description' => 'Allows viewing client\'s IP',
     ],
     'deny:client.read-ip' => [
         'type' => 2,
@@ -3227,7 +3227,7 @@ return [
     ],
     'ticket.close' => [
         'type' => 2,
-        'description' => 'Close tickets',
+        'description' => 'Allows closing of the ticket',
     ],
     'deny:ticket.close' => [
         'type' => 2,

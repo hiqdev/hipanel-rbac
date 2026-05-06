@@ -446,7 +446,7 @@ return [
         'description' => 'Update clients',
     ],
     'client.read-ip' => [
-        'description' => 'See client IP',
+        'description' => "Allows viewing client's IP",
     ],
     'client.read-financial-info' => [
         'description' => 'Read client financial info',
@@ -1646,7 +1646,7 @@ return [
         'description' => 'Answer tickets',
     ],
     'ticket.close' => [
-        'description' => 'Close tickets',
+        'description' => 'Allows closing of the ticket',
     ],
     'ticket.create' => [
         'description' => 'Create tickets',
