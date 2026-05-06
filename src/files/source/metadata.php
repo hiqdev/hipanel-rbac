@@ -23,7 +23,7 @@ return [
         'description' => 'The role is generally assigned to employees who are responsible for employee management',
     ],
     'role:client.impersonator' => [
-        'description' => 'The role is generally assigned to staff who are allowed to wear a client disguise',
+        'description' => 'The role is generally assigned to staff who are allowed to impersonate clients (log in as a client and act on their behalf)',
     ],
     'role:contact.user' => [
         'description' => 'The role is generally assigned to users who are allowed to use contacts',
@@ -44,7 +44,7 @@ return [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
     ],
     'role:hub.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to rents hubs',
+        'description' => 'The role is generally assigned to users who are allowed to rent hubs',
     ],
     'role:hub.admin' => [
         'description' => 'The role is generally assigned to reseller staff who are in charge of clients\' hub administration',
@@ -234,7 +234,7 @@ return [
         'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
     ],
     'role:client' => [
-        'description' => 'The role is generally assigned to users who are clients',
+        'description' => 'Account owner role. Has full access to all own resources, including all permissions available to admin, manager, and support sub-users.',
     ],
     'role:support' => [
         'description' => 'The role is generally assigned to staff who are in charge of customer support',
@@ -247,12 +247,13 @@ return [
     ],
     'role:accounter' => [
         'description' => 'The role is generally assigned to staff who are in charge of accounting',
+        'internal' => true,
     ],
     'role:manager' => [
         'description' => 'The role is generally assigned to staff who are in charge of services and clients management',
     ],
     'role:reseller' => [
-        'description' => 'The role is generally assigned to staff who resell services',
+        'description' => 'The role is generally assigned to clients who resell services to their own customers',
     ],
     'role:owner' => [
         'description' => 'The role is generally assigned to a root user and is not used by any other customers',
@@ -315,7 +316,7 @@ return [
         'description' => 'The role is generally assigned to staff who are in charge of purses',
     ],
     'access-reseller' => [
-        'description' => 'Allows access-reseller operation',
+        'description' => 'Grants access to reseller-level functionality, allowing the user to manage clients within their reseller scope',
     ],
     'access-subclients' => [
         'description' => 'Access to subclients
@@ -414,7 +415,7 @@ return [
         'description' => 'Get client note',
     ],
     'client.impersonate' => [
-        'description' => 'Impersonate',
+        'description' => 'Log in as a client to act on their behalf',
     ],
     'client.list' => [
         'description' => 'List clients',
@@ -445,7 +446,7 @@ return [
         'description' => 'Update clients',
     ],
     'client.read-ip' => [
-        'description' => 'See client IP',
+        'description' => "Allows viewing client's IP",
     ],
     'client.read-financial-info' => [
         'description' => 'Read client financial info',
@@ -472,15 +473,15 @@ return [
         'description' => 'Update configs',
     ],
     'consumption.update' => [
-        'description' => 'Update consumptions',
+        'description' => 'Modify resource consumption records for client devices',
         'internal' => true,
     ],
     'consumption.delete' => [
-        'description' => 'Delete consumptions',
+        'description' => 'Delete resource consumption records for client devices',
         'internal' => true,
     ],
     'consumption.read' => [
-        'description' => 'Read consumptions',
+        'description' => 'View resource consumption metrics for client devices',
     ],
     'contact.create' => [
         'description' => 'Create contacts',
@@ -489,13 +490,13 @@ return [
         'description' => 'Delete contacts',
     ],
     'contact.force-verify' => [
-        'description' => 'Force-verify contacts',
+        'description' => 'Force-mark a contact as verified, bypassing the normal verification process',
     ],
     'contact.read' => [
         'description' => 'Read contacts',
     ],
     'contact.set-verified' => [
-        'description' => 'Set contact verified',
+        'description' => 'Mark a contact as identity-verified',
     ],
     'contact.update' => [
         'description' => 'Update contacts',
@@ -543,7 +544,7 @@ return [
         'description' => 'Prohibits updating of the account',
     ],
     'deny:admin' => [
-        'description' => 'Prohibits admining',
+        'description' => 'Prohibits admin-level operations',
     ],
     'deny:backup.delete' => [
         'description' => 'Prohibits deleting of the backup',
@@ -750,7 +751,7 @@ return [
         'description' => 'Prohibits updating of the document',
     ],
     'deny:domain.approve-trasfer-out' => [
-        'description' => 'Prohibits approve-trasfer-out operation on the domain',
+        'description' => 'Prohibits approving outgoing domain transfers',
     ],
     'deny:domain.delete' => [
         'description' => 'Prohibits deleting of the domain',
@@ -915,7 +916,7 @@ return [
         'description' => 'Prohibits updating of the move',
     ],
     'deny:nothing' => [
-        'description' => 'Prohibits nothinging',
+        'description' => 'No-op denial (system use)',
     ],
     'deny:order.create' => [
         'description' => 'Prohibits creating of the order',
@@ -1107,7 +1108,7 @@ return [
         'description' => 'Prohibits reading of the stock',
     ],
     'deny:support' => [
-        'description' => 'Prohibits supporting',
+        'description' => 'Prohibits support-level operations',
     ],
     'deny:test.alpha' => [
         'description' => 'Prohibits alphatesting of the test',
@@ -1188,7 +1189,7 @@ return [
         'description' => 'Update DNS records',
     ],
     'document.acceptance' => [
-        'description' => 'Access acceptance documents',
+        'description' => 'Sign and view service acceptance documents',
     ],
     'document.create' => [
         'description' => 'Create documents',
@@ -1203,7 +1204,7 @@ return [
         'description' => 'Generate all documents',
     ],
     'document.invoice' => [
-        'description' => 'Access invoice documents',
+        'description' => 'Create and view invoices',
     ],
     'document.read' => [
         'description' => 'Read documents',
@@ -1212,40 +1213,40 @@ return [
         'description' => 'Update documents',
     ],
     'domain.approve-trasfer-out' => [
-        'description' => 'Approve domain trasfer out',
+        'description' => 'Approve outgoing domain transfer to another registrar',
     ],
     'domain.delete' => [
         'description' => 'Delete domains',
     ],
     'domain.delete-agp' => [
-        'description' => 'Delete AGP domains',
+        'description' => 'Delete domain and get partial money refund. Applicable for domains that are just registered, before the Add Grace Period is passed.',
     ],
     'domain.force-push' => [
-        'description' => 'Force push domains',
+        'description' => 'Force-push domains to another registrar account, bypassing normal restrictions',
     ],
     'domain.force-send-foa' => [
-        'description' => 'Force send FOA for domains',
+        'description' => 'Force send Form of Authorization (FOA) email required for domain transfers',
     ],
     'domain.freeze' => [
-        'description' => 'Freeze domains',
+        'description' => 'Lock a domain to prevent unauthorized transfers or modifications',
     ],
     'domain.pay' => [
         'description' => 'Pay domains',
     ],
     'domain.push' => [
-        'description' => 'Push domains',
+        'description' => 'Push (transfer) domains to another registrar account',
     ],
     'domain.read' => [
         'description' => 'Read domains',
     ],
     'domain.set-nss' => [
-        'description' => 'Set domain NSs',
+        'description' => 'Set domain nameservers',
     ],
     'domain.force-set-nss' => [
-        'description' => 'Force set domain NSs',
+        'description' => 'Force-set domain nameservers, bypassing normal restrictions',
     ],
     'domain.unfreeze' => [
-        'description' => 'Unfreeze domains',
+        'description' => 'Unlock a frozen domain to allow transfers and modifications',
     ],
     'domain.update' => [
         'description' => 'Update domains',
@@ -1345,7 +1346,7 @@ return [
         'description' => 'Update mail records',
     ],
     'mailing.prepare' => [
-        'description' => 'Mailing preparation',
+        'description' => 'Prepare mass email campaigns for sending',
     ],
     'mailing.send' => [
         'description' => 'Send mailings',
@@ -1431,7 +1432,7 @@ return [
         'description' => 'Update stock parts',
     ],
     'part.read-administrative' => [
-        'description' => 'Reading parts administrative data',
+        'description' => 'Read administrative data of hardware parts (e.g. purchase cost, supplier info)',
     ],
     'plan.create' => [
         'description' => 'Create tariff plans',
@@ -1440,7 +1441,7 @@ return [
         'description' => 'Delete tariff plans',
     ],
     'plan.force-read' => [
-        'description' => 'Read tariff plans additional data',
+        'description' => 'Read restricted tariff plan details not visible to the plan owner (e.g. internal pricing data)',
     ],
     'plan.read' => [
         'description' => 'Read tariff plans',
@@ -1467,10 +1468,10 @@ return [
         'description' => 'Update purses',
     ],
     'purse.set-credit' => [
-        'description' => 'Set purse credit',
+        'description' => 'Set a credit limit on a client\'s purse (wallet)',
     ],
     'ref.view.not-used' => [
-        'description' => 'Read not used refs',
+        'description' => 'View unused internal reference entries (internal technical permission)',
         'internal' => true,
     ],
     'request.create' => [
@@ -1525,7 +1526,7 @@ return [
         'internal' => true,
     ],
     'installment-plan.process' => [
-        'description' => 'Maually initiate installment plan processing',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.read' => [
@@ -1541,17 +1542,17 @@ return [
         'description' => 'Prohibits updating of installment plans',
     ],
     'deny:installment-plan.process' => [
-        'description' => 'Prohibits maual initiation of installment plan processing',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'see-no-mans' => [
-        'description' => 'See unsold objects',
+        'description' => 'View objects (servers, IPs, etc.) not assigned to any client',
         'internal' => true,
     ],
     'server.control-power' => [
         'description' => 'Control server power',
     ],
     'server.control-system' => [
-        'description' => 'Control server system',
+        'description' => 'Reinstall or reconfigure the server operating system',
     ],
     'server.create' => [
         'description' => 'Create servers',
@@ -1572,7 +1573,7 @@ return [
         'description' => 'Block servers',
     ],
     'server.manage-settings' => [
-        'description' => 'Manage server settings',
+        'description' => 'Manage server configuration settings (e.g. network parameters, hardware options)',
     ],
     'server.pay' => [
         'description' => 'Pay servers',
@@ -1587,10 +1588,10 @@ return [
         'description' => 'Read server system info',
     ],
     'server.read-wizzard' => [
-        'description' => 'Read server wizzarding info',
+        'description' => 'Read server provisioning wizard details and status',
     ],
     'server.read-legend' => [
-        'description' => 'Read servers legend',
+        'description' => 'Read the server legend (internal admin description of the server\'s hardware layout)',
     ],
     'server.read-billing' => [
         'description' => 'Read server billing information',
@@ -1609,7 +1610,7 @@ return [
         'internal' => true,
     ],
     'server.wizzard' => [
-        'description' => 'Wizards servers',
+        'description' => 'Run the server provisioning wizard (order and configure new servers)',
     ],
     'server.move-disks' => [
         'description' => 'Move disks in servers',
@@ -1645,7 +1646,7 @@ return [
         'description' => 'Answer tickets',
     ],
     'ticket.close' => [
-        'description' => 'Close tickets',
+        'description' => 'Allows closing of the ticket',
     ],
     'ticket.create' => [
         'description' => 'Create tickets',
@@ -1675,16 +1676,16 @@ return [
         'description' => 'Set ticket answer spent time',
     ],
     'vhost.create' => [
-        'description' => 'Create virthosts',
+        'description' => 'Create virtual hosts',
     ],
     'vhost.delete' => [
-        'description' => 'Delete virthosts',
+        'description' => 'Delete virtual hosts',
     ],
     'vhost.read' => [
-        'description' => 'Read virthosts',
+        'description' => 'Read virtual hosts',
     ],
     'vhost.update' => [
-        'description' => 'Update virthosts',
+        'description' => 'Update virtual hosts',
     ],
     'zone.create' => [
         'description' => 'Create DNS zones',
@@ -1739,7 +1740,7 @@ return [
         'description' => 'Prohibits updating of the sale',
     ],
     'part.read-all-hierarchy' => [
-        'description' => 'Read all parts',
+        'description' => 'Read hardware parts across all stock locations and organisational levels',
         'internal' => true,
     ],
     'sale.create' => [
@@ -1768,7 +1769,7 @@ return [
         'internal' => true,
     ],
     'role:consumption.master' => [
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who have full access to resource consumption data across all clients',
     ],
     'consumption.read-all' => [
         'description' => 'Read all resource consumptions',
@@ -1862,19 +1863,19 @@ return [
         'description' => 'The role is generally assigned to staff who are responsible for managing company resources.',
     ],
     'blacklist.create' => [
-        'description' => 'Create blacklists',
+        'description' => 'Add entries to the spam/abuse blacklist',
         'internal' => true,
     ],
     'blacklist.delete' => [
-        'description' => 'Delete blacklists',
+        'description' => 'Remove entries from the spam/abuse blacklist',
         'internal' => true,
     ],
     'blacklist.read' => [
-        'description' => 'Read blacklists',
+        'description' => 'View spam/abuse blacklist entries',
         'internal' => true,
     ],
     'blacklist.update' => [
-        'description' => 'Update blacklists',
+        'description' => 'Update spam/abuse blacklist entries',
         'internal' => true,
     ],
     'deny:blacklist.create' => [
@@ -1935,7 +1936,7 @@ return [
         'description' => 'Update billing targets',
     ],
     'deny:part.erase' => [
-        'description' => 'Prohibits eraseing of the part',
+        'description' => 'Prohibits erasing of the part',
     ],
     'deny:role:stock.admin' => [
         'description' => 'Prohibits role:stock-admin operation',

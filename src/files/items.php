@@ -65,7 +65,7 @@ return [
     ],
     'role:client.impersonator' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who are allowed to wear a client disguise',
+        'description' => 'The role is generally assigned to staff who are allowed to impersonate clients (log in as a client and act on their behalf)',
         'children' => [
             'client.impersonate',
         ],
@@ -160,7 +160,7 @@ return [
     ],
     'role:hub.user' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to users who are allowed to rents hubs',
+        'description' => 'The role is generally assigned to users who are allowed to rent hubs',
         'children' => [
             'hub.read',
         ],
@@ -216,7 +216,7 @@ return [
     ],
     'role:consumption.master' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'The role is generally assigned to staff who have full access to resource consumption data across all clients',
         'children' => [
             'consumption.read-all',
             'role:consumption.user',
@@ -878,7 +878,7 @@ return [
     ],
     'role:client' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to users who are clients',
+        'description' => 'Account owner role. Has full access to all own resources, including all permissions available to admin, manager, and support sub-users.',
         'children' => [
             'role:unauthorized',
             'have-goods',
@@ -903,6 +903,8 @@ return [
             'role:installment-plan.user',
             'client.notify',
             'access-subclients',
+            'role:admin',
+            'role:manager',
         ],
     ],
     'role:support' => [
@@ -919,7 +921,6 @@ return [
             'role:contact.user',
             'role:server.user',
             'role:hosting.user',
-            'role:blacklist.manager',
         ],
     ],
     'role:admin' => [
@@ -942,6 +943,7 @@ return [
             'role:stock.admin',
             'role:server.staff-admin',
             'role:hub.staff-admin',
+            'role:blacklist.manager',
             'see-no-mans',
         ],
     ],
@@ -952,6 +954,7 @@ return [
             'role:bill.staff-manager',
             'role:installment-plan.manager',
             'role:manager',
+            'role:blacklist.manager',
             'see-no-mans',
         ],
     ],
@@ -962,6 +965,7 @@ return [
             'role:manager',
             'role:hub.manager',
             'role:stock.manager',
+            'role:blacklist.manager',
         ],
     ],
     'role:manager' => [
@@ -996,7 +1000,7 @@ return [
     ],
     'role:reseller' => [
         'type' => 1,
-        'description' => 'The role is generally assigned to staff who resell services',
+        'description' => 'The role is generally assigned to clients who resell services to their own customers',
         'children' => [
             'have-goods',
             'resell',
@@ -1240,7 +1244,7 @@ return [
     ],
     'deny:nothing' => [
         'type' => 2,
-        'description' => 'Prohibits nothinging',
+        'description' => 'No-op denial (system use)',
     ],
     'restore-password' => [
         'type' => 2,
@@ -1292,7 +1296,7 @@ return [
     ],
     'client.read-ip' => [
         'type' => 2,
-        'description' => 'See client IP',
+        'description' => 'Allows viewing client\'s IP',
     ],
     'deny:client.read-ip' => [
         'type' => 2,
@@ -1324,7 +1328,7 @@ return [
     ],
     'contact.set-verified' => [
         'type' => 2,
-        'description' => 'Set contact verified',
+        'description' => 'Mark a contact as identity-verified',
     ],
     'deny:contact.set-verified' => [
         'type' => 2,
@@ -1412,7 +1416,7 @@ return [
     ],
     'purse.set-credit' => [
         'type' => 2,
-        'description' => 'Set purse credit',
+        'description' => 'Set a credit limit on a client\'s purse (wallet)',
     ],
     'deny:purse.set-credit' => [
         'type' => 2,
@@ -1456,7 +1460,7 @@ return [
     ],
     'document.acceptance' => [
         'type' => 2,
-        'description' => 'Access acceptance documents',
+        'description' => 'Sign and view service acceptance documents',
     ],
     'deny:document.acceptance' => [
         'type' => 2,
@@ -1464,7 +1468,7 @@ return [
     ],
     'client.impersonate' => [
         'type' => 2,
-        'description' => 'Impersonate',
+        'description' => 'Log in as a client to act on their behalf',
     ],
     'deny:client.impersonate' => [
         'type' => 2,
@@ -1528,7 +1532,7 @@ return [
     ],
     'server.control-system' => [
         'type' => 2,
-        'description' => 'Control server system',
+        'description' => 'Reinstall or reconfigure the server operating system',
     ],
     'deny:server.control-system' => [
         'type' => 2,
@@ -1544,7 +1548,7 @@ return [
     ],
     'server.read-wizzard' => [
         'type' => 2,
-        'description' => 'Read server wizzarding info',
+        'description' => 'Read server provisioning wizard details and status',
     ],
     'deny:server.read-wizzard' => [
         'type' => 2,
@@ -1552,7 +1556,7 @@ return [
     ],
     'server.read-legend' => [
         'type' => 2,
-        'description' => 'Read servers legend',
+        'description' => 'Read the server legend (internal admin description of the server\'s hardware layout)',
     ],
     'deny:server.read-legend' => [
         'type' => 2,
@@ -1568,7 +1572,7 @@ return [
     ],
     'server.wizzard' => [
         'type' => 2,
-        'description' => 'Wizards servers',
+        'description' => 'Run the server provisioning wizard (order and configure new servers)',
     ],
     'deny:server.wizzard' => [
         'type' => 2,
@@ -1584,7 +1588,7 @@ return [
     ],
     'consumption.read' => [
         'type' => 2,
-        'description' => 'Read consumptions',
+        'description' => 'View resource consumption metrics for client devices',
     ],
     'deny:consumption.read' => [
         'type' => 2,
@@ -1592,7 +1596,7 @@ return [
     ],
     'server.manage-settings' => [
         'type' => 2,
-        'description' => 'Manage server settings',
+        'description' => 'Manage server configuration settings (e.g. network parameters, hardware options)',
     ],
     'deny:server.manage-settings' => [
         'type' => 2,
@@ -1753,7 +1757,7 @@ return [
     ],
     'consumption.update' => [
         'type' => 2,
-        'description' => 'Update consumptions',
+        'description' => 'Modify resource consumption records for client devices',
         'internal' => true,
     ],
     'deny:consumption.update' => [
@@ -1762,7 +1766,7 @@ return [
     ],
     'consumption.delete' => [
         'type' => 2,
-        'description' => 'Delete consumptions',
+        'description' => 'Delete resource consumption records for client devices',
         'internal' => true,
     ],
     'deny:consumption.delete' => [
@@ -1780,7 +1784,7 @@ return [
     ],
     'blacklist.read' => [
         'type' => 2,
-        'description' => 'Read blacklists',
+        'description' => 'View spam/abuse blacklist entries',
         'internal' => true,
     ],
     'deny:blacklist.read' => [
@@ -1789,7 +1793,7 @@ return [
     ],
     'blacklist.create' => [
         'type' => 2,
-        'description' => 'Create blacklists',
+        'description' => 'Add entries to the spam/abuse blacklist',
         'internal' => true,
     ],
     'deny:blacklist.create' => [
@@ -1798,7 +1802,7 @@ return [
     ],
     'blacklist.update' => [
         'type' => 2,
-        'description' => 'Update blacklists',
+        'description' => 'Update spam/abuse blacklist entries',
         'internal' => true,
     ],
     'deny:blacklist.update' => [
@@ -1807,7 +1811,7 @@ return [
     ],
     'blacklist.delete' => [
         'type' => 2,
-        'description' => 'Delete blacklists',
+        'description' => 'Remove entries from the spam/abuse blacklist',
         'internal' => true,
     ],
     'deny:blacklist.delete' => [
@@ -2228,7 +2232,7 @@ return [
     ],
     'vhost.read' => [
         'type' => 2,
-        'description' => 'Read virthosts',
+        'description' => 'Read virtual hosts',
     ],
     'deny:vhost.read' => [
         'type' => 2,
@@ -2236,7 +2240,7 @@ return [
     ],
     'vhost.create' => [
         'type' => 2,
-        'description' => 'Create virthosts',
+        'description' => 'Create virtual hosts',
     ],
     'deny:vhost.create' => [
         'type' => 2,
@@ -2244,7 +2248,7 @@ return [
     ],
     'vhost.update' => [
         'type' => 2,
-        'description' => 'Update virthosts',
+        'description' => 'Update virtual hosts',
     ],
     'deny:vhost.update' => [
         'type' => 2,
@@ -2252,7 +2256,7 @@ return [
     ],
     'vhost.delete' => [
         'type' => 2,
-        'description' => 'Delete virthosts',
+        'description' => 'Delete virtual hosts',
     ],
     'deny:vhost.delete' => [
         'type' => 2,
@@ -2451,7 +2455,7 @@ return [
     ],
     'plan.force-read' => [
         'type' => 2,
-        'description' => 'Read tariff plans additional data',
+        'description' => 'Read restricted tariff plan details not visible to the plan owner (e.g. internal pricing data)',
     ],
     'deny:plan.force-read' => [
         'type' => 2,
@@ -2507,7 +2511,7 @@ return [
     ],
     'document.invoice' => [
         'type' => 2,
-        'description' => 'Access invoice documents',
+        'description' => 'Create and view invoices',
     ],
     'deny:document.invoice' => [
         'type' => 2,
@@ -2646,12 +2650,12 @@ return [
     ],
     'installment-plan.process' => [
         'type' => 2,
-        'description' => 'Process installment plans',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.process' => [
         'type' => 2,
-        'description' => 'Prohibits processing of installment plans',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'part.read' => [
         'type' => 2,
@@ -2687,7 +2691,7 @@ return [
     ],
     'part.read-all-hierarchy' => [
         'type' => 2,
-        'description' => 'Read all parts',
+        'description' => 'Read hardware parts across all stock locations and organisational levels',
         'internal' => true,
     ],
     'deny:part.read-all-hierarchy' => [
@@ -2700,7 +2704,7 @@ return [
     ],
     'deny:part.erase' => [
         'type' => 2,
-        'description' => 'Prohibits eraseing of the part',
+        'description' => 'Prohibits erasing of the part',
     ],
     'move.read' => [
         'type' => 2,
@@ -2840,7 +2844,7 @@ return [
     ],
     'part.read-administrative' => [
         'type' => 2,
-        'description' => 'Reading parts administrative data',
+        'description' => 'Read administrative data of hardware parts (e.g. purchase cost, supplier info)',
     ],
     'deny:part.read-administrative' => [
         'type' => 2,
@@ -2890,7 +2894,7 @@ return [
     ],
     'domain.push' => [
         'type' => 2,
-        'description' => 'Push domains',
+        'description' => 'Push (transfer) domains to another registrar account',
     ],
     'deny:domain.push' => [
         'type' => 2,
@@ -2898,7 +2902,7 @@ return [
     ],
     'domain.delete-agp' => [
         'type' => 2,
-        'description' => 'Delete AGP domains',
+        'description' => 'Delete domain and get partial money refund. Applicable for domains that are just registered, before the Add Grace Period is passed.',
     ],
     'deny:domain.delete-agp' => [
         'type' => 2,
@@ -2946,7 +2950,7 @@ return [
     ],
     'deny:support' => [
         'type' => 2,
-        'description' => 'Prohibits supporting',
+        'description' => 'Prohibits support-level operations',
     ],
     'admin' => [
         'type' => 2,
@@ -2954,11 +2958,11 @@ return [
     ],
     'deny:admin' => [
         'type' => 2,
-        'description' => 'Prohibits admining',
+        'description' => 'Prohibits admin-level operations',
     ],
     'see-no-mans' => [
         'type' => 2,
-        'description' => 'See unsold objects',
+        'description' => 'View objects (servers, IPs, etc.) not assigned to any client',
         'internal' => true,
     ],
     'deny:see-no-mans' => [
@@ -2975,7 +2979,7 @@ return [
     ],
     'access-reseller' => [
         'type' => 2,
-        'description' => 'Allows access-reseller operation',
+        'description' => 'Grants access to reseller-level functionality, allowing the user to manage clients within their reseller scope',
     ],
     'deny:access-reseller' => [
         'type' => 2,
@@ -2983,7 +2987,7 @@ return [
     ],
     'contact.force-verify' => [
         'type' => 2,
-        'description' => 'Force-verify contacts',
+        'description' => 'Force-mark a contact as verified, bypassing the normal verification process',
     ],
     'deny:contact.force-verify' => [
         'type' => 2,
@@ -2991,7 +2995,7 @@ return [
     ],
     'mailing.prepare' => [
         'type' => 2,
-        'description' => 'Mailing preparation',
+        'description' => 'Prepare mass email campaigns for sending',
     ],
     'deny:mailing.prepare' => [
         'type' => 2,
@@ -3063,7 +3067,7 @@ return [
     ],
     'domain.set-nss' => [
         'type' => 2,
-        'description' => 'Set domain NSs',
+        'description' => 'Set domain nameservers',
     ],
     'deny:domain.set-nss' => [
         'type' => 2,
@@ -3079,7 +3083,7 @@ return [
     ],
     'domain.freeze' => [
         'type' => 2,
-        'description' => 'Freeze domains',
+        'description' => 'Lock a domain to prevent unauthorized transfers or modifications',
     ],
     'deny:domain.freeze' => [
         'type' => 2,
@@ -3087,7 +3091,7 @@ return [
     ],
     'domain.unfreeze' => [
         'type' => 2,
-        'description' => 'Unfreeze domains',
+        'description' => 'Unlock a frozen domain to allow transfers and modifications',
     ],
     'deny:domain.unfreeze' => [
         'type' => 2,
@@ -3095,7 +3099,7 @@ return [
     ],
     'domain.force-push' => [
         'type' => 2,
-        'description' => 'Force push domains',
+        'description' => 'Force-push domains to another registrar account, bypassing normal restrictions',
     ],
     'deny:domain.force-push' => [
         'type' => 2,
@@ -3103,7 +3107,7 @@ return [
     ],
     'domain.force-send-foa' => [
         'type' => 2,
-        'description' => 'Force send FOA for domains',
+        'description' => 'Force send Form of Authorization (FOA) email required for domain transfers',
     ],
     'deny:domain.force-send-foa' => [
         'type' => 2,
@@ -3111,7 +3115,7 @@ return [
     ],
     'domain.force-set-nss' => [
         'type' => 2,
-        'description' => 'Force set domain NSs',
+        'description' => 'Force-set domain nameservers, bypassing normal restrictions',
     ],
     'deny:domain.force-set-nss' => [
         'type' => 2,
@@ -3119,11 +3123,11 @@ return [
     ],
     'domain.approve-trasfer-out' => [
         'type' => 2,
-        'description' => 'Approve domain trasfer out',
+        'description' => 'Approve outgoing domain transfer to another registrar',
     ],
     'deny:domain.approve-trasfer-out' => [
         'type' => 2,
-        'description' => 'Prohibits approve-trasfer-out operation on the domain',
+        'description' => 'Prohibits approving outgoing domain transfers',
     ],
     'domain.maintain' => [
         'type' => 2,
@@ -3223,7 +3227,7 @@ return [
     ],
     'ticket.close' => [
         'type' => 2,
-        'description' => 'Close tickets',
+        'description' => 'Allows closing of the ticket',
     ],
     'deny:ticket.close' => [
         'type' => 2,
@@ -3303,7 +3307,7 @@ return [
     ],
     'ref.view.not-used' => [
         'type' => 2,
-        'description' => 'Read not used refs',
+        'description' => 'View unused internal reference entries (internal technical permission)',
         'internal' => true,
     ],
     'deny:ref.view.not-used' => [

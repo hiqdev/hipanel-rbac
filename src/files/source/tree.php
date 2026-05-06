@@ -248,7 +248,7 @@ return [
     ],
     // FINANCE
     'role:finance.reader' => [
-        'plan.read', 'bill.read', 'document.read', 'finance.read', 'bill.read',
+        'plan.read', 'bill.read', 'document.read', 'finance.read',
     ],
     'role:finance.user' => [
         'role:finance.reader',
@@ -356,7 +356,6 @@ return [
     'role:stock.master' => [
         'role:stock.manager',
         'role:move.master',
-        'role:move.master',
         'role:order.master',
     ],
     // AUDIT
@@ -388,6 +387,8 @@ return [
         'role:installment-plan.user',
         'client.notify',
         'access-subclients',
+        'role:admin',
+        'role:manager',
     ],
     'role:support' => [
         'access-subclients', 'support',
@@ -399,7 +400,6 @@ return [
         'role:contact.user',
         'role:server.user',
         'role:hosting.user',
-        'role:blacklist.manager',
     ],
     'role:admin' => [
         'admin',
@@ -414,18 +414,21 @@ return [
         'role:stock.admin',
         'role:server.staff-admin',
         'role:hub.staff-admin',
+        'role:blacklist.manager',
         'see-no-mans',
     ],
     'role:staff-manager' => [
         'role:bill.staff-manager',
         'role:installment-plan.manager',
         'role:manager',
+        'role:blacklist.manager',
         'see-no-mans',
     ],
     'role:accounter' => [
         'role:manager',
         'role:hub.manager',
         'role:stock.manager',
+        'role:blacklist.manager',
     ],
     'role:manager' => [
         'manage', 'access-reseller',
@@ -545,7 +548,6 @@ return [
         'client.set-description',
         'owner-staff',
         'move.read-all',
-        'part.read-all-hierarchy',
         'move.get-directions',
         'see-no-mans',
         'role:blacklist.manager',
