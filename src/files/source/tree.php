@@ -248,7 +248,7 @@ return [
     ],
     // FINANCE
     'role:finance.reader' => [
-        'plan.read', 'bill.read', 'document.read', 'finance.read', 'bill.read',
+        'plan.read', 'bill.read', 'document.read', 'finance.read',
     ],
     'role:finance.user' => [
         'role:finance.reader',
@@ -355,7 +355,6 @@ return [
     ],
     'role:stock.master' => [
         'role:stock.manager',
-        'role:move.master',
         'role:move.master',
         'role:order.master',
     ],
@@ -550,7 +549,6 @@ return [
         'client.set-description',
         'owner-staff',
         'move.read-all',
-        'part.read-all-hierarchy',
         'move.get-directions',
         'see-no-mans',
         'role:blacklist.manager',
