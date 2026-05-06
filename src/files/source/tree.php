@@ -387,7 +387,6 @@ return [
         'role:installment-plan.user',
         'client.notify',
         'access-subclients',
-        'role:support',
         'role:admin',
         'role:manager',
     ],
