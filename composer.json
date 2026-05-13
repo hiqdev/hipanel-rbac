@@ -49,8 +49,8 @@
         "hiqdev/hidev": "dev-master",
         "hiqdev/hidev-php": "dev-master",
         "hiqdev/hidev-hiqdev": "dev-master",
-        "phpunit/phpunit": "^9.5",
-        "nikic/php-parser": "^4.12",
+        "phpunit/phpunit": "^12.5",
+        "nikic/php-parser": "^5.7",
         "laminas/laminas-code": "^4.5",
         "opis/closure": "3.x-dev as 3.6.x-dev"
     },
