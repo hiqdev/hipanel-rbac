@@ -2,320 +2,321 @@
 
 return [
     'role:nobody' => [
-        'description' => 'The role is generally assigned to nobody and used to indicate a user without any permissions.',
+        'description' => 'Grants no permissions at all; used as a sentinel role for users who should be denied all access.',
     ],
     'role:unauthorized' => [
-        'description' => 'The role is generally assigned to guests automatically.',
+        'description' => 'Grants unauthenticated visitors the ability to restore their password, make deposits, pay for servers, and read tariff plans.',
     ],
     'role:master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on everything',
+        'description' => 'Grants the full union of finance, billing, document, plan, sale, stock, domain, server, and hub master permissions, plus the ability to set client roles and resell services.',
     ],
     'role:client.support' => [
-        'description' => 'The role is generally assigned to staff who are members of the support team',
+        'description' => 'Grants read access to clients, client listing, and client IP addresses.',
     ],
     'role:client.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of client management',
+        'description' => 'Grants full client CRUD access including blocking, notes, financial info, requisites, referrals, deleted clients, contact verification, purse read/update, and credit control.',
     ],
     'role:client.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on clients management',
+        'description' => 'Grants the ability to assign and revoke roles on client accounts.',
     ],
     'role:employee.manager' => [
-        'description' => 'The role is generally assigned to employees who are responsible for employee management',
+        'description' => 'Grants the ability to read, create, update, and delete employee records, accept documents, list clients, and manage purses.',
     ],
     'role:client.impersonator' => [
-        'description' => 'The role is generally assigned to staff who are allowed to wear a client disguise',
+        'description' => 'Grants the ability to impersonate (log in as) any client account.',
     ],
     'role:contact.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to use contacts',
+        'description' => 'Grants full CRUD access to contacts.',
     ],
     'role:server.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to use servers',
+        'description' => 'Grants the ability to read servers, control power and system settings, and set server notes.',
     ],
     'role:server.admin' => [
-        'description' => 'The role is generally assigned to reseller clients who are in charge of clients\' server administration',
+        'description' => 'Extends server.user with access to wizard info, system info, server legend, labels, consumption data, settings management, and disk moves.',
     ],
     'role:server.staff-admin' => [
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers administration',
+        'description' => 'Extends server.admin with the ability to create, delete, update servers, and assign hubs to them.',
     ],
     'role:server.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s servers management',
+        'description' => 'Extends server.user with the ability to block/unblock servers, sell them, set labels, and read financial and billing information.',
     ],
     'role:server.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on servers management',
+        'description' => 'Grants the full union of server staff-admin and server manager permissions, covering all server operations from creation to financial management.',
     ],
     'role:hub.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to rents hubs',
+        'description' => 'Grants read-only access to switches and hubs.',
     ],
     'role:hub.admin' => [
-        'description' => 'The role is generally assigned to reseller staff who are in charge of clients\' hub administration',
+        'description' => 'Grants read and update access to switches and hubs.',
     ],
     'role:hub.staff-admin' => [
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs administration',
+        'description' => 'Extends hub.admin with the ability to create and delete switches and hubs.',
     ],
     'role:hub.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s hubs management',
+        'description' => 'Grants the ability to read and sell switches and hubs.',
     ],
     'role:hub.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on hubs management',
+        'description' => 'Grants the full union of hub staff-admin and hub manager permissions, covering all hub operations from creation to selling.',
     ],
     'role:consumption.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to see the device resources consumption details',
+        'description' => 'Grants read access to resource consumption data for objects the user owns.',
     ],
     'role:consumption.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of client\'s devices consumption management',
+        'description' => 'Grants the ability to read, update, and delete resource consumption records for objects the user has access to.',
     ],
     'role:config.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
+        'description' => 'Grants full CRUD access to system configuration entries (staff-only, not accessible to resellers or clients).',
     ],
     'role:integration.manager' => [
-        'description' => 'The role is generally assigned to staff who are allowed to change technical configuration of integrations with 3rd party services',
+        'description' => 'Grants full CRUD access to third-party service integration configurations.',
     ],
     'role:account.user' => [
-        'description' => 'The role is generally assigned to users who can use accounts with their hosting services',
+        'description' => 'Grants full CRUD access to hosting accounts.',
     ],
     'role:backup.user' => [
-        'description' => 'The role is generally assigned to users who need access to backus of their hosting services',
+        'description' => 'Grants the ability to read and delete backups of hosting services.',
     ],
     'role:backuping.user' => [
-        'description' => 'The role is generally assigned to users who need access to backups configurations of their hosting services',
+        'description' => 'Grants full CRUD access to backup configurations for hosting services.',
     ],
     'role:crontab.user' => [
-        'description' => 'The role is generally assigned to users who need access to crontab configuration of their hosting services',
+        'description' => 'Grants full CRUD access to crontab entries for hosting services.',
     ],
     'role:db.user' => [
-        'description' => 'The role is generally assigned to users who need access to DBMS configuration of their hosting services',
+        'description' => 'Grants full CRUD access to databases for hosting services.',
     ],
     'role:zone.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of domain zones management',
+        'description' => 'Grants full CRUD access to DNS zones.',
     ],
     'role:hdomain.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to have hosting domains on their services',
+        'description' => 'Grants full CRUD access to hosting domains including DNS configuration.',
     ],
     'role:ip.admin' => [
-        'description' => 'The role is generally assigned to staff who manage company IP addresses pool',
+        'description' => 'Grants full CRUD access to IP address records.',
     ],
     'role:mail.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to use mailboxes on their hosting services',
+        'description' => 'Grants full CRUD access to mail records for hosting services.',
     ],
     'role:request.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to see configuration requests of their hosting services',
+        'description' => 'Grants full CRUD access to hosting configuration requests.',
     ],
     'role:service.admin' => [
-        'description' => 'The role is generally assigned to staff who manage software services of user\'s hosting services',
+        'description' => 'Grants full CRUD access to software services associated with hosting accounts.',
     ],
     'role:vhost.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to have virtual hosts on their hosting services',
+        'description' => 'Grants full CRUD access to virtual hosts for hosting services.',
     ],
     'role:hosting.reader' => [
-        'description' => 'The role is generally assigned to users who have read-only access to hosting services',
+        'description' => 'Grants read-only access to all hosting service objects: accounts, backups, backup configs, crontabs, databases, hosting domains, IPs, mail, requests, services, and virtual hosts.',
     ],
     'role:hosting.user' => [
-        'description' => 'The role is generally assigned to users who have default user permissions for hosting services',
+        'description' => 'Grants full CRUD access to accounts, backups, backup configs, crontabs, databases, hosting domains, mail, requests, and virtual hosts, plus read access to IPs and services.',
     ],
     'role:hosting.admin' => [
-        'description' => 'The role is generally assigned to staff who are in charge of the client\'s hosting services administration',
+        'description' => 'Extends hosting.user with full CRUD access to IP addresses and software services, replacing read-only IP/service access.',
     ],
     'role:bill.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to see bills',
+        'description' => 'Grants read access to bills and the ability to make deposits.',
     ],
     'role:bill.junior-manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of bills management',
+        'description' => 'Grants read-only access to bills, without the ability to create, modify, or deposit.',
     ],
     'role:bill.manager' => [
-        'description' => 'The role is generally assigned to staff who have high permissions on bills management',
+        'description' => 'Grants full CRUD access to bills, deposits, and purse management (read and update).',
     ],
     'role:bill.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on bills management',
+        'description' => 'Extends bill.manager with the ability to import bills, perform currency exchange, and view server charges.',
     ],
     'role:requisites.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to see bank requisites',
+        'description' => 'Grants read access to financial requisites.',
     ],
     'role:requisites.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of financial requisites management',
+        'description' => 'Grants full CRUD access to financial requisites.',
     ],
     'role:plan.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to see tariff plans',
+        'description' => 'Grants read access to tariff plans, prices, and financial summary data.',
     ],
     'role:plan.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of tariff plans management',
+        'description' => 'Grants full CRUD access to tariff plans and prices, including force-read and plan notes.',
     ],
     'role:plan.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the tariff plans management',
+        'description' => 'Alias for plan.manager; grants full CRUD access to tariff plans and prices.',
     ],
     'role:document.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to work with documents',
+        'description' => 'Grants the ability to read and create documents and generate invoices.',
     ],
     'role:document.employee' => [
-        'description' => 'The role is generally assigned to staff who are in charge of employees\' and other contractors\' documents management',
+        'description' => 'Grants the ability to read and create documents, and accept contractor/employee documents.',
     ],
     'role:document.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of customer\'s documents management',
+        'description' => 'Grants full CRUD access to documents, plus the ability to generate, accept, and invoice documents.',
     ],
     'role:document.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the documents management',
+        'description' => 'Grants the ability to generate all documents system-wide, regardless of ownership.',
     ],
     'role:sale.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to see own sales',
+        'description' => 'Grants read access to sales records.',
     ],
     'role:sale.manager' => [
-        'description' => 'The role is generally assigned to staff who are allowed to sell objects to clients',
+        'description' => 'Grants full CRUD access to sales records.',
     ],
     'role:sale.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for sales management',
+        'description' => 'Alias for sale.manager; grants full CRUD access to sales records.',
     ],
     'role:finance.reader' => [
-        'description' => 'The role is generally assigned to users who have read-only access to financial information',
+        'description' => 'Grants read-only access to tariff plans, bills, documents, and financial summary data.',
     ],
     'role:finance.user' => [
-        'description' => 'The role is generally assigned to users who have limited write permissions on the financial information',
+        'description' => 'Grants read access to financial data plus the ability to read bills, make deposits, read plans/prices, and create/read documents and invoices.',
     ],
     'role:finance.employee' => [
-        'description' => 'The role is generally assigned to employees and staff who have access to payments information',
+        'description' => 'Grants the ability to read bills and make deposits, read and create documents and acceptance records, and read financial summary data.',
     ],
     'role:finance.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of finances management',
+        'description' => 'Grants read access to financial data and bills, plus full management of tariff plans, documents, and sales.',
     ],
     'role:finance.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for finances management',
+        'description' => 'Extends finance.manager with full bill CRUD (including deposits), purse management, and plan/sale master permissions.',
     ],
     'role:stock.user' => [
-        'description' => 'The role is generally assigned to users who have limited stock reading access',
+        'description' => 'Grants read access to stock overview, parts, moves, models, and orders.',
     ],
     'role:stock.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of stock management',
+        'description' => 'Extends stock.user with full part master permissions (including hierarchy read and erase), move management, and model master permissions.',
     ],
     'role:stock.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the stock management',
+        'description' => 'Extends stock.manager with read-all access to moves and full order management including profit visibility.',
     ],
     'role:order.user' => [
-        'description' => 'The role is generally assigned to users who have access to orders information',
+        'description' => 'Grants read access to stock orders.',
     ],
     'role:order.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of orders management',
+        'description' => 'Grants full CRUD access to stock orders.',
     ],
     'role:order.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the orders management',
+        'description' => 'Extends order.manager with access to order profit information.',
     ],
     'role:part.user' => [
-        'description' => 'The role is generally assigned to users who have access to part information',
+        'description' => 'Grants read access to stock parts.',
     ],
     'role:part.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of parts management',
+        'description' => 'Grants full CRUD access to stock parts.',
     ],
     'role:part.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the parts management',
+        'description' => 'Extends part.manager with access to the full part hierarchy and the ability to permanently erase parts with their move history.',
     ],
     'role:installment-plan.user' => [
-        'description' => 'The role is generally assigned to users who have access to installment plan information',
+        'description' => 'Grants read access to installment plans and sales records.',
     ],
     'role:installment-plan.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of installment plan management',
+        'description' => 'Extends installment-plan.user with the ability to delete, update, restore, and manually process installment plans.',
         'internal' => true,
     ],
     'role:model.user' => [
-        'description' => 'The role is generally assigned to users who have access to models information',
+        'description' => 'Grants read access to stock hardware models.',
     ],
     'role:model.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of models management',
+        'description' => 'Grants full CRUD access to stock hardware models.',
     ],
     'role:model.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the models management',
+        'description' => 'Alias for model.manager; grants full CRUD access to stock hardware models.',
     ],
     'role:move.user' => [
-        'description' => 'The role is generally assigned to users who have access to moves information',
+        'description' => 'Grants read access to stock movement records.',
     ],
     'role:move.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of moves management',
+        'description' => 'Extends move.user with the ability to retrieve valid move directions and perform full CRUD on stock movements.',
     ],
     'role:move.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the moves management',
+        'description' => 'Extends move.manager with the ability to read all stock movements regardless of ownership.',
     ],
     'role:project.user' => [
-        'description' => 'The role is generally assigned to staff who manage internal company sub-projects',
+        'description' => 'Grants read access to resource consumption, stock parts, and valid stock move directions; intended for internal project tracking.',
     ],
     'role:client' => [
-        'description' => 'The role is generally assigned to users who are clients',
+        'description' => 'Base role for authenticated clients: grants access to tickets, domains, DNS, SSL certificates, contacts, documents, servers, hosting, financial reading, sales, installment plans, and the ability to pay and notify.',
     ],
     'role:support' => [
-        'description' => 'The role is generally assigned to staff who are in charge of customer support',
+        'description' => 'Grants ticket management access and read access to clients, domains, DNS, certificates, contacts, servers, and hosting, plus subclient visibility and blacklist management.',
     ],
     'role:admin' => [
-        'description' => 'The role is generally assigned to reseller\'s clients who are in charge of the technical management of the resources',
+        'description' => 'Extends support with hub read access, stock read access, server administration (including system info and wizard), and full hosting administration (IP and service CRUD).',
     ],
     'role:staff-admin' => [
-        'description' => 'The role is generally assigned to staff who are in charge for the technical management of the resources',
+        'description' => 'Extends admin with stock admin permissions (move management, administrative part data), the ability to create/delete/update servers and assign hubs, create/delete hubs, and visibility of unsold objects.',
     ],
     'role:accounter' => [
-        'description' => 'The role is generally assigned to staff who are in charge of accounting',
+        'description' => 'Extends manager with hub selling rights and full stock management permissions (parts, moves, models).',
+        'internal' => true,
     ],
     'role:manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of services and clients management',
+        'description' => 'Grants comprehensive staff management access: support permissions, full document/domain/certificate/contact/client/finance management, server management, consumption management, DNS management, mailing, and billing targets.',
     ],
     'role:reseller' => [
-        'description' => 'The role is generally assigned to staff who resell services',
+        'description' => 'Grants all manager permissions plus full finance master access (bills, plans, documents, sales), integration management, and the ability to resell services to sub-clients.',
     ],
     'role:owner' => [
-        'description' => 'The role is generally assigned to a root user and is not used by any other customers',
+        'description' => 'Grants manager permissions plus bill master, stock management, cost price management, and ownership privileges; intended for the root account holder.',
     ],
     'role:superpowers' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions',
+        'description' => 'Grants the ability to see unsold objects, sell parts, and set allowed IPs on behalf of other clients.',
     ],
     'role:employee' => [
-        'description' => 'The role is generally assigned to employees',
+        'description' => 'Grants employees the ability to restore their password, manage contacts, read bills and make deposits, accept documents, and read employee records.',
     ],
     'role:junior-manager' => [
-        'description' => 'The role is generally assigned to staff who are managers with reduced permissions',
+        'description' => 'Grants read-only access to hubs, stock (including full part hierarchy and move directions), tariff plans, documents, bills, clients, contacts, servers, and consumption data; no write permissions.',
     ],
     'role:partner' => [
-        'description' => 'The role is generally assigned to partners',
+        'description' => 'Grants read-only access to documents, financial data, bills, and contacts, plus the ability to hold goods.',
     ],
     'role:domain.user' => [
-        'description' => 'The role is generally assigned to users who have access to domain name registration services',
+        'description' => 'Grants the ability to read, update, delete AGP-period domains, and set nameservers.',
     ],
     'role:domain.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of domain name registration services',
+        'description' => 'Extends domain.user with the ability to fully delete domains.',
     ],
     'role:domain.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions on domain name registration services',
+        'description' => 'Extends domain.manager with the ability to freeze/unfreeze, force-push, force-send FOA, force-set nameservers, approve transfers out, and perform maintenance operations on domains.',
     ],
     'role:dns.user' => [
-        'description' => 'The role is generally assigned to users who have access to DNS management',
+        'description' => 'Grants full CRUD access to DNS records.',
     ],
     'role:dns.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of DNS services management',
+        'description' => 'Alias for dns.user; grants full CRUD access to DNS records.',
     ],
     'role:certificate.user' => [
-        'description' => 'The role is generally assigned to users who have access to SSL certificates services',
+        'description' => 'Grants the ability to read, create, and update SSL certificates.',
     ],
     'role:certificate.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of SSL certificates management',
+        'description' => 'Extends certificate.user with the ability to delete SSL certificates.',
     ],
     'role:ticket.user' => [
-        'description' => 'The role is generally assigned to users who have access to the ticket system',
+        'description' => 'Grants the ability to read, create, answer, and close support tickets.',
     ],
     'role:ticket.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of tickets management',
+        'description' => 'Extends ticket.user with the ability to update and delete tickets, read templates and statistics, set private flags, recipients, and time tracking.',
     ],
     'role:beta-tester' => [
-        'description' => 'The role is generally assigned to users who participate in beta testing program',
+        'description' => 'Grants access to beta-stage features.',
     ],
     'role:alpha-tester' => [
-        'description' => 'The role is generally assigned to users who participate in early access testing program',
+        'description' => 'Grants access to alpha and beta-stage features for early-access testing.',
     ],
     'role:owner-staff' => [
-        'description' => 'The role is generally assigned to staff who represents owners of the company resources',
+        'description' => 'Grants owner-representative staff access to bill charges, server charges, full part hierarchy, client descriptions, all stock moves, blacklist management, audit reading, and installment plan management, plus visibility of unsold objects.',
     ],
     'role:purse.user' => [
-        'description' => 'The role is generally assigned to users who have access to the purses',
+        'description' => 'Grants read access to purses.',
     ],
     'role:purse.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of purses',
+        'description' => 'Grants the ability to read, create, and update purses.',
     ],
     'role:purse.master' => [
-        'description' => 'The role is generally assigned to staff who are in charge of purses',
+        'description' => 'Alias for purse.manager; grants the ability to read, create, and update purses.',
     ],
     'access-reseller' => [
-        'description' => 'Allows access-reseller operation',
+        'description' => 'Allows a reseller to see and link to sub-clients managed through their own seller account (used for client/seller link visibility and tariff data access in grids)',
     ],
     'access-subclients' => [
         'description' => 'Access to subclients
@@ -378,10 +379,12 @@ return [
         'description' => 'Update bills',
     ],
     'bill.import' => [
-        'description' => 'Import bills',
+        'description' => 'Import bills from external sources or files into the billing system',
+        'internal' => true,
     ],
     'bill.create-exchange' => [
-        'description' => 'Exchange currencies',
+        'description' => 'Create a currency exchange bill that converts funds between currencies in a client purse',
+        'internal' => true,
     ],
     'certificate.create' => [
         'description' => 'Create certificates',
@@ -414,7 +417,8 @@ return [
         'description' => 'Get client note',
     ],
     'client.impersonate' => [
-        'description' => 'Impersonate',
+        'description' => 'Impersonate a client account by logging in on their behalf',
+        'internal' => true,
     ],
     'client.list' => [
         'description' => 'List clients',
@@ -431,12 +435,14 @@ return [
     ],
     'client.set-others-allowed-ips' => [
         'description' => 'Set allowed IPs to other clients',
+        'internal' => true,
     ],
     'client.set-tmp-pwd' => [
         'description' => 'Set temporary password to client',
     ],
     'client.set-roles' => [
         'description' => 'Set roles to clients',
+        'internal' => true,
     ],
     'client.unblock' => [
         'description' => 'Unblock clients',
@@ -460,27 +466,29 @@ return [
         'description' => 'Read deleted clients',
     ],
     'config.create' => [
-        'description' => 'Create configs',
+        'description' => 'Create server configuration entries (staff-only)',
+        'internal' => true,
     ],
     'config.delete' => [
-        'description' => 'Delete configs',
+        'description' => 'Delete server configuration entries (staff-only)',
+        'internal' => true,
     ],
     'config.read' => [
-        'description' => 'Read configs',
+        'description' => 'Read server configuration entries (staff-only)',
+        'internal' => true,
     ],
     'config.update' => [
-        'description' => 'Update configs',
+        'description' => 'Update server configuration entries (staff-only)',
+        'internal' => true,
     ],
     'consumption.update' => [
-        'description' => 'Update consumptions',
-        'internal' => true,
+        'description' => 'Update resource consumption records for servers',
     ],
     'consumption.delete' => [
-        'description' => 'Delete consumptions',
-        'internal' => true,
+        'description' => 'Delete resource consumption records for servers (e.g. clear server resources or flush switch graphs)',
     ],
     'consumption.read' => [
-        'description' => 'Read consumptions',
+        'description' => 'Read resource consumption records for servers',
     ],
     'contact.create' => [
         'description' => 'Create contacts',
@@ -525,7 +533,7 @@ return [
         'description' => 'Update DBs',
     ],
     'deny:access-reseller' => [
-        'description' => 'Prohibits access-reseller operation',
+        'description' => 'Prohibits reseller-level access to sub-client data and tariff visibility',
     ],
     'deny:access-subclients' => [
         'description' => 'Prohibits access-subclients operation',
@@ -579,10 +587,12 @@ return [
         'description' => 'Prohibits updating of the bill',
     ],
     'deny:bill.import' => [
-        'description' => 'Prohibits import bills',
+        'description' => 'Prohibits importing bills from external sources or files',
+        'internal' => true,
     ],
     'deny:bill.create-exchange' => [
-        'description' => 'Prohibits exchange currencies',
+        'description' => 'Prohibits creating currency exchange bills',
+        'internal' => true,
     ],
     'deny:bill.see-server-charges' => [
         'description' => 'Denies to see server charges (detailed bill info)',
@@ -618,7 +628,8 @@ return [
         'description' => 'Prohibits get-note operation on the client',
     ],
     'deny:client.impersonate' => [
-        'description' => 'Prohibits impersonating of the client',
+        'description' => 'Prohibits impersonating a client account',
+        'internal' => true,
     ],
     'deny:client.list' => [
         'description' => 'Prohibits listing of the client',
@@ -633,13 +644,15 @@ return [
         'description' => 'Prohibits set-note operation on the client',
     ],
     'deny:client.set-others-allowed-ips' => [
-        'description' => 'Prohibits set-others-allowed-ips operation on the client',
+        'description' => 'Prohibits setting allowed IPs on behalf of other clients',
+        'internal' => true,
     ],
     'deny:client.set-tmp-pwd' => [
         'description' => 'Prohibits set-tmp-pwd operation on the client',
     ],
     'deny:client.set-roles' => [
-        'description' => 'Prohibits set-roles operation on the client',
+        'description' => 'Prohibits assigning roles to client accounts',
+        'internal' => true,
     ],
     'deny:client.unblock' => [
         'description' => 'Prohibits unblocking of the client',
@@ -648,16 +661,20 @@ return [
         'description' => 'Prohibits updating of the client',
     ],
     'deny:config.create' => [
-        'description' => 'Prohibits creating of the config',
+        'description' => 'Prohibits creating server configuration entries',
+        'internal' => true,
     ],
     'deny:config.delete' => [
-        'description' => 'Prohibits deleting of the config',
+        'description' => 'Prohibits deleting server configuration entries',
+        'internal' => true,
     ],
     'deny:config.read' => [
-        'description' => 'Prohibits reading of the config',
+        'description' => 'Prohibits reading server configuration entries',
+        'internal' => true,
     ],
     'deny:config.update' => [
-        'description' => 'Prohibits updating of the config',
+        'description' => 'Prohibits updating server configuration entries',
+        'internal' => true,
     ],
     'deny:consumption.update' => [
         'description' => 'Prohibits updating of the consumption',
@@ -738,7 +755,7 @@ return [
         'description' => 'Prohibits generating of the document',
     ],
     'deny:document.generate-all' => [
-        'description' => 'Prohibits generate-all operation on the document',
+        'description' => 'Prohibits bulk generation of financial documents for all purses',
     ],
     'deny:document.invoice' => [
         'description' => 'Prohibits invoicing of the document',
@@ -750,7 +767,8 @@ return [
         'description' => 'Prohibits updating of the document',
     ],
     'deny:domain.approve-trasfer-out' => [
-        'description' => 'Prohibits approve-trasfer-out operation on the domain',
+        'description' => 'Prohibits approving domain transfer out',
+        'internal' => true,
     ],
     'deny:domain.delete' => [
         'description' => 'Prohibits deleting of the domain',
@@ -760,12 +778,15 @@ return [
     ],
     'deny:domain.force-push' => [
         'description' => 'Prohibits force-push operation on the domain',
+        'internal' => true,
     ],
     'deny:domain.force-send-foa' => [
         'description' => 'Prohibits force-send-foa operation on the domain',
+        'internal' => true,
     ],
     'deny:domain.freeze' => [
         'description' => 'Prohibits freezing of the domain',
+        'internal' => true,
     ],
     'deny:domain.pay' => [
         'description' => 'Prohibits paying of the domain',
@@ -781,9 +802,11 @@ return [
     ],
     'deny:domain.force-set-nss' => [
         'description' => 'Prohibits force-set-nss operation on the domain',
+        'internal' => true,
     ],
     'deny:domain.unfreeze' => [
         'description' => 'Prohibits unfreezing of the domain',
+        'internal' => true,
     ],
     'deny:domain.update' => [
         'description' => 'Prohibits updating of the domain',
@@ -822,7 +845,8 @@ return [
         'description' => 'Prohibits updating of the hdomain',
     ],
     'deny:domain.maintain' => [
-        'description' => 'Prohibits operation with domain in DB',
+        'description' => 'Prohibits low-level maintenance operations on domains in the database',
+        'internal' => true,
     ],
     'deny:hub.create' => [
         'description' => 'Prohibits creating of the hub',
@@ -835,6 +859,7 @@ return [
     ],
     'deny:hub.sell' => [
         'description' => 'Prohibits selling of the hub',
+        'internal' => true,
     ],
     'deny:hub.update' => [
         'description' => 'Prohibits updating of the hub',
@@ -886,15 +911,18 @@ return [
     ],
     'deny:model.create' => [
         'description' => 'Prohibits creating of the model',
+        'internal' => true,
     ],
     'deny:model.delete' => [
         'description' => 'Prohibits deleting of the model',
+        'internal' => true,
     ],
     'deny:model.read' => [
         'description' => 'Prohibits reading of the model',
     ],
     'deny:model.update' => [
         'description' => 'Prohibits updating of the model',
+        'internal' => true,
     ],
     'deny:move.create' => [
         'description' => 'Prohibits creating of the move',
@@ -946,6 +974,7 @@ return [
     ],
     'deny:part.sell' => [
         'description' => 'Prohibits selling of the part',
+        'internal' => true,
     ],
     'deny:part.update' => [
         'description' => 'Prohibits updating of the part',
@@ -1068,7 +1097,7 @@ return [
         'description' => 'Prohibits reading of tariff and sale information of server',
     ],
     'deny:server.read-wizzard' => [
-        'description' => 'Prohibits reading of the info about wizzarding of server',
+        'description' => 'Prohibits reading wizard mode info of the server',
     ],
     'deny:server.read-legend' => [
         'description' => 'Prohibits reading legend of the server',
@@ -1086,7 +1115,7 @@ return [
         'description' => 'Prohibits updating of the server',
     ],
     'deny:server.wizzard' => [
-        'description' => 'Prohibits wizzarding of the server',
+        'description' => 'Prohibits disabling wizard mode on the server',
     ],
     'deny:server.assign-hub' => [
         'description' => 'Prohibits assign hub to server',
@@ -1200,7 +1229,7 @@ return [
         'description' => 'Generate documents',
     ],
     'document.generate-all' => [
-        'description' => 'Generate all documents',
+        'description' => 'Trigger bulk generation of financial documents for all purses system-wide',
     ],
     'document.invoice' => [
         'description' => 'Access invoice documents',
@@ -1212,7 +1241,8 @@ return [
         'description' => 'Update documents',
     ],
     'domain.approve-trasfer-out' => [
-        'description' => 'Approve domain trasfer out',
+        'description' => 'Approve domain transfer out',
+        'internal' => true,
     ],
     'domain.delete' => [
         'description' => 'Delete domains',
@@ -1222,12 +1252,15 @@ return [
     ],
     'domain.force-push' => [
         'description' => 'Force push domains',
+        'internal' => true,
     ],
     'domain.force-send-foa' => [
         'description' => 'Force send FOA for domains',
+        'internal' => true,
     ],
     'domain.freeze' => [
         'description' => 'Freeze domains',
+        'internal' => true,
     ],
     'domain.pay' => [
         'description' => 'Pay domains',
@@ -1243,15 +1276,18 @@ return [
     ],
     'domain.force-set-nss' => [
         'description' => 'Force set domain NSs',
+        'internal' => true,
     ],
     'domain.unfreeze' => [
         'description' => 'Unfreeze domains',
+        'internal' => true,
     ],
     'domain.update' => [
         'description' => 'Update domains',
     ],
     'domain.maintain' => [
-        'description' => 'Modify domains in DB',
+        'description' => 'Perform low-level maintenance operations on domains directly in the database (staff-only)',
+        'internal' => true,
     ],
     'employee.create' => [
         'description' => 'Create employees',
@@ -1303,6 +1339,7 @@ return [
     ],
     'hub.sell' => [
         'description' => 'Sell switches/hubs',
+        'internal' => true,
     ],
     'hub.update' => [
         'description' => 'Update switches/hubs',
@@ -1345,25 +1382,28 @@ return [
         'description' => 'Update mail records',
     ],
     'mailing.prepare' => [
-        'description' => 'Mailing preparation',
+        'description' => 'Prepare a client mailing by filtering recipients and exporting or forwarding the target list to the mailing service',
     ],
     'mailing.send' => [
-        'description' => 'Send mailings',
+        'description' => 'Trigger sending of a prepared mailing to its recipients via the mailing service',
     ],
     'manage' => [
         'description' => 'OBSOLETE. To be replaced with specific permissions',
     ],
     'model.create' => [
         'description' => 'Create stock models',
+        'internal' => true,
     ],
     'model.delete' => [
         'description' => 'Delete stock models',
+        'internal' => true,
     ],
     'model.read' => [
         'description' => 'Read stock models',
     ],
     'model.update' => [
         'description' => 'Update stock models',
+        'internal' => true,
     ],
     'move.create' => [
         'description' => 'Create stock moves',
@@ -1371,6 +1411,7 @@ return [
     ],
     'move.delete' => [
         'description' => 'Delete stock moves',
+        'internal' => true,
     ],
     'move.get-directions' => [
         'description' => 'Get available stock move directions',
@@ -1385,6 +1426,7 @@ return [
     ],
     'move.update' => [
         'description' => 'Update stock moves',
+        'internal' => true,
     ],
     'nothing' => [
         'description' => 'SYSTEM. Allows nothing',
@@ -1425,13 +1467,14 @@ return [
         'description' => 'Read stock parts',
     ],
     'part.sell' => [
-        'description' => 'Sell stock parts',
+        'description' => 'Create a sale for a stock part, assigning it to a buyer client',
+        'internal' => true,
     ],
     'part.update' => [
         'description' => 'Update stock parts',
     ],
     'part.read-administrative' => [
-        'description' => 'Reading parts administrative data',
+        'description' => 'Read administrative part data such as cost, price, and internal fields visible only to staff',
     ],
     'plan.create' => [
         'description' => 'Create tariff plans',
@@ -1470,7 +1513,7 @@ return [
         'description' => 'Set purse credit',
     ],
     'ref.view.not-used' => [
-        'description' => 'Read not used refs',
+        'description' => 'View all reference values including unused/inactive types (e.g. all server types, not just those currently in use)',
         'internal' => true,
     ],
     'request.create' => [
@@ -1525,7 +1568,7 @@ return [
         'internal' => true,
     ],
     'installment-plan.process' => [
-        'description' => 'Maually initiate installment plan processing',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.read' => [
@@ -1541,10 +1584,10 @@ return [
         'description' => 'Prohibits updating of installment plans',
     ],
     'deny:installment-plan.process' => [
-        'description' => 'Prohibits maual initiation of installment plan processing',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'see-no-mans' => [
-        'description' => 'See unsold objects',
+        'description' => 'See unowned (no-mans-land) objects such as servers and parts that do not yet belong to any client',
         'internal' => true,
     ],
     'server.control-power' => [
@@ -1587,16 +1630,16 @@ return [
         'description' => 'Read server system info',
     ],
     'server.read-wizzard' => [
-        'description' => 'Read server wizzarding info',
+        'description' => 'Read whether a server is in wizard mode (i.e. has multiple active services associated with it)',
     ],
     'server.read-legend' => [
-        'description' => 'Read servers legend',
+        'description' => 'View the color-coded legend explaining server state and type indicators in the server grid',
     ],
     'server.read-billing' => [
-        'description' => 'Read server billing information',
+        'description' => 'Access manager and billing grid views showing tariff plan, monthly fee, client, and consumption data for servers',
     ],
     'server.sell' => [
-        'description' => 'Sell servers',
+        'description' => 'Assign a server to a client under a tariff plan (create or update a sale record for the server)',
     ],
     'server.set-label' => [
         'description' => 'Set server label',
@@ -1609,10 +1652,10 @@ return [
         'internal' => true,
     ],
     'server.wizzard' => [
-        'description' => 'Wizards servers',
+        'description' => 'Disable wizard mode on a server (wizard mode marks a server as having multiple active services; disabling removes this marker)',
     ],
     'server.move-disks' => [
-        'description' => 'Move disks in servers',
+        'description' => 'Exchange/swap disk hardware between servers',
     ],
     'deny:server.move-disks' => [
         'description' => 'Deny move disks between servers',
@@ -1630,7 +1673,7 @@ return [
         'description' => 'Update services',
     ],
     'stock.read' => [
-        'description' => 'Read stock',
+        'description' => 'Read the stock overview dashboard (aggregate stock statistics)',
     ],
     'support' => [
         'description' => 'OBSOLETE. To be replaced with specific permissions',
@@ -1739,7 +1782,7 @@ return [
         'description' => 'Prohibits updating of the sale',
     ],
     'part.read-all-hierarchy' => [
-        'description' => 'Read all parts',
+        'description' => 'Read the full part hierarchy including parts not directly owned, enabling complete stock tree navigation',
         'internal' => true,
     ],
     'sale.create' => [
@@ -1749,7 +1792,7 @@ return [
         'description' => 'Update sales',
     ],
     'role:almighty' => [
-        'description' => 'The role is for testing only',
+        'description' => 'Testing-only role that combines all staff-admin, staff-manager, manager, document master, finance master, stock master, config manager, cost price manager, PnL master, and blacklist manager permissions.',
     ],
     'deny:purse.create' => [
         'description' => 'Prohibits creating of the purse',
@@ -1768,7 +1811,7 @@ return [
         'internal' => true,
     ],
     'role:consumption.master' => [
-        'description' => 'The role is generally assigned to ____',
+        'description' => 'Grants access to read all resource consumption regardless of ownership, plus the ability to update and delete consumption records.',
     ],
     'consumption.read-all' => [
         'description' => 'Read all resource consumptions',
@@ -1781,13 +1824,13 @@ return [
         'description' => 'Prohibits owner-staff operation',
     ],
     'role:costprice.user' => [
-        'description' => 'The role is generally assigned to staff who can see cost prices',
+        'description' => 'Grants read access to cost price data.',
     ],
     'role:costprice.manager' => [
-        'description' => 'The role is generally assigned to staff who can manage cost prices',
+        'description' => 'Grants full CRUD access to cost price data.',
     ],
     'role:stock.admin' => [
-        'description' => 'The role is generally assigned to staff who can manage stock',
+        'description' => 'Extends stock.user with move management permissions and read access to administrative part data.',
     ],
     'costprice.create' => [
         'description' => 'Create costprices',
@@ -1838,28 +1881,28 @@ return [
         'description' => 'Explicitly denies reading system objects and comprehensive audit data.',
     ],
     'role:bill.staff-manager' => [
-        'description' => 'The role is generally assigned to staff who are responsible for supervising billing operations.',
+        'description' => 'Extends bill.manager with access to detailed charge data and server charge information.',
     ],
     'role:blacklist.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of blacklist management.',
+        'description' => 'Grants full CRUD access to blacklist entries.',
     ],
     'role:pnl.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to view profit and loss information.',
+        'description' => 'Grants read access to the profit and loss report.',
     ],
     'role:pnl.master' => [
-        'description' => 'The role is generally assigned to staff who have exceptionally high permissions for profit and loss management.',
+        'description' => 'Grants the ability to read and update the profit and loss report, including access to expenses data.',
     ],
     'role:target.manager' => [
-        'description' => 'The role is generally assigned to users who can manage target details.',
+        'description' => 'Grants full CRUD access to billing targets.',
     ],
     'role:audit.user' => [
-        'description' => 'The role is generally assigned to users who are allowed to read audit logs for objects they have access to.',
+        'description' => 'Grants the ability to read the change history of objects the user has direct access to.',
     ],
     'role:audit.master' => [
-        'description' => 'The role is generally assigned to staff who have full audit permissions across all system objects.',
+        'description' => 'Extends audit.user with the ability to read change history for any system object regardless of ownership.',
     ],
     'role:staff-manager' => [
-        'description' => 'The role is generally assigned to staff who are responsible for managing company resources.',
+        'description' => 'Extends manager with bill staff-manager permissions (detailed charge access), installment plan management, and visibility of unsold objects.',
     ],
     'blacklist.create' => [
         'description' => 'Create blacklists',
@@ -1935,7 +1978,7 @@ return [
         'description' => 'Update billing targets',
     ],
     'deny:part.erase' => [
-        'description' => 'Prohibits eraseing of the part',
+        'description' => 'Prohibits erasing of the part',
     ],
     'deny:role:stock.admin' => [
         'description' => 'Prohibits role:stock-admin operation',
