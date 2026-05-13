@@ -105,12 +105,10 @@ return [
             'server.read-wizzard',
             'server.read-legend',
             'server.read-system-info',
-            'server.wizzard',
             'server.set-label',
             'consumption.read',
             'server.manage-settings',
             'server.see-label',
-            'server.move-disks',
         ],
     ],
     'role:server.manager' => [
@@ -135,6 +133,8 @@ return [
         'description' => 'Extends server.admin with the ability to create, delete, update servers, and assign hubs to them.',
         'children' => [
             'role:server.admin',
+            'server.wizzard',
+            'server.move-disks',
             'server.create',
             'server.delete',
             'server.update',
@@ -883,26 +883,7 @@ return [
             'role:unauthorized',
             'have-goods',
             'pay',
-            'role:ticket.user',
-            'role:domain.user',
-            'domain.pay',
-            'domain.push',
-            'domain.delete-agp',
-            'role:dns.user',
-            'role:certificate.user',
-            'certificate.pay',
-            'certificate.push',
-            'role:contact.user',
-            'role:document.user',
-            'document.invoice',
-            'role:server.user',
-            'server.pay',
-            'role:hosting.user',
-            'role:finance.user',
-            'role:sale.user',
-            'role:installment-plan.user',
-            'client.notify',
-            'access-subclients',
+            'role:manager',
         ],
     ],
     'role:support' => [
@@ -911,7 +892,7 @@ return [
         'children' => [
             'access-subclients',
             'support',
-            'role:ticket.manager',
+            'role:ticket.user',
             'role:client.support',
             'role:domain.user',
             'role:dns.user',
@@ -919,19 +900,14 @@ return [
             'role:contact.user',
             'role:server.user',
             'role:hosting.user',
-            'role:blacklist.manager',
         ],
     ],
     'role:admin' => [
         'type' => 1,
         'description' => 'Extends support with hub read access, stock read access, server administration (including system info and wizard), and full hosting administration (IP and service CRUD).',
         'children' => [
-            'admin',
             'role:support',
-            'role:hub.user',
-            'role:stock.user',
             'role:server.admin',
-            'role:hosting.admin',
         ],
     ],
     'role:staff-admin' => [
@@ -939,9 +915,15 @@ return [
         'description' => 'Extends admin with stock admin permissions (move management, administrative part data), the ability to create/delete/update servers and assign hubs, create/delete hubs, and visibility of unsold objects.',
         'children' => [
             'role:admin',
+            'admin',
+            'role:hub.user',
+            'role:ticket.manager',
+            'role:blacklist.manager',
             'role:stock.admin',
             'role:server.staff-admin',
             'role:hub.staff-admin',
+            'role:hosting.admin',
+            'role:consumption.manager',
             'see-no-mans',
         ],
     ],
@@ -949,17 +931,41 @@ return [
         'type' => 1,
         'description' => 'Extends manager with bill staff-manager permissions (detailed charge access), installment plan management, and visibility of unsold objects.',
         'children' => [
+            'role:manager',
             'role:bill.staff-manager',
             'role:installment-plan.manager',
-            'role:manager',
+            'role:certificate.manager',
+            'role:ticket.manager',
+            'role:blacklist.manager',
+            'role:consumption.manager',
+            'role:plan.manager',
+            'role:sale.manager',
+            'role:target.manager',
             'see-no-mans',
+            'manage',
+            'access-reseller',
+            'contact.force-verify',
+            'contact.set-verified',
+            'client.delete',
+            'client.block',
+            'client.unblock',
+            'client.get-note',
+            'client.set-note',
+            'client.read-deleted',
+            'purse.set-credit',
+            'purse.update',
+            'mailing.prepare',
+            'mailing.send',
+            'server.enable-block',
+            'server.disable-block',
+            'server.sell',
         ],
     ],
     'role:accounter' => [
         'type' => 1,
         'description' => 'Extends manager with hub selling rights and full stock management permissions (parts, moves, models).',
         'children' => [
-            'role:manager',
+            'role:staff-manager',
             'role:hub.manager',
             'role:stock.manager',
         ],
@@ -968,30 +974,28 @@ return [
         'type' => 1,
         'description' => 'Grants comprehensive staff management access: support permissions, full document/domain/certificate/contact/client/finance management, server management, consumption management, DNS management, mailing, and billing targets.',
         'children' => [
-            'manage',
-            'access-reseller',
-            'role:support',
+            'role:admin',
             'role:document.manager',
             'role:domain.manager',
             'domain.pay',
             'domain.push',
-            'domain.delete-agp',
-            'role:server.manager',
-            'role:consumption.manager',
             'role:dns.manager',
-            'role:certificate.manager',
             'certificate.pay',
             'certificate.push',
-            'role:contact.user',
-            'contact.force-verify',
-            'role:client.manager',
-            'role:finance.manager',
-            'mailing.prepare',
-            'mailing.send',
+            'server.read-financial-info',
+            'server.read-billing',
+            'server.pay',
+            'client.create',
+            'client.update',
+            'client.read-financial-info',
+            'client.read-requisite',
+            'client.read-referral',
             'client.set-tmp-pwd',
+            'role:finance.user',
+            'role:sale.user',
+            'installment-plan.read',
+            'purse.read',
             'client.notify',
-            'role:purse.user',
-            'role:target.manager',
         ],
     ],
     'role:reseller' => [
@@ -1004,6 +1008,24 @@ return [
             'deny:access-reseller',
             'role:manager',
             'role:integration.manager',
+            'role:certificate.manager',
+            'role:ticket.manager',
+            'role:consumption.manager',
+            'manage',
+            'contact.force-verify',
+            'contact.set-verified',
+            'client.delete',
+            'client.block',
+            'client.unblock',
+            'client.get-note',
+            'client.set-note',
+            'client.read-deleted',
+            'purse.set-credit',
+            'purse.update',
+            'role:target.manager',
+            'server.enable-block',
+            'server.disable-block',
+            'server.sell',
         ],
     ],
     'role:employee' => [
@@ -1067,63 +1089,173 @@ return [
             'move.get-directions',
             'plan.force-read',
             'plan.read',
+            'document.read',
+            'finance.read',
+            'bill.read',
+            'client.read',
+            'client.list',
+            'contact.read',
+            'server.read',
+            'consumption.read',
         ],
     ],
     'role:partner' => [
         'type' => 1,
         'description' => 'Grants read-only access to documents, financial data, bills, and contacts, plus the ability to hold goods.',
+        'children' => [
+            'document.read',
+            'finance.read',
+            'bill.read',
+            'contact.read',
+            'have-goods',
+        ],
     ],
     'role:domain.user' => [
         'type' => 1,
         'description' => 'Grants the ability to read, update, delete AGP-period domains, and set nameservers.',
+        'children' => [
+            'domain.read',
+            'domain.update',
+            'domain.delete-agp',
+            'domain.set-nss',
+        ],
     ],
     'role:domain.manager' => [
         'type' => 1,
         'description' => 'Extends domain.user with the ability to fully delete domains.',
+        'children' => [
+            'role:domain.user',
+            'domain.delete',
+        ],
     ],
     'role:domain.master' => [
         'type' => 1,
         'description' => 'Extends domain.manager with the ability to freeze/unfreeze, force-push, force-send FOA, force-set nameservers, approve transfers out, and perform maintenance operations on domains.',
+        'children' => [
+            'role:domain.manager',
+            'domain.freeze',
+            'domain.unfreeze',
+            'domain.push',
+            'domain.force-push',
+            'domain.force-send-foa',
+            'domain.force-set-nss',
+            'domain.approve-trasfer-out',
+            'domain.maintain',
+        ],
     ],
     'role:dns.user' => [
         'type' => 1,
         'description' => 'Grants full CRUD access to DNS records.',
+        'children' => [
+            'dns.create',
+            'dns.read',
+            'dns.update',
+            'dns.delete',
+        ],
     ],
     'role:dns.manager' => [
         'type' => 1,
         'description' => 'Alias for dns.user; grants full CRUD access to DNS records.',
+        'children' => [
+            'role:dns.user',
+        ],
     ],
     'role:certificate.user' => [
         'type' => 1,
         'description' => 'Grants the ability to read, create, and update SSL certificates.',
+        'children' => [
+            'certificate.read',
+            'certificate.create',
+            'certificate.update',
+        ],
     ],
     'role:certificate.manager' => [
         'type' => 1,
         'description' => 'Extends certificate.user with the ability to delete SSL certificates.',
+        'children' => [
+            'role:certificate.user',
+            'certificate.delete',
+        ],
     ],
     'role:ticket.user' => [
         'type' => 1,
         'description' => 'Grants the ability to read, create, answer, and close support tickets.',
+        'children' => [
+            'ticket.read',
+            'ticket.create',
+            'ticket.answer',
+            'ticket.close',
+            'ticket.update',
+        ],
     ],
     'role:ticket.manager' => [
         'type' => 1,
         'description' => 'Extends ticket.user with the ability to update and delete tickets, read templates and statistics, set private flags, recipients, and time tracking.',
+        'children' => [
+            'role:ticket.user',
+            'ticket.update',
+            'ticket.delete',
+            'ticket.read-templates',
+            'ticket.read-statistics',
+            'ticket.set-private',
+            'ticket.set-recipient',
+            'ticket.set-time',
+        ],
     ],
     'role:beta-tester' => [
         'type' => 1,
         'description' => 'Grants access to beta-stage features.',
+        'children' => [
+            'test.beta',
+        ],
     ],
     'role:alpha-tester' => [
         'type' => 1,
         'description' => 'Grants access to alpha and beta-stage features for early-access testing.',
+        'children' => [
+            'role:beta-tester',
+            'test.alpha',
+        ],
     ],
     'role:owner-staff' => [
         'type' => 1,
         'description' => 'Grants owner-representative staff access to bill charges, server charges, full part hierarchy, client descriptions, all stock moves, blacklist management, audit reading, and installment plan management, plus visibility of unsold objects.',
+        'children' => [
+            'ref.view.not-used',
+            'bill.charges.read',
+            'bill.see-server-charges',
+            'part.read-all-hierarchy',
+            'client.set-description',
+            'owner-staff',
+            'move.read-all',
+            'move.get-directions',
+            'see-no-mans',
+            'role:blacklist.manager',
+            'role:audit.user',
+            'role:installment-plan.manager',
+        ],
     ],
     'role:almighty' => [
         'type' => 1,
         'description' => 'Testing-only role that combines all staff-admin, staff-manager, manager, document master, finance master, stock master, config manager, cost price manager, PnL master, and blacklist manager permissions.',
+        'children' => [
+            'role:staff-admin',
+            'role:staff-manager',
+            'role:manager',
+            'role:document.master',
+            'role:finance.master',
+            'role:stock.master',
+            'role:config.manager',
+            'role:costprice.manager',
+            'role:pnl.master',
+            'role:blacklist.manager',
+            'domain.freeze',
+            'domain.force-push',
+            'domain.delete',
+            'employee.read',
+            'domain.force-send-foa',
+            'deny:deposit',
+        ],
     ],
     'nothing' => [
         'type' => 2,
@@ -1459,14 +1591,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits reading system info of the server',
     ],
-    'server.wizzard' => [
-        'type' => 2,
-        'description' => 'Disable wizard mode on a server (wizard mode marks a server as having multiple active services; disabling removes this marker)',
-    ],
-    'deny:server.wizzard' => [
-        'type' => 2,
-        'description' => 'Prohibits disabling wizard mode on the server',
-    ],
     'server.set-label' => [
         'type' => 2,
         'description' => 'Set server label',
@@ -1498,14 +1622,6 @@ return [
     'deny:server.see-label' => [
         'type' => 2,
         'description' => 'Prohibits see-label operation on the server',
-    ],
-    'server.move-disks' => [
-        'type' => 2,
-        'description' => 'Exchange/swap disk hardware between servers',
-    ],
-    'deny:server.move-disks' => [
-        'type' => 2,
-        'description' => 'Deny move disks between servers',
     ],
     'server.enable-block' => [
         'type' => 2,
@@ -1546,6 +1662,22 @@ return [
     'deny:server.read-billing' => [
         'type' => 2,
         'description' => 'Prohibits reading of tariff and sale information of server',
+    ],
+    'server.wizzard' => [
+        'type' => 2,
+        'description' => 'Disable wizard mode on a server (wizard mode marks a server as having multiple active services; disabling removes this marker)',
+    ],
+    'deny:server.wizzard' => [
+        'type' => 2,
+        'description' => 'Prohibits disabling wizard mode on the server',
+    ],
+    'server.move-disks' => [
+        'type' => 2,
+        'description' => 'Exchange/swap disk hardware between servers',
+    ],
+    'deny:server.move-disks' => [
+        'type' => 2,
+        'description' => 'Deny move disks between servers',
     ],
     'server.create' => [
         'type' => 2,
@@ -2783,54 +2915,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits paying',
     ],
-    'domain.pay' => [
-        'type' => 2,
-        'description' => 'Pay domains',
-    ],
-    'deny:domain.pay' => [
-        'type' => 2,
-        'description' => 'Prohibits paying of the domain',
-    ],
-    'domain.push' => [
-        'type' => 2,
-        'description' => 'Push domains',
-    ],
-    'deny:domain.push' => [
-        'type' => 2,
-        'description' => 'Prohibits pushing of the domain',
-    ],
-    'domain.delete-agp' => [
-        'type' => 2,
-        'description' => 'Delete AGP domains',
-    ],
-    'deny:domain.delete-agp' => [
-        'type' => 2,
-        'description' => 'Prohibits delete-agp operation on the domain',
-    ],
-    'certificate.pay' => [
-        'type' => 2,
-        'description' => 'Pay certificates',
-    ],
-    'deny:certificate.pay' => [
-        'type' => 2,
-        'description' => 'Prohibits paying of the certificate',
-    ],
-    'certificate.push' => [
-        'type' => 2,
-        'description' => 'Push certificates',
-    ],
-    'deny:certificate.push' => [
-        'type' => 2,
-        'description' => 'Prohibits pushing of the certificate',
-    ],
-    'client.notify' => [
-        'type' => 2,
-        'description' => 'Notify clients',
-    ],
-    'deny:client.notify' => [
-        'type' => 2,
-        'description' => 'Prohibits notifying of the client',
-    ],
     'access-subclients' => [
         'type' => 2,
         'description' => 'Access to subclients
@@ -2908,6 +2992,38 @@ return [
         'type' => 2,
         'description' => 'Prohibits sending of the mailing',
     ],
+    'domain.pay' => [
+        'type' => 2,
+        'description' => 'Pay domains',
+    ],
+    'deny:domain.pay' => [
+        'type' => 2,
+        'description' => 'Prohibits paying of the domain',
+    ],
+    'domain.push' => [
+        'type' => 2,
+        'description' => 'Push domains',
+    ],
+    'deny:domain.push' => [
+        'type' => 2,
+        'description' => 'Prohibits pushing of the domain',
+    ],
+    'certificate.pay' => [
+        'type' => 2,
+        'description' => 'Pay certificates',
+    ],
+    'deny:certificate.pay' => [
+        'type' => 2,
+        'description' => 'Prohibits paying of the certificate',
+    ],
+    'certificate.push' => [
+        'type' => 2,
+        'description' => 'Push certificates',
+    ],
+    'deny:certificate.push' => [
+        'type' => 2,
+        'description' => 'Prohibits pushing of the certificate',
+    ],
     'client.set-tmp-pwd' => [
         'type' => 2,
         'description' => 'Set temporary password to client',
@@ -2915,6 +3031,14 @@ return [
     'deny:client.set-tmp-pwd' => [
         'type' => 2,
         'description' => 'Prohibits set-tmp-pwd operation on the client',
+    ],
+    'client.notify' => [
+        'type' => 2,
+        'description' => 'Notify clients',
+    ],
+    'deny:client.notify' => [
+        'type' => 2,
+        'description' => 'Prohibits notifying of the client',
     ],
     'resell' => [
         'type' => 2,
@@ -2949,5 +3073,303 @@ return [
     'deny:client.set-others-allowed-ips' => [
         'type' => 2,
         'description' => 'Prohibits setting allowed IPs on behalf of other clients',
+    ],
+    'domain.read' => [
+        'type' => 2,
+        'description' => 'Read domains',
+    ],
+    'deny:domain.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the domain',
+    ],
+    'domain.update' => [
+        'type' => 2,
+        'description' => 'Update domains',
+    ],
+    'deny:domain.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the domain',
+    ],
+    'domain.delete-agp' => [
+        'type' => 2,
+        'description' => 'Delete AGP domains',
+    ],
+    'deny:domain.delete-agp' => [
+        'type' => 2,
+        'description' => 'Prohibits delete-agp operation on the domain',
+    ],
+    'domain.set-nss' => [
+        'type' => 2,
+        'description' => 'Set domain NSs',
+    ],
+    'deny:domain.set-nss' => [
+        'type' => 2,
+        'description' => 'Prohibits set-nss operation on the domain',
+    ],
+    'domain.delete' => [
+        'type' => 2,
+        'description' => 'Delete domains',
+    ],
+    'deny:domain.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the domain',
+    ],
+    'domain.freeze' => [
+        'type' => 2,
+        'description' => 'Freeze domains',
+        'internal' => true,
+    ],
+    'deny:domain.freeze' => [
+        'type' => 2,
+        'description' => 'Prohibits freezing of the domain',
+    ],
+    'domain.unfreeze' => [
+        'type' => 2,
+        'description' => 'Unfreeze domains',
+        'internal' => true,
+    ],
+    'deny:domain.unfreeze' => [
+        'type' => 2,
+        'description' => 'Prohibits unfreezing of the domain',
+    ],
+    'domain.force-push' => [
+        'type' => 2,
+        'description' => 'Force push domains',
+        'internal' => true,
+    ],
+    'deny:domain.force-push' => [
+        'type' => 2,
+        'description' => 'Prohibits force-push operation on the domain',
+    ],
+    'domain.force-send-foa' => [
+        'type' => 2,
+        'description' => 'Force send FOA for domains',
+        'internal' => true,
+    ],
+    'deny:domain.force-send-foa' => [
+        'type' => 2,
+        'description' => 'Prohibits force-send-foa operation on the domain',
+    ],
+    'domain.force-set-nss' => [
+        'type' => 2,
+        'description' => 'Force set domain NSs',
+        'internal' => true,
+    ],
+    'deny:domain.force-set-nss' => [
+        'type' => 2,
+        'description' => 'Prohibits force-set-nss operation on the domain',
+    ],
+    'domain.approve-trasfer-out' => [
+        'type' => 2,
+        'description' => 'Approve domain transfer out',
+        'internal' => true,
+    ],
+    'deny:domain.approve-trasfer-out' => [
+        'type' => 2,
+        'description' => 'Prohibits approving domain transfer out',
+    ],
+    'domain.maintain' => [
+        'type' => 2,
+        'description' => 'Perform low-level maintenance operations on domains directly in the database (staff-only)',
+        'internal' => true,
+    ],
+    'deny:domain.maintain' => [
+        'type' => 2,
+        'description' => 'Prohibits low-level maintenance operations on domains in the database',
+    ],
+    'dns.create' => [
+        'type' => 2,
+        'description' => 'Create DNS records',
+    ],
+    'deny:dns.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the dns',
+    ],
+    'dns.read' => [
+        'type' => 2,
+        'description' => 'Read DNS records',
+    ],
+    'deny:dns.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the dns',
+    ],
+    'dns.update' => [
+        'type' => 2,
+        'description' => 'Update DNS records',
+    ],
+    'deny:dns.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the dns',
+    ],
+    'dns.delete' => [
+        'type' => 2,
+        'description' => 'Delete DNS records',
+    ],
+    'deny:dns.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the dns',
+    ],
+    'certificate.read' => [
+        'type' => 2,
+        'description' => 'Read certificates',
+    ],
+    'deny:certificate.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the certificate',
+    ],
+    'certificate.create' => [
+        'type' => 2,
+        'description' => 'Create certificates',
+    ],
+    'deny:certificate.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the certificate',
+    ],
+    'certificate.update' => [
+        'type' => 2,
+        'description' => 'Update certificates',
+    ],
+    'deny:certificate.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the certificate',
+    ],
+    'certificate.delete' => [
+        'type' => 2,
+        'description' => 'Delete certificates',
+    ],
+    'deny:certificate.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the certificate',
+    ],
+    'ticket.read' => [
+        'type' => 2,
+        'description' => 'Read tickets',
+    ],
+    'deny:ticket.read' => [
+        'type' => 2,
+        'description' => 'Prohibits reading of the ticket',
+    ],
+    'ticket.create' => [
+        'type' => 2,
+        'description' => 'Create tickets',
+    ],
+    'deny:ticket.create' => [
+        'type' => 2,
+        'description' => 'Prohibits creating of the ticket',
+    ],
+    'ticket.answer' => [
+        'type' => 2,
+        'description' => 'Answer tickets',
+    ],
+    'deny:ticket.answer' => [
+        'type' => 2,
+        'description' => 'Prohibits answering of the ticket',
+    ],
+    'ticket.close' => [
+        'type' => 2,
+        'description' => 'Close tickets',
+    ],
+    'deny:ticket.close' => [
+        'type' => 2,
+        'description' => 'Prohibits closing of the ticket',
+    ],
+    'ticket.update' => [
+        'type' => 2,
+        'description' => 'Update tickets',
+    ],
+    'deny:ticket.update' => [
+        'type' => 2,
+        'description' => 'Prohibits updating of the ticket',
+    ],
+    'ticket.delete' => [
+        'type' => 2,
+        'description' => 'Delete tickets',
+    ],
+    'deny:ticket.delete' => [
+        'type' => 2,
+        'description' => 'Prohibits deleting of the ticket',
+    ],
+    'ticket.read-templates' => [
+        'type' => 2,
+        'description' => 'Read ticket templates',
+    ],
+    'deny:ticket.read-templates' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing ticket templates',
+    ],
+    'ticket.read-statistics' => [
+        'type' => 2,
+        'description' => 'Read ticket statistics',
+    ],
+    'deny:ticket.read-statistics' => [
+        'type' => 2,
+        'description' => 'Prohibits viewing tickets statistics',
+    ],
+    'ticket.set-private' => [
+        'type' => 2,
+        'description' => 'Make private ticket answers',
+    ],
+    'deny:ticket.set-private' => [
+        'type' => 2,
+        'description' => 'Prohibits setting `private` to answer',
+    ],
+    'ticket.set-recipient' => [
+        'type' => 2,
+        'description' => 'Set ticket recipient',
+    ],
+    'deny:ticket.set-recipient' => [
+        'type' => 2,
+        'description' => 'Prohibits setting ticket\'s recipient',
+    ],
+    'ticket.set-time' => [
+        'type' => 2,
+        'description' => 'Set ticket answer spent time',
+    ],
+    'deny:ticket.set-time' => [
+        'type' => 2,
+        'description' => 'Prohibits setting spent time to ticket',
+    ],
+    'test.beta' => [
+        'type' => 2,
+        'description' => 'Beta testing',
+    ],
+    'deny:test.beta' => [
+        'type' => 2,
+        'description' => 'Prohibits betatesting of the test',
+    ],
+    'test.alpha' => [
+        'type' => 2,
+        'description' => 'Alpha testing',
+    ],
+    'deny:test.alpha' => [
+        'type' => 2,
+        'description' => 'Prohibits alphatesting of the test',
+    ],
+    'ref.view.not-used' => [
+        'type' => 2,
+        'description' => 'View all reference values including unused/inactive types (e.g. all server types, not just those currently in use)',
+        'internal' => true,
+    ],
+    'deny:ref.view.not-used' => [
+        'type' => 2,
+        'description' => 'Prohibits view.not-used operation on the ref',
+    ],
+    'client.set-description' => [
+        'type' => 2,
+        'description' => 'Set client description',
+        'internal' => true,
+    ],
+    'deny:client.set-description' => [
+        'type' => 2,
+        'description' => 'Prohibits set-description operation on the client',
+    ],
+    'owner-staff' => [
+        'type' => 2,
+        'description' => 'OBSOLETE. To be replaced with specific permissions',
+        'internal' => true,
+    ],
+    'deny:owner-staff' => [
+        'type' => 2,
+        'description' => 'Prohibits owner-staff operation',
     ],
 ];
