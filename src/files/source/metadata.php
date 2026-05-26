@@ -1538,7 +1538,7 @@ return [
         'internal' => true,
     ],
     'installment-plan.process' => [
-        'description' => 'Maually initiate installment plan processing',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.read' => [
@@ -1554,7 +1554,7 @@ return [
         'description' => 'Prohibits updating of installment plans',
     ],
     'deny:installment-plan.process' => [
-        'description' => 'Prohibits maual initiation of installment plan processing',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'see-no-mans' => [
         'description' => 'See unsold objects',

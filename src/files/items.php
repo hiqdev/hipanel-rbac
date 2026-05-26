@@ -2656,12 +2656,12 @@ return [
     ],
     'installment-plan.process' => [
         'type' => 2,
-        'description' => 'Process installment plans',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.process' => [
         'type' => 2,
-        'description' => 'Prohibits processing of installment plans',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'part.read' => [
         'type' => 2,
