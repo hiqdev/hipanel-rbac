@@ -1211,6 +1211,19 @@ return [
     'document.update' => [
         'description' => 'Update documents',
     ],
+    'document.replace' => [
+        'description' => 'Replace document file',
+    ],
+    'deny:document.replace' => [
+        'description' => 'Prohibits replacing of the document file',
+    ],
+    'document.see-history' => [
+        'description' => 'See document file replacement history',
+        'internal' => true,
+    ],
+    'deny:document.see-history' => [
+        'description' => 'Prohibits seeing document file replacement history',
+    ],
     'domain.approve-trasfer-out' => [
         'description' => 'Approve domain trasfer out',
     ],

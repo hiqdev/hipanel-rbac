@@ -598,6 +598,7 @@ return [
             'document.generate',
             'document.acceptance',
             'document.invoice',
+            'document.replace',
         ],
     ],
     'role:document.master' => [
@@ -1210,6 +1211,7 @@ return [
             'role:blacklist.manager',
             'role:audit.user',
             'role:installment-plan.manager',
+            'document.see-history',
         ],
     ],
     'role:almighty' => [
@@ -2537,6 +2539,14 @@ return [
         'type' => 2,
         'description' => 'Prohibits generating of the document',
     ],
+    'document.replace' => [
+        'type' => 2,
+        'description' => 'Replace document file',
+    ],
+    'deny:document.replace' => [
+        'type' => 2,
+        'description' => 'Prohibits replacing of the document file',
+    ],
     'document.generate-all' => [
         'type' => 2,
         'description' => 'Generate all documents',
@@ -3327,5 +3337,14 @@ return [
     'deny:owner-staff' => [
         'type' => 2,
         'description' => 'Prohibits owner-staff operation',
+    ],
+    'document.see-history' => [
+        'type' => 2,
+        'description' => 'See document file replacement history',
+        'internal' => true,
+    ],
+    'deny:document.see-history' => [
+        'type' => 2,
+        'description' => 'Prohibits seeing document file replacement history',
     ],
 ];
