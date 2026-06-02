@@ -58,9 +58,8 @@ Roles follow a consistent `user → admin → manager → master` pattern per mo
 ### Adding a new permission
 
 1. Add the permission name to the appropriate role(s) in `src/files/source/tree.php`
-2. Run `./vendor/bin/hidev rbac/reinit`
-3. Update `tests/unit/CheckAccessTrait.php`: add the permission to every role test that should have it (and verify it's absent from role tests that should not)
-4. Run `./vendor/bin/phpunit` to confirm
+2. Update `tests/unit/CheckAccessTrait.php`: add the permission to every role test that should have it (and verify it's absent from role tests that should not)
+3. Run `./vendor/bin/phpunit` to confirm
 
 ### Tests
 

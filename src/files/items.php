@@ -599,6 +599,7 @@ return [
             'document.acceptance',
             'document.invoice',
             'document.replace',
+            'document.see-history',
         ],
     ],
     'role:document.master' => [
@@ -2547,6 +2548,15 @@ return [
         'type' => 2,
         'description' => 'Prohibits replacing of the document file',
     ],
+    'document.see-history' => [
+        'type' => 2,
+        'description' => 'See document file replacement history',
+        'internal' => true,
+    ],
+    'deny:document.see-history' => [
+        'type' => 2,
+        'description' => 'Prohibits seeing document file replacement history',
+    ],
     'document.generate-all' => [
         'type' => 2,
         'description' => 'Generate all documents',
@@ -3337,14 +3347,5 @@ return [
     'deny:owner-staff' => [
         'type' => 2,
         'description' => 'Prohibits owner-staff operation',
-    ],
-    'document.see-history' => [
-        'type' => 2,
-        'description' => 'See document file replacement history',
-        'internal' => true,
-    ],
-    'deny:document.see-history' => [
-        'type' => 2,
-        'description' => 'Prohibits seeing document file replacement history',
     ],
 ];

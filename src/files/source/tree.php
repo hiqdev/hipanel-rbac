@@ -232,7 +232,7 @@ return [
     'role:document.manager' => [
         'role:document.user', 'document.update', 'document.delete',
         'document.generate', 'document.acceptance', 'document.invoice',
-        'document.replace',
+        'document.replace', 'document.see-history',
     ],
     'role:document.master' => [
         'document.generate-all',

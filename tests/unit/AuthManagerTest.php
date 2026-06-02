@@ -95,6 +95,9 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'document.see-history',
 
             // Roles
+            'role:document.manager',
+            'role:finance.manager',
+            'role:finance.master',
             'role:employee.manager',
             'role:server.staff-admin',
             'role:bill.staff-manager',
