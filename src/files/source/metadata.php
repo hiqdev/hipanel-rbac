@@ -1213,6 +1213,7 @@ return [
     ],
     'document.replace' => [
         'description' => 'Replace document file',
+        'internal' => true,
     ],
     'deny:document.replace' => [
         'description' => 'Prohibits replacing of the document file',

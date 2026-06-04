@@ -598,7 +598,6 @@ return [
             'document.generate',
             'document.acceptance',
             'document.invoice',
-            'document.replace',
             'document.see-history',
         ],
     ],
@@ -607,6 +606,7 @@ return [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the documents management',
         'children' => [
             'document.generate-all',
+            'document.replace',
         ],
     ],
     'role:sale.user' => [
@@ -2540,14 +2540,6 @@ return [
         'type' => 2,
         'description' => 'Prohibits generating of the document',
     ],
-    'document.replace' => [
-        'type' => 2,
-        'description' => 'Replace document file',
-    ],
-    'deny:document.replace' => [
-        'type' => 2,
-        'description' => 'Prohibits replacing of the document file',
-    ],
     'document.see-history' => [
         'type' => 2,
         'description' => 'See document file replacement history',
@@ -2564,6 +2556,15 @@ return [
     'deny:document.generate-all' => [
         'type' => 2,
         'description' => 'Prohibits generate-all operation on the document',
+    ],
+    'document.replace' => [
+        'type' => 2,
+        'description' => 'Replace document file',
+        'internal' => true,
+    ],
+    'deny:document.replace' => [
+        'type' => 2,
+        'description' => 'Prohibits replacing of the document file',
     ],
     'sale.read' => [
         'type' => 2,
