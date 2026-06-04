@@ -5,40 +5,22 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Commands
 
 ```sh
-# Run all tests
-./vendor/bin/phpunit
+# Run all tests (from the Yii2 application root, not from within this package)
+./vendor/bin/phpunit -c vendor/hiqdev/hipanel-rbac/phpunit.xml.dist
 
 # Run a single test method
-./vendor/bin/phpunit --filter testManager
-
-# Regenerate items.php, metadata.php, and js/index.ts from source tree
-./vendor/bin/hidev rbac/reinit
-
-# Initialize RBAC in AuthManager (without regenerating metadata)
-./vendor/bin/hidev rbac/init
-
-# Regenerate descriptions only (metadata.php)
-./vendor/bin/hidev rbac/generate-descriptions
-
-# Export permissions matrix to permissions.csv
-./vendor/bin/hidev rbac/export
-
-# Show all roles and permissions
-./vendor/bin/hidev rbac/show
+./vendor/bin/phpunit -c vendor/hiqdev/hipanel-rbac/phpunit.xml.dist --filter testManager
 ```
 
 ## Architecture
 
 ### Source of truth vs generated files
 
-`src/files/source/tree.php` is the **only file you should edit** to define the role/permission hierarchy. It is a compact PHP array mapping role names to their direct children (roles or permissions).
+`src/files/source/tree.php` defines the role/permission hierarchy as a compact PHP array mapping role names to their direct children (roles or permissions).
 
-Running `rbac/reinit` regenerates three files from the source:
-- `src/files/items.php` — flat PHP array (roles + permissions + descriptions) loaded by `AuthManager` at runtime via Yii2's `PhpManager`
-- `src/files/source/metadata.php` — descriptions for each item; hand-written descriptions survive regeneration (the generator only fills missing ones)
-- `js/index.ts` — TypeScript enums and the full hierarchy object for frontend consumption
+`src/files/source/metadata.php` holds descriptions and flags (e.g. `'internal' => true`) for each item.
 
-Do not edit `src/files/items.php` directly; changes will be overwritten on the next `reinit`.
+`src/files/items.php` is the flat PHP array loaded by `AuthManager` at runtime via Yii2's `PhpManager`. It must be kept in sync with the source files manually when making changes.
 
 ### Role/permission naming conventions
 
@@ -57,10 +39,14 @@ Roles follow a consistent `user → admin → manager → master` pattern per mo
 
 ### Adding a new permission
 
-1. Add the permission name to the appropriate role(s) in `src/files/source/tree.php`
-2. Update `tests/unit/CheckAccessTrait.php`: add the permission to every role test that should have it (and verify it's absent from role tests that should not)
-3. Run `./vendor/bin/phpunit` to confirm
+1. Edit `src/files/source/tree.php` and `src/files/source/metadata.php` as needed
+2. Edit `src/files/items.php` to match (it mirrors the source files at runtime)
+3. Update `tests/unit/CheckAccessTrait.php`: add the permission to every role test that should have it (and verify it's absent from role tests that should not)
+4. If the permission is marked `'internal' => true`, also add it (and any role that becomes internal as a result) to the expected list in `tests/unit/AuthManagerTest.php::testIsRoleInternal`
+5. Run tests to confirm
 
 ### Tests
 
 `tests/unit/CheckAccessTrait.php` contains exhaustive per-role assertions (`assertAccesses`) that list every permission a role should have. Each role has its own `test*` method. When a role's permissions change, the corresponding test method must be updated to match exactly — the assertions check both presence and absence of every known permission.
+
+`tests/unit/AuthManagerTest.php::testIsRoleInternal` maintains a hardcoded list of all internal permissions and roles. A role is considered internal if any of its children are internal. Keep this list in sync whenever `'internal' => true` is added or removed from metadata.
