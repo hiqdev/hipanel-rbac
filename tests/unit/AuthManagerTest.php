@@ -92,8 +92,14 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'installment-plan.update',
             'installment-plan.restore',
             'installment-plan.process',
+            'document.see-history',
+            'document.replace',
 
             // Roles
+            'role:document.master',
+            'role:document.manager',
+            'role:finance.manager',
+            'role:finance.master',
             'role:employee.manager',
             'role:server.staff-admin',
             'role:bill.staff-manager',

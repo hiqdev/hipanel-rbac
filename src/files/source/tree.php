@@ -232,9 +232,10 @@ return [
     'role:document.manager' => [
         'role:document.user', 'document.update', 'document.delete',
         'document.generate', 'document.acceptance', 'document.invoice',
+        'document.see-history',
     ],
     'role:document.master' => [
-        'document.generate-all',
+        'document.generate-all', 'document.replace',
     ],
     // SALE
     'role:sale.user' => [
@@ -551,6 +552,7 @@ return [
         'role:blacklist.manager',
         'role:audit.user',
         'role:installment-plan.manager',
+        'document.see-history',
     ],
     'role:almighty' => [
         'role:staff-admin',
