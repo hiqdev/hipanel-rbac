@@ -1215,6 +1215,20 @@ return [
     'document.update' => [
         'description' => 'Update documents',
     ],
+    'document.replace' => [
+        'description' => 'Replace document file',
+        'internal' => true,
+    ],
+    'deny:document.replace' => [
+        'description' => 'Prohibits replacing of the document file',
+    ],
+    'document.see-history' => [
+        'description' => 'See document file replacement history',
+        'internal' => true,
+    ],
+    'deny:document.see-history' => [
+        'description' => 'Prohibits seeing document file replacement history',
+    ],
     'domain.approve-trasfer-out' => [
         'description' => 'Approve domain trasfer out',
     ],
@@ -1529,7 +1543,7 @@ return [
         'internal' => true,
     ],
     'installment-plan.process' => [
-        'description' => 'Maually initiate installment plan processing',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.read' => [
@@ -1545,7 +1559,7 @@ return [
         'description' => 'Prohibits updating of installment plans',
     ],
     'deny:installment-plan.process' => [
-        'description' => 'Prohibits maual initiation of installment plan processing',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'see-no-mans' => [
         'description' => 'See unsold objects',

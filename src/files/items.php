@@ -599,6 +599,7 @@ return [
             'document.generate',
             'document.acceptance',
             'document.invoice',
+            'document.see-history',
         ],
     ],
     'role:document.master' => [
@@ -606,6 +607,7 @@ return [
         'description' => 'The role is generally assigned to staff who have exceptionally high permissions for the documents management',
         'children' => [
             'document.generate-all',
+            'document.replace',
         ],
     ],
     'role:sale.user' => [
@@ -1212,6 +1214,7 @@ return [
             'role:blacklist.manager',
             'role:audit.user',
             'role:installment-plan.manager',
+            'document.see-history',
         ],
     ],
     'role:almighty' => [
@@ -2547,6 +2550,15 @@ return [
         'type' => 2,
         'description' => 'Prohibits generating of the document',
     ],
+    'document.see-history' => [
+        'type' => 2,
+        'description' => 'See document file replacement history',
+        'internal' => true,
+    ],
+    'deny:document.see-history' => [
+        'type' => 2,
+        'description' => 'Prohibits seeing document file replacement history',
+    ],
     'document.generate-all' => [
         'type' => 2,
         'description' => 'Generate all documents',
@@ -2554,6 +2566,15 @@ return [
     'deny:document.generate-all' => [
         'type' => 2,
         'description' => 'Prohibits generate-all operation on the document',
+    ],
+    'document.replace' => [
+        'type' => 2,
+        'description' => 'Replace document file',
+        'internal' => true,
+    ],
+    'deny:document.replace' => [
+        'type' => 2,
+        'description' => 'Prohibits replacing of the document file',
     ],
     'sale.read' => [
         'type' => 2,
@@ -2656,12 +2677,12 @@ return [
     ],
     'installment-plan.process' => [
         'type' => 2,
-        'description' => 'Maually initiate installment plan processing',
+        'description' => 'Manually initiate installment plan processing',
         'internal' => true,
     ],
     'deny:installment-plan.process' => [
         'type' => 2,
-        'description' => 'Prohibits maual initiation of installment plan processing',
+        'description' => 'Prohibits manual initiation of installment plan processing',
     ],
     'part.read' => [
         'type' => 2,

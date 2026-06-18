@@ -81,7 +81,7 @@ trait CheckAccessTrait
         foreach ($items as $item) {
             $name = $item->name;
             if ($this->auth->checkAccess($name, 'access-subclients')) {
-                $result[$name] = $name;
+                $result[] = $name;
             }
         }
         $this->assertEqualsCanonicalizing($result, [
@@ -265,7 +265,7 @@ trait CheckAccessTrait
             'server.read', 'server.pay', 'server.sell', 'server.control-power', 'server.control-system', 'server.enable-block', 'server.disable-block', 'server.set-label', 'server.set-note', 'server.see-label',
             'consumption.read', 'consumption.update', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
-            'document.generate', 'document.acceptance', 'document.invoice',
+            'document.generate', 'document.acceptance', 'document.invoice', 'document.see-history',
             'mailing.prepare', 'mailing.send',
             'stock.read',
             'part.read-all-hierarchy',
@@ -317,7 +317,7 @@ trait CheckAccessTrait
             'server.see-label',
             'consumption.read', 'consumption.update', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
-            'document.generate', 'document.acceptance', 'document.invoice',
+            'document.generate', 'document.acceptance', 'document.invoice', 'document.see-history',
             'mailing.prepare', 'mailing.send',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'bill.read', 'plan.read', 'finance.read',
@@ -362,7 +362,7 @@ trait CheckAccessTrait
             'server.see-label',
             'consumption.read', 'consumption.update', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
-            'document.generate', 'document.acceptance', 'document.invoice',
+            'document.generate', 'document.acceptance', 'document.invoice', 'document.see-history',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
             'account.read', 'account.create', 'account.update', 'account.delete',
@@ -429,7 +429,7 @@ trait CheckAccessTrait
             'consumption.read', 'consumption.update', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.generate-all',
-            'document.acceptance', 'document.invoice',
+            'document.acceptance', 'document.invoice', 'document.replace', 'document.see-history',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
             'stock.read',
@@ -517,7 +517,7 @@ trait CheckAccessTrait
             'consumption.read', 'consumption.update', 'consumption.delete',
             'document.read', 'document.create', 'document.update', 'document.delete',
             'document.generate', 'document.generate-all',
-            'document.acceptance', 'document.invoice',
+            'document.acceptance', 'document.invoice', 'document.replace', 'document.see-history',
             'contact.read', 'contact.create', 'contact.update', 'contact.delete', 'contact.force-verify',
             'mailing.prepare', 'mailing.send',
             'stock.read',
@@ -642,6 +642,7 @@ trait CheckAccessTrait
             'installment-plan.restore',
             'installment-plan.update',
             'installment-plan.process',
+            'document.see-history',
         ]);
     }
 }
