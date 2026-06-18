@@ -548,7 +548,7 @@ trait CheckAccessTrait
             'client.read-financial-info', 'client.read-requisite', 'client.read-referral', 'client.read-deleted', 'client.read-ip',
             'part.read-administrative', 'ticket.read-templates', 'ticket.read-statistics', 'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
 
-            'see-no-mans', 'bill.charges.read', 'bill.see-server-charges',
+            'see-no-mans', 'bill.charges.read', 'bill.charges.change_invoiced', 'bill.see-server-charges',
             'target.read', 'target.create', 'target.update', 'target.delete',
 
             'installment-plan.read', 'installment-plan.delete', 'installment-plan.update', 'installment-plan.restore', 'installment-plan.process',
@@ -622,6 +622,7 @@ trait CheckAccessTrait
         $this->assertAccesses('role:owner-staff', [
             'ref.view.not-used',
             'bill.charges.read',
+            'bill.charges.change_invoiced',
             'bill.see-server-charges',
             'part.read-all-hierarchy',
             'client.set-description',

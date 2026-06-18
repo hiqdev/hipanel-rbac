@@ -47,6 +47,7 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'server.update',
             'server.assign-hub',
             'bill.charges.read',
+            'bill.charges.change_invoiced',
             'bill.see-server-charges',
             'hub.create',
             'hub.update',

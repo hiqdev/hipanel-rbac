@@ -65,6 +65,7 @@ return [
     'role:bill.staff-manager' => [
         'role:bill.manager',
         'bill.charges.read',
+        'bill.charges.change_invoiced',
         'bill.see-server-charges',
     ],
     'role:server.master' => [
@@ -540,6 +541,7 @@ return [
     'role:owner-staff' => [
         'ref.view.not-used',
         'bill.charges.read',
+        'bill.charges.change_invoiced',
         'bill.see-server-charges',
         'part.read-all-hierarchy',
         'client.set-description',
