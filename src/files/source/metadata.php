@@ -361,6 +361,10 @@ return [
         'description' => 'Read charges (detailed bill info)',
         'internal' => true,
     ],
+    'bill.charges.change_invoiced' => [
+        'description' => 'Generate on-demand invoices for selected charges',
+        'internal' => true,
+    ],
     'bill.see-server-charges' => [
         'description' => 'Read server charges (detailed server bill info)',
         'internal' => true,

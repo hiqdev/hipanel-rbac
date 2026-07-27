@@ -147,6 +147,7 @@ return [
         'children' => [
             'role:bill.manager',
             'bill.charges.read',
+            'bill.charges.change_invoiced',
             'bill.see-server-charges',
         ],
     ],
@@ -1202,6 +1203,7 @@ return [
         'children' => [
             'ref.view.not-used',
             'bill.charges.read',
+            'bill.charges.change_invoiced',
             'bill.see-server-charges',
             'part.read-all-hierarchy',
             'client.set-description',
@@ -1701,6 +1703,14 @@ return [
     'deny:bill.charges.read' => [
         'type' => 2,
         'description' => 'Prohibits charges.read operation on the bill',
+    ],
+    'bill.charges.change_invoiced' => [
+        'type' => 2,
+        'description' => 'Generate on-demand invoices for selected charges',
+        'internal' => true,
+    ],
+    'deny:bill.charges.change_invoiced' => [
+        'type' => 2,
     ],
     'bill.see-server-charges' => [
         'type' => 2,
