@@ -454,9 +454,6 @@ return [
     'client.read-financial-info' => [
         'description' => 'Read client financial info',
     ],
-    'client.read-requisite' => [
-        'description' => 'Read requisites set to client',
-    ],
     'client.read-referral' => [
         'description' => 'Read referral set to client',
     ],
@@ -1737,9 +1734,6 @@ return [
     ],
     'deny:client.read-financial-info' => [
         'description' => 'Prohibits viewing client\'s financial info',
-    ],
-    'deny:client.read-requisite' => [
-        'description' => 'Prohibits viewing setted requisite to client',
     ],
     'deny:client.read-referral' => [
         'description' => 'Prohibits viewing client\'s referral',
