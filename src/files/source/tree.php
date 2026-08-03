@@ -15,7 +15,7 @@ return [
         'role:client.support', 'client.create', 'client.update', 'client.delete',
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note',
-        'client.read-financial-info', 'client.read-requisite', 'client.read-referral',
+        'client.read-financial-info', 'client.read-referral',
         'client.read-deleted',
         'purse.update', 'purse.read',
         'purse.set-credit',
