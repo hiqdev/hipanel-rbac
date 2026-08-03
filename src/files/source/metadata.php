@@ -1930,6 +1930,10 @@ return [
         'description' => 'Read expenses data in PNL report',
         'internal' => true,
     ],
+    'pnl.read-source' => [
+        'description' => 'Read source data in PNL index',
+        'internal' => true,
+    ],
     'pnl.update' => [
         'description' => 'Update PNL report',
         'internal' => true,

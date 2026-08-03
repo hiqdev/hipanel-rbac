@@ -41,7 +41,6 @@ return [
             'client.get-note',
             'client.set-note',
             'client.read-financial-info',
-            'client.read-requisite',
             'client.read-referral',
             'client.read-deleted',
             'purse.update',
@@ -454,6 +453,7 @@ return [
             'pnl.read',
             'pnl.update',
             'pnl.read-expenses',
+            'pnl.read-source',
         ],
     ],
     'role:pnl.user' => [
@@ -1374,14 +1374,6 @@ return [
     'deny:client.read-financial-info' => [
         'type' => 2,
         'description' => 'Prohibits viewing client\'s financial info',
-    ],
-    'client.read-requisite' => [
-        'type' => 2,
-        'description' => 'Read requisites set to client',
-    ],
-    'deny:client.read-requisite' => [
-        'type' => 2,
-        'description' => 'Prohibits viewing setted requisite to client',
     ],
     'client.read-referral' => [
         'type' => 2,
@@ -2305,6 +2297,14 @@ return [
     'deny:pnl.read-expenses' => [
         'type' => 2,
         'description' => 'Prohibits read-expenses operation on the pnl',
+    ],
+    'pnl.read-source' => [
+        'type' => 2,
+        'description' => 'Read source data in PNL index',
+        'internal' => true,
+    ],
+    'deny:pnl.read-source' => [
+        'type' => 2,
     ],
     'costprice.read' => [
         'type' => 2,

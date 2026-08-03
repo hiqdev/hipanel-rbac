@@ -174,7 +174,7 @@ return [
         'role:purse.manager',
     ],
     'role:pnl.master' => [
-        'pnl.read', 'pnl.update', 'pnl.read-expenses'
+        'pnl.read', 'pnl.update', 'pnl.read-expenses', 'pnl.read-source'
     ],
     'role:pnl.user' => [
         'pnl.read',

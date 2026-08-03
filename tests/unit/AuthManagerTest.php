@@ -63,6 +63,7 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'move.create',
             'pnl.read',
             'pnl.read-expenses',
+            'pnl.read-source',
             'pnl.update',
             'order.read',
             'order.create',
