@@ -540,7 +540,7 @@ trait CheckAccessTrait
             'ip.read', 'ip.create', 'ip.update', 'ip.delete',
             'service.read', 'service.create', 'service.update', 'service.delete',
             'costprice.read', 'costprice.create', 'costprice.update', 'costprice.delete',
-            'pnl.read', 'pnl.read-expenses', 'pnl.update',
+            'pnl.read', 'pnl.read-expenses', 'pnl.update', 'pnl.read-source',
             'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
 
             'purse.set-credit','server.read-wizzard','server.read-legend','server.read-financial-info', 'server.read-system-info',
