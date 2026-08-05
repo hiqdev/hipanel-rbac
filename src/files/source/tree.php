@@ -168,7 +168,7 @@ return [
         'purse.read',
     ],
     'role:purse.manager' => [
-        'role:purse.user', 'purse.update', 'purse.create',
+        'role:purse.user', 'purse.update', 'purse.create', 'role:requisites.user',
     ],
     'role:purse.master' => [
         'role:purse.manager',
