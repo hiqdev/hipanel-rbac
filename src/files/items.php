@@ -437,6 +437,7 @@ return [
             'role:purse.user',
             'purse.update',
             'purse.create',
+            'role:requisites.user',
         ],
     ],
     'role:purse.master' => [
