@@ -1704,6 +1704,7 @@ return [
     ],
     'deny:bill.charges.change_invoiced' => [
         'type' => 2,
+        'description' => 'Prohibits charges.change_invoiced operation on the bill',
     ],
     'bill.see-server-charges' => [
         'type' => 2,
@@ -2306,6 +2307,7 @@ return [
     ],
     'deny:pnl.read-source' => [
         'type' => 2,
+        'description' => 'Prohibits read-source operation on the pnl',
     ],
     'costprice.read' => [
         'type' => 2,

@@ -1956,4 +1956,10 @@ return [
     'deny:role:stock.admin' => [
         'description' => 'Prohibits role:stock-admin operation',
     ],
+    'deny:bill.charges.change_invoiced' => [
+        'description' => 'Prohibits charges.change_invoiced operation on the bill',
+    ],
+    'deny:pnl.read-source' => [
+        'description' => 'Prohibits read-source operation on the pnl',
+    ],
 ];
