@@ -390,6 +390,7 @@ return [
         'role:installment-plan.user',
         'client.notify',
         'access-subclients',
+        'bill.create-exchange',
     ],
     'role:support' => [
         'access-subclients', 'support',
