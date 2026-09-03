@@ -1216,6 +1216,7 @@ return [
             'role:audit.user',
             'role:installment-plan.manager',
             'document.see-history',
+            'ticket.export',
         ],
     ],
     'role:almighty' => [
@@ -3361,5 +3362,14 @@ return [
     'deny:owner-staff' => [
         'type' => 2,
         'description' => 'Prohibits owner-staff operation',
+    ],
+    'ticket.export' => [
+        'type' => 2,
+        'description' => 'Export tickets with full message threads for reporting',
+        'internal' => true,
+    ],
+    'deny:ticket.export' => [
+        'type' => 2,
+        'description' => 'Prohibits exporting tickets',
     ],
 ];

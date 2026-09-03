@@ -1140,6 +1140,9 @@ return [
     'deny:ticket.read-statistics' => [
         'description' => 'Prohibits viewing tickets statistics',
     ],
+    'deny:ticket.export' => [
+        'description' => 'Prohibits exporting tickets',
+    ],
     'deny:ticket.set-private' => [
         'description' => 'Prohibits setting `private` to answer',
     ],
@@ -1679,6 +1682,10 @@ return [
     ],
     'ticket.read-statistics' => [
         'description' => 'Read ticket statistics',
+    ],
+    'ticket.export' => [
+        'description' => 'Export tickets with full message threads for reporting',
+        'internal' => true,
     ],
     'ticket.set-private' => [
         'description' => 'Make private ticket answers',

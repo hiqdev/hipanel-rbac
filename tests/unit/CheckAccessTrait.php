@@ -646,6 +646,7 @@ trait CheckAccessTrait
             'installment-plan.update',
             'installment-plan.process',
             'document.see-history',
+            'ticket.export',
         ]);
     }
 }

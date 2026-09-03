@@ -555,6 +555,7 @@ return [
         'role:audit.user',
         'role:installment-plan.manager',
         'document.see-history',
+        'ticket.export',
     ],
     'role:almighty' => [
         'role:staff-admin',
