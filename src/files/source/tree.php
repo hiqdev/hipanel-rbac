@@ -532,6 +532,9 @@ return [
         'ticket.read-templates', 'ticket.read-statistics',
         'ticket.set-private', 'ticket.set-recipient', 'ticket.set-time',
     ],
+    'role:ticket.exporter' => [
+        'ticket.export',
+    ],
     'role:beta-tester' => [
         'test.beta',
     ],
