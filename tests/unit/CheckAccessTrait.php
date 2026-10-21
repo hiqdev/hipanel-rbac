@@ -649,4 +649,11 @@ trait CheckAccessTrait
             'ticket.export',
         ]);
     }
+
+    public function testTicketExporter(): void
+    {
+        $this->assertAccesses('role:ticket.exporter', [
+            'ticket.export',
+        ]);
+    }
 }

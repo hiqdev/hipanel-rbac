@@ -1183,6 +1183,13 @@ return [
             'ticket.set-time',
         ],
     ],
+    'role:ticket.exporter' => [
+        'type' => 1,
+        'description' => 'The role is generally assigned to staff who export tickets with full message threads for reporting',
+        'children' => [
+            'ticket.export',
+        ],
+    ],
     'role:beta-tester' => [
         'type' => 1,
         'description' => 'The role is generally assigned to users who participate in beta testing program',

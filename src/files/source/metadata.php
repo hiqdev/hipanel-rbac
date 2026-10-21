@@ -296,6 +296,9 @@ return [
     'role:ticket.manager' => [
         'description' => 'The role is generally assigned to staff who are in charge of tickets management',
     ],
+    'role:ticket.exporter' => [
+        'description' => 'The role is generally assigned to staff who export tickets with full message threads for reporting',
+    ],
     'role:beta-tester' => [
         'description' => 'The role is generally assigned to users who participate in beta testing program',
     ],
