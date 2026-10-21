@@ -3327,6 +3327,15 @@ return [
         'type' => 2,
         'description' => 'Prohibits setting spent time to ticket',
     ],
+    'ticket.export' => [
+        'type' => 2,
+        'description' => 'Export tickets with full message threads for reporting',
+        'internal' => true,
+    ],
+    'deny:ticket.export' => [
+        'type' => 2,
+        'description' => 'Prohibits exporting tickets',
+    ],
     'test.beta' => [
         'type' => 2,
         'description' => 'Beta testing',
@@ -3369,14 +3378,5 @@ return [
     'deny:owner-staff' => [
         'type' => 2,
         'description' => 'Prohibits owner-staff operation',
-    ],
-    'ticket.export' => [
-        'type' => 2,
-        'description' => 'Export tickets with full message threads for reporting',
-        'internal' => true,
-    ],
-    'deny:ticket.export' => [
-        'type' => 2,
-        'description' => 'Prohibits exporting tickets',
     ],
 ];
