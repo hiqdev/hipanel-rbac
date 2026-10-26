@@ -64,9 +64,6 @@ return [
     'role:consumption.manager' => [
         'description' => 'The role is generally assigned to staff who are in charge of client\'s devices consumption management',
     ],
-    'role:config.manager' => [
-        'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
-    ],
     'role:integration.manager' => [
         'description' => 'The role is generally assigned to staff who are allowed to change technical configuration of integrations with 3rd party services',
     ],
@@ -463,18 +460,6 @@ return [
     'client.read-deleted' => [
         'description' => 'Read deleted clients',
     ],
-    'config.create' => [
-        'description' => 'Create configs',
-    ],
-    'config.delete' => [
-        'description' => 'Delete configs',
-    ],
-    'config.read' => [
-        'description' => 'Read configs',
-    ],
-    'config.update' => [
-        'description' => 'Update configs',
-    ],
     'consumption.update' => [
         'description' => 'Update consumptions',
         'internal' => true,
@@ -650,18 +635,6 @@ return [
     ],
     'deny:client.update' => [
         'description' => 'Prohibits updating of the client',
-    ],
-    'deny:config.create' => [
-        'description' => 'Prohibits creating of the config',
-    ],
-    'deny:config.delete' => [
-        'description' => 'Prohibits deleting of the config',
-    ],
-    'deny:config.read' => [
-        'description' => 'Prohibits reading of the config',
-    ],
-    'deny:config.update' => [
-        'description' => 'Prohibits updating of the config',
     ],
     'deny:consumption.update' => [
         'description' => 'Prohibits updating of the consumption',

@@ -233,16 +233,6 @@ return [
             'blacklist.delete',
         ],
     ],
-    'role:config.manager' => [
-        'type' => 1,
-        'description' => 'The role is generally assigned to staff who are in charge of publicly offered servers configuration management',
-        'children' => [
-            'config.read',
-            'config.create',
-            'config.update',
-            'config.delete',
-        ],
-    ],
     'role:integration.manager' => [
         'type' => 1,
         'description' => 'The role is generally assigned to staff who are allowed to change technical configuration of integrations with 3rd party services',
@@ -1236,7 +1226,6 @@ return [
             'role:document.master',
             'role:finance.master',
             'role:stock.master',
-            'role:config.manager',
             'role:costprice.manager',
             'role:pnl.master',
             'role:blacklist.manager',
@@ -1828,38 +1817,6 @@ return [
     'deny:blacklist.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the blacklist',
-    ],
-    'config.read' => [
-        'type' => 2,
-        'description' => 'Read configs',
-    ],
-    'deny:config.read' => [
-        'type' => 2,
-        'description' => 'Prohibits reading of the config',
-    ],
-    'config.create' => [
-        'type' => 2,
-        'description' => 'Create configs',
-    ],
-    'deny:config.create' => [
-        'type' => 2,
-        'description' => 'Prohibits creating of the config',
-    ],
-    'config.update' => [
-        'type' => 2,
-        'description' => 'Update configs',
-    ],
-    'deny:config.update' => [
-        'type' => 2,
-        'description' => 'Prohibits updating of the config',
-    ],
-    'config.delete' => [
-        'type' => 2,
-        'description' => 'Delete configs',
-    ],
-    'deny:config.delete' => [
-        'type' => 2,
-        'description' => 'Prohibits deleting of the config',
     ],
     'integration.read' => [
         'type' => 2,

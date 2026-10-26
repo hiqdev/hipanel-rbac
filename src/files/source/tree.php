@@ -99,10 +99,6 @@ return [
     'role:blacklist.manager' => [
         'blacklist.read', 'blacklist.create', 'blacklist.update', 'blacklist.delete',
     ],
-    // CONFIG
-    'role:config.manager' => [
-        'config.read', 'config.create', 'config.update', 'config.delete',
-    ],
     // INTEGRATIONS
     'role:integration.manager' => [
         'integration.read', 'integration.create', 'integration.update', 'integration.delete',
@@ -567,7 +563,6 @@ return [
         'role:document.master',
         'role:finance.master',
         'role:stock.master',
-        'role:config.manager',
         'role:costprice.manager',
         'role:pnl.master',
         'role:blacklist.manager',
