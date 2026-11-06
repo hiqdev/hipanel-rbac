@@ -460,6 +460,9 @@ return [
     'client.read-deleted' => [
         'description' => 'Read deleted clients',
     ],
+    'client.restore' => [
+        'description' => 'Restore deleted clients',
+    ],
     'consumption.update' => [
         'description' => 'Update consumptions',
         'internal' => true,
@@ -602,6 +605,9 @@ return [
     ],
     'deny:client.delete' => [
         'description' => 'Prohibits deleting of the client',
+    ],
+    'deny:client.restore' => [
+        'description' => 'Prohibits restoring of the deleted client',
     ],
     'deny:client.get-note' => [
         'description' => 'Prohibits get-note operation on the client',
