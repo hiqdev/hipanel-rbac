@@ -12,7 +12,7 @@ return [
         'client.read', 'client.list', 'client.read-ip',
     ],
     'role:client.manager' => [
-        'role:client.support', 'client.create', 'client.update', 'client.delete',
+        'role:client.support', 'client.create', 'client.update', 'client.delete', 'client.restore',
         'contact.set-verified', 'client.block', 'client.unblock',
         'client.get-note', 'client.set-note',
         'client.read-financial-info', 'client.read-referral',

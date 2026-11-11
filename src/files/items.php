@@ -35,6 +35,7 @@ return [
             'client.create',
             'client.update',
             'client.delete',
+            'client.restore',
             'contact.set-verified',
             'client.block',
             'client.unblock',
@@ -1324,6 +1325,14 @@ return [
     'deny:client.delete' => [
         'type' => 2,
         'description' => 'Prohibits deleting of the client',
+    ],
+    'client.restore' => [
+        'type' => 2,
+        'description' => 'Restore deleted clients',
+    ],
+    'deny:client.restore' => [
+        'type' => 2,
+        'description' => 'Prohibits restoring of the deleted client',
     ],
     'contact.set-verified' => [
         'type' => 2,
