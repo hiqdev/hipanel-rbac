@@ -1209,6 +1209,7 @@ return [
             'owner-staff',
             'move.read-all',
             'move.get-directions',
+            'role:order.user',
             'see-no-mans',
             'role:blacklist.manager',
             'role:audit.user',

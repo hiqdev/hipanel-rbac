@@ -549,6 +549,7 @@ return [
         'move.read-all',
         'part.read-all-hierarchy',
         'move.get-directions',
+        'role:order.user',
         'see-no-mans',
         'role:blacklist.manager',
         'role:audit.user',
