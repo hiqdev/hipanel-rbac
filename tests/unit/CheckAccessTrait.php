@@ -631,6 +631,7 @@ trait CheckAccessTrait
             'move.read-all',
             'part.read-all-hierarchy',
             'move.get-directions',
+            'order.read',
             'see-no-mans',
             'blacklist.read',
             'blacklist.create',
