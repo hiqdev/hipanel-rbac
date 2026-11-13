@@ -338,7 +338,6 @@ return [
         'role:part.user',
         'role:move.user',
         'role:model.user',
-        'role:order.user',
     ],
     'role:stock.admin' => [
         'role:stock.user',
@@ -350,6 +349,7 @@ return [
         'role:part.master',
         'role:move.manager',
         'role:model.master',
+        'role:order.user',
     ],
     'role:stock.master' => [
         'role:stock.manager',
