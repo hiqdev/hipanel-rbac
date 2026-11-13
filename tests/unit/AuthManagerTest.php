@@ -126,7 +126,6 @@ class AuthManagerTest extends \PHPUnit\Framework\TestCase
             'role:order.user',
             'role:order.manager',
             'role:order.master',
-            'role:stock.user',
             'role:stock.admin',
             'role:stock.manager',
             'role:stock.master',

@@ -180,7 +180,6 @@ trait CheckAccessTrait
             'stock.read',
             'part.read',
             'move.read',
-            'order.read',
             'model.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
@@ -223,7 +222,6 @@ trait CheckAccessTrait
             'part.read',
             'move.read', 'move.create', 'move.update', 'move.delete',
             'move.get-directions',
-            'order.read',
             'model.read',
             'account.read', 'account.create', 'account.update', 'account.delete',
             'backup.read', 'backup.delete',
@@ -588,7 +586,7 @@ trait CheckAccessTrait
             'access-subclients', 'access-reseller',
             'client.read', 'server.read', 'consumption.read',
             'plan.force-read', 'plan.read', 'document.read', 'finance.read', 'part.read-all-hierarchy',
-            'stock.read', 'part.read', 'move.read', 'model.read', 'order.read', 'move.get-directions',
+            'stock.read', 'part.read', 'move.read', 'model.read', 'move.get-directions',
             'hub.read', 'client.list', 'contact.read', 'bill.read',
         ]);
     }
