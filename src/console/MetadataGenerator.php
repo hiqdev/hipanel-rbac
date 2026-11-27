@@ -53,7 +53,7 @@ final class MetadataGenerator
                 continue;
             }
 
-            $metadata[$name] = ['description' => $descriptor($name)];
+            $metadata[$name] = ['description' => $descriptor()];
         }
     }
 

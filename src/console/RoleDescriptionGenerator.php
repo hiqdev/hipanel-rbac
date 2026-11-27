@@ -12,7 +12,7 @@ namespace hipanel\rbac\console;
 
 final class RoleDescriptionGenerator
 {
-    public function __invoke(string $roleName): string
+    public function __invoke(): string
     {
         return 'The role is generally assigned to ____';
     }
