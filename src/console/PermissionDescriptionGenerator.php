@@ -21,10 +21,6 @@ final class PermissionDescriptionGenerator
      */
     private $operation;
     /**
-     * @var string
-     */
-    private $rawName;
-    /**
      * @var bool
      */
     private $allows;
@@ -42,7 +38,6 @@ final class PermissionDescriptionGenerator
     private function parse(string $name): void
     {
         $this->module = null;
-        $this->rawName = $name;
         $this->allows = strpos($name, 'deny:') === false;
         if (!$this->allows) {
             [, $name] = explode(':', $name, 2);

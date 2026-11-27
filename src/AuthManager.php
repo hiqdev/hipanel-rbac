@@ -59,14 +59,14 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
         parent::saveAssignments();
     }
 
-    public function checkAccess($userId, $permission, $params = [])
+    public function checkAccess($userId, $permissionName, $params = [])
     {
         if (empty($this->getAssignments($userId))) {
             $this->applyUserAssignments($userId);
         }
 
-        return parent::checkAccess($userId, $permission, $params)
-            && !parent::checkAccess($userId, "deny:$permission", $params);
+        return parent::checkAccess($userId, $permissionName, $params)
+            && !parent::checkAccess($userId, "deny:$permissionName", $params);
     }
 
     private function applyUserAssignments($userId)
@@ -161,7 +161,6 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
     {
         $items = [];
         foreach ($this->items as $name => $item) {
-            /** @var Item $item */
             $items[$name] = array_filter(
                 [
                     'type' => $item->type,
