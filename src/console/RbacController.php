@@ -11,6 +11,7 @@
 namespace hipanel\rbac\console;
 
 use hipanel\rbac\AbstractIniter;
+use hipanel\rbac\AuthManager;
 use hipanel\rbac\console\converter\ConverterInterface;
 use hipanel\rbac\RbacIniterInterface;
 use yii\base\Module;
@@ -21,6 +22,8 @@ use yii\rbac\CheckAccessInterface;
  * Class RbacController.
  *
  * Usage: `hidev rbac/init`
+ *
+ * @extends \yii\console\Controller<Module>
  */
 class RbacController extends \yii\console\Controller
 {
@@ -30,7 +33,7 @@ class RbacController extends \yii\console\Controller
     protected $initer;
 
     /**
-     * @var CheckAccessInterface
+     * @var AuthManager
      */
     private $auth;
 
@@ -82,7 +85,7 @@ class RbacController extends \yii\console\Controller
         echo "Permissions:\n";
         $permissions = $this->auth->getPermissions();
         ksort($permissions);
-        foreach ($permissions as $name => $perm) {
+        foreach ($permissions as $perm) {
             echo "   $perm->name – $perm->description\n";
         }
 
@@ -120,7 +123,7 @@ class RbacController extends \yii\console\Controller
         $perm2roles = [];
         foreach ($roles as $role => $roleObj) {
             $this->auth->setAssignment($role, $role);
-            foreach ($perms as $perm => $permObj) {
+            foreach (array_keys($perms) as $perm) {
                 if ($this->auth->checkAccess($role, $perm)) {
                     $perm2roles[$perm][$role] = $roleObj;
                 }

@@ -31,17 +31,6 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
     public $ruleFile       = __DIR__ . '/files/rules.php';
     public $assignmentFile = __DIR__ . '/files/assignments.php';
 
-    public function __construct(array $config = [])
-    {
-        if (yii::is2()) {
-            parent::__construct($config);
-            parent::init();
-        } else {
-            $dir = __DIR__ . '/files';
-            parent::__construct($dir);
-        }
-    }
-
     /**
      * We don't keep all the assignments, only persistent.
      * @see persistAssignments
@@ -59,14 +48,14 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
         parent::saveAssignments();
     }
 
-    public function checkAccess($userId, $permission, $params = [])
+    public function checkAccess($userId, $permissionName, $params = [])
     {
         if (empty($this->getAssignments($userId))) {
             $this->applyUserAssignments($userId);
         }
 
-        return parent::checkAccess($userId, $permission, $params)
-            && !parent::checkAccess($userId, "deny:$permission", $params);
+        return parent::checkAccess($userId, $permissionName, $params)
+            && !parent::checkAccess($userId, "deny:$permissionName", $params);
     }
 
     private function applyUserAssignments($userId)
@@ -161,7 +150,6 @@ class AuthManager extends \yii\rbac\PhpManager implements Configurable
     {
         $items = [];
         foreach ($this->items as $name => $item) {
-            /** @var Item $item */
             $items[$name] = array_filter(
                 [
                     'type' => $item->type,

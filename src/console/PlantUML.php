@@ -26,8 +26,6 @@ class PlantUML
 
     public function build()
     {
-        $path = dirname(__DIR__, 2) . '/docs/test.md';
-
         $header = '@startuml';
         $footer = '@enduml';
         $legend = '
@@ -49,7 +47,7 @@ hide stereotypes
         $hidds = [];
 
         $permissions = $this->auth->getPermissions();
-        foreach ($permissions as $name => $perm) {
+        foreach (array_keys($permissions) as $name) {
             if ($this->isDeny($name)) {
                 continue;
             }
@@ -65,11 +63,11 @@ hide stereotypes
 
         $items[] = '';
 
-        foreach ($this->auth->getRoles() as $parent => $role) {
+        foreach (array_keys($this->auth->getRoles()) as $parent) {
             $parent_id = $this->toId($parent);
 
             $items[] = "Role($parent_id, \"$parent\")";
-            foreach ($this->auth->getChildren($parent) as $child => $item) {
+            foreach (array_keys($this->auth->getChildren($parent)) as $child) {
                 $child_id = $this->toId($child);
                 $links[] = "$child_id -> $parent_id";
             }

@@ -10,6 +10,7 @@
 
 namespace hipanel\rbac\console;
 
+use hipanel\rbac\AbstractIniter;
 use hipanel\rbac\AuthManager;
 use hipanel\rbac\RbacIniterInterface;
 use Laminas\Code\Generator\FileGenerator;
@@ -22,7 +23,7 @@ final class MetadataGenerator
      */
     private $auth;
     /**
-     * @var RbacIniterInterface
+     * @var AbstractIniter
      */
     private $initer;
 
@@ -47,12 +48,12 @@ final class MetadataGenerator
     private function generateRoleDescriptions(array &$metadata): void
     {
         $descriptor = new RoleDescriptionGenerator();
-        foreach ($this->auth->getRoles() as $name => $role) {
+        foreach (array_keys($this->auth->getRoles()) as $name) {
             if (isset($metadata[$name])) {
                 continue;
             }
 
-            $metadata[$name] = ['description' => $descriptor($name)];
+            $metadata[$name] = ['description' => $descriptor()];
         }
     }
 
@@ -61,7 +62,7 @@ final class MetadataGenerator
         $descriptor = new PermissionDescriptionGenerator();
         $permissions = $this->auth->getPermissions();
         ksort($permissions);
-        foreach ($permissions as $name => $permission) {
+        foreach (array_keys($permissions) as $name) {
             if (isset($metadata[$name])) {
                 continue;
             }

@@ -7,8 +7,11 @@ class EnumRowItemBuilder extends DefaultEnumRowItemBuilder
 {
     public function build(string $value): string
     {
-        [,$newValue] = explode(':', $value);
-        $key = $this->toCamelCase($newValue);
+        $parts = explode(':', $value);
+        if (!isset($parts[1])) {
+            return parent::build($value);
+        }
+        $key = $this->toCamelCase($parts[1]);
 
         return $this->renderKeyValue($key, $value);
     }
